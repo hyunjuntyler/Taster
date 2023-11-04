@@ -18,6 +18,8 @@
 		299A913F2AF6C03800D9C2D1 /* GmarketSansTTFBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 299A913C2AF6C03800D9C2D1 /* GmarketSansTTFBold.ttf */; };
 		299A91402AF6C03800D9C2D1 /* GmarketSansTTFMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 299A913D2AF6C03800D9C2D1 /* GmarketSansTTFMedium.ttf */; };
 		299A91432AF6C20300D9C2D1 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A91422AF6C20300D9C2D1 /* FontExtension.swift */; };
+		299A914B2AF6C85A00D9C2D1 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A914A2AF6C85A00D9C2D1 /* TabBar.swift */; };
+		299A914D2AF6CBD600D9C2D1 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A914C2AF6CBD600D9C2D1 /* MainTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		299A913D2AF6C03800D9C2D1 /* GmarketSansTTFMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansTTFMedium.ttf; sourceTree = "<group>"; };
 		299A91412AF6C07900D9C2D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		299A91422AF6C20300D9C2D1 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
+		299A914A2AF6C85A00D9C2D1 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		299A914C2AF6CBD600D9C2D1 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +89,10 @@
 		299A91352AF6B2BE00D9C2D1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				299A914C2AF6CBD600D9C2D1 /* MainTabView.swift */,
 				299A91312AF6B1FF00D9C2D1 /* NoteView.swift */,
 				299A91332AF6B21A00D9C2D1 /* ShareView.swift */,
+				299A91492AF6C84100D9C2D1 /* Component */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -136,6 +142,14 @@
 				299A91422AF6C20300D9C2D1 /* FontExtension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		299A91492AF6C84100D9C2D1 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				299A914A2AF6C85A00D9C2D1 /* TabBar.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,8 +230,10 @@
 				299A91432AF6C20300D9C2D1 /* FontExtension.swift in Sources */,
 				299A91342AF6B21A00D9C2D1 /* ShareView.swift in Sources */,
 				299A91262AF6AD6C00D9C2D1 /* ContentView.swift in Sources */,
+				299A914D2AF6CBD600D9C2D1 /* MainTabView.swift in Sources */,
 				299A91322AF6B1FF00D9C2D1 /* NoteView.swift in Sources */,
 				299A91242AF6AD6C00D9C2D1 /* LookSmellTasteApp.swift in Sources */,
+				299A914B2AF6C85A00D9C2D1 /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,7 +386,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -404,7 +420,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

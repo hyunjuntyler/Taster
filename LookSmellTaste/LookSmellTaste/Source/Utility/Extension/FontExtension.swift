@@ -9,7 +9,7 @@ import SwiftUI
 
 extension Font {
     static let tossFace = Font.custom("TossFaceFontMac", size: 17, relativeTo: .body)
-
+    
     static let gmarketSansLargeTitle = Font.custom("GmarketSansTTFMedium", size: 34, relativeTo: .largeTitle)
     static let gmarketSansTitle = Font.custom("GmarketSansTTFMedium", size: 28, relativeTo: .title)
     static let gmarketSansTitle2 = Font.custom("GmarketSansTTFMedium", size: 22, relativeTo: .title2)
@@ -21,4 +21,5 @@ extension Font {
     static let gmarketSansFootnote = Font.custom("GmarketSansTTFMedium", size: 13, relativeTo: .footnote)
     static let gmarketCaption = Font.custom("GmarketSansTTFMedium", size: 12, relativeTo: .caption)
     static let gmarketCaption2 = Font.custom("GmarketSansTTFMedium", size: 11, relativeTo: .caption2)
+    static let gmarketTab = Font.custom("GmarketSansTTFMedium", size: 10, relativeTo: .caption2)
 }
