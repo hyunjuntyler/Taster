@@ -13,6 +13,11 @@
 		299A912B2AF6AD6D00D9C2D1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 299A912A2AF6AD6D00D9C2D1 /* Preview Assets.xcassets */; };
 		299A91322AF6B1FF00D9C2D1 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A91312AF6B1FF00D9C2D1 /* NoteView.swift */; };
 		299A91342AF6B21A00D9C2D1 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A91332AF6B21A00D9C2D1 /* ShareView.swift */; };
+		299A913A2AF6C00400D9C2D1 /* TossFaceFontMac.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 299A91392AF6C00400D9C2D1 /* TossFaceFontMac.ttf */; };
+		299A913E2AF6C03800D9C2D1 /* GmarketSansTTFLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 299A913B2AF6C03800D9C2D1 /* GmarketSansTTFLight.ttf */; };
+		299A913F2AF6C03800D9C2D1 /* GmarketSansTTFBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 299A913C2AF6C03800D9C2D1 /* GmarketSansTTFBold.ttf */; };
+		299A91402AF6C03800D9C2D1 /* GmarketSansTTFMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 299A913D2AF6C03800D9C2D1 /* GmarketSansTTFMedium.ttf */; };
+		299A91432AF6C20300D9C2D1 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A91422AF6C20300D9C2D1 /* FontExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +28,12 @@
 		299A912A2AF6AD6D00D9C2D1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		299A91312AF6B1FF00D9C2D1 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 		299A91332AF6B21A00D9C2D1 /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
+		299A91392AF6C00400D9C2D1 /* TossFaceFontMac.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TossFaceFontMac.ttf; sourceTree = "<group>"; };
+		299A913B2AF6C03800D9C2D1 /* GmarketSansTTFLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansTTFLight.ttf; sourceTree = "<group>"; };
+		299A913C2AF6C03800D9C2D1 /* GmarketSansTTFBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansTTFBold.ttf; sourceTree = "<group>"; };
+		299A913D2AF6C03800D9C2D1 /* GmarketSansTTFMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansTTFMedium.ttf; sourceTree = "<group>"; };
+		299A91412AF6C07900D9C2D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		299A91422AF6C20300D9C2D1 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,10 +66,9 @@
 		299A91222AF6AD6C00D9C2D1 /* LookSmellTaste */ = {
 			isa = PBXGroup;
 			children = (
-				299A91232AF6AD6C00D9C2D1 /* LookSmellTasteApp.swift */,
-				299A91252AF6AD6C00D9C2D1 /* ContentView.swift */,
-				299A91352AF6B2BE00D9C2D1 /* View */,
-				299A91272AF6AD6D00D9C2D1 /* Assets.xcassets */,
+				299A91412AF6C07900D9C2D1 /* Info.plist */,
+				299A91362AF6BFAB00D9C2D1 /* Source */,
+				299A91372AF6BFD900D9C2D1 /* Resource */,
 				299A91292AF6AD6D00D9C2D1 /* Preview Content */,
 			);
 			path = LookSmellTaste;
@@ -79,6 +89,53 @@
 				299A91332AF6B21A00D9C2D1 /* ShareView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		299A91362AF6BFAB00D9C2D1 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				299A91232AF6AD6C00D9C2D1 /* LookSmellTasteApp.swift */,
+				299A91252AF6AD6C00D9C2D1 /* ContentView.swift */,
+				299A91352AF6B2BE00D9C2D1 /* View */,
+				299A91442AF6C20B00D9C2D1 /* Utility */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		299A91372AF6BFD900D9C2D1 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				299A91382AF6BFED00D9C2D1 /* Font */,
+				299A91272AF6AD6D00D9C2D1 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		299A91382AF6BFED00D9C2D1 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				299A913C2AF6C03800D9C2D1 /* GmarketSansTTFBold.ttf */,
+				299A913B2AF6C03800D9C2D1 /* GmarketSansTTFLight.ttf */,
+				299A913D2AF6C03800D9C2D1 /* GmarketSansTTFMedium.ttf */,
+				299A91392AF6C00400D9C2D1 /* TossFaceFontMac.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		299A91442AF6C20B00D9C2D1 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				299A91452AF6C21A00D9C2D1 /* Extension */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		299A91452AF6C21A00D9C2D1 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				299A91422AF6C20300D9C2D1 /* FontExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,7 +198,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				299A912B2AF6AD6D00D9C2D1 /* Preview Assets.xcassets in Resources */,
+				299A913E2AF6C03800D9C2D1 /* GmarketSansTTFLight.ttf in Resources */,
+				299A913A2AF6C00400D9C2D1 /* TossFaceFontMac.ttf in Resources */,
 				299A91282AF6AD6D00D9C2D1 /* Assets.xcassets in Resources */,
+				299A913F2AF6C03800D9C2D1 /* GmarketSansTTFBold.ttf in Resources */,
+				299A91402AF6C03800D9C2D1 /* GmarketSansTTFMedium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				299A91432AF6C20300D9C2D1 /* FontExtension.swift in Sources */,
 				299A91342AF6B21A00D9C2D1 /* ShareView.swift in Sources */,
 				299A91262AF6AD6C00D9C2D1 /* ContentView.swift in Sources */,
 				299A91322AF6B1FF00D9C2D1 /* NoteView.swift in Sources */,
@@ -292,6 +354,7 @@
 				DEVELOPMENT_TEAM = 77745NX67K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LookSmellTaste/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -325,6 +388,7 @@
 				DEVELOPMENT_TEAM = 77745NX67K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LookSmellTaste/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
