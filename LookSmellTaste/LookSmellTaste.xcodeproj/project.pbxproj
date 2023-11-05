@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		299A91242AF6AD6C00D9C2D1 /* LookSmellTasteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A91232AF6AD6C00D9C2D1 /* LookSmellTasteApp.swift */; };
 		299A91262AF6AD6C00D9C2D1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A91252AF6AD6C00D9C2D1 /* ContentView.swift */; };
-		299A91282AF6AD6D00D9C2D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 299A91272AF6AD6D00D9C2D1 /* Assets.xcassets */; };
+		299A91282AF6AD6D00D9C2D1 /* Asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 299A91272AF6AD6D00D9C2D1 /* Asset.xcassets */; };
 		299A912B2AF6AD6D00D9C2D1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 299A912A2AF6AD6D00D9C2D1 /* Preview Assets.xcassets */; };
 		299A91322AF6B1FF00D9C2D1 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A91312AF6B1FF00D9C2D1 /* NoteView.swift */; };
 		299A91342AF6B21A00D9C2D1 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A91332AF6B21A00D9C2D1 /* ShareView.swift */; };
@@ -23,13 +23,17 @@
 		299A914F2AF6DEC000D9C2D1 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A914E2AF6DEC000D9C2D1 /* NavigationBar.swift */; };
 		299A91512AF6E2F100D9C2D1 /* PreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A91502AF6E2F100D9C2D1 /* PreferenceKey.swift */; };
 		299A91532AF71E9A00D9C2D1 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A91522AF71E9A00D9C2D1 /* ViewExtension.swift */; };
+		299A91592AF744BB00D9C2D1 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 299A91582AF744BB00D9C2D1 /* Color.xcassets */; };
+		299A915B2AF7451D00D9C2D1 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 299A915A2AF7451D00D9C2D1 /* Image.xcassets */; };
+		299A915E2AF74C6F00D9C2D1 /* AddNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A915D2AF74C6F00D9C2D1 /* AddNoteView.swift */; };
+		299A91622AF757F000D9C2D1 /* NextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A91612AF757F000D9C2D1 /* NextButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		299A91202AF6AD6C00D9C2D1 /* LookSmellTaste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LookSmellTaste.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		299A91232AF6AD6C00D9C2D1 /* LookSmellTasteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookSmellTasteApp.swift; sourceTree = "<group>"; };
 		299A91252AF6AD6C00D9C2D1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		299A91272AF6AD6D00D9C2D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		299A91272AF6AD6D00D9C2D1 /* Asset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Asset.xcassets; sourceTree = "<group>"; };
 		299A912A2AF6AD6D00D9C2D1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		299A91312AF6B1FF00D9C2D1 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 		299A91332AF6B21A00D9C2D1 /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
@@ -44,6 +48,10 @@
 		299A914E2AF6DEC000D9C2D1 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		299A91502AF6E2F100D9C2D1 /* PreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceKey.swift; sourceTree = "<group>"; };
 		299A91522AF71E9A00D9C2D1 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		299A91582AF744BB00D9C2D1 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		299A915A2AF7451D00D9C2D1 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
+		299A915D2AF74C6F00D9C2D1 /* AddNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteView.swift; sourceTree = "<group>"; };
+		299A91612AF757F000D9C2D1 /* NextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +126,9 @@
 			isa = PBXGroup;
 			children = (
 				299A91382AF6BFED00D9C2D1 /* Font */,
-				299A91272AF6AD6D00D9C2D1 /* Assets.xcassets */,
+				299A91272AF6AD6D00D9C2D1 /* Asset.xcassets */,
+				299A91582AF744BB00D9C2D1 /* Color.xcassets */,
+				299A915A2AF7451D00D9C2D1 /* Image.xcassets */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -157,6 +167,7 @@
 			children = (
 				299A914A2AF6C85A00D9C2D1 /* TabBar.swift */,
 				299A914E2AF6DEC000D9C2D1 /* NavigationBar.swift */,
+				299A91612AF757F000D9C2D1 /* NextButton.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -165,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				299A91312AF6B1FF00D9C2D1 /* NoteView.swift */,
+				299A915C2AF74C6200D9C2D1 /* AddNote */,
 			);
 			path = Note;
 			sourceTree = "<group>";
@@ -175,6 +187,14 @@
 				299A91332AF6B21A00D9C2D1 /* ShareView.swift */,
 			);
 			path = Share;
+			sourceTree = "<group>";
+		};
+		299A915C2AF74C6200D9C2D1 /* AddNote */ = {
+			isa = PBXGroup;
+			children = (
+				299A915D2AF74C6F00D9C2D1 /* AddNoteView.swift */,
+			);
+			path = AddNote;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,7 +259,9 @@
 				299A912B2AF6AD6D00D9C2D1 /* Preview Assets.xcassets in Resources */,
 				299A913E2AF6C03800D9C2D1 /* GmarketSansTTFLight.ttf in Resources */,
 				299A913A2AF6C00400D9C2D1 /* TossFaceFontMac.ttf in Resources */,
-				299A91282AF6AD6D00D9C2D1 /* Assets.xcassets in Resources */,
+				299A91282AF6AD6D00D9C2D1 /* Asset.xcassets in Resources */,
+				299A91592AF744BB00D9C2D1 /* Color.xcassets in Resources */,
+				299A915B2AF7451D00D9C2D1 /* Image.xcassets in Resources */,
 				299A913F2AF6C03800D9C2D1 /* GmarketSansTTFBold.ttf in Resources */,
 				299A91402AF6C03800D9C2D1 /* GmarketSansTTFMedium.ttf in Resources */,
 			);
@@ -258,10 +280,12 @@
 				299A91262AF6AD6C00D9C2D1 /* ContentView.swift in Sources */,
 				299A91532AF71E9A00D9C2D1 /* ViewExtension.swift in Sources */,
 				299A914F2AF6DEC000D9C2D1 /* NavigationBar.swift in Sources */,
+				299A91622AF757F000D9C2D1 /* NextButton.swift in Sources */,
 				299A914D2AF6CBD600D9C2D1 /* MainTabView.swift in Sources */,
 				299A91322AF6B1FF00D9C2D1 /* NoteView.swift in Sources */,
 				299A91242AF6AD6C00D9C2D1 /* LookSmellTasteApp.swift in Sources */,
 				299A914B2AF6C85A00D9C2D1 /* TabBar.swift in Sources */,
+				299A915E2AF74C6F00D9C2D1 /* AddNoteView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
