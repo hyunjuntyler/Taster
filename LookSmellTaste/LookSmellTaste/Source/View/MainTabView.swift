@@ -23,7 +23,7 @@ struct MainTabView: View {
             .contentMargins(.bottom, 80)
             .ignoresSafeArea(edges: .bottom)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            
+                        
             TabBar(selectedTab: $selectedTab)
         }
     }

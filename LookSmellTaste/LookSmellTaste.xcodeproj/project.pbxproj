@@ -20,6 +20,9 @@
 		299A91432AF6C20300D9C2D1 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A91422AF6C20300D9C2D1 /* FontExtension.swift */; };
 		299A914B2AF6C85A00D9C2D1 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A914A2AF6C85A00D9C2D1 /* TabBar.swift */; };
 		299A914D2AF6CBD600D9C2D1 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A914C2AF6CBD600D9C2D1 /* MainTabView.swift */; };
+		299A914F2AF6DEC000D9C2D1 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A914E2AF6DEC000D9C2D1 /* NavigationBar.swift */; };
+		299A91512AF6E2F100D9C2D1 /* PreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A91502AF6E2F100D9C2D1 /* PreferenceKey.swift */; };
+		299A91532AF71E9A00D9C2D1 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A91522AF71E9A00D9C2D1 /* ViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		299A91422AF6C20300D9C2D1 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
 		299A914A2AF6C85A00D9C2D1 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		299A914C2AF6CBD600D9C2D1 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		299A914E2AF6DEC000D9C2D1 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		299A91502AF6E2F100D9C2D1 /* PreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceKey.swift; sourceTree = "<group>"; };
+		299A91522AF71E9A00D9C2D1 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,8 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				299A914C2AF6CBD600D9C2D1 /* MainTabView.swift */,
-				299A91312AF6B1FF00D9C2D1 /* NoteView.swift */,
-				299A91332AF6B21A00D9C2D1 /* ShareView.swift */,
+				299A91542AF7217300D9C2D1 /* Note */,
+				299A91552AF7217E00D9C2D1 /* Share */,
 				299A91492AF6C84100D9C2D1 /* Component */,
 			);
 			path = View;
@@ -132,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				299A91452AF6C21A00D9C2D1 /* Extension */,
+				299A91502AF6E2F100D9C2D1 /* PreferenceKey.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -140,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				299A91422AF6C20300D9C2D1 /* FontExtension.swift */,
+				299A91522AF71E9A00D9C2D1 /* ViewExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -148,8 +156,25 @@
 			isa = PBXGroup;
 			children = (
 				299A914A2AF6C85A00D9C2D1 /* TabBar.swift */,
+				299A914E2AF6DEC000D9C2D1 /* NavigationBar.swift */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		299A91542AF7217300D9C2D1 /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				299A91312AF6B1FF00D9C2D1 /* NoteView.swift */,
+			);
+			path = Note;
+			sourceTree = "<group>";
+		};
+		299A91552AF7217E00D9C2D1 /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				299A91332AF6B21A00D9C2D1 /* ShareView.swift */,
+			);
+			path = Share;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,9 +252,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				299A91512AF6E2F100D9C2D1 /* PreferenceKey.swift in Sources */,
 				299A91432AF6C20300D9C2D1 /* FontExtension.swift in Sources */,
 				299A91342AF6B21A00D9C2D1 /* ShareView.swift in Sources */,
 				299A91262AF6AD6C00D9C2D1 /* ContentView.swift in Sources */,
+				299A91532AF71E9A00D9C2D1 /* ViewExtension.swift in Sources */,
+				299A914F2AF6DEC000D9C2D1 /* NavigationBar.swift in Sources */,
 				299A914D2AF6CBD600D9C2D1 /* MainTabView.swift in Sources */,
 				299A91322AF6B1FF00D9C2D1 /* NoteView.swift in Sources */,
 				299A91242AF6AD6C00D9C2D1 /* LookSmellTasteApp.swift in Sources */,
