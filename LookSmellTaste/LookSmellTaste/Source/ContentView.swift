@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    init(){
+        UINavigationBar.appearance().shadowImage = UIImage()
+    }
+    
     var body: some View {
         MainTabView()
     }

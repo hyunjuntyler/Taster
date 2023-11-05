@@ -12,19 +12,22 @@ struct MainTabView: View {
 
     var body: some View {
         ZStack {
-            Group {
-                switch selectedTab {
-                case .note:
-                    NoteView()
-                case .share:
-                    ShareView()
+            Color.appBackground.ignoresSafeArea()
+            
+            VStack(spacing: 0) {
+                Group {
+                    switch selectedTab {
+                    case .note:
+                        NoteView()
+                    case .share:
+                        ShareView()
+                    }
                 }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                
+                TabBar(selectedTab: $selectedTab)
             }
-            .contentMargins(.bottom, 80)
             .ignoresSafeArea(edges: .bottom)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        
-            TabBar(selectedTab: $selectedTab)
         }
     }
 }

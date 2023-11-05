@@ -22,7 +22,7 @@ struct ShareView: View {
                             
                         } label: {
                             Image(systemName: "gearshape.fill")
-                                .font(.system(size: 20))
+                                .font(.gmarketSansTitle2)
                                 .foregroundStyle(.gray)
                                 .padding(.trailing, 20)
                         }

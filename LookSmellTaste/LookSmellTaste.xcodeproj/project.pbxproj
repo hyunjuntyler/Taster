@@ -27,6 +27,8 @@
 		299A915B2AF7451D00D9C2D1 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 299A915A2AF7451D00D9C2D1 /* Image.xcassets */; };
 		299A915E2AF74C6F00D9C2D1 /* AddNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A915D2AF74C6F00D9C2D1 /* AddNoteView.swift */; };
 		299A91622AF757F000D9C2D1 /* NextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A91612AF757F000D9C2D1 /* NextButton.swift */; };
+		299A91682AF7B93000D9C2D1 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A91672AF7B93000D9C2D1 /* CloseButton.swift */; };
+		299A916A2AF7BBF800D9C2D1 /* CloseAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A91692AF7BBF800D9C2D1 /* CloseAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		299A915A2AF7451D00D9C2D1 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
 		299A915D2AF74C6F00D9C2D1 /* AddNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteView.swift; sourceTree = "<group>"; };
 		299A91612AF757F000D9C2D1 /* NextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButton.swift; sourceTree = "<group>"; };
+		299A91672AF7B93000D9C2D1 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		299A91692AF7BBF800D9C2D1 /* CloseAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,7 +171,9 @@
 			children = (
 				299A914A2AF6C85A00D9C2D1 /* TabBar.swift */,
 				299A914E2AF6DEC000D9C2D1 /* NavigationBar.swift */,
+				299A91692AF7BBF800D9C2D1 /* CloseAlert.swift */,
 				299A91612AF757F000D9C2D1 /* NextButton.swift */,
+				299A91672AF7B93000D9C2D1 /* CloseButton.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -280,6 +286,8 @@
 				299A91262AF6AD6C00D9C2D1 /* ContentView.swift in Sources */,
 				299A91532AF71E9A00D9C2D1 /* ViewExtension.swift in Sources */,
 				299A914F2AF6DEC000D9C2D1 /* NavigationBar.swift in Sources */,
+				299A916A2AF7BBF800D9C2D1 /* CloseAlert.swift in Sources */,
+				299A91682AF7B93000D9C2D1 /* CloseButton.swift in Sources */,
 				299A91622AF757F000D9C2D1 /* NextButton.swift in Sources */,
 				299A914D2AF6CBD600D9C2D1 /* MainTabView.swift in Sources */,
 				299A91322AF6B1FF00D9C2D1 /* NoteView.swift in Sources */,

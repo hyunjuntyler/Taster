@@ -17,7 +17,6 @@ fileprivate let imageHeight: CGFloat = 24
 fileprivate let tabBarCornerRadius: CGFloat = 0
 fileprivate let tabBarTopPadding: CGFloat = 5
 fileprivate let tabBarComponentSpacing: CGFloat = 5
-fileprivate let tabBarButtonScaleEffect = 0.95
 
 struct TabBar: View {
     @State var noteSymbolEffect = false
@@ -39,7 +38,7 @@ struct TabBar: View {
                 }
                 .padding(.top, tabBarTopPadding)
                 .frame(maxWidth: .infinity)
-                .foregroundColor(selectedTab == .note ? .blue : .gray)
+                .foregroundColor(selectedTab == .note ? .accent : .gray)
             }
             .buttonStyle(TabButtonStyle())
             
@@ -56,7 +55,7 @@ struct TabBar: View {
                 }
                 .padding(.top, tabBarTopPadding)
                 .frame(maxWidth: .infinity)
-                .foregroundColor(selectedTab == .share ? .blue : .gray)
+                .foregroundColor(selectedTab == .share ? .accent : .gray)
             }
             .buttonStyle(TabButtonStyle())
         }
@@ -65,7 +64,6 @@ struct TabBar: View {
             RoundedRectangle(cornerRadius: tabBarCornerRadius, style: .continuous)
                 .fill(.background)
         )
-        .frame(maxHeight: .infinity, alignment: .bottom)
         .edgesIgnoringSafeArea(.bottom)
     }
 }
@@ -73,7 +71,7 @@ struct TabBar: View {
 struct TabButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .scaleEffect(configuration.isPressed ? tabBarButtonScaleEffect : 1)
+            .scaleEffect(configuration.isPressed ? 0.95 : 1)
             .animation(.bouncy, value: configuration.isPressed)
     }
 }
