@@ -34,7 +34,7 @@ struct TabBar: View {
                         .frame(height: imageHeight, alignment: .bottom)
                         .symbolEffect(.bounce, value: noteSymbolEffect)
                     Text("노트")
-                        .font(.gmarketTab)
+                        .font(.gmarketSansTab)
                 }
                 .padding(.top, tabBarTopPadding)
                 .frame(maxWidth: .infinity)
@@ -51,7 +51,7 @@ struct TabBar: View {
                         .frame(height: imageHeight, alignment: .bottom)
                         .symbolEffect(.bounce, value: shareSymbolEffect)
                     Text("공유")
-                        .font(.gmarketTab)
+                        .font(.gmarketSansTab)
                 }
                 .padding(.top, tabBarTopPadding)
                 .frame(maxWidth: .infinity)

@@ -20,7 +20,7 @@ extension Font {
     static let gmarketSansCallout = Font.custom("GmarketSansTTFMedium", size: 16, relativeTo: .callout)
     static let gmarketSansSubHeadline = Font.custom("GmarketSansTTFMedium", size: 15, relativeTo: .subheadline)
     static let gmarketSansFootnote = Font.custom("GmarketSansTTFMedium", size: 13, relativeTo: .footnote)
-    static let gmarketCaption = Font.custom("GmarketSansTTFMedium", size: 12, relativeTo: .caption)
-    static let gmarketCaption2 = Font.custom("GmarketSansTTFMedium", size: 11, relativeTo: .caption2)
-    static let gmarketTab = Font.custom("GmarketSansTTFMedium", size: 10, relativeTo: .caption2)
+    static let gmarketSansCaption = Font.custom("GmarketSansTTFMedium", size: 12, relativeTo: .caption)
+    static let gmarketSansCaption2 = Font.custom("GmarketSansTTFMedium", size: 11, relativeTo: .caption2)
+    static let gmarketSansTab = Font.custom("GmarketSansTTFMedium", size: 10, relativeTo: .caption2)
 }
