@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct NoteView: View {
+    @Bindable private var noteEnvironment = NoteEnvironment()
     @State var scrollOffset = 0.0
-    @State var addNote = false
     
     var body: some View {
         ScrollView {
@@ -29,26 +29,33 @@ struct NoteView: View {
                         }
                     }
                 }
-            Text("기록이 없어요")
-                .font(.gmarketSansBody)
+            ContentUnavailable(type: .note)
         }
         .coordinateSpace(name: "scroll")
         .overlay {
             InlineNavigationTitle(type: .note, scrollOffset: scrollOffset)
         }
         .overlay(alignment: .bottomTrailing) {
-            Button {
-                addNote = true
-            } label: {
-                Image(systemName: "plus.circle.fill")
-                    .font(.system(size: 45))
-            }
-            .padding(20)
+            addButton
         }
-        .sheet(isPresented: $addNote) {
+        .sheet(isPresented: $noteEnvironment.addNote) {
             AddNoteView()
                 .interactiveDismissDisabled()
         }
+        .environment(noteEnvironment)
+    }
+    
+    private var addButton: some View {
+        Button {
+            noteEnvironment.addNote = true
+        } label: {
+            Image(systemName: "plus.circle.fill")
+                .font(.system(size: 60))
+                .foregroundStyle(.appBackground, .accent)
+                .shadow(radius: 1)
+        }
+        .padding(20)
+        .buttonStyle(PressButtonStyle())
     }
 }
 

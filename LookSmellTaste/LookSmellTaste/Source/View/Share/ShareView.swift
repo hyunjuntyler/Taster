@@ -28,7 +28,7 @@ struct ShareView: View {
                         }
                     }
                 }
-            Text("공유 뷰")
+            ContentUnavailable(type: .share)
         }
         .coordinateSpace(name: "scroll")
         .overlay {
