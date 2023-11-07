@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CloseAlert: View {
+    @Environment(NoteEnvironment.self) var noteEnvironment: NoteEnvironment
+    
     var body: some View {
         ZStack {
             Color.black
@@ -22,11 +24,12 @@ struct CloseAlert: View {
                     .padding(.bottom, 20)
                 HStack {
                     Button("돌아가기") {
-                        
+                        noteEnvironment.showAlert = false
                     }
                     .buttonStyle(AlertButtonStyle(type: .cancel))
                     Button("종료하기") {
-                        
+                        noteEnvironment.showAlert = false
+                        noteEnvironment.addNote = false
                     }
                     .buttonStyle(AlertButtonStyle(type: .destructive))
                 }
@@ -67,4 +70,5 @@ struct AlertButtonStyle: ButtonStyle {
 
 #Preview {
     CloseAlert()
+        .environment(NoteEnvironment())
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddNoteView: View {
-    @State var showAlert = false
+    @Environment(NoteEnvironment.self) var noteEnvironment: NoteEnvironment
     @State var navigate = false
     
     var body: some View {
@@ -29,9 +29,9 @@ struct AddNoteView: View {
                                     .resizable()
                                     .scaledToFit()
                                     .frame(height: 40)
+                                    .frame(height: 50)
                             }
                             .frame(maxWidth: .infinity)
-                            .frame(height: 100)
                             .padding()
                             .background {
                                 RoundedRectangle(cornerRadius: 12, style: .continuous)
@@ -46,7 +46,6 @@ struct AddNoteView: View {
                                     .frame(height: 50)
                             }
                             .frame(maxWidth: .infinity)
-                            .frame(height: 100)
                             .padding()
                             .background {
                                 RoundedRectangle(cornerRadius: 12, style: .continuous)
@@ -59,9 +58,9 @@ struct AddNoteView: View {
                                     .resizable()
                                     .scaledToFit()
                                     .frame(height: 40)
+                                    .frame(height: 50)
                             }
                             .frame(maxWidth: .infinity)
-                            .frame(height: 100)
                             .padding()
                             .background {
                                 RoundedRectangle(cornerRadius: 12, style: .continuous)
@@ -80,8 +79,13 @@ struct AddNoteView: View {
             }
             .toolbar {
                 CloseButton {
-                    showAlert = true
+                    noteEnvironment.showAlert = true
                 }
+            }
+        }
+        .overlay {
+            if noteEnvironment.showAlert {
+                CloseAlert()
             }
         }
         .tint(.clear)
@@ -90,4 +94,5 @@ struct AddNoteView: View {
 
 #Preview {
     AddNoteView()
+        .environment(NoteEnvironment())
 }
