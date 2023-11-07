@@ -15,15 +15,7 @@ struct CloseButton: View {
             Image(systemName: "xmark.circle.fill")
                 .foregroundStyle(.appGrayButton)
         }
-        .buttonStyle(CloseButtonStyle())
-    }
-}
-
-struct CloseButtonStyle: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .scaleEffect(configuration.isPressed ? 0.97 : 1)
-            .animation(.bouncy, value: configuration.isPressed)
+        .buttonStyle(PressButtonStyle())
     }
 }
 
