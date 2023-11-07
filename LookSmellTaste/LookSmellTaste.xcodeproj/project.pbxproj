@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		29431F992AF8654300BE17F1 /* NoteObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29431F982AF8654300BE17F1 /* NoteObservable.swift */; };
+		29431F992AF8654300BE17F1 /* NoteEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29431F982AF8654300BE17F1 /* NoteEnvironment.swift */; };
+		2990E4022AF9A21E0001617A /* ContentUnavailable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2990E4012AF9A21E0001617A /* ContentUnavailable.swift */; };
+		2990E4052AF9ACEF0001617A /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2990E4042AF9ACEF0001617A /* ButtonStyle.swift */; };
+		2990E4072AF9E11D0001617A /* AddNoteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2990E4062AF9E11D0001617A /* AddNoteButton.swift */; };
 		299A91242AF6AD6C00D9C2D1 /* LookSmellTasteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A91232AF6AD6C00D9C2D1 /* LookSmellTasteApp.swift */; };
 		299A91262AF6AD6C00D9C2D1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A91252AF6AD6C00D9C2D1 /* ContentView.swift */; };
 		299A91282AF6AD6D00D9C2D1 /* Asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 299A91272AF6AD6D00D9C2D1 /* Asset.xcassets */; };
@@ -33,7 +36,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		29431F982AF8654300BE17F1 /* NoteObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteObservable.swift; sourceTree = "<group>"; };
+		29431F982AF8654300BE17F1 /* NoteEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEnvironment.swift; sourceTree = "<group>"; };
+		2990E4012AF9A21E0001617A /* ContentUnavailable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentUnavailable.swift; sourceTree = "<group>"; };
+		2990E4042AF9ACEF0001617A /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
+		2990E4062AF9E11D0001617A /* AddNoteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteButton.swift; sourceTree = "<group>"; };
 		299A91202AF6AD6C00D9C2D1 /* LookSmellTaste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LookSmellTaste.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		299A91232AF6AD6C00D9C2D1 /* LookSmellTasteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookSmellTasteApp.swift; sourceTree = "<group>"; };
 		299A91252AF6AD6C00D9C2D1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -74,7 +80,7 @@
 		29431F972AF8647B00BE17F1 /* Observable */ = {
 			isa = PBXGroup;
 			children = (
-				29431F982AF8654300BE17F1 /* NoteObservable.swift */,
+				29431F982AF8654300BE17F1 /* NoteEnvironment.swift */,
 			);
 			path = Observable;
 			sourceTree = "<group>";
@@ -164,6 +170,7 @@
 			children = (
 				299A91452AF6C21A00D9C2D1 /* Extension */,
 				299A91502AF6E2F100D9C2D1 /* PreferenceKey.swift */,
+				2990E4042AF9ACEF0001617A /* ButtonStyle.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -185,6 +192,8 @@
 				299A91692AF7BBF800D9C2D1 /* CloseAlert.swift */,
 				299A91612AF757F000D9C2D1 /* NextButton.swift */,
 				299A91672AF7B93000D9C2D1 /* CloseButton.swift */,
+				2990E4012AF9A21E0001617A /* ContentUnavailable.swift */,
+				2990E4062AF9E11D0001617A /* AddNoteButton.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -293,10 +302,13 @@
 			files = (
 				299A91512AF6E2F100D9C2D1 /* PreferenceKey.swift in Sources */,
 				299A91432AF6C20300D9C2D1 /* FontExtension.swift in Sources */,
+				2990E4022AF9A21E0001617A /* ContentUnavailable.swift in Sources */,
+				2990E4072AF9E11D0001617A /* AddNoteButton.swift in Sources */,
 				299A91342AF6B21A00D9C2D1 /* ShareView.swift in Sources */,
 				299A91262AF6AD6C00D9C2D1 /* ContentView.swift in Sources */,
 				299A91532AF71E9A00D9C2D1 /* ViewExtension.swift in Sources */,
 				299A914F2AF6DEC000D9C2D1 /* NavigationBar.swift in Sources */,
+				2990E4052AF9ACEF0001617A /* ButtonStyle.swift in Sources */,
 				299A916A2AF7BBF800D9C2D1 /* CloseAlert.swift in Sources */,
 				299A91682AF7B93000D9C2D1 /* CloseButton.swift in Sources */,
 				299A91622AF757F000D9C2D1 /* NextButton.swift in Sources */,
@@ -304,7 +316,7 @@
 				299A91322AF6B1FF00D9C2D1 /* NoteView.swift in Sources */,
 				299A91242AF6AD6C00D9C2D1 /* LookSmellTasteApp.swift in Sources */,
 				299A914B2AF6C85A00D9C2D1 /* TabBar.swift in Sources */,
-				29431F992AF8654300BE17F1 /* NoteObservable.swift in Sources */,
+				29431F992AF8654300BE17F1 /* NoteEnvironment.swift in Sources */,
 				299A915E2AF74C6F00D9C2D1 /* AddNoteView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

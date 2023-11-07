@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-enum NavigationTitleType: String {
+enum ViewType: String {
     case note = "노트"
     case share = "공유"
 }
 
 struct NavigationTitle: View {
-    var type: NavigationTitleType = .note
+    var type: ViewType = .note
     var scrollOffset = 0.0
     
     var body: some View {
@@ -28,7 +28,7 @@ struct NavigationTitle: View {
 }
 
 struct InlineNavigationTitle: View {
-    var type: NavigationTitleType = .note
+    var type: ViewType = .note
     var scrollOffset = -40.0
     
     var body: some View {
