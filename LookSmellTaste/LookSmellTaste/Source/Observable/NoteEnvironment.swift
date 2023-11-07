@@ -18,4 +18,10 @@ class NoteEnvironment {
     var addNote = false
     var showAlert = false
     var noteType: NoteType?
+    
+    func close() {
+        addNote = false
+        showAlert = false
+        noteType = nil
+    }
 }

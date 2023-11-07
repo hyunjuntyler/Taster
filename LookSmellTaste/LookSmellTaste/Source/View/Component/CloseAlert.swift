@@ -28,8 +28,7 @@ struct CloseAlert: View {
                     }
                     .buttonStyle(AlertButtonStyle(type: .cancel))
                     Button("종료하기") {
-                        noteEnvironment.showAlert = false
-                        noteEnvironment.addNote = false
+                        noteEnvironment.close()
                     }
                     .buttonStyle(AlertButtonStyle(type: .destructive))
                 }

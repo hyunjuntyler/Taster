@@ -22,49 +22,14 @@ struct AddNoteView: View {
                             .padding(.bottom)
                         
                         HStack {
-                            VStack {
-                                Text("와인")
-                                    .font(.gmarketSansBody)
-                                Image("garnetWine")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(height: 40)
-                                    .frame(height: 50)
+                            AddNoteButton(title: "와인", image: "garnetWine", selected: noteEnvironment.noteType == .wine) {
+                                noteEnvironment.noteType = .wine
                             }
-                            .frame(maxWidth: .infinity)
-                            .padding()
-                            .background {
-                                RoundedRectangle(cornerRadius: 12, style: .continuous)
-                                    .foregroundStyle(.appSheetBoxBackground)
+                            AddNoteButton(title: "커피", image: "coffee", selected: noteEnvironment.noteType == .coffee) {
+                                noteEnvironment.noteType = .coffee
                             }
-                            VStack {
-                                Text("커피")
-                                    .font(.gmarketSansBody)
-                                Image("coffee")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(height: 50)
-                            }
-                            .frame(maxWidth: .infinity)
-                            .padding()
-                            .background {
-                                RoundedRectangle(cornerRadius: 12, style: .continuous)
-                                    .foregroundStyle(.appSheetBoxBackground)
-                            }
-                            VStack {
-                                Text("칵테일")
-                                    .font(.gmarketSansBody)
-                                Image("cocktail")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(height: 40)
-                                    .frame(height: 50)
-                            }
-                            .frame(maxWidth: .infinity)
-                            .padding()
-                            .background {
-                                RoundedRectangle(cornerRadius: 12, style: .continuous)
-                                    .foregroundStyle(.appSheetBoxBackground)
+                            AddNoteButton(title: "칵테일", image: "cocktail", selected: noteEnvironment.noteType == .cocktail) {
+                                noteEnvironment.noteType = .cocktail
                             }
                         }
                         .padding(.horizontal)
