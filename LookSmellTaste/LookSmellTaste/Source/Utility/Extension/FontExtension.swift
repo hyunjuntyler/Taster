@@ -8,7 +8,9 @@
 import SwiftUI
 
 extension Font {
-    static let tossFace = Font.custom("TossFaceFontMac", size: 17, relativeTo: .body)
+    static let tossFaceSmall = Font.custom("TossFaceFontMac", size: 17, relativeTo: .body)
+    static let tossFaceMedium = Font.custom("TossFaceFontMac", size: 24, relativeTo: .body)
+    static let tossFaceLarge = Font.custom("TossFaceFontMac", size: 38, relativeTo: .body)
     
     static let gmarketSansLargeTitle = Font.custom("GmarketSansTTFMedium", size: 34, relativeTo: .largeTitle)
     static let gmarketSansTitle = Font.custom("GmarketSansTTFMedium", size: 28, relativeTo: .title)
