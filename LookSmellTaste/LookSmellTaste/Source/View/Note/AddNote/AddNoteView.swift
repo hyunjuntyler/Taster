@@ -34,12 +34,29 @@ struct AddNoteView: View {
                         }
                         .padding(.horizontal)
                     }
-                                        
-                    NextButton {
+                    
+                    Text("추가하고 싶은 노트를 선택해주세요")
+                        .font(.gmarketSansCaption)
+                        .foregroundStyle(.gray)
+                        .transition(.opacity)
+                        .opacity(noteEnvironment.noteType == nil ? 1 : 0)
+                        .animation(.bouncy, value: noteEnvironment.noteType)
+                        .padding(.bottom, 5)
+                    
+                    NextButton(disabled: noteEnvironment.noteType == nil) {
                         navigate = true
                     }
                     .navigationDestination(isPresented: $navigate) {
-                        AddWineInfoView()
+                        switch noteEnvironment.noteType {
+                        case .wine:
+                            AddWineInfoView()
+                        case .coffee:
+                            Text("coffee")
+                        case .cocktail:
+                            Text("cocktail")
+                        case .none:
+                            EmptyView()
+                        }
                     }
                 }
             }
