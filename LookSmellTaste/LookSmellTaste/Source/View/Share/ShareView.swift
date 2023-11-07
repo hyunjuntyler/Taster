@@ -39,5 +39,5 @@ struct ShareView: View {
 }
 
 #Preview {
-    MainTabView(selectedTab: .share)
+    MainTabView()
 }
