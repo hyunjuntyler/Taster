@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		29431F992AF8654300BE17F1 /* NoteEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29431F982AF8654300BE17F1 /* NoteEnvironment.swift */; };
+		2949F2912AFA55B1005AFEFC /* AddWineInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2949F2902AFA55B1005AFEFC /* AddWineInfoView.swift */; };
 		2990E4022AF9A21E0001617A /* ContentUnavailable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2990E4012AF9A21E0001617A /* ContentUnavailable.swift */; };
 		2990E4052AF9ACEF0001617A /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2990E4042AF9ACEF0001617A /* ButtonStyle.swift */; };
 		2990E4072AF9E11D0001617A /* AddNoteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2990E4062AF9E11D0001617A /* AddNoteButton.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		29431F982AF8654300BE17F1 /* NoteEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEnvironment.swift; sourceTree = "<group>"; };
+		2949F2902AFA55B1005AFEFC /* AddWineInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWineInfoView.swift; sourceTree = "<group>"; };
 		2990E4012AF9A21E0001617A /* ContentUnavailable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentUnavailable.swift; sourceTree = "<group>"; };
 		2990E4042AF9ACEF0001617A /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		2990E4062AF9E11D0001617A /* AddNoteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteButton.swift; sourceTree = "<group>"; };
@@ -83,6 +85,14 @@
 				29431F982AF8654300BE17F1 /* NoteEnvironment.swift */,
 			);
 			path = Observable;
+			sourceTree = "<group>";
+		};
+		2949F28F2AFA5599005AFEFC /* AddWineNoteView */ = {
+			isa = PBXGroup;
+			children = (
+				2949F2902AFA55B1005AFEFC /* AddWineInfoView.swift */,
+			);
+			path = AddWineNoteView;
 			sourceTree = "<group>";
 		};
 		299A91172AF6AD6C00D9C2D1 = {
@@ -219,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				299A915D2AF74C6F00D9C2D1 /* AddNoteView.swift */,
+				2949F28F2AFA5599005AFEFC /* AddWineNoteView */,
 			);
 			path = AddNote;
 			sourceTree = "<group>";
@@ -310,6 +321,7 @@
 				299A914F2AF6DEC000D9C2D1 /* NavigationBar.swift in Sources */,
 				2990E4052AF9ACEF0001617A /* ButtonStyle.swift in Sources */,
 				299A916A2AF7BBF800D9C2D1 /* CloseAlert.swift in Sources */,
+				2949F2912AFA55B1005AFEFC /* AddWineInfoView.swift in Sources */,
 				299A91682AF7B93000D9C2D1 /* CloseButton.swift in Sources */,
 				299A91622AF757F000D9C2D1 /* NextButton.swift in Sources */,
 				299A914D2AF6CBD600D9C2D1 /* MainTabView.swift in Sources */,

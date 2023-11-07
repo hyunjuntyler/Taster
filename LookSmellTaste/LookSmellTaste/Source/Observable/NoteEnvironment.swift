@@ -24,4 +24,12 @@ class NoteEnvironment {
         showAlert = false
         noteType = nil
     }
+    
+    func checkType(type: NoteType) {
+        if noteType == type {
+            noteType = nil
+        } else {
+            noteType = type
+        }
+    }
 }

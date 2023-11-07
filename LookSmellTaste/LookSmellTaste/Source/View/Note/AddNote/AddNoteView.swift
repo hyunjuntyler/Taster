@@ -18,27 +18,28 @@ struct AddNoteView: View {
                 VStack {
                     ScrollView {
                         Text("어떤 노트를 추가하고 싶으신가요?")
-                            .font(.gmarketSansTitle3)
+                            .font(.gmarketSansTitle2)
                             .padding(.bottom)
                         
                         HStack {
                             AddNoteButton(title: "와인", image: "garnetWine", selected: noteEnvironment.noteType == .wine) {
-                                noteEnvironment.noteType = .wine
+                                noteEnvironment.checkType(type: .wine)
                             }
                             AddNoteButton(title: "커피", image: "coffee", selected: noteEnvironment.noteType == .coffee) {
-                                noteEnvironment.noteType = .coffee
+                                noteEnvironment.checkType(type: .coffee)
                             }
                             AddNoteButton(title: "칵테일", image: "cocktail", selected: noteEnvironment.noteType == .cocktail) {
-                                noteEnvironment.noteType = .cocktail
+                                noteEnvironment.checkType(type: .cocktail)
                             }
                         }
                         .padding(.horizontal)
                     }
+                                        
                     NextButton {
                         navigate = true
                     }
                     .navigationDestination(isPresented: $navigate) {
-                        Text("next view")
+                        AddWineInfoView()
                     }
                 }
             }

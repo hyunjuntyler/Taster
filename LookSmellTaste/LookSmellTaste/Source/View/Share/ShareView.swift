@@ -26,6 +26,7 @@ struct ShareView: View {
                                 .foregroundStyle(.gray)
                                 .padding(.trailing, 20)
                         }
+                        .buttonStyle(PressButtonStyle())
                     }
                 }
             ContentUnavailable(type: .share)

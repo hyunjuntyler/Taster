@@ -27,6 +27,7 @@ struct NoteView: View {
                                 .frame(width: 28)
                                 .padding(.trailing, 20)
                         }
+                        .buttonStyle(PressButtonStyle())
                     }
                 }
             ContentUnavailable(type: .note)

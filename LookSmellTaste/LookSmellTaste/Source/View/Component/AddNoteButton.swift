@@ -29,7 +29,7 @@ struct AddNoteButton: View {
             .padding()
             .background {
                 RoundedRectangle(cornerRadius: 12, style: .continuous)
-                    .foregroundStyle(selected ? .accent.opacity(0.6) : .appSheetBoxBackground)
+                    .foregroundStyle(selected ? .accent.opacity(0.8) : .appSheetBoxBackground)
             }
             .animation(.easeInOut, value: selected)
         }
