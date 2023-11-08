@@ -9,8 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     
-    init(){
+    init() {
         UINavigationBar.appearance().shadowImage = UIImage()
+        
+        // Custom Back Button Image
+        let backButtonImage = UIImage(systemName: "chevron.backward.circle.fill")
+        UINavigationBar.appearance().backIndicatorImage = backButtonImage
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = backButtonImage
     }
     
     var body: some View {

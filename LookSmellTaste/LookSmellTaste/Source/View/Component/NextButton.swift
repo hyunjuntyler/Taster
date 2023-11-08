@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct NextButton: View {
-    var disabled: Bool
+    var label = "다음"
+    var disabled = false
     var action: () -> Void
     
     var body: some View {
         Button(action: action) {
-            Text("다음")
+            Text(label)
                 .foregroundStyle(.background)
                 .font(.gmarketSansButton)
                 .frame(maxWidth: .infinity)
@@ -32,7 +33,7 @@ struct NextButton: View {
 }
 
 #Preview {
-    NextButton(disabled: false) {
+    NextButton {
         // action here
     }
 }

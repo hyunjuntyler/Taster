@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainTabView: View {
-    @State var selectedTab: Tab = .note
+    @State private var selectedTab: Tab = .note
 
     var body: some View {
         ZStack {

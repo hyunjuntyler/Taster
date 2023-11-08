@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AddNoteView: View {
     @Environment(NoteEnvironment.self) var noteEnvironment: NoteEnvironment
-    @State var navigate = false
+    @State private var navigate = false
     
     var body: some View {
         NavigationStack {
@@ -60,6 +60,7 @@ struct AddNoteView: View {
                     }
                 }
             }
+            .navigationTitle("")
             .toolbar {
                 CloseButton {
                     noteEnvironment.showAlert = true
@@ -71,7 +72,6 @@ struct AddNoteView: View {
                 CloseAlert()
             }
         }
-        .tint(.clear)
     }
 }
 

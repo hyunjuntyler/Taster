@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NoteView: View {
     @Bindable private var noteEnvironment = NoteEnvironment()
-    @State var scrollOffset = 0.0
+    @State private var scrollOffset = 0.0
     
     var body: some View {
         ScrollView {
@@ -39,7 +39,7 @@ struct NoteView: View {
         .overlay(alignment: .bottomTrailing) {
             addButton
         }
-        .sheet(isPresented: $noteEnvironment.addNote) {
+        .fullScreenCover(isPresented: $noteEnvironment.addNote) {
             AddNoteView()
                 .interactiveDismissDisabled()
         }
@@ -61,5 +61,5 @@ struct NoteView: View {
 }
 
 #Preview {
-    MainTabView(selectedTab: .note)
+    MainTabView()
 }

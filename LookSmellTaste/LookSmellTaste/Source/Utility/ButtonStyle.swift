@@ -14,3 +14,18 @@ struct PressButtonStyle: ButtonStyle {
             .animation(.bouncy, value: configuration.isPressed)
     }
 }
+
+struct WineTypeButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding(5)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background {
+                RoundedRectangle(cornerRadius: 12, style: .continuous)
+                    .foregroundStyle(configuration.isPressed ? .appSheetBackground : .appSheetBoxBackground)
+            }
+            .padding(.horizontal)
+            .scaleEffect(configuration.isPressed ? 0.97 : 1)
+            .animation(.easeInOut, value: configuration.isPressed)
+    }
+}
