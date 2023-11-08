@@ -20,7 +20,7 @@ struct NoteView: View {
                 .overlay(alignment: .bottomTrailing) {
                     if scrollOffset > -15 {
                         Button {
-                            
+                            Haptic.impact(style: .soft)
                         } label: {
                             Circle()
                                 .foregroundStyle(.gray)
@@ -48,6 +48,7 @@ struct NoteView: View {
     
     private var addButton: some View {
         Button {
+            Haptic.impact(style: .soft)
             noteEnvironment.addNote = true
         } label: {
             Image(systemName: "plus.circle.fill")

@@ -23,12 +23,15 @@ struct AddNoteView: View {
                         
                         HStack {
                             AddNoteButton(title: "와인", image: "garnetWine", selected: noteEnvironment.noteType == .wine) {
+                                Haptic.impact(style: .soft)
                                 noteEnvironment.checkType(type: .wine)
                             }
                             AddNoteButton(title: "커피", image: "coffee", selected: noteEnvironment.noteType == .coffee) {
+                                Haptic.impact(style: .soft)
                                 noteEnvironment.checkType(type: .coffee)
                             }
                             AddNoteButton(title: "칵테일", image: "cocktail", selected: noteEnvironment.noteType == .cocktail) {
+                                Haptic.impact(style: .soft)
                                 noteEnvironment.checkType(type: .cocktail)
                             }
                         }
@@ -44,6 +47,7 @@ struct AddNoteView: View {
                         .padding(.bottom, 5)
                     
                     NextButton(disabled: noteEnvironment.noteType == nil) {
+                        Haptic.impact(style: .soft)
                         navigate = true
                     }
                     .navigationDestination(isPresented: $navigate) {

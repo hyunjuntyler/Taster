@@ -61,9 +61,13 @@ struct AddWineInfoView: View {
                         HStack {
                             Text("\(date.formatted(date: .complete, time: .omitted))")
                                 .font(.gmarketSansBody)
+                                .onChange(of: date) { _, _ in
+                                    Haptic.impact(style: .soft)
+                                }
                             Spacer()
                             Button {
                                 isFocused = false
+                                Haptic.impact(style: .soft)
                                 showDatePicker = true
                             } label: {
                                 Text("바꾸기")
@@ -77,7 +81,8 @@ struct AddWineInfoView: View {
                             }
                             .buttonStyle(PressButtonStyle())
                         }
-                        .padding()
+                        .padding(.leading, 10)
+                        .padding(8)
                         .background {
                             RoundedRectangle(cornerRadius: 12, style: .continuous)
                                 .foregroundStyle(.appSheetBoxBackground)
@@ -98,6 +103,7 @@ struct AddWineInfoView: View {
                             Spacer()
                             Button {
                                 isFocused = false
+                                Haptic.impact(style: .soft)
                                 showWindTypePicker = true
                             } label: {
                                 Text("바꾸기")
@@ -111,7 +117,7 @@ struct AddWineInfoView: View {
                             }
                             .buttonStyle(PressButtonStyle())
                         }
-                        .padding()
+                        .padding(8)
                         .background {
                             RoundedRectangle(cornerRadius: 12, style: .continuous)
                                 .foregroundStyle(.appSheetBoxBackground)
@@ -153,6 +159,7 @@ struct AddWineInfoView: View {
                     ForEach(wineTypes, id: \.typeName) { wine in
                         Button {
                             type = wine
+                            Haptic.impact(style: .soft)
                             showWindTypePicker = false
                         } label: {
                             HStack {

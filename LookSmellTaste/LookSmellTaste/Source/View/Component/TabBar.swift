@@ -28,6 +28,7 @@ struct TabBar: View {
             Button {
                 noteSymbolEffect.toggle()
                 selectedTab = .note
+                Haptic.impact(style: .soft)
             } label: {
                 VStack(spacing: tabBarComponentSpacing) {
                     Image(systemName: "book.pages.fill")
@@ -45,6 +46,7 @@ struct TabBar: View {
             Button {
                 shareSymbolEffect.toggle()
                 selectedTab = .share
+                Haptic.impact(style: .soft)
             } label: {
                 VStack(spacing: tabBarComponentSpacing) {
                     Image(systemName: "person.2.fill")
