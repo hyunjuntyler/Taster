@@ -1,5 +1,5 @@
 //
-//  Wine.swift
+//  WineModel.swift
 //  LookSmellTaste
 //
 //  Created by hyunjun on 11/8/23.
