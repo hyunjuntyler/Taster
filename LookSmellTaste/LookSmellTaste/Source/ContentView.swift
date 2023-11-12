@@ -11,10 +11,6 @@ struct ContentView: View {
     
     init() {
         UINavigationBar.appearance().shadowImage = UIImage()
-        
-        let backButtonImage = UIImage(systemName: "chevron.backward.circle.fill")
-        UINavigationBar.appearance().backIndicatorImage = backButtonImage
-        UINavigationBar.appearance().backIndicatorTransitionMaskImage = backButtonImage
     }
     
     var body: some View {

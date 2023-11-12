@@ -12,8 +12,9 @@ struct CloseButton: View {
     
     var body: some View {
         Button(action: action) {
-            Image(systemName: "xmark.circle.fill")
-                .foregroundStyle(.appGrayButton)
+            Image(systemName: "xmark")
+                .foregroundStyle(.accent)
+                .fontWeight(.semibold)
         }
         .buttonStyle(PressButtonStyle())
     }
