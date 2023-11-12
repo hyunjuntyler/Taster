@@ -41,6 +41,8 @@
 		299A916A2AF7BBF800D9C2D1 /* CloseAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A91692AF7BBF800D9C2D1 /* CloseAlert.swift */; };
 		29BD870E2B006DA90082241D /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD870D2B006DA90082241D /* NoteModel.swift */; };
 		29BD87102B0097580082241D /* AddWineSmellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD870F2B0097580082241D /* AddWineSmellView.swift */; };
+		29BD87122B00AE3C0082241D /* AddWineTasteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD87112B00AE3C0082241D /* AddWineTasteView.swift */; };
+		29BD87142B00AE9E0082241D /* AddWineThinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD87132B00AE9E0082241D /* AddWineThinkView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +82,8 @@
 		299A91692AF7BBF800D9C2D1 /* CloseAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseAlert.swift; sourceTree = "<group>"; };
 		29BD870D2B006DA90082241D /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
 		29BD870F2B0097580082241D /* AddWineSmellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWineSmellView.swift; sourceTree = "<group>"; };
+		29BD87112B00AE3C0082241D /* AddWineTasteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWineTasteView.swift; sourceTree = "<group>"; };
+		29BD87132B00AE9E0082241D /* AddWineThinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWineThinkView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,8 @@
 				2949F2902AFA55B1005AFEFC /* AddWineInfoView.swift */,
 				293FD1F32AFB096000623B23 /* AddWineLookView.swift */,
 				29BD870F2B0097580082241D /* AddWineSmellView.swift */,
+				29BD87112B00AE3C0082241D /* AddWineTasteView.swift */,
+				29BD87132B00AE9E0082241D /* AddWineThinkView.swift */,
 			);
 			path = AddWineNoteView;
 			sourceTree = "<group>";
@@ -340,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29BD87122B00AE3C0082241D /* AddWineTasteView.swift in Sources */,
 				29BD870E2B006DA90082241D /* NoteModel.swift in Sources */,
 				293FD1F82AFB426F00623B23 /* WineNoteModel.swift in Sources */,
 				299A91512AF6E2F100D9C2D1 /* PreferenceKey.swift in Sources */,
@@ -348,6 +355,7 @@
 				2990E4072AF9E11D0001617A /* AddNoteButton.swift in Sources */,
 				299A91342AF6B21A00D9C2D1 /* ShareView.swift in Sources */,
 				299A91262AF6AD6C00D9C2D1 /* ContentView.swift in Sources */,
+				29BD87142B00AE9E0082241D /* AddWineThinkView.swift in Sources */,
 				299A91532AF71E9A00D9C2D1 /* ViewExtension.swift in Sources */,
 				293FD1F02AFAF98600623B23 /* UIScreenExtension.swift in Sources */,
 				293FD1F62AFB40D500623B23 /* Haptic.swift in Sources */,

@@ -46,7 +46,7 @@ let wineColors: [WineColor] = [
     WineColor(colorName: "황갈색", colorImageName: "tawnyWine", wineColor: .tawnyWine)
 ]
 
-struct WineScent: Identifiable, Hashable {
+struct WineScent: Identifiable, Hashable, Equatable {    
     var id = UUID()
     var scentName: String
     var scentImageName: String

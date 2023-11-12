@@ -146,6 +146,7 @@ struct AddWineInfoView: View {
                     .padding(.bottom, 5)
                 
                 NextButton(disabled: text.isEmpty) {
+                    Haptic.impact(style: .soft)
                     navigate = true
                 }
                 .navigationDestination(isPresented: $navigate) {
