@@ -19,7 +19,7 @@ struct ShareView: View {
                 .overlay(alignment: .bottomTrailing) {
                     if scrollOffset > -15 {
                         Button {
-                            
+                            Haptic.impact(style: .soft)
                         } label: {
                             Image(systemName: "gearshape.fill")
                                 .font(.gmarketSansTitle2)

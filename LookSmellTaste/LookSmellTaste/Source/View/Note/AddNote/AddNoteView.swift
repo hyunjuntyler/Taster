@@ -17,8 +17,12 @@ struct AddNoteView: View {
                 Color.appSheetBackground.ignoresSafeArea()
                 VStack {
                     ScrollView {
+                        Text("Start")
+                            .font(.gmarketSansTitle)
+                            .padding(.bottom)
                         Text("어떤 노트를 추가하고 싶으신가요?")
-                            .font(.gmarketSansTitle2)
+                            .font(.gmarketSansBody)
+                            .foregroundStyle(.gray)
                             .padding(.bottom)
                         
                         HStack {
@@ -68,6 +72,7 @@ struct AddNoteView: View {
             .toolbar {
                 CloseButton {
                     noteEnvironment.showAlert = true
+                    Haptic.impact(style: .soft)
                 }
             }
         }

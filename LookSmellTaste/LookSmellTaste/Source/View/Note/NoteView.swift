@@ -48,7 +48,7 @@ struct NoteView: View {
     
     private var addButton: some View {
         Button {
-            Haptic.impact(style: .soft)
+            Haptic.impact(style: .light)
             noteEnvironment.addNote = true
         } label: {
             Image(systemName: "plus.circle.fill")

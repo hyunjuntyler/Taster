@@ -25,10 +25,12 @@ struct CloseAlert: View {
                 HStack {
                     Button("돌아가기") {
                         noteEnvironment.showAlert = false
+                        Haptic.impact(style: .soft)
                     }
                     .buttonStyle(AlertButtonStyle(type: .cancel))
                     Button("종료하기") {
                         noteEnvironment.close()
+                        Haptic.impact(style: .soft)
                     }
                     .buttonStyle(AlertButtonStyle(type: .destructive))
                 }
