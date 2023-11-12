@@ -17,6 +17,11 @@ struct CloseAlert: View {
                 .ignoresSafeArea()
             
             VStack(spacing: 5) {
+                Image(systemName: "questionmark.circle.fill")
+                    .foregroundStyle(.accent, .appPickerGray)
+                    .symbolEffect(.pulse)
+                    .font(.largeTitle)
+                    .padding(.bottom)
                 Text("정말 작성을 종료하시겠어요?")
                     .font(.gmarketSansHeadline)
                 Text("작성된 내용은 저장되지 않아요")
