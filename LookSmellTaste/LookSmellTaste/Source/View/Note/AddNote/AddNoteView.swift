@@ -81,6 +81,18 @@ struct AddNoteView: View {
                 CloseAlert()
             }
         }
+        .overlay {
+            if noteEnvironment.showCompleteView {
+                AddWineCompleteView()
+                    .transition(.opacity.animation(.bouncy(duration: 2)))
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                            noteEnvironment.showCompleteView = false
+                            noteEnvironment.addNote = false
+                        }
+                    }
+            }
+        }
     }
 }
 

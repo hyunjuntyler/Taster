@@ -12,8 +12,8 @@ struct CloseAlert: View {
     
     var body: some View {
         ZStack {
-            Color.black
-                .opacity(0.5)
+            Rectangle()
+                .foregroundStyle(.ultraThinMaterial)
                 .ignoresSafeArea()
             
             VStack(spacing: 5) {

@@ -31,16 +31,27 @@ struct AddWineInfoView: View {
                         .foregroundStyle(.gray)
                         .padding(.bottom)
                     VStack(alignment: .leading) {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 20, style: .continuous)
+                                .frame(width: 100, height: 100)
+                                .foregroundStyle(.appSheetBoxBackground)
+                                .frame(maxWidth: .infinity, alignment: .center)
+                            Image(type.typeImageName)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height: 60)
+                        }
+                        
                         Text("와인 이름")
                             .font(.gmarketSansSubHeadline)
                             .foregroundStyle(.gray)
                             .padding(.leading)
                             .padding(.top, 5)
                         HStack {
-                            TextField("와인 이름을 입력해주세요", text: $text)
+                            TextField("와인 이름을 입력해주세요", text: $text, axis: .vertical)
+                                .font(.gmarketSansBody)
                                 .focused($isFocused)
                                 .tint(.accent)
-                                .font(.gmarketSansBody)
                                 .onTapGesture {
                                     Haptic.impact(style: .soft)
                                 }
@@ -59,6 +70,7 @@ struct AddWineInfoView: View {
                             .opacity(text.isEmpty ? 0 : 1)
                         }
                         .padding()
+                        .frame(height: 60)
                         .background {
                             RoundedRectangle(cornerRadius: 12, style: .continuous)
                                 .foregroundStyle(.appSheetBoxBackground)
@@ -94,6 +106,7 @@ struct AddWineInfoView: View {
                         }
                         .padding(.leading, 10)
                         .padding(8)
+                        .frame(height: 60)
                         .background {
                             RoundedRectangle(cornerRadius: 12, style: .continuous)
                                 .foregroundStyle(.appSheetBoxBackground)
@@ -129,6 +142,7 @@ struct AddWineInfoView: View {
                             .buttonStyle(PressButtonStyle())
                         }
                         .padding(8)
+                        .frame(height: 60)
                         .background {
                             RoundedRectangle(cornerRadius: 12, style: .continuous)
                                 .foregroundStyle(.appSheetBoxBackground)

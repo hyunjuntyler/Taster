@@ -16,6 +16,7 @@ enum NoteType {
 @Observable
 class NoteEnvironment {
     var showSelectNoteType = false
+    var showCompleteView = false
     var addNote = false
     var showAlert = false
     var noteType: NoteType?

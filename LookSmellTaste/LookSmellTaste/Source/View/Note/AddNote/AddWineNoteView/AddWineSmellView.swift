@@ -22,7 +22,7 @@ struct AddWineSmellView: View {
                     Text("Smell")
                         .font(.gmarketSansTitle)
                         .padding(.bottom)
-                    Text("와인의 향을 선택해주세요")
+                    Text("어떠한 향이 나나요?")
                         .font(.gmarketSansBody)
                         .foregroundStyle(.gray)
                         .padding(.bottom)
