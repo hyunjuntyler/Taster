@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AddNoteView: View {
     @Environment(NoteEnvironment.self) var noteEnvironment: NoteEnvironment
+    @State private var columns = Array(repeating: GridItem(.flexible()), count: 3)
     @State private var navigate = false
     
     var body: some View {
@@ -25,19 +26,18 @@ struct AddNoteView: View {
                             .foregroundStyle(.gray)
                             .padding(.bottom)
                         
-                        HStack {
-                            AddNoteButton(title: "와인", image: "garnetWine", selected: noteEnvironment.noteType == .wine) {
-                                Haptic.impact(style: .soft)
-                                noteEnvironment.checkType(type: .wine)
+                        LazyVGrid(columns: columns, spacing: 0) {
+                            ForEach(notes) { note in
+                                AddNoteButton(title: note.noteLabel, image: note.noteImageName, selected: noteEnvironment.noteType == note.noteType) {
+                                    Haptic.impact(style: .soft)
+                                    noteEnvironment.checkType(type: note.noteType)
+                                }
                             }
-                            AddNoteButton(title: "커피", image: "coffee", selected: noteEnvironment.noteType == .coffee) {
-                                Haptic.impact(style: .soft)
-                                noteEnvironment.checkType(type: .coffee)
-                            }
-                            AddNoteButton(title: "칵테일", image: "cocktail", selected: noteEnvironment.noteType == .cocktail) {
-                                Haptic.impact(style: .soft)
-                                noteEnvironment.checkType(type: .cocktail)
-                            }
+                        }
+                        .padding()
+                        .background {
+                            RoundedRectangle(cornerRadius: 12)
+                                .foregroundStyle(.appSheetBoxBackground)
                         }
                         .padding(.horizontal)
                     }

@@ -18,7 +18,7 @@ struct AddNoteButton: View {
             VStack {
                 Text(title)
                     .font(.gmarketSansBody)
-                    .foregroundStyle(selected ? .white : .primary)
+                    .foregroundStyle(selected ? .accent : .gray)
                 Image(image)
                     .resizable()
                     .scaledToFit()
@@ -29,7 +29,7 @@ struct AddNoteButton: View {
             .padding()
             .background {
                 RoundedRectangle(cornerRadius: 12, style: .continuous)
-                    .foregroundStyle(selected ? .accent.opacity(0.8) : .appSheetBoxBackground)
+                    .foregroundStyle(selected ? .appPickerGray : .appSheetBoxBackground)
             }
             .animation(.easeInOut, value: selected)
         }

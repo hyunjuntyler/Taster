@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct WineType: Identifiable {
+struct WineType: Identifiable, Hashable {
     var id = UUID()
     var typeName: String
     var typeImageName: String
@@ -46,7 +46,7 @@ let wineColors: [WineColor] = [
     WineColor(colorName: "황갈색", colorImageName: "tawnyWine", wineColor: .tawnyWine)
 ]
 
-struct WineScent: Identifiable {
+struct WineScent: Identifiable, Hashable {
     var id = UUID()
     var scentName: String
     var scentImageName: String

@@ -7,15 +7,15 @@
 
 import SwiftUI
 
-struct Note: Identifiable {
+struct Note: Identifiable, Hashable {
     var id = UUID()
-    var label: String
-    var image: String
-    var type: NoteType
+    var noteLabel: String
+    var noteImageName: String
+    var noteType: NoteType
 }
 
 let notes: [Note] = [
-    Note(label: "와인", image: "garnetWine", type: .wine),
-    Note(label: "커피", image: "coffee", type: .coffee),
-    Note(label: "칵테일", image: "cocktail", type: .cocktail)
+    Note(noteLabel: "와인", noteImageName: "garnetWine", noteType: .wine),
+    Note(noteLabel: "커피", noteImageName: "coffee", noteType: .coffee),
+    Note(noteLabel: "칵테일", noteImageName: "cocktail", noteType: .cocktail)
 ]

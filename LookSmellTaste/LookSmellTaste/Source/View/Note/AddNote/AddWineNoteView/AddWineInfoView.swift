@@ -16,15 +16,19 @@ struct AddWineInfoView: View {
     
     @State var text = ""
     @State var date = Date()
-    @State var type: WineType = WineType(typeName: "화이트 와인", typeImageName: "whiteWine")
+    @State var type: WineType = wineTypes[0]
     
     var body: some View {
         ZStack {
             Color.appSheetBackground.ignoresSafeArea()
             VStack {
                 ScrollView {
-                    Text("기본정보")
+                    Text("Info")
                         .font(.gmarketSansTitle)
+                        .padding(.bottom)
+                    Text("간단한 정보를 입력해주세요")
+                        .font(.gmarketSansBody)
+                        .foregroundStyle(.gray)
                         .padding(.bottom)
                     VStack(alignment: .leading) {
                         Text("와인 이름")
@@ -37,7 +41,14 @@ struct AddWineInfoView: View {
                                 .focused($isFocused)
                                 .tint(.accent)
                                 .font(.gmarketSansBody)
+                                .onTapGesture {
+                                    Haptic.impact(style: .soft)
+                                }
+                                .onChange(of: text) { _, _ in
+                                    Haptic.impact(style: .soft)
+                                }
                             Button {
+                                Haptic.impact(style: .soft)
                                 text = ""
                             } label: {
                                 Image(systemName: "xmark.circle.fill")
@@ -67,8 +78,8 @@ struct AddWineInfoView: View {
                             Spacer()
                             Button {
                                 isFocused = false
-                                Haptic.impact(style: .soft)
                                 showDatePicker = true
+                                Haptic.impact(style: .soft)
                             } label: {
                                 Text("바꾸기")
                                     .font(.gmarketSansFootnote)
@@ -103,8 +114,8 @@ struct AddWineInfoView: View {
                             Spacer()
                             Button {
                                 isFocused = false
-                                Haptic.impact(style: .soft)
                                 showWindTypePicker = true
+                                Haptic.impact(style: .soft)
                             } label: {
                                 Text("바꾸기")
                                     .font(.gmarketSansFootnote)
@@ -125,14 +136,28 @@ struct AddWineInfoView: View {
                     }
                     .padding(.horizontal)
                 }
-                NextButton(disabled: false) {
+                
+                Text("와인 이름을 입력해주세요")
+                    .font(.gmarketSansCaption)
+                    .foregroundStyle(.gray)
+                    .transition(.opacity)
+                    .opacity(text.isEmpty ? 1 : 0)
+                    .animation(.bouncy, value: noteEnvironment.noteType)
+                    .padding(.bottom, 5)
+                
+                NextButton(disabled: text.isEmpty) {
                     navigate = true
+                }
+                .navigationDestination(isPresented: $navigate) {
+                    AddWineLookView()
                 }
             }
         }
+        .navigationTitle("")
         .toolbar {
             CloseButton {
                 noteEnvironment.showAlert = true
+                Haptic.impact(style: .soft)
             }
         }
         .sheet(isPresented: $showDatePicker) {
@@ -156,7 +181,7 @@ struct AddWineInfoView: View {
                 Text("와인 종류 변경")
                     .font(.gmarketSansBody)
                 ScrollView {
-                    ForEach(wineTypes, id: \.typeName) { wine in
+                    ForEach(wineTypes) { wine in
                         Button {
                             type = wine
                             Haptic.impact(style: .soft)
