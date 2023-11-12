@@ -39,6 +39,7 @@
 		299A91622AF757F000D9C2D1 /* NextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A91612AF757F000D9C2D1 /* NextButton.swift */; };
 		299A91682AF7B93000D9C2D1 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A91672AF7B93000D9C2D1 /* CloseButton.swift */; };
 		299A916A2AF7BBF800D9C2D1 /* CloseAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A91692AF7BBF800D9C2D1 /* CloseAlert.swift */; };
+		29BD870E2B006DA90082241D /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD870D2B006DA90082241D /* NoteModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		299A91612AF757F000D9C2D1 /* NextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButton.swift; sourceTree = "<group>"; };
 		299A91672AF7B93000D9C2D1 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		299A91692AF7BBF800D9C2D1 /* CloseAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseAlert.swift; sourceTree = "<group>"; };
+		29BD870D2B006DA90082241D /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		2949F2922AFA9576005AFEFC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				29BD870D2B006DA90082241D /* NoteModel.swift */,
 				2949F2932AFA9593005AFEFC /* WineModel.swift */,
 				293FD1F72AFB426F00623B23 /* WineNoteModel.swift */,
 			);
@@ -334,6 +337,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29BD870E2B006DA90082241D /* NoteModel.swift in Sources */,
 				293FD1F82AFB426F00623B23 /* WineNoteModel.swift in Sources */,
 				299A91512AF6E2F100D9C2D1 /* PreferenceKey.swift in Sources */,
 				299A91432AF6C20300D9C2D1 /* FontExtension.swift in Sources */,

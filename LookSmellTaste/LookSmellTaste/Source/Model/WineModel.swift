@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-struct WineType {
-    let typeName: String
-    let typeImageName: String
+struct WineType: Identifiable {
+    var id = UUID()
+    var typeName: String
+    var typeImageName: String
 }
 
 let wineTypes: [WineType] = [
@@ -23,10 +24,11 @@ let wineTypes: [WineType] = [
     WineType(typeName: "샴페인", typeImageName: "champagne")
 ]
 
-struct WineColor {
-    let colorName: String
-    let colorImageName: String
-    let wineColor: Color
+struct WineColor: Identifiable, Hashable {
+    var id = UUID()
+    var colorName: String
+    var colorImageName: String
+    var wineColor: Color
 }
 
 let wineColors: [WineColor] = [
@@ -44,9 +46,10 @@ let wineColors: [WineColor] = [
     WineColor(colorName: "황갈색", colorImageName: "tawnyWine", wineColor: .tawnyWine)
 ]
 
-struct WineScent {
-    let scentName: String
-    let scentImageName: String
+struct WineScent: Identifiable {
+    var id = UUID()
+    var scentName: String
+    var scentImageName: String
 }
 
 let wineScents: [WineScent] = [
