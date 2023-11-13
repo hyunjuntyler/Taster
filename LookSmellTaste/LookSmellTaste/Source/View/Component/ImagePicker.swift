@@ -12,6 +12,7 @@ struct ImagePicker: View {
     @Environment(NoteEnvironment.self) var noteEnvironment: NoteEnvironment
     
     @Binding var selectedImage: UIImage?
+    
     @State var showCamera = false
     @State var showImagePicker = false
     @State var permissionDenied = false

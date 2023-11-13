@@ -12,7 +12,7 @@ struct AddWineView: View {
     @State private var showWindTypePicker = false
     @FocusState private var isFocused
     
-    @State var text = ""
+    @State var name = ""
     @State var date = Date()
     @State var type: WineType = wineTypes[2]
     @State var image: UIImage?
@@ -25,26 +25,26 @@ struct AddWineView: View {
                 .padding(.leading)
                 .padding(.top, 5)
             HStack {
-                TextField("와인 이름을 입력해주세요", text: $text, axis: .vertical)
+                TextField("와인 이름을 입력해주세요", text: $name, axis: .vertical)
                     .font(.gmarketSansBody)
                     .focused($isFocused)
                     .tint(.accent)
                     .onTapGesture {
                         Haptic.impact(style: .soft)
                     }
-                    .onChange(of: text) { _, _ in
+                    .onChange(of: name) { _, _ in
                         Haptic.impact(style: .soft)
                     }
                 Button {
                     Haptic.impact(style: .soft)
-                    text = ""
+                    name = ""
                 } label: {
                     Image(systemName: "xmark.circle.fill")
                         .foregroundStyle(.gray, .appPickerGray)
                         .font(.title3)
                 }
                 .buttonStyle(PressButtonStyle())
-                .opacity(text.isEmpty ? 0 : 1)
+                .opacity(name.isEmpty ? 0 : 1)
             }
             .padding()
             .frame(height: 60)

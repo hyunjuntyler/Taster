@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct WineType: Identifiable, Hashable {
+struct WineType: Identifiable, Codable, Hashable {
     var id = UUID()
     var typeName: String
     var typeImageName: String
@@ -24,29 +24,28 @@ let wineTypes: [WineType] = [
     WineType(typeName: "샴페인", typeImageName: "champagne")
 ]
 
-struct WineColor: Identifiable, Hashable {
+struct WineColor: Identifiable, Codable, Hashable {
     var id = UUID()
     var colorName: String
     var colorImageName: String
-    var wineColor: Color
 }
 
 let wineColors: [WineColor] = [
-    WineColor(colorName: "밀짚색", colorImageName: "strawWine", wineColor: .strawWine),
-    WineColor(colorName: "노란색", colorImageName: "yellowWine", wineColor: .yellowWine),
-    WineColor(colorName: "황금색", colorImageName: "goldWine", wineColor: .goldWine),
-    WineColor(colorName: "호박색", colorImageName: "amberWine", wineColor: .amberWine),
-    WineColor(colorName: "갈색", colorImageName: "brownWine", wineColor: .brownWine),
-    WineColor(colorName: "구리색", colorImageName: "copperWine", wineColor: .copperWine),
-    WineColor(colorName: "연어색", colorImageName: "salmonWine", wineColor: .salmonWine),
-    WineColor(colorName: "분홍색", colorImageName: "pinkWine", wineColor: .pinkWine),
-    WineColor(colorName: "루비색", colorImageName: "rubyWine", wineColor: .rubyWine),
-    WineColor(colorName: "보라색", colorImageName: "purpleWine", wineColor: .purpleWine),
-    WineColor(colorName: "석류색", colorImageName: "garnetWine", wineColor: .garnetWine),
-    WineColor(colorName: "황갈색", colorImageName: "tawnyWine", wineColor: .tawnyWine)
+    WineColor(colorName: "밀짚색", colorImageName: "strawWine"),
+    WineColor(colorName: "노란색", colorImageName: "yellowWine"),
+    WineColor(colorName: "황금색", colorImageName: "goldWine"),
+    WineColor(colorName: "호박색", colorImageName: "amberWine"),
+    WineColor(colorName: "갈색", colorImageName: "brownWine"),
+    WineColor(colorName: "구리색", colorImageName: "copperWine"),
+    WineColor(colorName: "연어색", colorImageName: "salmonWine"),
+    WineColor(colorName: "분홍색", colorImageName: "pinkWine"),
+    WineColor(colorName: "루비색", colorImageName: "rubyWine"),
+    WineColor(colorName: "보라색", colorImageName: "purpleWine"),
+    WineColor(colorName: "석류색", colorImageName: "garnetWine"),
+    WineColor(colorName: "황갈색", colorImageName: "tawnyWine")
 ]
 
-struct WineScent: Identifiable, Hashable, Equatable {    
+struct WineScent: Identifiable, Codable, Hashable, Equatable {    
     var id = UUID()
     var scentName: String
     var scentImageName: String
