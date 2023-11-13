@@ -17,16 +17,16 @@ struct AddNoteButton: View {
         Button(action: action) {
             VStack {
                 Text(title)
-                    .font(.gmarketSansBody)
+                    .font(.gmarketSansSubHeadline)
                     .foregroundStyle(selected ? .accent : .gray)
                 Image(image)
                     .resizable()
                     .scaledToFit()
+                    .frame(height: 30)
                     .frame(height: 40)
-                    .frame(height: 50)
             }
             .frame(maxWidth: .infinity)
-            .padding()
+            .padding(10)
             .background {
                 RoundedRectangle(cornerRadius: 12, style: .continuous)
                     .foregroundStyle(selected ? .appPickerGray : .appSheetBoxBackground)

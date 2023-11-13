@@ -36,6 +36,9 @@ struct AddWineLookView: View {
                             } label: {
                                 VStack {
                                     Image(wineColor.colorImageName)
+                                        .resizable()
+                                        .scaledToFit()
+                                        .padding(.bottom, 5)
                                     Text(wineColor.colorName)
                                         .font(.gmarketSansSubHeadline)
                                         .foregroundStyle(color == wineColor ? .accent : .appGrayButton)

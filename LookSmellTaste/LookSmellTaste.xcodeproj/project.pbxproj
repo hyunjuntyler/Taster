@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2921B0152B02673B00533A83 /* AddWineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2921B0142B02673B00533A83 /* AddWineView.swift */; };
 		293FD1F02AFAF98600623B23 /* UIScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293FD1EF2AFAF98600623B23 /* UIScreenExtension.swift */; };
 		293FD1F42AFB096000623B23 /* AddWineLookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293FD1F32AFB096000623B23 /* AddWineLookView.swift */; };
 		293FD1F62AFB40D500623B23 /* Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293FD1F52AFB40D500623B23 /* Haptic.swift */; };
 		293FD1F82AFB426F00623B23 /* WineNoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293FD1F72AFB426F00623B23 /* WineNoteModel.swift */; };
 		29431F992AF8654300BE17F1 /* NoteEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29431F982AF8654300BE17F1 /* NoteEnvironment.swift */; };
-		2949F2912AFA55B1005AFEFC /* AddWineInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2949F2902AFA55B1005AFEFC /* AddWineInfoView.swift */; };
 		2949F2942AFA9593005AFEFC /* WineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2949F2932AFA9593005AFEFC /* WineModel.swift */; };
 		2990E4022AF9A21E0001617A /* ContentUnavailable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2990E4012AF9A21E0001617A /* ContentUnavailable.swift */; };
 		2990E4052AF9ACEF0001617A /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2990E4042AF9ACEF0001617A /* ButtonStyle.swift */; };
@@ -39,6 +39,7 @@
 		299A91622AF757F000D9C2D1 /* NextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A91612AF757F000D9C2D1 /* NextButton.swift */; };
 		299A91682AF7B93000D9C2D1 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A91672AF7B93000D9C2D1 /* CloseButton.swift */; };
 		299A916A2AF7BBF800D9C2D1 /* CloseAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A91692AF7BBF800D9C2D1 /* CloseAlert.swift */; };
+		29B388B22B0276D100E3942D /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B388B12B0276D100E3942D /* ImagePicker.swift */; };
 		29BD870E2B006DA90082241D /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD870D2B006DA90082241D /* NoteModel.swift */; };
 		29BD87102B0097580082241D /* AddWineSmellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD870F2B0097580082241D /* AddWineSmellView.swift */; };
 		29BD87122B00AE3C0082241D /* AddWineTasteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD87112B00AE3C0082241D /* AddWineTasteView.swift */; };
@@ -49,12 +50,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2921B0142B02673B00533A83 /* AddWineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWineView.swift; sourceTree = "<group>"; };
 		293FD1EF2AFAF98600623B23 /* UIScreenExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreenExtension.swift; sourceTree = "<group>"; };
 		293FD1F32AFB096000623B23 /* AddWineLookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWineLookView.swift; sourceTree = "<group>"; };
 		293FD1F52AFB40D500623B23 /* Haptic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptic.swift; sourceTree = "<group>"; };
 		293FD1F72AFB426F00623B23 /* WineNoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineNoteModel.swift; sourceTree = "<group>"; };
 		29431F982AF8654300BE17F1 /* NoteEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEnvironment.swift; sourceTree = "<group>"; };
-		2949F2902AFA55B1005AFEFC /* AddWineInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWineInfoView.swift; sourceTree = "<group>"; };
 		2949F2932AFA9593005AFEFC /* WineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineModel.swift; sourceTree = "<group>"; };
 		2990E4012AF9A21E0001617A /* ContentUnavailable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentUnavailable.swift; sourceTree = "<group>"; };
 		2990E4042AF9ACEF0001617A /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
@@ -83,6 +84,7 @@
 		299A91612AF757F000D9C2D1 /* NextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButton.swift; sourceTree = "<group>"; };
 		299A91672AF7B93000D9C2D1 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		299A91692AF7BBF800D9C2D1 /* CloseAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseAlert.swift; sourceTree = "<group>"; };
+		29B388B12B0276D100E3942D /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		29BD870D2B006DA90082241D /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
 		29BD870F2B0097580082241D /* AddWineSmellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWineSmellView.swift; sourceTree = "<group>"; };
 		29BD87112B00AE3C0082241D /* AddWineTasteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWineTasteView.swift; sourceTree = "<group>"; };
@@ -114,7 +116,6 @@
 		2949F28F2AFA5599005AFEFC /* AddWineNoteView */ = {
 			isa = PBXGroup;
 			children = (
-				2949F2902AFA55B1005AFEFC /* AddWineInfoView.swift */,
 				293FD1F32AFB096000623B23 /* AddWineLookView.swift */,
 				29BD870F2B0097580082241D /* AddWineSmellView.swift */,
 				29BD87112B00AE3C0082241D /* AddWineTasteView.swift */,
@@ -248,6 +249,7 @@
 				2990E4062AF9E11D0001617A /* AddNoteButton.swift */,
 				29BD87172B00BD8D0082241D /* Rating.swift */,
 				29BD87192B00F15D0082241D /* RadarChart.swift */,
+				29B388B12B0276D100E3942D /* ImagePicker.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -273,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				299A915D2AF74C6F00D9C2D1 /* AddNoteView.swift */,
+				2921B0142B02673B00533A83 /* AddWineView.swift */,
 				2949F28F2AFA5599005AFEFC /* AddWineNoteView */,
 			);
 			path = AddNote;
@@ -358,6 +361,7 @@
 				29BD87122B00AE3C0082241D /* AddWineTasteView.swift in Sources */,
 				29BD870E2B006DA90082241D /* NoteModel.swift in Sources */,
 				293FD1F82AFB426F00623B23 /* WineNoteModel.swift in Sources */,
+				2921B0152B02673B00533A83 /* AddWineView.swift in Sources */,
 				299A91512AF6E2F100D9C2D1 /* PreferenceKey.swift in Sources */,
 				29BD871A2B00F15D0082241D /* RadarChart.swift in Sources */,
 				299A91432AF6C20300D9C2D1 /* FontExtension.swift in Sources */,
@@ -367,6 +371,7 @@
 				299A91342AF6B21A00D9C2D1 /* ShareView.swift in Sources */,
 				299A91262AF6AD6C00D9C2D1 /* ContentView.swift in Sources */,
 				29BD87142B00AE9E0082241D /* AddWineThinkView.swift in Sources */,
+				29B388B22B0276D100E3942D /* ImagePicker.swift in Sources */,
 				299A91532AF71E9A00D9C2D1 /* ViewExtension.swift in Sources */,
 				29BD87182B00BD8D0082241D /* Rating.swift in Sources */,
 				293FD1F02AFAF98600623B23 /* UIScreenExtension.swift in Sources */,
@@ -375,7 +380,6 @@
 				2990E4052AF9ACEF0001617A /* ButtonStyle.swift in Sources */,
 				29BD87102B0097580082241D /* AddWineSmellView.swift in Sources */,
 				299A916A2AF7BBF800D9C2D1 /* CloseAlert.swift in Sources */,
-				2949F2912AFA55B1005AFEFC /* AddWineInfoView.swift in Sources */,
 				293FD1F42AFB096000623B23 /* AddWineLookView.swift in Sources */,
 				299A91682AF7B93000D9C2D1 /* CloseButton.swift in Sources */,
 				299A91622AF757F000D9C2D1 /* NextButton.swift in Sources */,

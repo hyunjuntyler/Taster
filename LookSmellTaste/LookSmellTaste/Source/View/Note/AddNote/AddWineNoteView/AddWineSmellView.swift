@@ -40,6 +40,8 @@ struct AddWineSmellView: View {
                             } label: {
                                 VStack {
                                     Image(wineScent.scentImageName)
+                                        .resizable()
+                                        .scaledToFit()
                                     Text(wineScent.scentName)
                                         .font(.gmarketSansCaption2)
                                         .foregroundStyle(scents.contains(wineScent) ? .accent : .appGrayButton)

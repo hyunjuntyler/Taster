@@ -7,12 +7,6 @@
 
 import SwiftUI
 
-enum NoteType {
-    case wine
-    case coffee
-    case cocktail
-}
-
 @Observable
 class NoteEnvironment {
     var showSelectNoteType = false

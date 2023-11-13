@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AddNoteView: View {
     @Environment(NoteEnvironment.self) var noteEnvironment: NoteEnvironment
-    @State private var columns = Array(repeating: GridItem(.flexible()), count: 3)
+    @State private var columns = Array(repeating: GridItem(.flexible()), count: 4)
     @State private var navigate = false
     
     var body: some View {
@@ -21,47 +21,48 @@ struct AddNoteView: View {
                         Text("Add note")
                             .font(.gmarketSansTitle)
                             .padding(.bottom)
-                        Text("어떤 노트를 추가하고 싶으신가요?")
+                        Text(noteEnvironment.noteType == .none ? "어떤 노트를 추가하고 싶으신가요?" : "아래 간단한 정보를 입력해주세요")
                             .font(.gmarketSansBody)
                             .foregroundStyle(.gray)
-                            .padding(.bottom)
+                            .animation(nil, value: noteEnvironment.noteType)
                         
                         LazyVGrid(columns: columns, spacing: 0) {
                             ForEach(notes) { note in
                                 AddNoteButton(title: note.noteLabel, image: note.noteImageName, selected: noteEnvironment.noteType == note.noteType) {
                                     Haptic.impact(style: .soft)
-                                    noteEnvironment.checkType(type: note.noteType)
+                                    withAnimation {
+                                        noteEnvironment.checkType(type: note.noteType)
+                                    }
                                 }
                             }
                         }
-                        .padding()
+                        .padding(10)
                         .background {
                             RoundedRectangle(cornerRadius: 12)
                                 .foregroundStyle(.appSheetBoxBackground)
                         }
-                        .padding(.horizontal)
+                        .padding()
+                        
+                        if noteEnvironment.noteType == .wine {
+                            AddWineView()
+                                .transition(.opacity.combined(with: .offset(y : 5)))
+                        }
                     }
                     
-                    Text("추가하고 싶은 노트를 선택해주세요")
-                        .font(.gmarketSansCaption)
-                        .foregroundStyle(.gray)
-                        .transition(.opacity)
-                        .opacity(noteEnvironment.noteType == nil ? 1 : 0)
-                        .animation(.bouncy, value: noteEnvironment.noteType)
-                        .padding(.bottom, 5)
-                    
-                    NextButton(disabled: noteEnvironment.noteType == nil) {
+                    NextButton(disabled: noteEnvironment.noteType == .none) {
                         Haptic.impact(style: .soft)
                         navigate = true
                     }
                     .navigationDestination(isPresented: $navigate) {
                         switch noteEnvironment.noteType {
                         case .wine:
-                            AddWineInfoView()
+                            AddWineLookView()
                         case .coffee:
                             Text("coffee")
                         case .cocktail:
                             Text("cocktail")
+                        case .whiskey:
+                            Text("whiskey")
                         case .none:
                             EmptyView()
                         }
@@ -71,9 +72,18 @@ struct AddNoteView: View {
             .navigationTitle("")
             .toolbar {
                 CloseButton {
-                    noteEnvironment.addNote = false
+                    if noteEnvironment.noteType == .none {
+                        noteEnvironment.addNote = false
+                    } else {
+                        noteEnvironment.showAlert = true
+                    }
                     Haptic.impact(style: .soft)
                 }
+            }
+        }
+        .overlay {
+            if noteEnvironment.showAlert {
+                CloseAlert()
             }
         }
         .overlay {

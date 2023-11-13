@@ -7,6 +7,13 @@
 
 import SwiftUI
 
+enum NoteType {
+    case wine
+    case coffee
+    case cocktail
+    case whiskey
+}
+
 struct Note: Identifiable, Hashable {
     var id = UUID()
     var noteLabel: String
@@ -17,5 +24,6 @@ struct Note: Identifiable, Hashable {
 let notes: [Note] = [
     Note(noteLabel: "와인", noteImageName: "garnetWine", noteType: .wine),
     Note(noteLabel: "커피", noteImageName: "coffee", noteType: .coffee),
-    Note(noteLabel: "칵테일", noteImageName: "cocktail", noteType: .cocktail)
+    Note(noteLabel: "칵테일", noteImageName: "cocktail", noteType: .cocktail),
+    Note(noteLabel: "위스키", noteImageName: "whiskey", noteType: .whiskey)
 ]

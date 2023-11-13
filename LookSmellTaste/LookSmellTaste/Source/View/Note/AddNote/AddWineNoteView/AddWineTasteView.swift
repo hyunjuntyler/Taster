@@ -33,11 +33,11 @@ struct AddWineTasteView: View {
                             Divider()
                             HStack {
                                 Text(tasteLabels[index])
-                                    .font(.gmarketSansBody)
+                                    .font(.gmarketSansHeadline)
                                 Spacer()
                                 Rating(rating: $taste[index],
                                        symbolName: "circle.fill",
-                                       symbolFont: .gmarketSansTitle2,
+                                       symbolFont: Font.system(size: 24),
                                        symbolColor: symbolColors[index])
                             }
                         }

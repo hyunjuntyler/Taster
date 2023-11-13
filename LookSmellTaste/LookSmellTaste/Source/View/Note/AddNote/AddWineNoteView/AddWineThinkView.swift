@@ -33,6 +33,9 @@ struct AddWineThinkView: View {
                                 .focused($isFocused)
                                 .frame(height: 200, alignment: .topLeading)
                                 .font(.gmarketSansBody)
+                                .onChange(of: think) { _, _ in
+                                    Haptic.impact(style: .soft)
+                                }
                             Button {
                                 Haptic.impact(style: .soft)
                                 think = ""
@@ -79,6 +82,7 @@ struct AddWineThinkView: View {
                     .padding(.bottom)
                 }
                 NextButton(label: "완료", disabled: false) {
+                    isFocused = false
                     Haptic.impact(style: .soft)
                     withAnimation {
                         noteEnvironment.showCompleteView = true
