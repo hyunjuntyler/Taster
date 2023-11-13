@@ -43,11 +43,14 @@
 		29B388B42B027EDE00E3942D /* ImagePickerUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B388B32B027EDE00E3942D /* ImagePickerUI.swift */; };
 		29B388B62B0281E700E3942D /* PermissionAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B388B52B0281E700E3942D /* PermissionAlert.swift */; };
 		29B388B82B028F0200E3942D /* PreparingContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B388B72B028F0200E3942D /* PreparingContent.swift */; };
+		29B388BB2B0295E300E3942D /* Confetti.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B388BA2B0295E300E3942D /* Confetti.swift */; };
+		29B388BD2B0295FB00E3942D /* ConfettiShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B388BC2B0295FB00E3942D /* ConfettiShapes.swift */; };
+		29B388BF2B02963B00E3942D /* ConfettiSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B388BE2B02963B00E3942D /* ConfettiSample.swift */; };
 		29BD870E2B006DA90082241D /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD870D2B006DA90082241D /* NoteModel.swift */; };
 		29BD87102B0097580082241D /* AddWineSmellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD870F2B0097580082241D /* AddWineSmellView.swift */; };
 		29BD87122B00AE3C0082241D /* AddWineTasteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD87112B00AE3C0082241D /* AddWineTasteView.swift */; };
 		29BD87142B00AE9E0082241D /* AddWineThinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD87132B00AE9E0082241D /* AddWineThinkView.swift */; };
-		29BD87162B00B0A30082241D /* AddWineCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD87152B00B0A30082241D /* AddWineCompleteView.swift */; };
+		29BD87162B00B0A30082241D /* AddNoteCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD87152B00B0A30082241D /* AddNoteCompleteView.swift */; };
 		29BD87182B00BD8D0082241D /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD87172B00BD8D0082241D /* Rating.swift */; };
 		29BD871A2B00F15D0082241D /* RadarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD87192B00F15D0082241D /* RadarChart.swift */; };
 /* End PBXBuildFile section */
@@ -91,11 +94,14 @@
 		29B388B32B027EDE00E3942D /* ImagePickerUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerUI.swift; sourceTree = "<group>"; };
 		29B388B52B0281E700E3942D /* PermissionAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionAlert.swift; sourceTree = "<group>"; };
 		29B388B72B028F0200E3942D /* PreparingContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparingContent.swift; sourceTree = "<group>"; };
+		29B388BA2B0295E300E3942D /* Confetti.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Confetti.swift; sourceTree = "<group>"; };
+		29B388BC2B0295FB00E3942D /* ConfettiShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiShapes.swift; sourceTree = "<group>"; };
+		29B388BE2B02963B00E3942D /* ConfettiSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiSample.swift; sourceTree = "<group>"; };
 		29BD870D2B006DA90082241D /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
 		29BD870F2B0097580082241D /* AddWineSmellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWineSmellView.swift; sourceTree = "<group>"; };
 		29BD87112B00AE3C0082241D /* AddWineTasteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWineTasteView.swift; sourceTree = "<group>"; };
 		29BD87132B00AE9E0082241D /* AddWineThinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWineThinkView.swift; sourceTree = "<group>"; };
-		29BD87152B00B0A30082241D /* AddWineCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWineCompleteView.swift; sourceTree = "<group>"; };
+		29BD87152B00B0A30082241D /* AddNoteCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteCompleteView.swift; sourceTree = "<group>"; };
 		29BD87172B00BD8D0082241D /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
 		29BD87192B00F15D0082241D /* RadarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarChart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,7 +132,6 @@
 				29BD870F2B0097580082241D /* AddWineSmellView.swift */,
 				29BD87112B00AE3C0082241D /* AddWineTasteView.swift */,
 				29BD87132B00AE9E0082241D /* AddWineThinkView.swift */,
-				29BD87152B00B0A30082241D /* AddWineCompleteView.swift */,
 			);
 			path = AddWineNoteView;
 			sourceTree = "<group>";
@@ -247,6 +252,7 @@
 		299A91492AF6C84100D9C2D1 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				29B388B92B0295D900E3942D /* Confetti */,
 				299A914A2AF6C85A00D9C2D1 /* TabBar.swift */,
 				299A914E2AF6DEC000D9C2D1 /* NavigationBar.swift */,
 				299A91692AF7BBF800D9C2D1 /* CloseAlert.swift */,
@@ -285,9 +291,20 @@
 			children = (
 				299A915D2AF74C6F00D9C2D1 /* AddNoteView.swift */,
 				2921B0142B02673B00533A83 /* AddWineView.swift */,
+				29BD87152B00B0A30082241D /* AddNoteCompleteView.swift */,
 				2949F28F2AFA5599005AFEFC /* AddWineNoteView */,
 			);
 			path = AddNote;
+			sourceTree = "<group>";
+		};
+		29B388B92B0295D900E3942D /* Confetti */ = {
+			isa = PBXGroup;
+			children = (
+				29B388BA2B0295E300E3942D /* Confetti.swift */,
+				29B388BC2B0295FB00E3942D /* ConfettiShapes.swift */,
+				29B388BE2B02963B00E3942D /* ConfettiSample.swift */,
+			);
+			path = Confetti;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -376,12 +393,15 @@
 				29BD871A2B00F15D0082241D /* RadarChart.swift in Sources */,
 				29B388B62B0281E700E3942D /* PermissionAlert.swift in Sources */,
 				299A91432AF6C20300D9C2D1 /* FontExtension.swift in Sources */,
-				29BD87162B00B0A30082241D /* AddWineCompleteView.swift in Sources */,
+				29BD87162B00B0A30082241D /* AddNoteCompleteView.swift in Sources */,
 				2990E4022AF9A21E0001617A /* ContentUnavailable.swift in Sources */,
 				2990E4072AF9E11D0001617A /* AddNoteButton.swift in Sources */,
 				299A91342AF6B21A00D9C2D1 /* ShareView.swift in Sources */,
+				29B388BB2B0295E300E3942D /* Confetti.swift in Sources */,
 				299A91262AF6AD6C00D9C2D1 /* ContentView.swift in Sources */,
 				29BD87142B00AE9E0082241D /* AddWineThinkView.swift in Sources */,
+				29B388BF2B02963B00E3942D /* ConfettiSample.swift in Sources */,
+				29B388BD2B0295FB00E3942D /* ConfettiShapes.swift in Sources */,
 				29B388B22B0276D100E3942D /* ImagePicker.swift in Sources */,
 				299A91532AF71E9A00D9C2D1 /* ViewExtension.swift in Sources */,
 				29BD87182B00BD8D0082241D /* Rating.swift in Sources */,

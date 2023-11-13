@@ -109,12 +109,12 @@ struct AddNoteView: View {
         }
         .overlay {
             if noteEnvironment.showCompleteView {
-                AddWineCompleteView()
-                    .transition(.opacity.animation(.bouncy(duration: 2)))
+                AddNoteCompleteView()
+                    .transition(.opacity.animation(.easeInOut(duration: 0.5)))
                     .onAppear {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                            noteEnvironment.showCompleteView = false
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                             noteEnvironment.addNote = false
+                            noteEnvironment.showCompleteView = false
                         }
                     }
             }
