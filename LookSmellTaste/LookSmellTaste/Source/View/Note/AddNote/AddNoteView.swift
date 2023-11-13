@@ -45,7 +45,7 @@ struct AddNoteView: View {
                         
                         if noteEnvironment.noteType == .wine {
                             AddWineView()
-                                .transition(.opacity.combined(with: .offset(y : 5)))
+                                .transition(.opacity.combined(with: .offset(y : 5)).animation(.bouncy(duration: 1)))
                         }
                     }
                     
@@ -75,15 +75,20 @@ struct AddNoteView: View {
                     if noteEnvironment.noteType == .none {
                         noteEnvironment.addNote = false
                     } else {
-                        noteEnvironment.showAlert = true
+                        noteEnvironment.showCloseAlert = true
                     }
                     Haptic.impact(style: .soft)
                 }
             }
         }
         .overlay {
-            if noteEnvironment.showAlert {
+            if noteEnvironment.showCloseAlert {
                 CloseAlert()
+            }
+        }
+        .overlay {
+            if noteEnvironment.showPermissionAlert {
+                PermissionAlert()
             }
         }
         .overlay {

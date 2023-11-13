@@ -40,6 +40,8 @@
 		299A91682AF7B93000D9C2D1 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A91672AF7B93000D9C2D1 /* CloseButton.swift */; };
 		299A916A2AF7BBF800D9C2D1 /* CloseAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A91692AF7BBF800D9C2D1 /* CloseAlert.swift */; };
 		29B388B22B0276D100E3942D /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B388B12B0276D100E3942D /* ImagePicker.swift */; };
+		29B388B42B027EDE00E3942D /* ImagePickerUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B388B32B027EDE00E3942D /* ImagePickerUI.swift */; };
+		29B388B62B0281E700E3942D /* PermissionAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B388B52B0281E700E3942D /* PermissionAlert.swift */; };
 		29BD870E2B006DA90082241D /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD870D2B006DA90082241D /* NoteModel.swift */; };
 		29BD87102B0097580082241D /* AddWineSmellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD870F2B0097580082241D /* AddWineSmellView.swift */; };
 		29BD87122B00AE3C0082241D /* AddWineTasteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD87112B00AE3C0082241D /* AddWineTasteView.swift */; };
@@ -85,6 +87,8 @@
 		299A91672AF7B93000D9C2D1 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		299A91692AF7BBF800D9C2D1 /* CloseAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseAlert.swift; sourceTree = "<group>"; };
 		29B388B12B0276D100E3942D /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		29B388B32B027EDE00E3942D /* ImagePickerUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerUI.swift; sourceTree = "<group>"; };
+		29B388B52B0281E700E3942D /* PermissionAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionAlert.swift; sourceTree = "<group>"; };
 		29BD870D2B006DA90082241D /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
 		29BD870F2B0097580082241D /* AddWineSmellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWineSmellView.swift; sourceTree = "<group>"; };
 		29BD87112B00AE3C0082241D /* AddWineTasteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWineTasteView.swift; sourceTree = "<group>"; };
@@ -223,6 +227,7 @@
 				299A91502AF6E2F100D9C2D1 /* PreferenceKey.swift */,
 				2990E4042AF9ACEF0001617A /* ButtonStyle.swift */,
 				293FD1F52AFB40D500623B23 /* Haptic.swift */,
+				29B388B32B027EDE00E3942D /* ImagePickerUI.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -243,6 +248,7 @@
 				299A914A2AF6C85A00D9C2D1 /* TabBar.swift */,
 				299A914E2AF6DEC000D9C2D1 /* NavigationBar.swift */,
 				299A91692AF7BBF800D9C2D1 /* CloseAlert.swift */,
+				29B388B52B0281E700E3942D /* PermissionAlert.swift */,
 				299A91612AF757F000D9C2D1 /* NextButton.swift */,
 				299A91672AF7B93000D9C2D1 /* CloseButton.swift */,
 				2990E4012AF9A21E0001617A /* ContentUnavailable.swift */,
@@ -358,12 +364,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29B388B42B027EDE00E3942D /* ImagePickerUI.swift in Sources */,
 				29BD87122B00AE3C0082241D /* AddWineTasteView.swift in Sources */,
 				29BD870E2B006DA90082241D /* NoteModel.swift in Sources */,
 				293FD1F82AFB426F00623B23 /* WineNoteModel.swift in Sources */,
 				2921B0152B02673B00533A83 /* AddWineView.swift in Sources */,
 				299A91512AF6E2F100D9C2D1 /* PreferenceKey.swift in Sources */,
 				29BD871A2B00F15D0082241D /* RadarChart.swift in Sources */,
+				29B388B62B0281E700E3942D /* PermissionAlert.swift in Sources */,
 				299A91432AF6C20300D9C2D1 /* FontExtension.swift in Sources */,
 				29BD87162B00B0A30082241D /* AddWineCompleteView.swift in Sources */,
 				2990E4022AF9A21E0001617A /* ContentUnavailable.swift in Sources */,
@@ -528,6 +536,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LookSmellTaste/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -562,6 +572,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LookSmellTaste/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

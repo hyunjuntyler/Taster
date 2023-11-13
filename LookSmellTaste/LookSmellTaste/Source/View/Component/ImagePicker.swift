@@ -6,20 +6,38 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct ImagePicker: View {
+    @Environment(NoteEnvironment.self) var noteEnvironment: NoteEnvironment
+    
+    @Binding var selectedImage: UIImage?
+    @State var showCamera = false
+    @State var showImagePicker = false
+    @State var permissionDenied = false
+    
     var defaultImageName: String = ""
     
     var body: some View {
         HStack {
-            ZStack {
-                RoundedRectangle(cornerRadius: 12, style: .continuous)
-                    .frame(width: 80, height: 80)
-                    .foregroundStyle(.appPickerGray)
-                Image(defaultImageName)
+            if let image = selectedImage {
+                Image(uiImage: image)
                     .resizable()
-                    .scaledToFit()
-                    .frame(height: 60)
+                    .scaledToFill()
+                    .frame(width: 80, height: 80)
+                    .clipShape(
+                        RoundedRectangle(cornerRadius: 12, style: .continuous)
+                    )
+            } else {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 12, style: .continuous)
+                        .frame(width: 80, height: 80)
+                        .foregroundStyle(.appPickerGray)
+                    Image(defaultImageName)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 60)
+                }
             }
             
             Spacer()
@@ -32,6 +50,7 @@ struct ImagePicker: View {
                 HStack {
                     Button {
                         Haptic.impact(style: .soft)
+                        selectedImage = nil
                     } label: {
                         Text("기본")
                             .font(.gmarketSansFootnote)
@@ -46,6 +65,7 @@ struct ImagePicker: View {
                     
                     Button {
                         Haptic.impact(style: .soft)
+                        checkAlbumPermission()
                     } label: {
                         Text("앨범에서 선택")
                             .font(.gmarketSansFootnote)
@@ -60,6 +80,7 @@ struct ImagePicker: View {
                     
                     Button {
                         Haptic.impact(style: .soft)
+                        checkCameraPermission()
                     } label: {
                         Text("사진찍기")
                             .font(.gmarketSansFootnote)
@@ -79,6 +100,43 @@ struct ImagePicker: View {
             RoundedRectangle(cornerRadius: 12, style: .continuous)
                 .foregroundStyle(.appSheetBoxBackground)
         }
+        .fullScreenCover(isPresented: $showCamera) {
+            ImagePickerUI(selectedImage: $selectedImage, sourceType: .camera)
+                .ignoresSafeArea()
+        }
+        .sheet(isPresented: $showImagePicker) {
+            ImagePickerUI(selectedImage: $selectedImage)
+                .ignoresSafeArea()
+        }
+    }
+    
+    private func checkCameraPermission() {
+        AVCaptureDevice.requestAccess(for: .video) { granted in
+            DispatchQueue.main.async {
+                if granted {
+                    self.showCamera = true
+                } else {
+                    noteEnvironment.showPermissionAlert = true
+                    noteEnvironment.permissionType = .camera
+                }
+            }
+        }
+    }
+
+    private func checkAlbumPermission() {
+        PHPhotoLibrary.requestAuthorization { status in
+            DispatchQueue.main.async {
+                switch status {
+                case .authorized:
+                    self.showImagePicker = true
+                case .denied, .restricted, .notDetermined:
+                    noteEnvironment.showPermissionAlert = true
+                    noteEnvironment.permissionType = .album
+                default:
+                    break
+                }
+            }
+        }
     }
 }
 
@@ -86,9 +144,10 @@ struct ImagePicker: View {
     ZStack {
         Color.appSheetBackground.ignoresSafeArea()
         ScrollView {
-            ImagePicker()
+            ImagePicker(selectedImage: .constant(nil))
                 .padding(.horizontal)
                 .padding(.top, 300)
+                .environment(NoteEnvironment())
         }
     }
 }

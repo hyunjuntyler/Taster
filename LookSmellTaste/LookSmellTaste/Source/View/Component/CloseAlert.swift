@@ -29,7 +29,7 @@ struct CloseAlert: View {
                     .padding(.bottom, 20)
                 HStack {
                     Button("돌아가기") {
-                        noteEnvironment.showAlert = false
+                        noteEnvironment.showCloseAlert = false
                         Haptic.impact(style: .soft)
                     }
                     .buttonStyle(AlertButtonStyle(type: .cancel))

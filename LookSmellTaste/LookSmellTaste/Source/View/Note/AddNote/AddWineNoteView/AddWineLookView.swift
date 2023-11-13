@@ -72,7 +72,7 @@ struct AddWineLookView: View {
         .navigationTitle("")
         .toolbar {
             CloseButton {
-                noteEnvironment.showAlert = true
+                noteEnvironment.showCloseAlert = true
                 Haptic.impact(style: .soft)
             }
         }

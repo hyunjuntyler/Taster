@@ -14,7 +14,8 @@ struct AddWineView: View {
     
     @State var text = ""
     @State var date = Date()
-    @State var type: WineType = wineTypes[0]
+    @State var type: WineType = wineTypes[2]
+    @State var image: UIImage?
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -129,77 +130,7 @@ struct AddWineView: View {
                 .foregroundStyle(.gray)
                 .padding(.leading)
                 .padding(.top, 5)
-            HStack {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 12, style: .continuous)
-                        .frame(width: 80, height: 80)
-                        .foregroundStyle(.appPickerGray)
-                    Image(type.typeImageName)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 60)
-                }
-                
-                Spacer()
-                
-                VStack {
-                    Text("선택한 이미지는 썸네일 이미지로 활용돼요")
-                        .font(.gmarketSansCaption)
-                        .foregroundStyle(.gray)
-                        .frame(maxHeight: .infinity)
-                    HStack {
-                        Button {
-                            isFocused = false
-                            Haptic.impact(style: .soft)
-                        } label: {
-                            Text("기본")
-                                .font(.gmarketSansFootnote)
-                                .foregroundStyle(.gray)
-                                .padding(12)
-                                .background {
-                                    RoundedRectangle(cornerRadius: 12, style: .continuous)
-                                        .foregroundStyle(.appPickerGray)
-                                }
-                        }
-                        .buttonStyle(PressButtonStyle())
-                        
-                        Button {
-                            isFocused = false
-                            Haptic.impact(style: .soft)
-                        } label: {
-                            Text("앨범에서 선택")
-                                .font(.gmarketSansFootnote)
-                                .foregroundStyle(.gray)
-                                .padding(12)
-                                .background {
-                                    RoundedRectangle(cornerRadius: 12, style: .continuous)
-                                        .foregroundStyle(.appPickerGray)
-                                }
-                        }
-                        .buttonStyle(PressButtonStyle())
-                        
-                        Button {
-                            isFocused = false
-                            Haptic.impact(style: .soft)
-                        } label: {
-                            Text("사진찍기")
-                                .font(.gmarketSansFootnote)
-                                .foregroundStyle(.gray)
-                                .padding(12)
-                                .background {
-                                    RoundedRectangle(cornerRadius: 12, style: .continuous)
-                                        .foregroundStyle(.appPickerGray)
-                                }
-                        }
-                        .buttonStyle(PressButtonStyle())
-                    }
-                }
-            }
-            .padding(8)
-            .background {
-                RoundedRectangle(cornerRadius: 12, style: .continuous)
-                    .foregroundStyle(.appSheetBoxBackground)
-            }
+            ImagePicker(selectedImage: $image, defaultImageName: type.typeImageName)
             .padding(.bottom)
         }
         .padding(.horizontal)
