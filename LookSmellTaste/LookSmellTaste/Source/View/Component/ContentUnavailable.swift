@@ -45,6 +45,7 @@ struct ContentUnavailable: View {
             }
             Text(title)
                 .font(.gmarketSansBody)
+                .padding(.bottom, 5)
             Text(description)
                 .font(.gmarketSansCaption)
                 .foregroundStyle(.secondary)

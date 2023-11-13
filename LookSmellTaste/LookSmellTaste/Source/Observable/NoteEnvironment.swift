@@ -8,12 +8,16 @@
 import SwiftUI
 
 @Observable
-class NoteEnvironment {
-    var showSelectNoteType = false
-    var showCompleteView = false
+final class NoteEnvironment {
     var addNote = false
+    
+    var isNotePreparing = true
+    
     var showCloseAlert = false
     var showPermissionAlert = false
+    
+    var showCompleteView = false
+
     var noteType: NoteType?
     var permissionType: PermissionType?
     
@@ -23,17 +27,34 @@ class NoteEnvironment {
         noteType = nil
     }
     
-    func checkType(type: NoteType) {
+    func selectType(type: NoteType) {
         if noteType == type {
             noteType = nil
+            checkNotePreparing()
         } else {
             noteType = type
+            checkNotePreparing()
         }
     }
     
     func openAppSetting() {
         if let url = URL(string: UIApplication.openSettingsURLString) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    
+    private func checkNotePreparing() {
+        switch noteType {
+        case .wine:
+            isNotePreparing = false
+        case .coffee:
+            isNotePreparing = true
+        case .cocktail:
+            isNotePreparing = true
+        case .whiskey:
+            isNotePreparing = true
+        case nil:
+            isNotePreparing = true
         }
     }
 }

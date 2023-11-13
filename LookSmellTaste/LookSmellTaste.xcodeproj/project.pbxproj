@@ -42,6 +42,7 @@
 		29B388B22B0276D100E3942D /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B388B12B0276D100E3942D /* ImagePicker.swift */; };
 		29B388B42B027EDE00E3942D /* ImagePickerUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B388B32B027EDE00E3942D /* ImagePickerUI.swift */; };
 		29B388B62B0281E700E3942D /* PermissionAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B388B52B0281E700E3942D /* PermissionAlert.swift */; };
+		29B388B82B028F0200E3942D /* PreparingContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B388B72B028F0200E3942D /* PreparingContent.swift */; };
 		29BD870E2B006DA90082241D /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD870D2B006DA90082241D /* NoteModel.swift */; };
 		29BD87102B0097580082241D /* AddWineSmellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD870F2B0097580082241D /* AddWineSmellView.swift */; };
 		29BD87122B00AE3C0082241D /* AddWineTasteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD87112B00AE3C0082241D /* AddWineTasteView.swift */; };
@@ -89,6 +90,7 @@
 		29B388B12B0276D100E3942D /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		29B388B32B027EDE00E3942D /* ImagePickerUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerUI.swift; sourceTree = "<group>"; };
 		29B388B52B0281E700E3942D /* PermissionAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionAlert.swift; sourceTree = "<group>"; };
+		29B388B72B028F0200E3942D /* PreparingContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparingContent.swift; sourceTree = "<group>"; };
 		29BD870D2B006DA90082241D /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
 		29BD870F2B0097580082241D /* AddWineSmellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWineSmellView.swift; sourceTree = "<group>"; };
 		29BD87112B00AE3C0082241D /* AddWineTasteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWineTasteView.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				29BD87172B00BD8D0082241D /* Rating.swift */,
 				29BD87192B00F15D0082241D /* RadarChart.swift */,
 				29B388B12B0276D100E3942D /* ImagePicker.swift */,
+				29B388B72B028F0200E3942D /* PreparingContent.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				299A914F2AF6DEC000D9C2D1 /* NavigationBar.swift in Sources */,
 				2990E4052AF9ACEF0001617A /* ButtonStyle.swift in Sources */,
 				29BD87102B0097580082241D /* AddWineSmellView.swift in Sources */,
+				29B388B82B028F0200E3942D /* PreparingContent.swift in Sources */,
 				299A916A2AF7BBF800D9C2D1 /* CloseAlert.swift in Sources */,
 				293FD1F42AFB096000623B23 /* AddWineLookView.swift in Sources */,
 				299A91682AF7B93000D9C2D1 /* CloseButton.swift in Sources */,

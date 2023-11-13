@@ -21,7 +21,7 @@ struct AddNoteView: View {
                         Text("Add note")
                             .font(.gmarketSansTitle)
                             .padding(.bottom)
-                        Text(noteEnvironment.noteType == .none ? "어떤 노트를 추가하고 싶으신가요?" : "아래 간단한 정보를 입력해주세요")
+                        Text(noteEnvironment.isNotePreparing ? "어떤 노트를 추가하고 싶으신가요?" : "아래 간단한 정보를 입력해주세요")
                             .font(.gmarketSansBody)
                             .foregroundStyle(.gray)
                             .animation(nil, value: noteEnvironment.noteType)
@@ -31,7 +31,7 @@ struct AddNoteView: View {
                                 AddNoteButton(title: note.noteLabel, image: note.noteImageName, selected: noteEnvironment.noteType == note.noteType) {
                                     Haptic.impact(style: .soft)
                                     withAnimation {
-                                        noteEnvironment.checkType(type: note.noteType)
+                                        noteEnvironment.selectType(type: note.noteType)
                                     }
                                 }
                             }
@@ -43,13 +43,29 @@ struct AddNoteView: View {
                         }
                         .padding()
                         
-                        if noteEnvironment.noteType == .wine {
-                            AddWineView()
-                                .transition(.opacity.combined(with: .offset(y : 5)).animation(.bouncy(duration: 1)))
+                        Group {
+                            switch noteEnvironment.noteType {
+                            case .wine:
+                                AddWineView()
+                            case .coffee:
+                                PreparingContent()
+                            case .cocktail:
+                                PreparingContent()
+                            case .whiskey:
+                                PreparingContent()
+                            case .none:
+                                EmptyView()
+                            }
                         }
+                        .transition(
+                            .asymmetric(
+                                insertion: .opacity.combined(with: .offset(y: 10)),
+                                removal: .opacity.animation(nil)
+                            )
+                        )
                     }
                     
-                    NextButton(disabled: noteEnvironment.noteType == .none) {
+                    NextButton(disabled: noteEnvironment.isNotePreparing) {
                         Haptic.impact(style: .soft)
                         navigate = true
                     }
@@ -58,11 +74,11 @@ struct AddNoteView: View {
                         case .wine:
                             AddWineLookView()
                         case .coffee:
-                            Text("coffee")
+                            EmptyView()
                         case .cocktail:
-                            Text("cocktail")
+                            EmptyView()
                         case .whiskey:
-                            Text("whiskey")
+                            EmptyView()
                         case .none:
                             EmptyView()
                         }
@@ -72,7 +88,7 @@ struct AddNoteView: View {
             .navigationTitle("")
             .toolbar {
                 CloseButton {
-                    if noteEnvironment.noteType == .none {
+                    if noteEnvironment.isNotePreparing {
                         noteEnvironment.addNote = false
                     } else {
                         noteEnvironment.showCloseAlert = true
