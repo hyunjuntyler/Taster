@@ -17,20 +17,8 @@ struct NoteView: View {
                 .onScrollOffsetChanged { offset in
                     scrollOffset = offset
                 }
-                .overlay(alignment: .bottomTrailing) {
-                    if scrollOffset > -15 {
-                        Button {
-                            Haptic.impact(style: .soft)
-                        } label: {
-                            Circle()
-                                .foregroundStyle(.gray)
-                                .frame(width: 28)
-                                .padding(.trailing, 20)
-                        }
-                        .buttonStyle(PressButtonStyle())
-                    }
-                }
             ContentUnavailable(type: .note)
+                .padding(.top, 250)
         }
         .coordinateSpace(name: "scroll")
         .overlay {
@@ -62,5 +50,9 @@ struct NoteView: View {
 }
 
 #Preview {
-    MainTabView()
+    ZStack {
+        Color.appBackground.ignoresSafeArea()
+        NoteView()
+    }
+    .ignoresSafeArea(edges: .bottom)
 }

@@ -22,14 +22,11 @@
 		299A91282AF6AD6D00D9C2D1 /* Asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 299A91272AF6AD6D00D9C2D1 /* Asset.xcassets */; };
 		299A912B2AF6AD6D00D9C2D1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 299A912A2AF6AD6D00D9C2D1 /* Preview Assets.xcassets */; };
 		299A91322AF6B1FF00D9C2D1 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A91312AF6B1FF00D9C2D1 /* NoteView.swift */; };
-		299A91342AF6B21A00D9C2D1 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A91332AF6B21A00D9C2D1 /* ShareView.swift */; };
 		299A913A2AF6C00400D9C2D1 /* TossFaceFontMac.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 299A91392AF6C00400D9C2D1 /* TossFaceFontMac.ttf */; };
 		299A913E2AF6C03800D9C2D1 /* GmarketSansTTFLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 299A913B2AF6C03800D9C2D1 /* GmarketSansTTFLight.ttf */; };
 		299A913F2AF6C03800D9C2D1 /* GmarketSansTTFBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 299A913C2AF6C03800D9C2D1 /* GmarketSansTTFBold.ttf */; };
 		299A91402AF6C03800D9C2D1 /* GmarketSansTTFMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 299A913D2AF6C03800D9C2D1 /* GmarketSansTTFMedium.ttf */; };
 		299A91432AF6C20300D9C2D1 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A91422AF6C20300D9C2D1 /* FontExtension.swift */; };
-		299A914B2AF6C85A00D9C2D1 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A914A2AF6C85A00D9C2D1 /* TabBar.swift */; };
-		299A914D2AF6CBD600D9C2D1 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A914C2AF6CBD600D9C2D1 /* MainTabView.swift */; };
 		299A914F2AF6DEC000D9C2D1 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A914E2AF6DEC000D9C2D1 /* NavigationBar.swift */; };
 		299A91512AF6E2F100D9C2D1 /* PreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A91502AF6E2F100D9C2D1 /* PreferenceKey.swift */; };
 		299A91532AF71E9A00D9C2D1 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A91522AF71E9A00D9C2D1 /* ViewExtension.swift */; };
@@ -72,15 +69,12 @@
 		299A91272AF6AD6D00D9C2D1 /* Asset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Asset.xcassets; sourceTree = "<group>"; };
 		299A912A2AF6AD6D00D9C2D1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		299A91312AF6B1FF00D9C2D1 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
-		299A91332AF6B21A00D9C2D1 /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
 		299A91392AF6C00400D9C2D1 /* TossFaceFontMac.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TossFaceFontMac.ttf; sourceTree = "<group>"; };
 		299A913B2AF6C03800D9C2D1 /* GmarketSansTTFLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansTTFLight.ttf; sourceTree = "<group>"; };
 		299A913C2AF6C03800D9C2D1 /* GmarketSansTTFBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansTTFBold.ttf; sourceTree = "<group>"; };
 		299A913D2AF6C03800D9C2D1 /* GmarketSansTTFMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansTTFMedium.ttf; sourceTree = "<group>"; };
 		299A91412AF6C07900D9C2D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		299A91422AF6C20300D9C2D1 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
-		299A914A2AF6C85A00D9C2D1 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
-		299A914C2AF6CBD600D9C2D1 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		299A914E2AF6DEC000D9C2D1 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		299A91502AF6E2F100D9C2D1 /* PreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceKey.swift; sourceTree = "<group>"; };
 		299A91522AF71E9A00D9C2D1 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
@@ -183,9 +177,7 @@
 		299A91352AF6B2BE00D9C2D1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				299A914C2AF6CBD600D9C2D1 /* MainTabView.swift */,
 				299A91542AF7217300D9C2D1 /* Note */,
-				299A91552AF7217E00D9C2D1 /* Share */,
 				299A91492AF6C84100D9C2D1 /* Component */,
 			);
 			path = View;
@@ -252,7 +244,6 @@
 			isa = PBXGroup;
 			children = (
 				29B388B92B0295D900E3942D /* Confetti */,
-				299A914A2AF6C85A00D9C2D1 /* TabBar.swift */,
 				299A914E2AF6DEC000D9C2D1 /* NavigationBar.swift */,
 				299A91692AF7BBF800D9C2D1 /* CloseAlert.swift */,
 				29B388B52B0281E700E3942D /* PermissionAlert.swift */,
@@ -275,14 +266,6 @@
 				299A915C2AF74C6200D9C2D1 /* AddNote */,
 			);
 			path = Note;
-			sourceTree = "<group>";
-		};
-		299A91552AF7217E00D9C2D1 /* Share */ = {
-			isa = PBXGroup;
-			children = (
-				299A91332AF6B21A00D9C2D1 /* ShareView.swift */,
-			);
-			path = Share;
 			sourceTree = "<group>";
 		};
 		299A915C2AF74C6200D9C2D1 /* AddNote */ = {
@@ -412,7 +395,6 @@
 				29BD87162B00B0A30082241D /* AddNoteCompleteView.swift in Sources */,
 				2990E4022AF9A21E0001617A /* ContentUnavailable.swift in Sources */,
 				2990E4072AF9E11D0001617A /* AddNoteButton.swift in Sources */,
-				299A91342AF6B21A00D9C2D1 /* ShareView.swift in Sources */,
 				29B388BB2B0295E300E3942D /* Confetti.swift in Sources */,
 				299A91262AF6AD6C00D9C2D1 /* ContentView.swift in Sources */,
 				29BD87142B00AE9E0082241D /* AddWineThinkView.swift in Sources */,
@@ -431,11 +413,9 @@
 				293FD1F42AFB096000623B23 /* AddWineLookView.swift in Sources */,
 				299A91682AF7B93000D9C2D1 /* CloseButton.swift in Sources */,
 				299A91622AF757F000D9C2D1 /* NextButton.swift in Sources */,
-				299A914D2AF6CBD600D9C2D1 /* MainTabView.swift in Sources */,
 				299A91322AF6B1FF00D9C2D1 /* NoteView.swift in Sources */,
 				299A91242AF6AD6C00D9C2D1 /* LookSmellTasteApp.swift in Sources */,
 				2949F2942AFA9593005AFEFC /* WineModel.swift in Sources */,
-				299A914B2AF6C85A00D9C2D1 /* TabBar.swift in Sources */,
 				29431F992AF8654300BE17F1 /* NoteEnvironment.swift in Sources */,
 				299A915E2AF74C6F00D9C2D1 /* AddNoteView.swift in Sources */,
 			);

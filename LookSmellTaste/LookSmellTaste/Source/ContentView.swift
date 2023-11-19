@@ -14,7 +14,11 @@ struct ContentView: View {
     }
     
     var body: some View {
-        MainTabView()
+        ZStack {
+            Color.appBackground.ignoresSafeArea()
+            NoteView()
+        }
+        .ignoresSafeArea(edges: .bottom)
     }
 }
 

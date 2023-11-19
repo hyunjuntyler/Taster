@@ -50,7 +50,6 @@ struct ContentUnavailable: View {
                 .font(.gmarketSansCaption)
                 .foregroundStyle(.secondary)
         }
-        .padding(.top, 200)
     }
 }
 
