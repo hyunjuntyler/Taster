@@ -81,7 +81,7 @@ struct AddWineThinkView: View {
                     }
                     .padding(.bottom)
                 }
-                NextButton(label: "완료", disabled: false) {
+                NextButton(label: "작성 완료", disabled: false) {
                     isFocused = false
                     Haptic.impact(style: .soft)
                     withAnimation {

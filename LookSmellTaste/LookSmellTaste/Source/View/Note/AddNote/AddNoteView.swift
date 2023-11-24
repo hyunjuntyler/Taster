@@ -64,6 +64,7 @@ struct AddNoteView: View {
                             )
                         )
                     }
+                    .scrollDisabled(noteEnvironment.isNotePreparing)
                     
                     NextButton(disabled: noteEnvironment.isNotePreparing) {
                         Haptic.impact(style: .soft)

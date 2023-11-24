@@ -10,20 +10,17 @@ import SwiftUI
 @Observable
 final class NoteEnvironment {
     var addNote = false
-    
     var isNotePreparing = true
-    
     var showCloseAlert = false
     var showPermissionAlert = false
-    
     var showCompleteView = false
-
     var noteType: NoteType?
     var permissionType: PermissionType?
     
     func close() {
         addNote = false
         showCloseAlert = false
+        isNotePreparing = true
         noteType = nil
     }
     

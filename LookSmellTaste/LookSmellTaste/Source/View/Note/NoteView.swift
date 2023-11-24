@@ -45,6 +45,7 @@ struct NoteView: View {
                 .shadow(radius: 1)
         }
         .padding(20)
+        .padding(.bottom, 10)
         .buttonStyle(PressButtonStyle())
     }
 }
