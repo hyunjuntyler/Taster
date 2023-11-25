@@ -51,6 +51,8 @@
 		29BD87182B00BD8D0082241D /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD87172B00BD8D0082241D /* Rating.swift */; };
 		29BD871A2B00F15D0082241D /* RadarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD87192B00F15D0082241D /* RadarChart.swift */; };
 		F04B4FC22B11A9530000047D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04B4FC12B11A9530000047D /* User.swift */; };
+		F04B4FC52B11AF190000047D /* CoffeeNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04B4FC42B11AF190000047D /* CoffeeNote.swift */; };
+		F04B4FC72B11AF210000047D /* CocktailNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04B4FC62B11AF210000047D /* CocktailNote.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +103,8 @@
 		29BD87192B00F15D0082241D /* RadarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarChart.swift; sourceTree = "<group>"; };
 		F04B4FC12B11A9530000047D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F04B4FC32B11ACAD0000047D /* LookSmellTaste.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LookSmellTaste.entitlements; sourceTree = "<group>"; };
+		F04B4FC42B11AF190000047D /* CoffeeNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeNote.swift; sourceTree = "<group>"; };
+		F04B4FC62B11AF210000047D /* CocktailNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailNote.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,6 +311,8 @@
 			children = (
 				F04B4FC12B11A9530000047D /* User.swift */,
 				293FD1F72AFB426F00623B23 /* WineNote.swift */,
+				F04B4FC42B11AF190000047D /* CoffeeNote.swift */,
+				F04B4FC62B11AF210000047D /* CocktailNote.swift */,
 			);
 			path = SwiftData;
 			sourceTree = "<group>";
@@ -392,6 +398,7 @@
 				29BD87122B00AE3C0082241D /* AddWineTasteView.swift in Sources */,
 				29BD870E2B006DA90082241D /* NoteModel.swift in Sources */,
 				293FD1F82AFB426F00623B23 /* WineNote.swift in Sources */,
+				F04B4FC52B11AF190000047D /* CoffeeNote.swift in Sources */,
 				2921B0152B02673B00533A83 /* AddWineView.swift in Sources */,
 				299A91512AF6E2F100D9C2D1 /* PreferenceKey.swift in Sources */,
 				29BD871A2B00F15D0082241D /* RadarChart.swift in Sources */,
@@ -410,6 +417,7 @@
 				29BD87182B00BD8D0082241D /* Rating.swift in Sources */,
 				293FD1F02AFAF98600623B23 /* UIScreenExtension.swift in Sources */,
 				293FD1F62AFB40D500623B23 /* Haptic.swift in Sources */,
+				F04B4FC72B11AF210000047D /* CocktailNote.swift in Sources */,
 				299A914F2AF6DEC000D9C2D1 /* NavigationBar.swift in Sources */,
 				2990E4052AF9ACEF0001617A /* ButtonStyle.swift in Sources */,
 				29BD87102B0097580082241D /* AddWineSmellView.swift in Sources */,

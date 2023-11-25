@@ -12,6 +12,9 @@ import SwiftUI
 final class User {
     @Attribute(.unique) var id = UUID()
     var name: String
+    @Attribute(.externalStorage) var image: Data?
+    
+    @Relationship(deleteRule: .cascade) var wineNotes: [WineNote]?
 
     init(name: String) {
         self.name = name

@@ -10,34 +10,22 @@ import SwiftUI
 
 @Model
 final class WineNote {
-    var name: String
-    var date: Date
-    var type: WineType
-    @Attribute(.externalStorage) var image: Data
-    var color: WineColor
-    var scents: [WineScent]
-    var taste: [Double]
-    var think: String
-    var rating: Double
+    var name: String = ""
+    var date: Date = Date()
+    var type: WineType = wineTypes[2]
+    @Attribute(.externalStorage) var image: Data?
+    var color: WineColor = wineColors[0]
+    var scents: [WineScent] = []
+    var taste: [Double] = [0, 0, 0, 0, 0]
+    var think: String = ""
+    var rating: Double = 0.0
     
-    init(
-        name: String = "",
-        date: Date = .now,
-        type: WineType = wineTypes[2],
-        image: Data,
-        color: WineColor = wineColors[0],
-        scents: [WineScent] = [],
-        taste: [Double] = [0, 0, 0, 0, 0],
-        think: String = "",
-        rating: Double = 0.0
-    ) {
+    init(name: String, date: Date, type: WineType, image: Data? = nil, color: WineColor, think: String, rating: Double) {
         self.name = name
         self.date = date
         self.type = type
         self.image = image
         self.color = color
-        self.scents = scents
-        self.taste = taste
         self.think = think
         self.rating = rating
     }
