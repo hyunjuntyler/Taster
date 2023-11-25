@@ -50,6 +50,7 @@
 		29BD87162B00B0A30082241D /* AddNoteCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD87152B00B0A30082241D /* AddNoteCompleteView.swift */; };
 		29BD87182B00BD8D0082241D /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD87172B00BD8D0082241D /* Rating.swift */; };
 		29BD871A2B00F15D0082241D /* RadarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD87192B00F15D0082241D /* RadarChart.swift */; };
+		F04B4FC22B11A9530000047D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04B4FC12B11A9530000047D /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +99,8 @@
 		29BD87152B00B0A30082241D /* AddNoteCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteCompleteView.swift; sourceTree = "<group>"; };
 		29BD87172B00BD8D0082241D /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
 		29BD87192B00F15D0082241D /* RadarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarChart.swift; sourceTree = "<group>"; };
+		F04B4FC12B11A9530000047D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F04B4FC32B11ACAD0000047D /* LookSmellTaste.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LookSmellTaste.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +161,7 @@
 		299A91222AF6AD6C00D9C2D1 /* LookSmellTaste */ = {
 			isa = PBXGroup;
 			children = (
+				F04B4FC32B11ACAD0000047D /* LookSmellTaste.entitlements */,
 				299A91412AF6C07900D9C2D1 /* Info.plist */,
 				299A91362AF6BFAB00D9C2D1 /* Source */,
 				299A91372AF6BFD900D9C2D1 /* Resource */,
@@ -301,6 +305,7 @@
 		29B388C12B02A9B200E3942D /* SwiftData */ = {
 			isa = PBXGroup;
 			children = (
+				F04B4FC12B11A9530000047D /* User.swift */,
 				293FD1F72AFB426F00623B23 /* WineNote.swift */,
 			);
 			path = SwiftData;
@@ -415,6 +420,7 @@
 				299A91622AF757F000D9C2D1 /* NextButton.swift in Sources */,
 				299A91322AF6B1FF00D9C2D1 /* NoteView.swift in Sources */,
 				299A91242AF6AD6C00D9C2D1 /* LookSmellTasteApp.swift in Sources */,
+				F04B4FC22B11A9530000047D /* User.swift in Sources */,
 				2949F2942AFA9593005AFEFC /* WineModel.swift in Sources */,
 				29431F992AF8654300BE17F1 /* NoteEnvironment.swift in Sources */,
 				299A915E2AF74C6F00D9C2D1 /* AddNoteView.swift in Sources */,
@@ -548,6 +554,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LookSmellTaste/LookSmellTaste.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LookSmellTaste/Preview Content\"";
@@ -584,6 +591,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LookSmellTaste/LookSmellTaste.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LookSmellTaste/Preview Content\"";
