@@ -17,13 +17,20 @@ struct NavigationTitle: View {
     var scrollOffset = 0.0
     
     var body: some View {
-        Text(type.rawValue)
-            .font(.gmarketSansTitle)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .scaleEffect(min(1 + scrollOffset / 300, 1.2), anchor: .leading)
-            .padding(.top, 10)
-            .opacity(scrollOffset > -15 ? 1 : 0)
-            .padding(.leading, 20)
+        HStack {
+            Text(type.rawValue)
+                .font(.gmarketSansTitle)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .scaleEffect(min(1 + scrollOffset / 300, 1.2), anchor: .leading)
+            Circle()
+                .frame(width: 25)
+                .foregroundStyle(.gray.opacity(0.5))
+                .scaleEffect(min(1 + scrollOffset / 300, 1.2), anchor: .trailing)
+        }
+        .padding(.top, 10)
+        .opacity(scrollOffset > -15 ? 1 : 0)
+        .padding(.leading, 20)
+        .padding(.trailing, 15)
     }
 }
 
@@ -32,19 +39,27 @@ struct InlineNavigationTitle: View {
     var scrollOffset = -40.0
     
     var body: some View {
-        Text(type.rawValue)
-            .font(.gmarketSansTitle)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .scaleEffect(0.95, anchor: .leading)
-            .padding(.leading, 20)
-            .background {
-                Rectangle()
-                    .foregroundStyle(.ultraThinMaterial)
-                    .ignoresSafeArea()
-            }
-            .padding(.top, -5)
-            .frame(maxHeight: .infinity, alignment: .top)
-            .opacity(scrollOffset < -14.9 ? 1 : 0)
+        HStack {
+            Text(type.rawValue)
+                .font(.gmarketSansTitle)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .scaleEffect(0.95, anchor: .leading)
+            Circle()
+                .frame(width: 25)
+                .foregroundStyle(.gray.opacity(0.5))
+                .scaleEffect(0.95, anchor: .trailing)
+        }
+        .padding(.leading, 20)
+        .padding(.trailing, 15)
+        .padding(.bottom, 3)
+        .background {
+            Rectangle()
+                .foregroundStyle(.ultraThinMaterial)
+                .ignoresSafeArea()
+        }
+        .padding(.top, -5)
+        .frame(maxHeight: .infinity, alignment: .top)
+        .opacity(scrollOffset < -14.9 ? 1 : 0)
     }
 }
 
