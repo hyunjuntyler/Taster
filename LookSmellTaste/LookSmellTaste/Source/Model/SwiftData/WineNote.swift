@@ -5,8 +5,8 @@
 //  Created by hyunjun on 11/8/23.
 //
 
-import SwiftData
 import SwiftUI
+import SwiftData
 
 @Model
 final class WineNote {

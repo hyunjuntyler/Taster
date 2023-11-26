@@ -11,7 +11,7 @@ struct PreparingContent: View {
     var body: some View {
         VStack {
             Text("👨🏻‍💻")
-                .font(.tossFaceLarge)
+                .font(.tossFaceXLarge)
                 .padding(.bottom)
             Text("콘텐츠 준비중")
                 .font(.gmarketSansBody)

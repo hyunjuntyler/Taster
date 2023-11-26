@@ -50,6 +50,9 @@
 		29BD87162B00B0A30082241D /* AddNoteCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD87152B00B0A30082241D /* AddNoteCompleteView.swift */; };
 		29BD87182B00BD8D0082241D /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD87172B00BD8D0082241D /* Rating.swift */; };
 		29BD871A2B00F15D0082241D /* RadarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD87192B00F15D0082241D /* RadarChart.swift */; };
+		F003F5D92B1234AC003D2499 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F003F5D82B1234AC003D2499 /* SignInView.swift */; };
+		F003F5DB2B1318A6003D2499 /* ThumbnailPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F003F5DA2B1318A6003D2499 /* ThumbnailPicker.swift */; };
+		F003F5DF2B13299E003D2499 /* SignInPermissionAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F003F5DE2B13299E003D2499 /* SignInPermissionAlert.swift */; };
 		F04B4FC22B11A9530000047D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04B4FC12B11A9530000047D /* User.swift */; };
 		F04B4FC52B11AF190000047D /* CoffeeNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04B4FC42B11AF190000047D /* CoffeeNote.swift */; };
 		F04B4FC72B11AF210000047D /* CocktailNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04B4FC62B11AF210000047D /* CocktailNote.swift */; };
@@ -101,6 +104,9 @@
 		29BD87152B00B0A30082241D /* AddNoteCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteCompleteView.swift; sourceTree = "<group>"; };
 		29BD87172B00BD8D0082241D /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
 		29BD87192B00F15D0082241D /* RadarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarChart.swift; sourceTree = "<group>"; };
+		F003F5D82B1234AC003D2499 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		F003F5DA2B1318A6003D2499 /* ThumbnailPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailPicker.swift; sourceTree = "<group>"; };
+		F003F5DE2B13299E003D2499 /* SignInPermissionAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPermissionAlert.swift; sourceTree = "<group>"; };
 		F04B4FC12B11A9530000047D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F04B4FC32B11ACAD0000047D /* LookSmellTaste.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LookSmellTaste.entitlements; sourceTree = "<group>"; };
 		F04B4FC42B11AF190000047D /* CoffeeNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeNote.swift; sourceTree = "<group>"; };
@@ -129,6 +135,7 @@
 		2949F28F2AFA5599005AFEFC /* AddWineNoteView */ = {
 			isa = PBXGroup;
 			children = (
+				2921B0142B02673B00533A83 /* AddWineView.swift */,
 				293FD1F32AFB096000623B23 /* AddWineLookView.swift */,
 				29BD870F2B0097580082241D /* AddWineSmellView.swift */,
 				29BD87112B00AE3C0082241D /* AddWineTasteView.swift */,
@@ -185,6 +192,7 @@
 		299A91352AF6B2BE00D9C2D1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F003F5D72B12348D003D2499 /* User */,
 				299A91542AF7217300D9C2D1 /* Note */,
 				299A91492AF6C84100D9C2D1 /* Component */,
 			);
@@ -280,7 +288,6 @@
 			isa = PBXGroup;
 			children = (
 				299A915D2AF74C6F00D9C2D1 /* AddNoteView.swift */,
-				2921B0142B02673B00533A83 /* AddWineView.swift */,
 				29BD87152B00B0A30082241D /* AddNoteCompleteView.swift */,
 				2949F28F2AFA5599005AFEFC /* AddWineNoteView */,
 			);
@@ -315,6 +322,16 @@
 				F04B4FC62B11AF210000047D /* CocktailNote.swift */,
 			);
 			path = SwiftData;
+			sourceTree = "<group>";
+		};
+		F003F5D72B12348D003D2499 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				F003F5D82B1234AC003D2499 /* SignInView.swift */,
+				F003F5DA2B1318A6003D2499 /* ThumbnailPicker.swift */,
+				F003F5DE2B13299E003D2499 /* SignInPermissionAlert.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -406,11 +423,14 @@
 				299A91432AF6C20300D9C2D1 /* FontExtension.swift in Sources */,
 				29BD87162B00B0A30082241D /* AddNoteCompleteView.swift in Sources */,
 				2990E4022AF9A21E0001617A /* ContentUnavailable.swift in Sources */,
+				F003F5DF2B13299E003D2499 /* SignInPermissionAlert.swift in Sources */,
+				F003F5D92B1234AC003D2499 /* SignInView.swift in Sources */,
 				2990E4072AF9E11D0001617A /* AddNoteButton.swift in Sources */,
 				29B388BB2B0295E300E3942D /* Confetti.swift in Sources */,
 				299A91262AF6AD6C00D9C2D1 /* ContentView.swift in Sources */,
 				29BD87142B00AE9E0082241D /* AddWineThinkView.swift in Sources */,
 				29B388BF2B02963B00E3942D /* ConfettiSample.swift in Sources */,
+				F003F5DB2B1318A6003D2499 /* ThumbnailPicker.swift in Sources */,
 				29B388BD2B0295FB00E3942D /* ConfettiShapes.swift in Sources */,
 				29B388B22B0276D100E3942D /* ImagePicker.swift in Sources */,
 				299A91532AF71E9A00D9C2D1 /* ViewExtension.swift in Sources */,
@@ -572,7 +592,7 @@
 				INFOPLIST_FILE = LookSmellTaste/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "특별한 순간을 사진으로도 남겨보세요! 추가한 사진은 썸네일 이외의 용도로 사용되지 않아요.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -609,7 +629,7 @@
 				INFOPLIST_FILE = LookSmellTaste/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "특별한 순간을 사진으로도 남겨보세요! 추가한 사진은 썸네일 이외의 용도로 사용되지 않아요.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

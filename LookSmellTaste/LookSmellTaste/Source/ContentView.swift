@@ -14,11 +14,12 @@ struct ContentView: View {
     }
     
     var body: some View {
-        ZStack {
-            Color.appBackground.ignoresSafeArea()
-            NoteView()
-        }
-        .ignoresSafeArea(edges: .bottom)
+//        ZStack {
+//            Color.appBackground.ignoresSafeArea()
+//            NoteView()
+//        }
+//        .ignoresSafeArea(edges: .bottom)
+        SignInView()
     }
 }
 

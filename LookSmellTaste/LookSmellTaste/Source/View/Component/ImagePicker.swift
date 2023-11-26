@@ -15,7 +15,6 @@ struct ImagePicker: View {
     
     @State var showCamera = false
     @State var showImagePicker = false
-    @State var permissionDenied = false
     
     var defaultImageName: String = ""
     
