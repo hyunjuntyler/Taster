@@ -13,10 +13,12 @@ struct NoteView: View {
     
     var body: some View {
         ScrollView {
-            NavigationTitle(type: .note, scrollOffset: scrollOffset)
+            Color.clear
+                .frame(height: 0)
                 .onScrollOffsetChanged { offset in
                     scrollOffset = offset
                 }
+            NavigationTitle(type: .note, scrollOffset: scrollOffset)
             ContentUnavailable(type: .note)
                 .padding(.top, 250)
         }

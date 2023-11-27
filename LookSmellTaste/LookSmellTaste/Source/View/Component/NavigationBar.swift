@@ -14,6 +14,9 @@ enum ViewType: String {
 }
 
 struct NavigationTitle: View {
+    @Query private var users: [User]
+    private var user: User? { users.first }
+    
     var type: ViewType = .note
     var scrollOffset = 0.0
     
@@ -23,10 +26,21 @@ struct NavigationTitle: View {
                 .font(.gmarketSansTitle)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .scaleEffect(min(1 + scrollOffset / 300, 1.2), anchor: .leading)
-            Circle()
-                .frame(width: 25)
-                .foregroundStyle(.gray.opacity(0.5))
-                .scaleEffect(min(1 + scrollOffset / 300, 1.2), anchor: .trailing)
+            if let user = user {
+                if let image = user.image {
+                    Circle()
+                        .foregroundStyle(.gray.opacity(0.5))
+                } else {
+                    ZStack {
+                        Circle()
+                            .foregroundStyle(.gray.opacity(0.5))
+                        Text(user.icon)
+                            .font(.tossFaceSmall)
+                    }
+                    .frame(width: 25)
+                    .scaleEffect(min(1 + scrollOffset / 300, 1.2), anchor: .trailing)
+                }
+            }
         }
         .padding(.top, 10)
         .opacity(scrollOffset > -15 ? 1 : 0)
@@ -36,6 +50,9 @@ struct NavigationTitle: View {
 }
 
 struct InlineNavigationTitle: View {
+    @Query private var users: [User]
+    private var user: User? { users.first }
+    
     var type: ViewType = .note
     var scrollOffset = -40.0
     
@@ -44,11 +61,20 @@ struct InlineNavigationTitle: View {
             Text(type.rawValue)
                 .font(.gmarketSansTitle)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .scaleEffect(0.95, anchor: .leading)
-            Circle()
-                .frame(width: 25)
-                .foregroundStyle(.gray.opacity(0.5))
-                .scaleEffect(0.95, anchor: .trailing)
+            if let user = user {
+                if let image = user.image {
+                    Circle()
+                        .foregroundStyle(.gray.opacity(0.5))
+                } else {
+                    ZStack {
+                        Circle()
+                            .foregroundStyle(.gray.opacity(0.5))
+                        Text(user.icon)
+                            .font(.tossFaceSmall)
+                    }
+                    .frame(width: 25)
+                }
+            }
         }
         .padding(.leading, 20)
         .padding(.trailing, 15)
