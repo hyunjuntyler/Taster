@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct SignInView: View {
+    @Environment(\.modelContext) private var context
     @State private var moveToInput = false
     @State private var moveToThumbnail = false
     @State private var permissionDenied = false
     
     @State private var name = ""
-    @State private var icon: String?
+    @State private var icon = ""
     @State private var image: UIImage?
 
     @FocusState var isFocused
@@ -77,8 +78,16 @@ struct SignInView: View {
                     }
                 }
             } else {
-                NextButton(label: "시작하기", disabled: name.isEmpty || image == nil && icon == nil) {
+                NextButton(label: "시작하기", disabled: name.isEmpty || image == nil && icon == "") {
                     withAnimation {
+                        if let data = image?.pngData() {
+                            let user = User(name: name, icon: icon)
+                            user.image = data
+                            context.insert(user)
+                        } else {
+                            let user = User(name: name, icon: icon)
+                            context.insert(user)
+                        }
                     }
                 }
             }

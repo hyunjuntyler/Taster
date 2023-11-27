@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
     
@@ -13,13 +14,18 @@ struct ContentView: View {
         UINavigationBar.appearance().shadowImage = UIImage()
     }
     
+    @Query private var user: [User]
+    
     var body: some View {
-//        ZStack {
-//            Color.appBackground.ignoresSafeArea()
-//            NoteView()
-//        }
-//        .ignoresSafeArea(edges: .bottom)
-        SignInView()
+        if user.isEmpty {
+            SignInView()
+        } else {
+            ZStack {
+                Color.appBackground.ignoresSafeArea()
+                NoteView()
+            }
+            .ignoresSafeArea(edges: .bottom)
+        }
     }
 }
 

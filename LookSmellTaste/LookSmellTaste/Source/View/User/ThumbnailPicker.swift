@@ -14,7 +14,7 @@ struct ThumbnailPicker: View {
     @State private var showIconPicker = false
     
     @Binding var selectedImage: UIImage?
-    @Binding var selectedIcon: String?
+    @Binding var selectedIcon: String
     @Binding var permissionDenied: Bool
     
     private let icons = ["😃", "😆", "😚", "🤓", "🥳", "👨", "👩‍🦰", "👧", "👦", "🧑‍💻", "💦", "🍷", "🥃", "🍸", "🍹", "🩷", "❤️", "💚", "🩵", "💙", "⚽️", "🇰🇷", "👻", "🤖",  "🐱", "🐰", "🐶", "🦊", "🐻", "🐼", "🐻‍❄️", "🐯", "🐮", "🐷", "🦋", "🐣", "🐥", "🪶", "🎄", "🌱", "🌞", "🌙", "🌼", "⭐️", "✨"]
@@ -34,10 +34,8 @@ struct ThumbnailPicker: View {
                     Circle()
                         .frame(width: 60, height: 60)
                         .foregroundStyle(.appPickerGray.opacity(0.5))
-                    if let icon = selectedIcon {
-                        Text(icon)
-                            .font(.tossFaceLarge)
-                    }
+                    Text(selectedIcon)
+                        .font(.tossFaceLarge)
                 }
             }
             

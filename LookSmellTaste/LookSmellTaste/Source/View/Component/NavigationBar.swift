@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 enum ViewType: String {
     case note = "노트"
