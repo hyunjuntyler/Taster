@@ -10,6 +10,7 @@ import SwiftData
 
 @Model
 final class WineNote {
+    var user: User?
     var name: String = ""
     var date: Date = Date()
     var type: WineType = wineTypes[2]
@@ -20,12 +21,13 @@ final class WineNote {
     var think: String = ""
     var rating: Double = 0.0
     
-    init(name: String, date: Date, type: WineType, image: Data? = nil, color: WineColor, think: String, rating: Double) {
+    init(name: String, date: Date, type: WineType, color: WineColor, scents: [WineScent], taste: [Double], think: String, rating: Double) {
         self.name = name
         self.date = date
         self.type = type
-        self.image = image
         self.color = color
+        self.scents = scents
+        self.taste = taste
         self.think = think
         self.rating = rating
     }

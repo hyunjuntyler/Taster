@@ -10,9 +10,9 @@ import SwiftData
 
 @Model
 final class User {
-    @Attribute(.unique) var id = UUID()
-    var name: String
-    var icon: String
+    var id = UUID()
+    var name: String = ""
+    var icon: String = ""
     @Attribute(.externalStorage) var image: Data?
     
     @Relationship(deleteRule: .cascade) var wineNotes: [WineNote]?
