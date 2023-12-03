@@ -10,21 +10,25 @@ import SwiftUI
 struct NoteView: View {
     @Bindable private var noteEnvironment = NoteEnvironment()
     @State private var scrollOffset = 0.0
+    @Binding var navigateToUserView: Bool
     
     var body: some View {
         ScrollView {
-            Color.clear
-                .frame(height: 0)
-                .onScrollOffsetChanged { offset in
-                    scrollOffset = offset
-                }
-            NavigationTitle(type: .note, scrollOffset: scrollOffset)
+            ZStack {
+                Color.clear
+                    .frame(height: 0)
+                    .onScrollOffsetChanged { offset in
+                        scrollOffset = offset
+                    }
+                
+                NavigationTitle(type: .note, scrollOffset: scrollOffset, navigateToUserView: $navigateToUserView)
+            }
             ContentUnavailable(type: .note)
                 .padding(.top, 250)
         }
         .coordinateSpace(name: "scroll")
         .overlay {
-            InlineNavigationTitle(type: .note, scrollOffset: scrollOffset)
+            InlineNavigationTitle(type: .note, scrollOffset: scrollOffset, navigateToUserView: $navigateToUserView)
         }
         .overlay(alignment: .bottomTrailing) {
             addButton
@@ -46,8 +50,7 @@ struct NoteView: View {
                 .foregroundStyle(.appBackground, .accent)
                 .shadow(radius: 1)
         }
-        .padding(20)
-        .padding(.bottom, 10)
+        .padding(.trailing, 20)
         .buttonStyle(PressButtonStyle())
     }
 }
@@ -55,7 +58,7 @@ struct NoteView: View {
 #Preview {
     ZStack {
         Color.appBackground.ignoresSafeArea()
-        NoteView()
+        NoteView(navigateToUserView: .constant(false))
     }
     .ignoresSafeArea(edges: .bottom)
 }

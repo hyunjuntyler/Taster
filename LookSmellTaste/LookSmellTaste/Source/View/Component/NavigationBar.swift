@@ -18,32 +18,49 @@ struct NavigationTitle: View {
     private var user: User? { users.first }
     
     var type: ViewType = .note
-    var scrollOffset = 0.0
+    var scrollOffset = 11.0
+    
+    @Binding var navigateToUserView: Bool
     
     var body: some View {
         HStack {
             Text(type.rawValue)
-                .font(.gmarketSansTitle)
+                .font(.gmarketSansLargeTitle)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .scaleEffect(min(1 + scrollOffset / 300, 1.2), anchor: .leading)
             if let user = user {
-                if let image = user.image {
-                    Circle()
-                        .foregroundStyle(.gray.opacity(0.5))
-                } else {
-                    ZStack {
-                        Circle()
-                            .foregroundStyle(.gray.opacity(0.5))
-                        Text(user.icon)
-                            .font(.tossFaceSmall)
+                if let data = user.image {
+                    if let image = UIImage(data: data) {
+                        Button {
+                            navigateToUserView = true
+                        } label: {
+                            Image(uiImage: image)
+                                .resizable()
+                                .scaledToFit()
+                                .mask {
+                                    Circle()
+                                        .frame(width: 30)
+                                }
+                        }
                     }
-                    .frame(width: 25)
-                    .scaleEffect(min(1 + scrollOffset / 300, 1.2), anchor: .trailing)
+                } else {
+                    Button {
+                        navigateToUserView = true
+                    } label: {
+                        ZStack {
+                            Circle()
+                                .foregroundStyle(.gray.opacity(0.5))
+                            Text(user.icon)
+                                .font(.tossFaceMedium)
+                        }
+                        .frame(width: 30)
+                        .scaleEffect(min(1 + scrollOffset / 300, 1.2), anchor: .trailing)
+                    }
                 }
             }
         }
         .padding(.top, 10)
-        .opacity(scrollOffset > -15 ? 1 : 0)
+        .opacity(scrollOffset > 10 ? 1 : 0)
         .padding(.leading, 20)
         .padding(.trailing, 15)
     }
@@ -52,27 +69,44 @@ struct NavigationTitle: View {
 struct InlineNavigationTitle: View {
     @Query private var users: [User]
     private var user: User? { users.first }
-    
+        
     var type: ViewType = .note
-    var scrollOffset = -40.0
+    var scrollOffset = 0.0
+    
+    @Binding var navigateToUserView: Bool
     
     var body: some View {
         HStack {
             Text(type.rawValue)
-                .font(.gmarketSansTitle)
+                .font(.gmarketSansLargeTitle)
                 .frame(maxWidth: .infinity, alignment: .leading)
             if let user = user {
-                if let image = user.image {
-                    Circle()
-                        .foregroundStyle(.gray.opacity(0.5))
-                } else {
-                    ZStack {
-                        Circle()
-                            .foregroundStyle(.gray.opacity(0.5))
-                        Text(user.icon)
-                            .font(.tossFaceSmall)
+                if let data = user.image {
+                    if let image = UIImage(data: data) {
+                        Button {
+                            navigateToUserView = true
+                        } label: {
+                            Image(uiImage: image)
+                                .resizable()
+                                .scaledToFit()
+                                .mask {
+                                    Circle()
+                                        .frame(width: 30)
+                                }
+                        }
                     }
-                    .frame(width: 25)
+                } else {
+                    Button {
+                        navigateToUserView = true
+                    } label: {
+                        ZStack {
+                            Circle()
+                                .foregroundStyle(.gray.opacity(0.5))
+                            Text(user.icon)
+                                .font(.tossFaceMedium)
+                        }
+                        .frame(width: 30)
+                    }
                 }
             }
         }
@@ -84,17 +118,16 @@ struct InlineNavigationTitle: View {
                 .foregroundStyle(.ultraThinMaterial)
                 .ignoresSafeArea()
         }
-        .padding(.top, -5)
         .frame(maxHeight: .infinity, alignment: .top)
-        .opacity(scrollOffset < -14.9 ? 1 : 0)
+        .opacity(scrollOffset < 10.1 ? 1 : 0)
     }
 }
 
 #Preview {
     ScrollView {
-        NavigationTitle()
+        NavigationTitle(navigateToUserView: .constant(false))
     }
     .overlay {
-        InlineNavigationTitle()
-    }
+        InlineNavigationTitle(navigateToUserView: .constant(false))
+   }
 }

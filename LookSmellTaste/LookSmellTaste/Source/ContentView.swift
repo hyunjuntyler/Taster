@@ -15,14 +15,21 @@ struct ContentView: View {
     }
     
     @Query private var user: [User]
+    @State private var navigateToUserView = false
+    
     
     var body: some View {
         if user.isEmpty {
             SignInView()
         } else {
-            ZStack {
-                Color.appBackground.ignoresSafeArea()
-                NoteView()
+            NavigationStack {
+                ZStack {
+                    Color.appBackground.ignoresSafeArea()
+                    NoteView(navigateToUserView: $navigateToUserView)
+                }
+                .navigationDestination(isPresented: $navigateToUserView) {
+                    Text("UserView")
+                }
             }
             .ignoresSafeArea(edges: .bottom)
         }
