@@ -8,9 +8,19 @@
 import SwiftUI
 import SwiftData
 
-struct WineNoteView: View {
-    @Query(sort: \WineNote.date, order: .reverse) private var wineNotes: [WineNote]
+enum SortOption {
+    case date
+    case rating
+}
 
+struct WineNoteView: View {
+    @Query private var wineNotes: [WineNote]
+    @State private var sortOption: SortOption = .date
+    
+    private var sortedWineNotes: [WineNote] {
+        wineNotes.sort(on: sortOption)
+    }
+    
     var body: some View {
         ZStack {
             Color.appBackground.ignoresSafeArea()
@@ -18,15 +28,14 @@ struct WineNoteView: View {
             ScrollView {
                 VStack(alignment: .leading) {
                     HStack {
-                        Text("와인 노트")
-                            .font(.gmarketSansTitle3)
+                        Text("전체 와인 노트")
+                            .font(.gmarketSansTitle)
                         Spacer()
                     }
                     .padding(.horizontal, 5)
+                    
                     LazyVStack {
-                        let recentWineNotes = wineNotes.prefix(3)
-                        
-                        ForEach(recentWineNotes) { note in
+                        ForEach(sortedWineNotes) { note in
                             NavigationLink {
                                 Text(note.name)
                             } label: {
@@ -68,13 +77,47 @@ struct WineNoteView: View {
                     }
                 }
                 .padding(.horizontal)
-                .padding(.top)
             }
+        }
+        .navigationTitle("")
+        .toolbar {
+            Button {
+                if sortOption == .date {
+                    sortOption = .rating
+                } else {
+                    sortOption = .date
+                }
+            } label: {
+                VStack {
+                    Image(systemName: sortOption == .date ? "clock.fill" : "star.fill")
+                        .font(.footnote)
+                        .fontWeight(.semibold)
+                        .contentTransition(.symbolEffect(.replace))
+                        .frame(height: 20)
+                    Text(sortOption == .date ? "최신순" : "점수순")
+                        .font(.gmarketSansCaption2)
+                }
+                .foregroundStyle(.accent)
+            }
+            .buttonStyle(PressButtonStyle())
+        }
+    }
+}
+
+private extension [WineNote] {
+    func sort(on option: SortOption) -> [WineNote] {
+        switch option {
+        case .date:
+            self.sorted(by: { $0.date > $1.date })
+        case .rating:
+            self.sorted(by: { $0.rating > $1.rating })
         }
     }
 }
 
 #Preview {
-    WineNoteView()
-        .modelContainer(previewContainer)
+    NavigationStack {
+        WineNoteView()
+            .modelContainer(previewContainer)
+    }
 }

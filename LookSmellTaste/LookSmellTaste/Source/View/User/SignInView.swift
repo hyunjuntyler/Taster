@@ -80,7 +80,7 @@ struct SignInView: View {
             } else {
                 NextButton(label: "시작하기", disabled: name.isEmpty || image == nil && icon == "") {
                     withAnimation {
-                        if let data = image?.pngData() {
+                        if let data = image?.jpegData(compressionQuality: 0.1) {
                             let user = User(name: name, icon: icon)
                             user.image = data
                             context.insert(user)

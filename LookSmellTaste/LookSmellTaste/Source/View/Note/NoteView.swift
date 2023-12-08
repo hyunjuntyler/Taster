@@ -76,7 +76,7 @@ struct NoteView: View {
                             .font(.gmarketSansTitle3)
                         Spacer()
                         NavigationLink {
-                            
+                            WineNoteView()
                         } label: {
                             Text("모두보기")
                                 .font(.gmarketSansCallout)

@@ -130,7 +130,7 @@ struct UserEditView: View {
                         showUserEditSheet = false
                         if let user = user {
                             user.name = name
-                            if let data = image?.pngData() {
+                            if let data = image?.jpegData(compressionQuality: 0.1) {
                                 user.image = data
                             } else {
                                 user.image = nil
