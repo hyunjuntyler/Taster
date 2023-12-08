@@ -27,8 +27,9 @@ struct ContentView: View {
                     Color.appBackground.ignoresSafeArea()
                     NoteView(navigateToUserView: $navigateToUserView)
                 }
+                .navigationTitle("")
                 .navigationDestination(isPresented: $navigateToUserView) {
-                    Text("UserView")
+                    UserView(navigateToUserView: $navigateToUserView)
                 }
             }
             .ignoresSafeArea(edges: .bottom)
@@ -36,6 +37,7 @@ struct ContentView: View {
     }
 }
 
-#Preview {
+#Preview { @MainActor in
     ContentView()
+        .modelContainer(previewContainer)
 }

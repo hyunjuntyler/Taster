@@ -33,10 +33,12 @@ struct NavigationTitle: View {
                     if let image = UIImage(data: data) {
                         Button {
                             navigateToUserView = true
+                            Haptic.impact(style: .soft)
                         } label: {
                             Image(uiImage: image)
                                 .resizable()
-                                .scaledToFit()
+                                .scaledToFill()
+                                .frame(width: 30, height: 30)
                                 .mask {
                                     Circle()
                                         .frame(width: 30)
@@ -46,23 +48,27 @@ struct NavigationTitle: View {
                 } else {
                     Button {
                         navigateToUserView = true
+                        Haptic.impact(style: .soft)
                     } label: {
                         ZStack {
                             Circle()
-                                .foregroundStyle(.gray.opacity(0.5))
+                                .foregroundStyle(.appListBoxBackground)
                             Text(user.icon)
                                 .font(.tossFaceMedium)
                         }
                         .frame(width: 30)
-                        .scaleEffect(min(1 + scrollOffset / 300, 1.2), anchor: .trailing)
+                        .scaleEffect(min(1 + scrollOffset / 300, 1.2), anchor: .center)
                     }
                 }
+            } else {
+                Circle()
+                    .foregroundStyle(.gray.opacity(0.5))
+                    .frame(width: 30)
             }
         }
         .padding(.top, 10)
         .opacity(scrollOffset > 10 ? 1 : 0)
-        .padding(.leading, 20)
-        .padding(.trailing, 15)
+        .padding(.horizontal, 20)
     }
 }
 
@@ -85,10 +91,12 @@ struct InlineNavigationTitle: View {
                     if let image = UIImage(data: data) {
                         Button {
                             navigateToUserView = true
+                            Haptic.impact(style: .soft)
                         } label: {
                             Image(uiImage: image)
                                 .resizable()
-                                .scaledToFit()
+                                .scaledToFill()
+                                .frame(width: 30, height: 30)
                                 .mask {
                                     Circle()
                                         .frame(width: 30)
@@ -98,20 +106,24 @@ struct InlineNavigationTitle: View {
                 } else {
                     Button {
                         navigateToUserView = true
+                        Haptic.impact(style: .soft)
                     } label: {
                         ZStack {
                             Circle()
-                                .foregroundStyle(.gray.opacity(0.5))
+                                .foregroundStyle(.appListBoxBackground)
                             Text(user.icon)
                                 .font(.tossFaceMedium)
                         }
                         .frame(width: 30)
                     }
                 }
+            } else {
+                Circle()
+                    .foregroundStyle(.gray.opacity(0.5))
+                    .frame(width: 30)
             }
         }
-        .padding(.leading, 20)
-        .padding(.trailing, 15)
+        .padding(.horizontal, 20)
         .padding(.bottom, 3)
         .background {
             Rectangle()
@@ -123,11 +135,13 @@ struct InlineNavigationTitle: View {
     }
 }
 
-#Preview {
+#Preview { @MainActor in
     ScrollView {
         NavigationTitle(navigateToUserView: .constant(false))
+            .modelContainer(previewContainer)
     }
     .overlay {
         InlineNavigationTitle(navigateToUserView: .constant(false))
+            .modelContainer(previewContainer)
    }
 }

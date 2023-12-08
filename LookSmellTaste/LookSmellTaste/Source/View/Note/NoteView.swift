@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct NoteView: View {
+    @Query private var wineNotes: [WineNote]
     @Bindable private var noteEnvironment = NoteEnvironment()
     @State private var scrollOffset = 0.0
     @Binding var navigateToUserView: Bool
@@ -23,8 +25,37 @@ struct NoteView: View {
                 
                 NavigationTitle(type: .note, scrollOffset: scrollOffset, navigateToUserView: $navigateToUserView)
             }
-            ContentUnavailable(type: .note)
-                .padding(.top, 250)
+            if isNoteEmpty() {
+                ContentUnavailable(type: .note)
+                    .padding(.top, 250)
+            }
+            
+            if !wineNotes.isEmpty {
+                Text("와인 노트")
+                ForEach(wineNotes) { note in
+                    if let data = note.image {
+                        if let image = UIImage(data: data) {
+                            Image(uiImage: image)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 80, height: 80)
+                                .clipShape(
+                                    RoundedRectangle(cornerRadius: 12, style: .continuous)
+                                )
+                        }
+                    } else {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 12, style: .continuous)
+                                .frame(width: 80, height: 80)
+                                .foregroundStyle(.appPickerGray)
+                            Image(note.type.typeImageName)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height: 60)
+                        }
+                    }
+                }
+            }
         }
         .coordinateSpace(name: "scroll")
         .overlay {
@@ -53,12 +84,16 @@ struct NoteView: View {
         .padding(.trailing, 20)
         .buttonStyle(PressButtonStyle())
     }
+    
+    private func isNoteEmpty() -> Bool {
+        wineNotes.isEmpty
+    }
 }
 
-#Preview {
+#Preview { @MainActor in
     ZStack {
         Color.appBackground.ignoresSafeArea()
         NoteView(navigateToUserView: .constant(false))
+            .modelContainer(previewContainer)
     }
-    .ignoresSafeArea(edges: .bottom)
 }

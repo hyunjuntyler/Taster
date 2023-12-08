@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AddWineLookView: View {
+    @Bindable private var observable = WineNoteObservable.shared
     @Environment(NoteEnvironment.self) var noteEnvironment: NoteEnvironment
     @State private var columns = Array(repeating: GridItem(.flexible()), count: 4)
     @State private var navigate = false
@@ -61,6 +62,7 @@ struct AddWineLookView: View {
                     .padding(.horizontal)
                 }
                 NextButton(disabled: false) {
+                    observable.color = color
                     Haptic.impact(style: .soft)
                     navigate = true
                 }

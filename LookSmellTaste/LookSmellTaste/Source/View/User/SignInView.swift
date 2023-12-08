@@ -146,7 +146,7 @@ struct SignInView: View {
     
     private var thumbnailInput: some View {
         VStack(alignment: .leading, spacing: 5) {
-            Text("썸네일고르기")
+            Text("썸네일")
                 .font(.gmarketSansTitle3)
                 .foregroundStyle(.tertiary)
                 .scaleEffect(0.8, anchor: .bottomLeading)

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AddWineThinkView: View {
+    @Bindable private var observable = WineNoteObservable.shared
     @Environment(NoteEnvironment.self) var noteEnvironment: NoteEnvironment
     @State private var showCompleteView = false
     @FocusState private var isFocused
@@ -83,6 +84,8 @@ struct AddWineThinkView: View {
                 }
                 NextButton(label: "작성 완료", disabled: false) {
                     isFocused = false
+                    observable.think = think
+                    observable.rating = rating
                     Haptic.impact(style: .soft)
                     withAnimation {
                         noteEnvironment.showCompleteView = true

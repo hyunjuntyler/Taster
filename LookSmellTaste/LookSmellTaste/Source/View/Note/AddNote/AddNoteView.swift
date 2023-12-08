@@ -113,7 +113,7 @@ struct AddNoteView: View {
                 AddNoteCompleteView()
                     .transition(.opacity.animation(.easeInOut(duration: 0.5)))
                     .onAppear {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                             noteEnvironment.addNote = false
                             noteEnvironment.showCompleteView = false
                         }

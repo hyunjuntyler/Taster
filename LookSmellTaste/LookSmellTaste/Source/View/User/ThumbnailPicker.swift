@@ -90,40 +90,47 @@ struct ThumbnailPicker: View {
         }
         .sheet(isPresented: $showIconPicker) {
             iconPicker
-                .presentationCornerRadius(16)
+                .presentationCornerRadius(24)
         }
     }
     
     private var iconPicker: some View {
-        ZStack {
-            Color.appSheetBackground.ignoresSafeArea()
-            VStack {
-                Text("원하시는 아이콘을 골라주세요")
-                    .font(.gmarketSansTitle3)
-                    .padding(.top, 30)
-                    .padding(.bottom)
-                ScrollView {
-                    LazyVGrid(columns: columns) {
-                        ForEach(icons, id: \.self) { icon in
-                            Button(icon) {
-                                Haptic.impact(style: .soft)
-                                selectedImage = nil
-                                selectedIcon = icon
-                                showIconPicker = false
+        NavigationStack {
+            ZStack {
+                Color.appSheetBackground.ignoresSafeArea()
+                VStack {
+                    Text("원하시는 아이콘을 골라주세요")
+                        .font(.gmarketSansTitle3)
+                        .padding(.bottom)
+                    ScrollView {
+                        LazyVGrid(columns: columns) {
+                            ForEach(icons, id: \.self) { icon in
+                                Button(icon) {
+                                    Haptic.impact(style: .soft)
+                                    selectedImage = nil
+                                    selectedIcon = icon
+                                    showIconPicker = false
+                                }
+                                .font(.tossFaceLarge)
+                                .padding(5)
+                                .buttonStyle(PressButtonStyle())
                             }
-                            .font(.tossFaceLarge)
-                            .padding(5)
-                            .buttonStyle(PressButtonStyle())
                         }
+                        .padding()
                     }
-                    .padding()
+                    .background {
+                        RoundedRectangle(cornerRadius: 16)
+                            .foregroundStyle(.appSheetBoxBackground)
+                    }
+                    .padding(.horizontal)
+                    .frame(maxHeight: .infinity, alignment: .top)
                 }
-                .background {
-                    RoundedRectangle(cornerRadius: 16)
-                        .foregroundStyle(.appSheetBoxBackground)
+            }
+            .toolbar {
+                CloseButton {
+                    showIconPicker = false
+                    Haptic.impact(style: .soft)
                 }
-                .padding(.horizontal)
-                .frame(maxHeight: .infinity, alignment: .top)
             }
         }
     }

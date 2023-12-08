@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AddWineSmellView: View {
+    @Bindable private var observable = WineNoteObservable.shared
     @Environment(NoteEnvironment.self) var noteEnvironment: NoteEnvironment
     @State private var columns = Array(repeating: GridItem(.flexible()), count: 5)
     @State private var navigate = false
@@ -64,6 +65,7 @@ struct AddWineSmellView: View {
                     .padding(.bottom)
                 }
                 NextButton(disabled: false) {
+                    observable.scents = scents
                     Haptic.impact(style: .soft)
                     navigate = true
                 }

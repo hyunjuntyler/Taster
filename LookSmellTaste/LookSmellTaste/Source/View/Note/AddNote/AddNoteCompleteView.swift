@@ -6,8 +6,14 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct AddNoteCompleteView: View {
+    @Environment(\.modelContext) private var context
+    @Bindable private var observable = WineNoteObservable.shared
+    @Query private var users: [User]
+    private var user: User? { users.first }
+    
     @State var counter = 1
     
     var body: some View {
@@ -17,7 +23,7 @@ struct AddNoteCompleteView: View {
                 .ignoresSafeArea()
             VStack {
                 Text("🎉")
-                    .font(.tossFaceXLarge)
+                    .font(.tossFaceXXLarge)
                     .padding(.bottom)
                 Text("성공적으로 기록되었어요")
                     .font(.gmarketSansTitle2)
@@ -25,15 +31,18 @@ struct AddNoteCompleteView: View {
             }
             .padding(.bottom, 100)
         }
+        .onDisappear {
+            saveNote()
+        }
     }
     
     private var confetti: some View {
         Confetti(counter: $counter,
                  num: 80,
-                 confettiSize: 6,
+                 confettiSize: 8,
                  rainHeight: UIScreen.main.bounds.height,
-                 openingAngle: .degrees(60),
-                 closingAngle: .degrees(120),
+                 openingAngle: .degrees(50),
+                 closingAngle: .degrees(130),
                  radius: UIScreen.main.bounds.width,
                  repetitions: 1,
                  repetitionInterval: 0.5)
@@ -43,8 +52,18 @@ struct AddNoteCompleteView: View {
                 }
             }
     }
+    
+    private func saveNote() {
+        let wineNote = WineNote(name: observable.name, date: observable.date, type: observable.type, color: observable.color, scents: observable.scents, taste: observable.taste, think: observable.think, rating: observable.rating)
+        
+        wineNote.user = user
+        wineNote.image = observable.image
+        
+        user?.wineNotes?.append(wineNote)
+    }
 }
 
 #Preview {
     AddNoteCompleteView()
+        .modelContainer(previewContainer)
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AddWineView: View {
+    @Bindable private var observable = WineNoteObservable.shared
     @State private var showDatePicker = false
     @State private var showWindTypePicker = false
     @FocusState private var isFocused
@@ -131,29 +132,27 @@ struct AddWineView: View {
                 .padding(.leading)
                 .padding(.top, 5)
             ImagePicker(selectedImage: $image, defaultImageName: type.typeImageName)
-            .padding(.bottom)
+                .padding(.bottom)
         }
         .padding(.horizontal)
         .sheet(isPresented: $showDatePicker) {
             VStack {
+                Text("마신 날짜 변경")
+                    .font(.gmarketSansTitle3)
                 DatePicker("마신 날짜", selection: $date, in: ...Date(), displayedComponents: .date)
                     .datePickerStyle(.graphical)
-                    .frame(height: 300)
                     .tint(.accent)
-                    .padding()
-                NextButton(label: "선택 완료") {
-                    showDatePicker = false
-                }
+                    .onChange(of: date) { _, _ in
+                        showDatePicker = false
+                    }
             }
-            .padding(.top, 30)
             .presentationDetents([.medium])
-            .presentationCornerRadius(UIScreen.main.displayCornerRadius)
-            .presentationDragIndicator(.visible)
+            .presentationCornerRadius(24)
         }
         .sheet(isPresented: $showWindTypePicker) {
             VStack {
                 Text("와인 종류 변경")
-                    .font(.gmarketSansBody)
+                    .font(.gmarketSansTitle3)
                 ScrollView {
                     ForEach(wineTypes) { wine in
                         Button {
@@ -174,13 +173,18 @@ struct AddWineView: View {
                     }
                 }
             }
-            .padding(.top, 30)
+            .padding(.top, 24)
             .presentationDetents([.medium])
-            .presentationCornerRadius(UIScreen.main.displayCornerRadius)
-            .presentationDragIndicator(.visible)
+            .presentationCornerRadius(24)
         }
         .onTapGesture {
             isFocused = false
+        }
+        .onDisappear {
+            observable.name = name
+            observable.date = date
+            observable.type = type
+            observable.image = image?.pngData()
         }
     }
 }

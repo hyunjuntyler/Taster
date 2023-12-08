@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct AddWineTasteView: View {
+    @Bindable private var observable = WineNoteObservable.shared
     @Environment(NoteEnvironment.self) var noteEnvironment: NoteEnvironment
     @State private var navigate = false
+    
     @State var taste: [Double] = [0, 0, 0, 0, 0]
     
     private let tasteLabels = ["바디", "당도", "산도", "타닌", "알코올"]
@@ -54,6 +56,7 @@ struct AddWineTasteView: View {
                     .padding(.bottom)
                 }
                 NextButton(disabled: false) {
+                    observable.taste = taste
                     Haptic.impact(style: .soft)
                     navigate = true
                 }
