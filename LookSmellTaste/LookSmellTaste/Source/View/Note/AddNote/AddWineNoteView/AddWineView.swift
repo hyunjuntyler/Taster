@@ -184,7 +184,9 @@ struct AddWineView: View {
             observable.name = name
             observable.date = date
             observable.type = type
-            observable.image = image?.pngData()
+            if let image = image {
+                observable.image = image.jpegData(compressionQuality: 0.1)
+            }
         }
     }
 }
