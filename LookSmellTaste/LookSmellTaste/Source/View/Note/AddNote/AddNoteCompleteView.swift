@@ -33,6 +33,7 @@ struct AddNoteCompleteView: View {
         }
         .onDisappear {
             saveNote()
+            observable.reset()
         }
     }
     

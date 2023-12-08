@@ -21,4 +21,17 @@ final class WineNoteObservable {
     var rating: Double = 0.0
     
     static var shared = WineNoteObservable()
+    
+    func reset() {
+        user = nil
+        name = ""
+        date = Date()
+        type = wineTypes[2]
+        image = nil
+        color = wineColors[0]
+        scents = []
+        taste = [0, 0, 0, 0, 0]
+        think = ""
+        rating = 0.0
+    }
 }

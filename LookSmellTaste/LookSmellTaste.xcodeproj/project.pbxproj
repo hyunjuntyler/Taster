@@ -61,6 +61,7 @@
 		F0FBBFF82B22FF3400F513BC /* UserDeleteAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBBFF72B22FF3400F513BC /* UserDeleteAlert.swift */; };
 		F0FBBFFA2B2310F500F513BC /* WineNoteObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBBFF92B2310F500F513BC /* WineNoteObservable.swift */; };
 		F0FBBFFC2B231D2100F513BC /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBBFFB2B231D2100F513BC /* PreviewContainer.swift */; };
+		F0FBBFFE2B2348C700F513BC /* WineNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBBFFD2B2348C700F513BC /* WineNoteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -121,6 +122,7 @@
 		F0FBBFF72B22FF3400F513BC /* UserDeleteAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDeleteAlert.swift; sourceTree = "<group>"; };
 		F0FBBFF92B2310F500F513BC /* WineNoteObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineNoteObservable.swift; sourceTree = "<group>"; };
 		F0FBBFFB2B231D2100F513BC /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
+		F0FBBFFD2B2348C700F513BC /* WineNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineNoteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				299A91312AF6B1FF00D9C2D1 /* NoteView.swift */,
+				F0FBBFFD2B2348C700F513BC /* WineNoteView.swift */,
 				299A915C2AF74C6200D9C2D1 /* AddNote */,
 			);
 			path = Note;
@@ -451,6 +454,7 @@
 				F0FBBFF82B22FF3400F513BC /* UserDeleteAlert.swift in Sources */,
 				29B388B22B0276D100E3942D /* ImagePicker.swift in Sources */,
 				299A91532AF71E9A00D9C2D1 /* ViewExtension.swift in Sources */,
+				F0FBBFFE2B2348C700F513BC /* WineNoteView.swift in Sources */,
 				29BD87182B00BD8D0082241D /* Rating.swift in Sources */,
 				293FD1F02AFAF98600623B23 /* UIScreenExtension.swift in Sources */,
 				293FD1F62AFB40D500623B23 /* Haptic.swift in Sources */,
