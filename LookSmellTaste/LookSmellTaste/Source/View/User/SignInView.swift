@@ -16,7 +16,7 @@ struct SignInView: View {
     @State private var name = ""
     @State private var icon = ""
     @State private var image: UIImage?
-
+    
     @FocusState var isFocused
     
     var body: some View {
@@ -30,9 +30,6 @@ struct SignInView: View {
                     .transition(.opacity)
             } else {
                 signIn
-                    .onTapGesture {
-                        isFocused = false
-                    }
                     .transition(.opacity.combined(with: .offset(y: 5)))
                     .overlay {
                         if permissionDenied {
@@ -65,15 +62,17 @@ struct SignInView: View {
         VStack {
             VStack {
                 headline
+                    .padding(.vertical, 60)
                 nameInput
                 if moveToThumbnail {
                     thumbnailInput
+                        .transition(.opacity.combined(with: .offset(y: 5)))
                 }
             }
-            .frame(maxHeight: .infinity)
+            .frame(maxHeight: .infinity, alignment: .top)
             if !moveToThumbnail {
                 NextButton(label: "다음", disabled: name.isEmpty) {
-                    withAnimation {
+                    withAnimation(.easeIn(duration: 0.5)) {
                         moveToThumbnail = true
                     }
                 }
@@ -101,7 +100,10 @@ struct SignInView: View {
                 .padding(.bottom, 5)
             Text(moveToThumbnail ? "반가워요! 썸네일도 설정해주세요." : "어떻게 불러드릴까요?")
                 .font(.gmarketSansTitle2)
-                .padding(.bottom, 30)
+                .padding(.bottom, 5)
+            Text("지금 설정한 정보는 언제나 변경 가능해요")
+                .font(.gmarketSansSubHeadline)
+                .foregroundStyle(.gray)
         }
     }
     

@@ -73,6 +73,7 @@
 		F0DE9BEF2B247719004A9621 /* CoffeeNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BEE2B247719004A9621 /* CoffeeNoteView.swift */; };
 		F0DE9BF12B247820004A9621 /* CoffeeNoteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BF02B247820004A9621 /* CoffeeNoteDetailView.swift */; };
 		F0DE9BF32B2479AE004A9621 /* CoffeeNoteEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BF22B2479AE004A9621 /* CoffeeNoteEditView.swift */; };
+		F0DE9BF62B2482BF004A9621 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BF52B2482BF004A9621 /* OnboardingView.swift */; };
 		F0FBBFF62B22F81400F513BC /* UserEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBBFF52B22F81400F513BC /* UserEditView.swift */; };
 		F0FBBFF82B22FF3400F513BC /* UserDeleteAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBBFF72B22FF3400F513BC /* UserDeleteAlert.swift */; };
 		F0FBBFFA2B2310F500F513BC /* WineNoteObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBBFF92B2310F500F513BC /* WineNoteObservable.swift */; };
@@ -150,6 +151,7 @@
 		F0DE9BEE2B247719004A9621 /* CoffeeNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeNoteView.swift; sourceTree = "<group>"; };
 		F0DE9BF02B247820004A9621 /* CoffeeNoteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeNoteDetailView.swift; sourceTree = "<group>"; };
 		F0DE9BF22B2479AE004A9621 /* CoffeeNoteEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeNoteEditView.swift; sourceTree = "<group>"; };
+		F0DE9BF52B2482BF004A9621 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		F0FBBFF52B22F81400F513BC /* UserEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditView.swift; sourceTree = "<group>"; };
 		F0FBBFF72B22FF3400F513BC /* UserDeleteAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDeleteAlert.swift; sourceTree = "<group>"; };
 		F0FBBFF92B2310F500F513BC /* WineNoteObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineNoteObservable.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 		299A91352AF6B2BE00D9C2D1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F0DE9BF42B2482AF004A9621 /* Onboarding */,
 				F003F5D72B12348D003D2499 /* User */,
 				299A91542AF7217300D9C2D1 /* Note */,
 				299A91492AF6C84100D9C2D1 /* Component */,
@@ -424,6 +427,14 @@
 			path = CoffeeNote;
 			sourceTree = "<group>";
 		};
+		F0DE9BF42B2482AF004A9621 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				F0DE9BF52B2482BF004A9621 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -514,6 +525,7 @@
 				F0DE9BED2B2475D9004A9621 /* CoffeeNoteList.swift in Sources */,
 				29BD871A2B00F15D0082241D /* RadarChart.swift in Sources */,
 				29B388B62B0281E700E3942D /* PermissionAlert.swift in Sources */,
+				F0DE9BF62B2482BF004A9621 /* OnboardingView.swift in Sources */,
 				299A91432AF6C20300D9C2D1 /* FontExtension.swift in Sources */,
 				29BD87162B00B0A30082241D /* AddNoteCompleteView.swift in Sources */,
 				2990E4022AF9A21E0001617A /* ContentUnavailable.swift in Sources */,

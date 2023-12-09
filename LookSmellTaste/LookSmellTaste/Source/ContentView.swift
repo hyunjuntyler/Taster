@@ -16,6 +16,7 @@ struct ContentView: View {
     
     @Query private var user: [User]
     @State private var navigateToUserView = false
+    @AppStorage("onboarding") private var onboarding = true
     
     var body: some View {
         if user.isEmpty {
@@ -32,6 +33,10 @@ struct ContentView: View {
                 }
             }
             .ignoresSafeArea(edges: .bottom)
+            .sheet(isPresented: $onboarding) {
+                OnboardingView()
+                    .interactiveDismissDisabled()
+            }
         }
     }
 }
