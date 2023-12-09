@@ -58,6 +58,8 @@
 		F04B4FC52B11AF190000047D /* CoffeeNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04B4FC42B11AF190000047D /* CoffeeNote.swift */; };
 		F04B4FC72B11AF210000047D /* CocktailNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04B4FC62B11AF210000047D /* CocktailNote.swift */; };
 		F07D515C2B20073F0059A62C /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07D515B2B20073F0059A62C /* UserView.swift */; };
+		F0DE9BD52B2420C0004A9621 /* RatingDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BD42B2420C0004A9621 /* RatingDisplay.swift */; };
+		F0DE9BD72B24250E004A9621 /* WineNoteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BD62B24250E004A9621 /* WineNoteList.swift */; };
 		F0FBBFF62B22F81400F513BC /* UserEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBBFF52B22F81400F513BC /* UserEditView.swift */; };
 		F0FBBFF82B22FF3400F513BC /* UserDeleteAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBBFF72B22FF3400F513BC /* UserDeleteAlert.swift */; };
 		F0FBBFFA2B2310F500F513BC /* WineNoteObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBBFF92B2310F500F513BC /* WineNoteObservable.swift */; };
@@ -120,6 +122,8 @@
 		F04B4FC42B11AF190000047D /* CoffeeNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeNote.swift; sourceTree = "<group>"; };
 		F04B4FC62B11AF210000047D /* CocktailNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailNote.swift; sourceTree = "<group>"; };
 		F07D515B2B20073F0059A62C /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		F0DE9BD42B2420C0004A9621 /* RatingDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingDisplay.swift; sourceTree = "<group>"; };
+		F0DE9BD62B24250E004A9621 /* WineNoteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineNoteList.swift; sourceTree = "<group>"; };
 		F0FBBFF52B22F81400F513BC /* UserEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditView.swift; sourceTree = "<group>"; };
 		F0FBBFF72B22FF3400F513BC /* UserDeleteAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDeleteAlert.swift; sourceTree = "<group>"; };
 		F0FBBFF92B2310F500F513BC /* WineNoteObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineNoteObservable.swift; sourceTree = "<group>"; };
@@ -287,6 +291,7 @@
 				29BD87192B00F15D0082241D /* RadarChart.swift */,
 				29B388B12B0276D100E3942D /* ImagePicker.swift */,
 				29B388B72B028F0200E3942D /* PreparingContent.swift */,
+				F0DE9BD42B2420C0004A9621 /* RatingDisplay.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -359,6 +364,7 @@
 			children = (
 				F0FBBFFD2B2348C700F513BC /* WineNoteView.swift */,
 				F02EED492B235173009AD6D1 /* WineNoteDetailView.swift */,
+				F0DE9BD62B24250E004A9621 /* WineNoteList.swift */,
 			);
 			path = WineNote;
 			sourceTree = "<group>";
@@ -454,9 +460,11 @@
 				2990E4022AF9A21E0001617A /* ContentUnavailable.swift in Sources */,
 				F003F5DF2B13299E003D2499 /* SignInPermissionAlert.swift in Sources */,
 				F07D515C2B20073F0059A62C /* UserView.swift in Sources */,
+				F0DE9BD72B24250E004A9621 /* WineNoteList.swift in Sources */,
 				F003F5D92B1234AC003D2499 /* SignInView.swift in Sources */,
 				2990E4072AF9E11D0001617A /* AddNoteButton.swift in Sources */,
 				29B388BB2B0295E300E3942D /* Confetti.swift in Sources */,
+				F0DE9BD52B2420C0004A9621 /* RatingDisplay.swift in Sources */,
 				299A91262AF6AD6C00D9C2D1 /* ContentView.swift in Sources */,
 				29BD87142B00AE9E0082241D /* AddWineThinkView.swift in Sources */,
 				29B388BF2B02963B00E3942D /* ConfettiSample.swift in Sources */,

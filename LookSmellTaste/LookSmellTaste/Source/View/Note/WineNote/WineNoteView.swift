@@ -37,40 +37,9 @@ struct WineNoteView: View {
                     LazyVStack {
                         ForEach(sortedWineNotes) { note in
                             NavigationLink {
-                                WineNoteDetailView()
+                                WineNoteDetailView(note: note)
                             } label: {
-                                HStack {
-                                    if let data = note.image {
-                                        if let image = UIImage(data: data) {
-                                            Image(uiImage: image)
-                                                .resizable()
-                                                .aspectRatio(contentMode: .fill)
-                                                .frame(width: 60, height: 60)
-                                                .clipShape(
-                                                    RoundedRectangle(cornerRadius: 12, style: .continuous)
-                                                )
-                                        }
-                                    } else {
-                                        ZStack {
-                                            RoundedRectangle(cornerRadius: 12, style: .continuous)
-                                                .frame(width: 60, height: 60)
-                                                .foregroundStyle(.appPickerGray)
-                                            Image(note.type.typeImageName)
-                                                .resizable()
-                                                .scaledToFit()
-                                                .frame(height: 40)
-                                        }
-                                    }
-                                    
-                                    Text(note.name)
-                                        .font(.gmarketSansBody)
-                                }
-                                .padding(10)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .background {
-                                    RoundedRectangle(cornerRadius: 16)
-                                        .foregroundStyle(.appSheetBoxBackground)
-                                }
+                                WineNoteList(note: note)
                             }
                             .buttonStyle(PressButtonStyle())
                         }
