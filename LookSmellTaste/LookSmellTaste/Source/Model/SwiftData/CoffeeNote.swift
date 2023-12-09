@@ -15,7 +15,7 @@ final class CoffeeNote {
     var date: Date = Date()
     var type: CoffeeType = coffeeTypes[0]
     @Attribute(.externalStorage) var image: Data?
-    var flavor: [CoffeeFlavor] = []
+    var flavors: [CoffeeFlavor] = []
     var taste: [Double] = [0.0, 0.0, 0.0, 0.0, 0.0]
     var think: String = ""
     var rating: Double = 0.0
@@ -24,7 +24,7 @@ final class CoffeeNote {
         self.name = name
         self.date = date
         self.type = type
-        self.flavor = flavor
+        self.flavors = flavor
         self.taste = taste
         self.think = think
         self.rating = rating

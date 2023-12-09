@@ -28,10 +28,10 @@ struct AddNoteView: View {
                         
                         LazyVGrid(columns: columns, spacing: 0) {
                             ForEach(notes) { note in
-                                AddNoteButton(title: note.noteLabel, image: note.noteImageName, selected: noteEnvironment.noteType == note.noteType) {
+                                AddNoteButton(title: note.label, image: note.imageName, selected: noteEnvironment.noteType == note.type) {
                                     Haptic.impact(style: .soft)
                                     withAnimation {
-                                        noteEnvironment.selectType(type: note.noteType)
+                                        noteEnvironment.selectType(type: note.type)
                                     }
                                 }
                             }
@@ -46,9 +46,9 @@ struct AddNoteView: View {
                         Group {
                             switch noteEnvironment.noteType {
                             case .wine:
-                                AddWineView()
+                                AddWineNoteView()
                             case .coffee:
-                                PreparingContent()
+                                AddCoffeeNoteView()
                             case .cocktail:
                                 PreparingContent()
                             case .whiskey:

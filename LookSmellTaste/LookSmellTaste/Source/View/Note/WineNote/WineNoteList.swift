@@ -29,7 +29,7 @@ struct WineNoteList: View {
                         RoundedRectangle(cornerRadius: 12, style: .continuous)
                             .frame(width: 60, height: 60)
                             .foregroundStyle(.appPickerGray)
-                        Image(note.type.typeImageName)
+                        Image(note.type.imageName)
                             .resizable()
                             .scaledToFit()
                             .frame(height: 40)
@@ -38,7 +38,7 @@ struct WineNoteList: View {
                 
                 VStack(alignment: .leading, spacing: 5) {
                     HStack {
-                        Text(note.type.typeName)
+                        Text(note.type.name)
                             .font(.gmarketSansCaption)
                         Spacer()
                         Text("\(note.date.formatted(date: .abbreviated, time: .omitted))")

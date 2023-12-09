@@ -1,32 +1,32 @@
 //
-//  AddWineView.swift
+//  AddCoffeeNoteView.swift
 //  LookSmellTaste
 //
-//  Created by hyunjun on 11/13/23.
+//  Created by Hyunjun Kim on 12/9/23.
 //
 
 import SwiftUI
 
-struct AddWineView: View {
-    @Bindable private var observable = WineNoteObservable.shared
+struct AddCoffeeNoteView: View {
+    @Bindable private var observable = CoffeeNoteObservable.shared
     @State private var showDatePicker = false
     @State private var showWindTypePicker = false
     @FocusState private var isFocused
     
     @State private var name = ""
     @State private var date = Date()
-    @State private var type: WineType = wineTypes[2]
+    @State private var type: CoffeeType = coffeeTypes[0]
     @State private var image: UIImage?
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("와인 이름")
+            Text("커피 이름")
                 .font(.gmarketSansSubHeadline)
                 .foregroundStyle(.gray)
                 .padding(.leading)
                 .padding(.top, 5)
             HStack {
-                TextField("와인 이름을 입력해주세요", text: $name, axis: .vertical)
+                TextField("커피 이름을 입력해주세요", text: $name, axis: .vertical)
                     .font(.gmarketSansBody)
                     .focused($isFocused)
                     .tint(.accent)
@@ -87,17 +87,17 @@ struct AddWineView: View {
                     .foregroundStyle(.appSheetBoxBackground)
             }
             
-            Text("와인 종류")
+            Text("커피 종류")
                 .font(.gmarketSansSubHeadline)
                 .foregroundStyle(.gray)
                 .padding(.leading)
                 .padding(.top, 5)
             HStack {
-                Image(type.typeImageName)
+                Image(type.imageName)
                     .resizable()
                     .scaledToFit()
                     .frame(height: 30)
-                Text(type.typeName)
+                Text(type.name)
                     .font(.gmarketSansBody)
                 Spacer()
                 Button {
@@ -128,7 +128,7 @@ struct AddWineView: View {
                 .foregroundStyle(.gray)
                 .padding(.leading)
                 .padding(.top, 5)
-            ImagePicker(selectedImage: $image, defaultImageName: type.typeImageName)
+            ImagePicker(selectedImage: $image, defaultImageName: type.imageName)
                 .padding(.bottom)
         }
         .padding(.horizontal)
@@ -153,18 +153,18 @@ struct AddWineView: View {
                 Text("와인 종류 변경")
                     .font(.gmarketSansTitle3)
                 ScrollView {
-                    ForEach(wineTypes) { wine in
+                    ForEach(coffeeTypes) { coffee in
                         Button {
-                            type = wine
+                            type = coffee
                             Haptic.impact(style: .soft)
                             showWindTypePicker = false
                         } label: {
                             HStack {
-                                Image(wine.typeImageName)
+                                Image(coffee.imageName)
                                     .resizable()
                                     .scaledToFit()
                                     .frame(height: 40)
-                                Text(wine.typeName)
+                                Text(coffee.name)
                                     .font(.gmarketSansBody)
                             }
                         }

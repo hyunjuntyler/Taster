@@ -1,60 +1,58 @@
 //
-//  AddWineSmellView.swift
+//  AddWineLookView.swift
 //  LookSmellTaste
 //
-//  Created by hyunjun on 11/12/23.
+//  Created by hyunjun on 11/8/23.
 //
 
 import SwiftUI
 
-struct AddWineSmellView: View {
+struct AddWineLookView: View {
     @Bindable private var observable = WineNoteObservable.shared
     @Environment(NoteEnvironment.self) var noteEnvironment: NoteEnvironment
     
     @State private var navigate = false
-    @State private var scents: [WineScent] = []
+    @State private var color: WineColor = wineColors[0]
     
-    private let columns = Array(repeating: GridItem(.flexible()), count: 5)
+    private let columns = Array(repeating: GridItem(.flexible()), count: 4)
     
     var body: some View {
         ZStack {
             Color.appSheetBackground.ignoresSafeArea()
             VStack {
                 ScrollView {
-                    Text("Smell")
+                    Text("Look")
                         .font(.gmarketSansTitle)
                         .padding(.bottom)
-                    Text("어떠한 향이 나나요?")
+                    Text("와인의 색상을 선택해주세요")
                         .font(.gmarketSansBody)
                         .foregroundStyle(.gray)
                         .padding(.bottom)
-                    LazyVGrid(columns: columns, spacing: 8) {
-                        ForEach(wineScents) { wineScent in
+                    LazyVGrid(columns: columns, spacing: 0) {
+                        ForEach(wineColors) { wineColor in
                             Button {
-                                if scents.contains(wineScent) {
-                                    if let index = scents.firstIndex(of: wineScent) {
-                                        scents.remove(at: index)
-                                    }
-                                } else {
-                                    scents.append(wineScent)
+                                withAnimation(.easeInOut) {
+                                    color = wineColor
                                 }
                                 Haptic.impact(style: .soft)
                             } label: {
                                 VStack {
-                                    Image(wineScent.scentImageName)
+                                    Image(wineColor.imageName)
                                         .resizable()
                                         .scaledToFit()
-                                    Text(wineScent.scentName)
-                                        .font(.gmarketSansCaption2)
-                                        .foregroundStyle(scents.contains(wineScent) ? .accent : .appGrayButton)
+                                        .padding(.bottom, 5)
+                                    Text(wineColor.name)
+                                        .font(.gmarketSansSubHeadline)
+                                        .foregroundStyle(color == wineColor ? .accent : .appGrayButton)
                                 }
-                                .padding(4)
+                                .padding()
                                 .background {
                                     RoundedRectangle(cornerRadius: 12)
-                                        .foregroundStyle(scents.contains(wineScent) ? .appPickerGray : .appSheetBoxBackground)
+                                        .foregroundStyle(color == wineColor ? .appPickerGray : .appSheetBoxBackground)
                                 }
                             }
                             .buttonStyle(PressButtonStyle())
+                            
                         }
                     }
                     .padding()
@@ -63,15 +61,14 @@ struct AddWineSmellView: View {
                             .foregroundStyle(.appSheetBoxBackground)
                     }
                     .padding(.horizontal)
-                    .padding(.bottom)
                 }
                 NextButton(disabled: false) {
-                    observable.scents = scents
+                    observable.color = color
                     Haptic.impact(style: .soft)
                     navigate = true
                 }
                 .navigationDestination(isPresented: $navigate) {
-                    AddWineTasteView()
+                    AddWineSmellView()
                 }
             }
         }
@@ -87,7 +84,7 @@ struct AddWineSmellView: View {
 
 #Preview {
     NavigationStack {
-        AddWineSmellView()
+        AddWineLookView()
             .environment(NoteEnvironment())
     }
 }

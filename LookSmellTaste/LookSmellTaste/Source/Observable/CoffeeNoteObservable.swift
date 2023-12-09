@@ -13,7 +13,7 @@ final class CoffeeNoteObservable {
     var date: Date = Date()
     var type: CoffeeType = coffeeTypes[0]
     var image: Data?
-    var flavor: [CoffeeFlavor] = []
+    var flavors: [CoffeeFlavor] = []
     var taste: [Double] = [0.0, 0.0, 0.0, 0.0, 0.0]
     var think: String = ""
     var rating: Double = 0.0
@@ -25,7 +25,7 @@ final class CoffeeNoteObservable {
         date = Date()
         type = coffeeTypes[0]
         image = nil
-        flavor = []
+        flavors = []
         taste = [0, 0, 0, 0, 0]
         think = ""
         rating = 0.0

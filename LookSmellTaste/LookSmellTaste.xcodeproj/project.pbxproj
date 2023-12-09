@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2921B0152B02673B00533A83 /* AddWineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2921B0142B02673B00533A83 /* AddWineView.swift */; };
+		2921B0152B02673B00533A83 /* AddWineNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2921B0142B02673B00533A83 /* AddWineNoteView.swift */; };
 		293FD1F02AFAF98600623B23 /* UIScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293FD1EF2AFAF98600623B23 /* UIScreenExtension.swift */; };
 		293FD1F42AFB096000623B23 /* AddWineLookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293FD1F32AFB096000623B23 /* AddWineLookView.swift */; };
 		293FD1F62AFB40D500623B23 /* Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293FD1F52AFB40D500623B23 /* Haptic.swift */; };
@@ -65,6 +65,8 @@
 		F0DE9BDD2B245BC4004A9621 /* CameraPermissionAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BDC2B245BC4004A9621 /* CameraPermissionAlert.swift */; };
 		F0DE9BDF2B245FA0004A9621 /* CoffeeNoteObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BDE2B245FA0004A9621 /* CoffeeNoteObservable.swift */; };
 		F0DE9BE12B2460B7004A9621 /* CoffeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BE02B2460B7004A9621 /* CoffeeModel.swift */; };
+		F0DE9BE42B246321004A9621 /* AddCoffeeNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BE32B246321004A9621 /* AddCoffeeNoteView.swift */; };
+		F0DE9BE62B246402004A9621 /* AddCoffeeFlavorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BE52B246401004A9621 /* AddCoffeeFlavorView.swift */; };
 		F0FBBFF62B22F81400F513BC /* UserEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBBFF52B22F81400F513BC /* UserEditView.swift */; };
 		F0FBBFF82B22FF3400F513BC /* UserDeleteAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBBFF72B22FF3400F513BC /* UserDeleteAlert.swift */; };
 		F0FBBFFA2B2310F500F513BC /* WineNoteObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBBFF92B2310F500F513BC /* WineNoteObservable.swift */; };
@@ -73,7 +75,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2921B0142B02673B00533A83 /* AddWineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWineView.swift; sourceTree = "<group>"; };
+		2921B0142B02673B00533A83 /* AddWineNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWineNoteView.swift; sourceTree = "<group>"; };
 		293FD1EF2AFAF98600623B23 /* UIScreenExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreenExtension.swift; sourceTree = "<group>"; };
 		293FD1F32AFB096000623B23 /* AddWineLookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWineLookView.swift; sourceTree = "<group>"; };
 		293FD1F52AFB40D500623B23 /* Haptic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptic.swift; sourceTree = "<group>"; };
@@ -134,6 +136,8 @@
 		F0DE9BDC2B245BC4004A9621 /* CameraPermissionAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermissionAlert.swift; sourceTree = "<group>"; };
 		F0DE9BDE2B245FA0004A9621 /* CoffeeNoteObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeNoteObservable.swift; sourceTree = "<group>"; };
 		F0DE9BE02B2460B7004A9621 /* CoffeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeModel.swift; sourceTree = "<group>"; };
+		F0DE9BE32B246321004A9621 /* AddCoffeeNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoffeeNoteView.swift; sourceTree = "<group>"; };
+		F0DE9BE52B246401004A9621 /* AddCoffeeFlavorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoffeeFlavorView.swift; sourceTree = "<group>"; };
 		F0FBBFF52B22F81400F513BC /* UserEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditView.swift; sourceTree = "<group>"; };
 		F0FBBFF72B22FF3400F513BC /* UserDeleteAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDeleteAlert.swift; sourceTree = "<group>"; };
 		F0FBBFF92B2310F500F513BC /* WineNoteObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineNoteObservable.swift; sourceTree = "<group>"; };
@@ -162,16 +166,16 @@
 			path = Observable;
 			sourceTree = "<group>";
 		};
-		2949F28F2AFA5599005AFEFC /* AddWineNoteView */ = {
+		2949F28F2AFA5599005AFEFC /* AddWineNote */ = {
 			isa = PBXGroup;
 			children = (
-				2921B0142B02673B00533A83 /* AddWineView.swift */,
+				2921B0142B02673B00533A83 /* AddWineNoteView.swift */,
 				293FD1F32AFB096000623B23 /* AddWineLookView.swift */,
 				29BD870F2B0097580082241D /* AddWineSmellView.swift */,
 				29BD87112B00AE3C0082241D /* AddWineTasteView.swift */,
 				29BD87132B00AE9E0082241D /* AddWineThinkView.swift */,
 			);
-			path = AddWineNoteView;
+			path = AddWineNote;
 			sourceTree = "<group>";
 		};
 		2949F2922AFA9576005AFEFC /* Model */ = {
@@ -323,7 +327,8 @@
 			children = (
 				299A915D2AF74C6F00D9C2D1 /* AddNoteView.swift */,
 				29BD87152B00B0A30082241D /* AddNoteCompleteView.swift */,
-				2949F28F2AFA5599005AFEFC /* AddWineNoteView */,
+				2949F28F2AFA5599005AFEFC /* AddWineNote */,
+				F0DE9BE22B246304004A9621 /* AddCoffeeNote */,
 			);
 			path = AddNote;
 			sourceTree = "<group>";
@@ -382,6 +387,15 @@
 				F0DE9BD62B24250E004A9621 /* WineNoteList.swift */,
 			);
 			path = WineNote;
+			sourceTree = "<group>";
+		};
+		F0DE9BE22B246304004A9621 /* AddCoffeeNote */ = {
+			isa = PBXGroup;
+			children = (
+				F0DE9BE32B246321004A9621 /* AddCoffeeNoteView.swift */,
+				F0DE9BE52B246401004A9621 /* AddCoffeeFlavorView.swift */,
+			);
+			path = AddCoffeeNote;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -465,8 +479,9 @@
 				29BD87122B00AE3C0082241D /* AddWineTasteView.swift in Sources */,
 				29BD870E2B006DA90082241D /* NoteModel.swift in Sources */,
 				293FD1F82AFB426F00623B23 /* WineNote.swift in Sources */,
+				F0DE9BE42B246321004A9621 /* AddCoffeeNoteView.swift in Sources */,
 				F04B4FC52B11AF190000047D /* CoffeeNote.swift in Sources */,
-				2921B0152B02673B00533A83 /* AddWineView.swift in Sources */,
+				2921B0152B02673B00533A83 /* AddWineNoteView.swift in Sources */,
 				299A91512AF6E2F100D9C2D1 /* PreferenceKey.swift in Sources */,
 				29BD871A2B00F15D0082241D /* RadarChart.swift in Sources */,
 				29B388B62B0281E700E3942D /* PermissionAlert.swift in Sources */,
@@ -515,6 +530,7 @@
 				F0DE9BDD2B245BC4004A9621 /* CameraPermissionAlert.swift in Sources */,
 				299A915E2AF74C6F00D9C2D1 /* AddNoteView.swift in Sources */,
 				F0FBBFF62B22F81400F513BC /* UserEditView.swift in Sources */,
+				F0DE9BE62B246402004A9621 /* AddCoffeeFlavorView.swift in Sources */,
 				F0DE9BDB2B243BBC004A9621 /* EditImagePicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

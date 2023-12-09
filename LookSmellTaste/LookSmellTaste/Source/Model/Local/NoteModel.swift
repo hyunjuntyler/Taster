@@ -16,14 +16,14 @@ enum NoteType {
 
 struct Note: Identifiable, Hashable {
     var id = UUID()
-    var noteLabel: String
-    var noteImageName: String
-    var noteType: NoteType
+    var label: String
+    var imageName: String
+    var type: NoteType
 }
 
 let notes: [Note] = [
-    Note(noteLabel: "와인", noteImageName: "garnetWine", noteType: .wine),
-    Note(noteLabel: "커피", noteImageName: "coffee", noteType: .coffee),
-    Note(noteLabel: "칵테일", noteImageName: "cocktail", noteType: .cocktail),
-    Note(noteLabel: "위스키", noteImageName: "whiskey", noteType: .whiskey)
+    Note(label: "와인", imageName: "garnetWine", type: .wine),
+    Note(label: "커피", imageName: "coffee", type: .coffee),
+    Note(label: "칵테일", imageName: "cocktail", type: .cocktail),
+    Note(label: "위스키", imageName: "whiskey", type: .whiskey)
 ]

@@ -9,91 +9,91 @@ import SwiftUI
 
 struct WineType: Identifiable, Codable, Hashable {
     var id = UUID()
-    var typeName: String
-    var typeImageName: String
+    var name: String
+    var imageName: String
 }
 
 let wineTypes: [WineType] = [
-    WineType(typeName: "스파클링 와인", typeImageName: "sparklingWine"),
-    WineType(typeName: "화이트 와인", typeImageName: "whiteWine"),
-    WineType(typeName: "레드 와인", typeImageName: "redWine"),
-    WineType(typeName: "디저트 와인", typeImageName: "dessertWine"),
-    WineType(typeName: "로제 와인", typeImageName: "roseWine"),
-    WineType(typeName: "오렌지 와인", typeImageName: "orangeWine"),
-    WineType(typeName: "포트 와인", typeImageName: "portWine"),
-    WineType(typeName: "샴페인", typeImageName: "champagne")
+    WineType(name: "스파클링 와인", imageName: "sparklingWine"),
+    WineType(name: "화이트 와인", imageName: "whiteWine"),
+    WineType(name: "레드 와인", imageName: "redWine"),
+    WineType(name: "디저트 와인", imageName: "dessertWine"),
+    WineType(name: "로제 와인", imageName: "roseWine"),
+    WineType(name: "오렌지 와인", imageName: "orangeWine"),
+    WineType(name: "포트 와인", imageName: "portWine"),
+    WineType(name: "샴페인", imageName: "champagne")
 ]
 
 struct WineColor: Identifiable, Codable, Hashable {
     var id = UUID()
-    var colorName: String
-    var colorImageName: String
+    var name: String
+    var imageName: String
 }
 
 let wineColors: [WineColor] = [
-    WineColor(colorName: "밀짚색", colorImageName: "strawWine"),
-    WineColor(colorName: "노란색", colorImageName: "yellowWine"),
-    WineColor(colorName: "황금색", colorImageName: "goldWine"),
-    WineColor(colorName: "호박색", colorImageName: "amberWine"),
-    WineColor(colorName: "갈색", colorImageName: "brownWine"),
-    WineColor(colorName: "구리색", colorImageName: "copperWine"),
-    WineColor(colorName: "연어색", colorImageName: "salmonWine"),
-    WineColor(colorName: "분홍색", colorImageName: "pinkWine"),
-    WineColor(colorName: "루비색", colorImageName: "rubyWine"),
-    WineColor(colorName: "보라색", colorImageName: "purpleWine"),
-    WineColor(colorName: "석류색", colorImageName: "garnetWine"),
-    WineColor(colorName: "황갈색", colorImageName: "tawnyWine")
+    WineColor(name: "밀짚색", imageName: "strawWine"),
+    WineColor(name: "노란색", imageName: "yellowWine"),
+    WineColor(name: "황금색", imageName: "goldWine"),
+    WineColor(name: "호박색", imageName: "amberWine"),
+    WineColor(name: "갈색", imageName: "brownWine"),
+    WineColor(name: "구리색", imageName: "copperWine"),
+    WineColor(name: "연어색", imageName: "salmonWine"),
+    WineColor(name: "분홍색", imageName: "pinkWine"),
+    WineColor(name: "루비색", imageName: "rubyWine"),
+    WineColor(name: "보라색", imageName: "purpleWine"),
+    WineColor(name: "석류색", imageName: "garnetWine"),
+    WineColor(name: "황갈색", imageName: "tawnyWine")
 ]
 
 struct WineScent: Identifiable, Codable, Hashable, Equatable {    
     var id = UUID()
-    var scentName: String
-    var scentImageName: String
+    var name: String
+    var imageName: String
 }
 
 let wineScents: [WineScent] = [
-    WineScent(scentName: "블루베리", scentImageName: "blueberry"),
-    WineScent(scentName: "올리브", scentImageName: "olive"),
-    WineScent(scentName: "자두", scentImageName: "plum"),
-    WineScent(scentName: "체리", scentImageName: "cherry"),
-    WineScent(scentName: "크렌베리", scentImageName: "cranberry"),
-    WineScent(scentName: "석류", scentImageName: "pomegranate"),
-    WineScent(scentName: "산딸기", scentImageName: "raspberry"),
-    WineScent(scentName: "딸기", scentImageName: "strawberry"),
-    WineScent(scentName: "토마토", scentImageName: "tomato"),
-    WineScent(scentName: "키위", scentImageName: "kiwi"),
-    WineScent(scentName: "망고", scentImageName: "mango"),
-    WineScent(scentName: "파인애플", scentImageName: "pineapple"),
-    WineScent(scentName: "사과", scentImageName: "apple"),
-    WineScent(scentName: "살구", scentImageName: "apricot"),
-    WineScent(scentName: "복숭아", scentImageName: "peach"),
-    WineScent(scentName: "자몽", scentImageName: "grapefruit"),
-    WineScent(scentName: "레몬", scentImageName: "lemon"),
-    WineScent(scentName: "라임", scentImageName: "lime"),
-    WineScent(scentName: "오렌지", scentImageName: "orange"),
-    WineScent(scentName: "아카시아", scentImageName: "acacia"),
-    WineScent(scentName: "아이리스", scentImageName: "iris"),
-    WineScent(scentName: "자스민", scentImageName: "jasmine"),
-    WineScent(scentName: "라벤더", scentImageName: "lavender"),
-    WineScent(scentName: "라일락", scentImageName: "lilac"),
-    WineScent(scentName: "장미", scentImageName: "rose"),
-    WineScent(scentName: "제비꽃", scentImageName: "violet"),
-    WineScent(scentName: "홍차", scentImageName: "blacktea"),
-    WineScent(scentName: "민트", scentImageName: "mint"),
-    WineScent(scentName: "오레가노", scentImageName: "oregano"),
-    WineScent(scentName: "계피", scentImageName: "cinamon"),
-    WineScent(scentName: "후추", scentImageName: "blackpepper"),
-    WineScent(scentName: "고추", scentImageName: "redpepper"),
-    WineScent(scentName: "버터", scentImageName: "butter"),
-    WineScent(scentName: "흙", scentImageName: "soil"),
-    WineScent(scentName: "절인 고기", scentImageName: "marinatedmeat"),
-    WineScent(scentName: "버섯", scentImageName: "mushroom"),
-    WineScent(scentName: "연기", scentImageName: "smoke"),
-    WineScent(scentName: "초콜릿", scentImageName: "chocolate"),
-    WineScent(scentName: "커피", scentImageName: "coffee"),
-    WineScent(scentName: "가죽", scentImageName: "leather"),
-    WineScent(scentName: "견과류", scentImageName: "nuts"),
-    WineScent(scentName: "코코넛", scentImageName: "coconut"),
-    WineScent(scentName: "콜라", scentImageName: "coke"),
-    WineScent(scentName: "바닐라", scentImageName: "vanilla")
+    WineScent(name: "블루베리", imageName: "blueberry"),
+    WineScent(name: "올리브", imageName: "olive"),
+    WineScent(name: "자두", imageName: "plum"),
+    WineScent(name: "체리", imageName: "cherry"),
+    WineScent(name: "크렌베리", imageName: "cranberry"),
+    WineScent(name: "석류", imageName: "pomegranate"),
+    WineScent(name: "산딸기", imageName: "raspberry"),
+    WineScent(name: "딸기", imageName: "strawberry"),
+    WineScent(name: "토마토", imageName: "tomato"),
+    WineScent(name: "키위", imageName: "kiwi"),
+    WineScent(name: "망고", imageName: "mango"),
+    WineScent(name: "파인애플", imageName: "pineapple"),
+    WineScent(name: "사과", imageName: "apple"),
+    WineScent(name: "살구", imageName: "apricot"),
+    WineScent(name: "복숭아", imageName: "peach"),
+    WineScent(name: "자몽", imageName: "grapefruit"),
+    WineScent(name: "레몬", imageName: "lemon"),
+    WineScent(name: "라임", imageName: "lime"),
+    WineScent(name: "오렌지", imageName: "orange"),
+    WineScent(name: "아카시아", imageName: "acacia"),
+    WineScent(name: "아이리스", imageName: "iris"),
+    WineScent(name: "자스민", imageName: "jasmine"),
+    WineScent(name: "라벤더", imageName: "lavender"),
+    WineScent(name: "라일락", imageName: "lilac"),
+    WineScent(name: "장미", imageName: "rose"),
+    WineScent(name: "제비꽃", imageName: "violet"),
+    WineScent(name: "홍차", imageName: "blacktea"),
+    WineScent(name: "민트", imageName: "mint"),
+    WineScent(name: "오레가노", imageName: "oregano"),
+    WineScent(name: "계피", imageName: "cinamon"),
+    WineScent(name: "후추", imageName: "blackpepper"),
+    WineScent(name: "고추", imageName: "redpepper"),
+    WineScent(name: "버터", imageName: "butter"),
+    WineScent(name: "흙", imageName: "soil"),
+    WineScent(name: "절인 고기", imageName: "marinatedmeat"),
+    WineScent(name: "버섯", imageName: "mushroom"),
+    WineScent(name: "연기", imageName: "smoke"),
+    WineScent(name: "초콜릿", imageName: "chocolate"),
+    WineScent(name: "커피", imageName: "coffee"),
+    WineScent(name: "가죽", imageName: "leather"),
+    WineScent(name: "견과류", imageName: "nuts"),
+    WineScent(name: "코코넛", imageName: "coconut"),
+    WineScent(name: "콜라", imageName: "coke"),
+    WineScent(name: "바닐라", imageName: "vanilla")
 ]

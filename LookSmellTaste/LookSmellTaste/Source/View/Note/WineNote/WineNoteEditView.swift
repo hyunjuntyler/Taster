@@ -120,11 +120,11 @@ struct WineNoteEditView: View {
                             .padding(.leading)
                             .padding(.top, 5)
                         HStack {
-                            Image(type.typeImageName)
+                            Image(type.imageName)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: 30)
-                            Text(type.typeName)
+                            Text(type.name)
                                 .font(.gmarketSansBody)
                             Spacer()
                             Button {
@@ -163,11 +163,11 @@ struct WineNoteEditView: View {
                                     Haptic.impact(style: .soft)
                                 } label: {
                                     VStack {
-                                        Image(wineColor.colorImageName)
+                                        Image(wineColor.imageName)
                                             .resizable()
                                             .scaledToFit()
                                             .padding(.bottom, 5)
-                                        Text(wineColor.colorName)
+                                        Text(wineColor.name)
                                             .font(.gmarketSansCaption2)
                                             .foregroundStyle(color == wineColor ? .accent : .appGrayButton)
                                     }
@@ -204,10 +204,10 @@ struct WineNoteEditView: View {
                                     Haptic.impact(style: .soft)
                                 } label: {
                                     VStack {
-                                        Image(wineScent.scentImageName)
+                                        Image(wineScent.imageName)
                                             .resizable()
                                             .scaledToFit()
-                                        Text(wineScent.scentName)
+                                        Text(wineScent.name)
                                             .font(.gmarketSansCaption2)
                                             .foregroundStyle(scents.contains(wineScent) ? .accent : .appGrayButton)
                                     }
@@ -339,16 +339,16 @@ struct WineNoteEditView: View {
                         ForEach(wineTypes) { wine in
                             Button {
                                 type = wine
-                                defaultImageName = type.typeImageName
+                                defaultImageName = type.imageName
                                 Haptic.impact(style: .soft)
                                 showWindTypePicker = false
                             } label: {
                                 HStack {
-                                    Image(wine.typeImageName)
+                                    Image(wine.imageName)
                                         .resizable()
                                         .scaledToFit()
                                         .frame(height: 40)
-                                    Text(wine.typeName)
+                                    Text(wine.name)
                                         .font(.gmarketSansBody)
                                 }
                             }
@@ -393,7 +393,7 @@ struct WineNoteEditView: View {
         think = note.think
         rating = note.rating
         
-        defaultImageName = type.typeImageName
+        defaultImageName = type.imageName
     }
     
     private func saveData() {

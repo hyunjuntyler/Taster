@@ -40,14 +40,14 @@ struct WineNoteDetailView: View {
                                     RoundedRectangle(cornerRadius: 12, style: .continuous)
                                         .frame(width: 80, height: 80)
                                         .foregroundStyle(.appListBoxBackground)
-                                    Image(note.type.typeImageName)
+                                    Image(note.type.imageName)
                                         .resizable()
                                         .scaledToFit()
                                         .frame(height: 60)
                                 }
                             }
                             VStack(alignment: .leading, spacing: 5) {
-                                Text(note.type.typeName)
+                                Text(note.type.name)
                                     .font(.gmarketSansCaption)
                                 Text(note.name)
                                     .font(.gmarketSansBody)
@@ -77,7 +77,7 @@ struct WineNoteDetailView: View {
                                             .frame(width: 16, height: 16)
                                             .foregroundStyle(getColor(color: note.color))
                                             .shadow(color: Color(.systemGray3), radius: 1)
-                                        Text(note.color.colorName)
+                                        Text(note.color.name)
                                             .font(.gmarketSansSubHeadline)
                                     }
                                     .padding(.vertical, 3)
@@ -94,11 +94,11 @@ struct WineNoteDetailView: View {
                                         HStack {
                                             ForEach(note.scents) { scent in
                                                     VStack {
-                                                        Image(scent.scentImageName)
+                                                        Image(scent.imageName)
                                                             .resizable()
                                                             .scaledToFit()
                                                             .frame(width: 30, height: 30)
-                                                        Text(scent.scentName)
+                                                        Text(scent.name)
                                                             .font(.gmarketSansCaption2)
                                                             .fontWeight(.regular)
                                                     }
@@ -190,7 +190,7 @@ struct WineNoteDetailView: View {
     }
 
     private func getColor(color: WineColor) -> Color {
-        if let colorName = WineColorName(rawValue: color.colorName) {
+        if let colorName = WineColorName(rawValue: color.name) {
             switch colorName {
             case .밀짚색: return .strawWine
             case .노란색: return .yellowWine
