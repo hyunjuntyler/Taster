@@ -58,6 +58,8 @@
 		F04B4FC52B11AF190000047D /* CoffeeNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04B4FC42B11AF190000047D /* CoffeeNote.swift */; };
 		F04B4FC72B11AF210000047D /* CocktailNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04B4FC62B11AF210000047D /* CocktailNote.swift */; };
 		F07D515C2B20073F0059A62C /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07D515B2B20073F0059A62C /* UserView.swift */; };
+		F0DCD1AE2B2498A600841A18 /* DeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DCD1AD2B2498A600841A18 /* DeleteButton.swift */; };
+		F0DCD1B02B2499DC00841A18 /* DeleteAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DCD1AF2B2499DC00841A18 /* DeleteAlert.swift */; };
 		F0DE9BD52B2420C0004A9621 /* RatingDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BD42B2420C0004A9621 /* RatingDisplay.swift */; };
 		F0DE9BD72B24250E004A9621 /* WineNoteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BD62B24250E004A9621 /* WineNoteList.swift */; };
 		F0DE9BD92B2434B3004A9621 /* WineNoteEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BD82B2434B3004A9621 /* WineNoteEditView.swift */; };
@@ -136,6 +138,8 @@
 		F04B4FC42B11AF190000047D /* CoffeeNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeNote.swift; sourceTree = "<group>"; };
 		F04B4FC62B11AF210000047D /* CocktailNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailNote.swift; sourceTree = "<group>"; };
 		F07D515B2B20073F0059A62C /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		F0DCD1AD2B2498A600841A18 /* DeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButton.swift; sourceTree = "<group>"; };
+		F0DCD1AF2B2499DC00841A18 /* DeleteAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAlert.swift; sourceTree = "<group>"; };
 		F0DE9BD42B2420C0004A9621 /* RatingDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingDisplay.swift; sourceTree = "<group>"; };
 		F0DE9BD62B24250E004A9621 /* WineNoteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineNoteList.swift; sourceTree = "<group>"; };
 		F0DE9BD82B2434B3004A9621 /* WineNoteEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineNoteEditView.swift; sourceTree = "<group>"; };
@@ -312,9 +316,11 @@
 				29B388B92B0295D900E3942D /* Confetti */,
 				299A914E2AF6DEC000D9C2D1 /* NavigationBar.swift */,
 				299A91692AF7BBF800D9C2D1 /* CloseAlert.swift */,
+				F0DCD1AF2B2499DC00841A18 /* DeleteAlert.swift */,
 				29B388B52B0281E700E3942D /* PermissionAlert.swift */,
 				F0DE9BDC2B245BC4004A9621 /* CameraPermissionAlert.swift */,
 				299A91612AF757F000D9C2D1 /* NextButton.swift */,
+				F0DCD1AD2B2498A600841A18 /* DeleteButton.swift */,
 				299A91672AF7B93000D9C2D1 /* CloseButton.swift */,
 				2990E4012AF9A21E0001617A /* ContentUnavailable.swift */,
 				2990E4062AF9E11D0001617A /* AddNoteButton.swift */,
@@ -521,6 +527,7 @@
 				F04B4FC52B11AF190000047D /* CoffeeNote.swift in Sources */,
 				F0DE9BE82B2466A3004A9621 /* AddCoffeeTasteView.swift in Sources */,
 				2921B0152B02673B00533A83 /* AddWineNoteView.swift in Sources */,
+				F0DCD1AE2B2498A600841A18 /* DeleteButton.swift in Sources */,
 				299A91512AF6E2F100D9C2D1 /* PreferenceKey.swift in Sources */,
 				F0DE9BED2B2475D9004A9621 /* CoffeeNoteList.swift in Sources */,
 				29BD871A2B00F15D0082241D /* RadarChart.swift in Sources */,
@@ -548,6 +555,7 @@
 				F0DE9BE12B2460B7004A9621 /* CoffeeModel.swift in Sources */,
 				299A91532AF71E9A00D9C2D1 /* ViewExtension.swift in Sources */,
 				F0FBBFFE2B2348C700F513BC /* WineNoteView.swift in Sources */,
+				F0DCD1B02B2499DC00841A18 /* DeleteAlert.swift in Sources */,
 				29BD87182B00BD8D0082241D /* Rating.swift in Sources */,
 				293FD1F02AFAF98600623B23 /* UIScreenExtension.swift in Sources */,
 				293FD1F62AFB40D500623B23 /* Haptic.swift in Sources */,
