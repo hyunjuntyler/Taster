@@ -94,7 +94,7 @@ struct AddNoteCompleteView: View {
     
     private func reset() {
         wineNoteObservable.reset()
-        
+        coffeeNoteObservable.reset()
         noteEnvironment.noteType = nil
     }
 }

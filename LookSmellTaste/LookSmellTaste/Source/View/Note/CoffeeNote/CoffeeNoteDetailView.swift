@@ -176,6 +176,7 @@ struct CoffeeNoteDetailPreview: View {
 
 #Preview {
     NavigationStack {
-        CoffeeNoteDetailPreview()            .modelContainer(previewContainer)
+        CoffeeNoteDetailPreview()            
+            .modelContainer(previewContainer)
     }
 }
