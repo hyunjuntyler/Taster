@@ -10,7 +10,7 @@ import SwiftUI
 struct AddCoffeeNoteView: View {
     @Bindable private var observable = CoffeeNoteObservable.shared
     @State private var showDatePicker = false
-    @State private var showWindTypePicker = false
+    @State private var showCoffeeTypePicker = false
     @FocusState private var isFocused
     
     @State private var name = ""
@@ -102,7 +102,7 @@ struct AddCoffeeNoteView: View {
                 Spacer()
                 Button {
                     isFocused = false
-                    showWindTypePicker = true
+                    showCoffeeTypePicker = true
                     Haptic.impact(style: .soft)
                 } label: {
                     Text("바꾸기")
@@ -148,16 +148,16 @@ struct AddCoffeeNoteView: View {
             .presentationDetents([.medium])
             .presentationCornerRadius(24)
         }
-        .sheet(isPresented: $showWindTypePicker) {
+        .sheet(isPresented: $showCoffeeTypePicker) {
             VStack {
-                Text("와인 종류 변경")
+                Text("커피 종류 변경")
                     .font(.gmarketSansTitle3)
                 ScrollView {
                     ForEach(coffeeTypes) { coffee in
                         Button {
                             type = coffee
                             Haptic.impact(style: .soft)
-                            showWindTypePicker = false
+                            showCoffeeTypePicker = false
                         } label: {
                             HStack {
                                 Image(coffee.imageName)

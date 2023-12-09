@@ -10,7 +10,7 @@ import SwiftUI
 struct AddWineNoteView: View {
     @Bindable private var observable = WineNoteObservable.shared
     @State private var showDatePicker = false
-    @State private var showWindTypePicker = false
+    @State private var showWineTypePicker = false
     @FocusState private var isFocused
     
     @State private var name = ""
@@ -102,7 +102,7 @@ struct AddWineNoteView: View {
                 Spacer()
                 Button {
                     isFocused = false
-                    showWindTypePicker = true
+                    showWineTypePicker = true
                     Haptic.impact(style: .soft)
                 } label: {
                     Text("바꾸기")
@@ -148,7 +148,7 @@ struct AddWineNoteView: View {
             .presentationDetents([.medium])
             .presentationCornerRadius(24)
         }
-        .sheet(isPresented: $showWindTypePicker) {
+        .sheet(isPresented: $showWineTypePicker) {
             VStack {
                 Text("와인 종류 변경")
                     .font(.gmarketSansTitle3)
@@ -157,7 +157,7 @@ struct AddWineNoteView: View {
                         Button {
                             type = wine
                             Haptic.impact(style: .soft)
-                            showWindTypePicker = false
+                            showWineTypePicker = false
                         } label: {
                             HStack {
                                 Image(wine.imageName)

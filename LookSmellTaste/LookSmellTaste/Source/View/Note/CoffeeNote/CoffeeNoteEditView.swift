@@ -1,5 +1,5 @@
 //
-//  WineNoteEditView.swift
+//  CoffeeNoteEditView.swift
 //  LookSmellTaste
 //
 //  Created by Hyunjun Kim on 12/9/23.
@@ -8,19 +8,18 @@
 import SwiftUI
 import SwiftData
 
-struct WineNoteEditView: View {
+struct CoffeeNoteEditView: View {
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
     
-    @Bindable var note: WineNote
+    @Bindable var note: CoffeeNote
     
     @State private var selectedImage: UIImage?
     @State private var defaultImageName = ""
     @State private var name = ""
     @State private var date = Date()
-    @State private var type: WineType = wineTypes[2]
-    @State private var color: WineColor = wineColors[0]
-    @State private var scents: [WineScent] = []
+    @State private var type: CoffeeType = coffeeTypes[0]
+    @State private var flavors: [CoffeeFlavor] = []
     @State private var taste: [Double] = [0, 0, 0, 0, 0]
     @State private var think = ""
     @State private var rating = 0.0
@@ -29,11 +28,10 @@ struct WineNoteEditView: View {
     @State private var permissionType: PermissionType = .album
     
     @State private var showDatePicker = false
-    @State private var showWineTypePicker = false
+    @State private var showCoffeeTypePicker = false
     
-    private let lookColumns = Array(repeating: GridItem(.flexible()), count: 6)
-    private let smellColumns = Array(repeating: GridItem(.flexible()), count: 6)
-    private let tasteLabels = ["바디", "당도", "산도", "타닌", "알코올"]
+    private let columns = Array(repeating: GridItem(.flexible()), count: 6)
+    private let tasteLabels = ["신맛", "쓴맛", "향미", "단맛", "바디"]
     private let symbolColors: [Color] = [.purple, .orange, .blue, .green, .red]
     
     var body: some View {
@@ -49,13 +47,13 @@ struct WineNoteEditView: View {
                             .padding(.top, 5)
                         EditImagePicker(selectedImage: $selectedImage, permissionDenied: $permissionDenied, permissionType: $permissionType, defaultImageName: defaultImageName)
                         
-                        Text("와인 이름")
+                        Text("커피 이름")
                             .font(.gmarketSansSubHeadline)
                             .foregroundStyle(.gray)
                             .padding(.leading)
                             .padding(.top, 5)
                         HStack {
-                            TextField("와인 이름을 입력해주세요", text: $name, axis: .vertical)
+                            TextField("커피 이름을 입력해주세요", text: $name, axis: .vertical)
                                 .font(.gmarketSansBody)
                                 .tint(.accent)
                                 .onTapGesture {
@@ -114,7 +112,7 @@ struct WineNoteEditView: View {
                                 .foregroundStyle(.appSheetBoxBackground)
                         }
                         
-                        Text("와인 종류")
+                        Text("커피 종류")
                             .font(.gmarketSansSubHeadline)
                             .foregroundStyle(.gray)
                             .padding(.leading)
@@ -128,7 +126,7 @@ struct WineNoteEditView: View {
                                 .font(.gmarketSansBody)
                             Spacer()
                             Button {
-                                showWineTypePicker = true
+                                showCoffeeTypePicker = true
                                 Haptic.impact(style: .soft)
                             } label: {
                                 Text("바꾸기")
@@ -149,72 +147,35 @@ struct WineNoteEditView: View {
                                 .foregroundStyle(.appSheetBoxBackground)
                         }
                         
-                        Text("Look")
+                        Text("Flavor")
                             .font(.gmarketSansSubHeadline)
                             .foregroundStyle(.gray)
                             .padding(.leading)
                             .padding(.top, 5)
-                        LazyVGrid(columns: lookColumns, spacing: 5) {
-                            ForEach(wineColors) { wineColor in
+                        LazyVGrid(columns: columns, spacing: 8) {
+                            ForEach(coffeeFlavors) { coffeeFlavor in
                                 Button {
-                                    withAnimation(.easeInOut) {
-                                        color = wineColor
-                                    }
-                                    Haptic.impact(style: .soft)
-                                } label: {
-                                    VStack {
-                                        Image(wineColor.imageName)
-                                            .resizable()
-                                            .scaledToFit()
-                                            .padding(.bottom, 5)
-                                        Text(wineColor.name)
-                                            .font(.gmarketSansCaption2)
-                                            .foregroundStyle(color == wineColor ? .accent : .appGrayButton)
-                                    }
-                                    .padding(5)
-                                    .background {
-                                        RoundedRectangle(cornerRadius: 12)
-                                            .foregroundStyle(color == wineColor ? .appPickerGray : .appSheetBoxBackground)
-                                    }
-                                }
-                                .buttonStyle(PressButtonStyle())
-                            }
-                        }
-                        .padding(10)
-                        .background {
-                            RoundedRectangle(cornerRadius: 12)
-                                .foregroundStyle(.appSheetBoxBackground)
-                        }
-                        
-                        Text("Smell")
-                            .font(.gmarketSansSubHeadline)
-                            .foregroundStyle(.gray)
-                            .padding(.leading)
-                            .padding(.top, 5)
-                        LazyVGrid(columns: smellColumns, spacing: 8) {
-                            ForEach(wineScents) { wineScent in
-                                Button {
-                                    if scents.contains(wineScent) {
-                                        if let index = scents.firstIndex(of: wineScent) {
-                                            scents.remove(at: index)
+                                    if flavors.contains(coffeeFlavor) {
+                                        if let index = flavors.firstIndex(of: coffeeFlavor) {
+                                            flavors.remove(at: index)
                                         }
                                     } else {
-                                        scents.append(wineScent)
+                                        flavors.append(coffeeFlavor)
                                     }
                                     Haptic.impact(style: .soft)
                                 } label: {
                                     VStack {
-                                        Image(wineScent.imageName)
+                                        Image(coffeeFlavor.imageName)
                                             .resizable()
                                             .scaledToFit()
-                                        Text(wineScent.name)
+                                        Text(coffeeFlavor.name)
                                             .font(.gmarketSansCaption2)
-                                            .foregroundStyle(scents.contains(wineScent) ? .accent : .appGrayButton)
+                                            .foregroundStyle(flavors.contains(coffeeFlavor) ? .accent : .appGrayButton)
                                     }
                                     .padding(4)
                                     .background {
                                         RoundedRectangle(cornerRadius: 12)
-                                            .foregroundStyle(scents.contains(wineScent) ? .appPickerGray : .appSheetBoxBackground)
+                                            .foregroundStyle(flavors.contains(coffeeFlavor) ? .appPickerGray : .appSheetBoxBackground)
                                     }
                                 }
                                 .buttonStyle(PressButtonStyle())
@@ -232,7 +193,7 @@ struct WineNoteEditView: View {
                             .padding(.leading)
                             .padding(.top, 5)
                         VStack {
-                            RadarChart(data: taste, frame: 100)
+                            RadarChart(data: taste, valueList: ["신맛", "바디", "쓴맛", "향미", "단맛"], frame: 100)
                                 .padding(.top, 30)
                                 .padding(.bottom, 10)
                             ForEach(0..<5) { index in
@@ -331,24 +292,24 @@ struct WineNoteEditView: View {
                 .presentationDetents([.medium])
                 .presentationCornerRadius(24)
             }
-            .sheet(isPresented: $showWineTypePicker) {
+            .sheet(isPresented: $showCoffeeTypePicker) {
                 VStack {
-                    Text("와인 종류 변경")
+                    Text("커피 종류 변경")
                         .font(.gmarketSansTitle3)
                     ScrollView {
-                        ForEach(wineTypes) { wine in
+                        ForEach(coffeeTypes) { coffee in
                             Button {
-                                type = wine
+                                type = coffee
                                 defaultImageName = type.imageName
                                 Haptic.impact(style: .soft)
-                                showWineTypePicker = false
+                                showCoffeeTypePicker = false
                             } label: {
                                 HStack {
-                                    Image(wine.imageName)
+                                    Image(coffee.imageName)
                                         .resizable()
                                         .scaledToFit()
                                         .frame(height: 40)
-                                    Text(wine.name)
+                                    Text(coffee.name)
                                         .font(.gmarketSansBody)
                                 }
                             }
@@ -357,7 +318,7 @@ struct WineNoteEditView: View {
                     }
                 }
                 .padding(.top, 24)
-                .presentationDetents([.medium])
+                .presentationDetents([.height(300)])
                 .presentationCornerRadius(24)
             }
             .toolbar {
@@ -387,8 +348,7 @@ struct WineNoteEditView: View {
         name = note.name
         date = note.date
         type = note.type
-        color = note.color
-        scents = note.scents
+        flavors = note.flavors
         taste = note.taste
         think = note.think
         rating = note.rating
@@ -405,8 +365,7 @@ struct WineNoteEditView: View {
         note.name = name
         note.date = date
         note.type = type
-        note.color = color
-        note.scents = scents
+        note.flavors = flavors
         note.taste = taste
         note.think = think
         note.rating = rating
@@ -415,17 +374,17 @@ struct WineNoteEditView: View {
     }
 }
 
-struct WineNoteEditPreview: View {
-    @Query private var wineNotes: [WineNote]
+struct CoffeeNoteEditPreview: View {
+    @Query private var coffeeNotes: [CoffeeNote]
     
     var body: some View {
-        WineNoteEditView(note: wineNotes[0])
+        CoffeeNoteEditView(note: coffeeNotes[0])
     }
 }
 
 #Preview {
     NavigationStack {
-        WineNoteEditPreview()
+        CoffeeNoteEditPreview()
             .modelContainer(previewContainer)
     }
 }

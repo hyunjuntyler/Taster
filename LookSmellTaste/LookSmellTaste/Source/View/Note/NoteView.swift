@@ -100,6 +100,37 @@ struct NoteView: View {
                 .padding(.horizontal)
                 .padding(.top)
             }
+            
+            if !coffeeNotes.isEmpty {
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text("커피 노트")
+                            .font(.gmarketSansTitle2)
+                        Spacer()
+                        NavigationLink {
+                            CoffeeNoteView()
+                        } label: {
+                            Text("모두보기")
+                                .font(.gmarketSansBody)
+                        }
+                    }
+                    .padding(.horizontal, 5)
+                    LazyVStack {
+                        let recentCoffeeNotes = coffeeNotes.prefix(3)
+                        
+                        ForEach(recentCoffeeNotes) { note in
+                            NavigationLink {
+                                CoffeeNoteDetailView(note: note)
+                            } label: {
+                                CoffeeNoteList(note: note)
+                            }
+                            .buttonStyle(PressButtonStyle())
+                        }
+                    }
+                }
+                .padding(.horizontal)
+                .padding(.top)
+            }
         }
         .coordinateSpace(name: "scroll")
         .overlay {
