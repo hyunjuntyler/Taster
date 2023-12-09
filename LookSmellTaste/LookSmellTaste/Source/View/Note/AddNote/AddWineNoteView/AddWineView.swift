@@ -13,10 +13,10 @@ struct AddWineView: View {
     @State private var showWindTypePicker = false
     @FocusState private var isFocused
     
-    @State var name = ""
-    @State var date = Date()
-    @State var type: WineType = wineTypes[2]
-    @State var image: UIImage?
+    @State private var name = ""
+    @State private var date = Date()
+    @State private var type: WineType = wineTypes[2]
+    @State private var image: UIImage?
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -31,9 +31,6 @@ struct AddWineView: View {
                     .focused($isFocused)
                     .tint(.accent)
                     .onTapGesture {
-                        Haptic.impact(style: .soft)
-                    }
-                    .onChange(of: name) { _, _ in
                         Haptic.impact(style: .soft)
                     }
                 Button {
@@ -145,7 +142,9 @@ struct AddWineView: View {
                     .onChange(of: date) { _, _ in
                         showDatePicker = false
                     }
+                    .padding()
             }
+            .padding(.top, 24)
             .presentationDetents([.medium])
             .presentationCornerRadius(24)
         }

@@ -13,7 +13,7 @@ struct AddWineLookView: View {
     @State private var columns = Array(repeating: GridItem(.flexible()), count: 4)
     @State private var navigate = false
     
-    @State var color: WineColor = wineColors[0]
+    @State private var color: WineColor = wineColors[0]
     
     var body: some View {
         ZStack {

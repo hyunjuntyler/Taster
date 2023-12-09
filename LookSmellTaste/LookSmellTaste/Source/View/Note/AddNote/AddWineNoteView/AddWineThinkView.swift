@@ -13,8 +13,8 @@ struct AddWineThinkView: View {
     @State private var showCompleteView = false
     @FocusState private var isFocused
 
-    @State var think = ""
-    @State var rating = 0.0
+    @State private var think = ""
+    @State private var rating = 0.0
     
     var body: some View {
         ZStack {
@@ -34,9 +34,6 @@ struct AddWineThinkView: View {
                                 .focused($isFocused)
                                 .frame(height: 200, alignment: .topLeading)
                                 .font(.gmarketSansBody)
-                                .onChange(of: think) { _, _ in
-                                    Haptic.impact(style: .soft)
-                                }
                             Button {
                                 Haptic.impact(style: .soft)
                                 think = ""

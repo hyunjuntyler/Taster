@@ -60,6 +60,8 @@
 		F07D515C2B20073F0059A62C /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07D515B2B20073F0059A62C /* UserView.swift */; };
 		F0DE9BD52B2420C0004A9621 /* RatingDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BD42B2420C0004A9621 /* RatingDisplay.swift */; };
 		F0DE9BD72B24250E004A9621 /* WineNoteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BD62B24250E004A9621 /* WineNoteList.swift */; };
+		F0DE9BD92B2434B3004A9621 /* WineNoteEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BD82B2434B3004A9621 /* WineNoteEditView.swift */; };
+		F0DE9BDB2B243BBC004A9621 /* EditImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BDA2B243BBC004A9621 /* EditImagePicker.swift */; };
 		F0FBBFF62B22F81400F513BC /* UserEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBBFF52B22F81400F513BC /* UserEditView.swift */; };
 		F0FBBFF82B22FF3400F513BC /* UserDeleteAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBBFF72B22FF3400F513BC /* UserDeleteAlert.swift */; };
 		F0FBBFFA2B2310F500F513BC /* WineNoteObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBBFF92B2310F500F513BC /* WineNoteObservable.swift */; };
@@ -124,6 +126,8 @@
 		F07D515B2B20073F0059A62C /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		F0DE9BD42B2420C0004A9621 /* RatingDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingDisplay.swift; sourceTree = "<group>"; };
 		F0DE9BD62B24250E004A9621 /* WineNoteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineNoteList.swift; sourceTree = "<group>"; };
+		F0DE9BD82B2434B3004A9621 /* WineNoteEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineNoteEditView.swift; sourceTree = "<group>"; };
+		F0DE9BDA2B243BBC004A9621 /* EditImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditImagePicker.swift; sourceTree = "<group>"; };
 		F0FBBFF52B22F81400F513BC /* UserEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditView.swift; sourceTree = "<group>"; };
 		F0FBBFF72B22FF3400F513BC /* UserDeleteAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDeleteAlert.swift; sourceTree = "<group>"; };
 		F0FBBFF92B2310F500F513BC /* WineNoteObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineNoteObservable.swift; sourceTree = "<group>"; };
@@ -290,6 +294,7 @@
 				29BD87172B00BD8D0082241D /* Rating.swift */,
 				29BD87192B00F15D0082241D /* RadarChart.swift */,
 				29B388B12B0276D100E3942D /* ImagePicker.swift */,
+				F0DE9BDA2B243BBC004A9621 /* EditImagePicker.swift */,
 				29B388B72B028F0200E3942D /* PreparingContent.swift */,
 				F0DE9BD42B2420C0004A9621 /* RatingDisplay.swift */,
 			);
@@ -364,6 +369,7 @@
 			children = (
 				F0FBBFFD2B2348C700F513BC /* WineNoteView.swift */,
 				F02EED492B235173009AD6D1 /* WineNoteDetailView.swift */,
+				F0DE9BD82B2434B3004A9621 /* WineNoteEditView.swift */,
 				F0DE9BD62B24250E004A9621 /* WineNoteList.swift */,
 			);
 			path = WineNote;
@@ -488,6 +494,7 @@
 				293FD1F42AFB096000623B23 /* AddWineLookView.swift in Sources */,
 				299A91682AF7B93000D9C2D1 /* CloseButton.swift in Sources */,
 				299A91622AF757F000D9C2D1 /* NextButton.swift in Sources */,
+				F0DE9BD92B2434B3004A9621 /* WineNoteEditView.swift in Sources */,
 				299A91322AF6B1FF00D9C2D1 /* NoteView.swift in Sources */,
 				299A91242AF6AD6C00D9C2D1 /* LookSmellTasteApp.swift in Sources */,
 				F02EED4A2B235173009AD6D1 /* WineNoteDetailView.swift in Sources */,
@@ -496,6 +503,7 @@
 				29431F992AF8654300BE17F1 /* NoteEnvironment.swift in Sources */,
 				299A915E2AF74C6F00D9C2D1 /* AddNoteView.swift in Sources */,
 				F0FBBFF62B22F81400F513BC /* UserEditView.swift in Sources */,
+				F0DE9BDB2B243BBC004A9621 /* EditImagePicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

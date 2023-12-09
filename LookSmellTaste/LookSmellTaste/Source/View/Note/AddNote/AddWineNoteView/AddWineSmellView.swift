@@ -13,7 +13,7 @@ struct AddWineSmellView: View {
     @State private var columns = Array(repeating: GridItem(.flexible()), count: 5)
     @State private var navigate = false
     
-    @State var scents: [WineScent] = []
+    @State private var scents: [WineScent] = []
     
     var body: some View {
         ZStack {

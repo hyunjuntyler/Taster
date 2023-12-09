@@ -12,7 +12,7 @@ struct AddWineTasteView: View {
     @Environment(NoteEnvironment.self) var noteEnvironment: NoteEnvironment
     @State private var navigate = false
     
-    @State var taste: [Double] = [0, 0, 0, 0, 0]
+    @State private var taste: [Double] = [0, 0, 0, 0, 0]
     
     private let tasteLabels = ["바디", "당도", "산도", "타닌", "알코올"]
     private let symbolColors: [Color] = [.purple, .orange, .blue, .green, .red]
