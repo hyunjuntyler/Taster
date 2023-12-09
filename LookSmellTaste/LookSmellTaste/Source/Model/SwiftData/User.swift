@@ -16,6 +16,7 @@ final class User {
     @Attribute(.externalStorage) var image: Data?
     
     @Relationship(deleteRule: .cascade) var wineNotes: [WineNote]?
+    @Relationship(deleteRule: .cascade) var coffeeNotes: [CoffeeNote]?
 
     init(name: String, icon: String) {
         self.name = name

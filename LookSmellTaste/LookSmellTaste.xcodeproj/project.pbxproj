@@ -63,6 +63,8 @@
 		F0DE9BD92B2434B3004A9621 /* WineNoteEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BD82B2434B3004A9621 /* WineNoteEditView.swift */; };
 		F0DE9BDB2B243BBC004A9621 /* EditImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BDA2B243BBC004A9621 /* EditImagePicker.swift */; };
 		F0DE9BDD2B245BC4004A9621 /* CameraPermissionAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BDC2B245BC4004A9621 /* CameraPermissionAlert.swift */; };
+		F0DE9BDF2B245FA0004A9621 /* CoffeeNoteObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BDE2B245FA0004A9621 /* CoffeeNoteObservable.swift */; };
+		F0DE9BE12B2460B7004A9621 /* CoffeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BE02B2460B7004A9621 /* CoffeeModel.swift */; };
 		F0FBBFF62B22F81400F513BC /* UserEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBBFF52B22F81400F513BC /* UserEditView.swift */; };
 		F0FBBFF82B22FF3400F513BC /* UserDeleteAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBBFF72B22FF3400F513BC /* UserDeleteAlert.swift */; };
 		F0FBBFFA2B2310F500F513BC /* WineNoteObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBBFF92B2310F500F513BC /* WineNoteObservable.swift */; };
@@ -130,6 +132,8 @@
 		F0DE9BD82B2434B3004A9621 /* WineNoteEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineNoteEditView.swift; sourceTree = "<group>"; };
 		F0DE9BDA2B243BBC004A9621 /* EditImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditImagePicker.swift; sourceTree = "<group>"; };
 		F0DE9BDC2B245BC4004A9621 /* CameraPermissionAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermissionAlert.swift; sourceTree = "<group>"; };
+		F0DE9BDE2B245FA0004A9621 /* CoffeeNoteObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeNoteObservable.swift; sourceTree = "<group>"; };
+		F0DE9BE02B2460B7004A9621 /* CoffeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeModel.swift; sourceTree = "<group>"; };
 		F0FBBFF52B22F81400F513BC /* UserEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditView.swift; sourceTree = "<group>"; };
 		F0FBBFF72B22FF3400F513BC /* UserDeleteAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDeleteAlert.swift; sourceTree = "<group>"; };
 		F0FBBFF92B2310F500F513BC /* WineNoteObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineNoteObservable.swift; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 			children = (
 				29431F982AF8654300BE17F1 /* NoteEnvironment.swift */,
 				F0FBBFF92B2310F500F513BC /* WineNoteObservable.swift */,
+				F0DE9BDE2B245FA0004A9621 /* CoffeeNoteObservable.swift */,
 			);
 			path = Observable;
 			sourceTree = "<group>";
@@ -338,6 +343,7 @@
 			children = (
 				29BD870D2B006DA90082241D /* NoteModel.swift */,
 				2949F2932AFA9593005AFEFC /* WineModel.swift */,
+				F0DE9BE02B2460B7004A9621 /* CoffeeModel.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -481,6 +487,7 @@
 				29B388BD2B0295FB00E3942D /* ConfettiShapes.swift in Sources */,
 				F0FBBFF82B22FF3400F513BC /* UserDeleteAlert.swift in Sources */,
 				29B388B22B0276D100E3942D /* ImagePicker.swift in Sources */,
+				F0DE9BE12B2460B7004A9621 /* CoffeeModel.swift in Sources */,
 				299A91532AF71E9A00D9C2D1 /* ViewExtension.swift in Sources */,
 				F0FBBFFE2B2348C700F513BC /* WineNoteView.swift in Sources */,
 				29BD87182B00BD8D0082241D /* Rating.swift in Sources */,
@@ -499,6 +506,7 @@
 				299A91622AF757F000D9C2D1 /* NextButton.swift in Sources */,
 				F0DE9BD92B2434B3004A9621 /* WineNoteEditView.swift in Sources */,
 				299A91322AF6B1FF00D9C2D1 /* NoteView.swift in Sources */,
+				F0DE9BDF2B245FA0004A9621 /* CoffeeNoteObservable.swift in Sources */,
 				299A91242AF6AD6C00D9C2D1 /* LookSmellTasteApp.swift in Sources */,
 				F02EED4A2B235173009AD6D1 /* WineNoteDetailView.swift in Sources */,
 				F04B4FC22B11A9530000047D /* User.swift in Sources */,

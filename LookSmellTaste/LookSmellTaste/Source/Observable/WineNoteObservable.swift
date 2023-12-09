@@ -9,7 +9,6 @@ import SwiftUI
 
 @Observable
 final class WineNoteObservable {
-    var user: User?
     var name: String = ""
     var date: Date = Date()
     var type: WineType = wineTypes[2]
@@ -23,7 +22,6 @@ final class WineNoteObservable {
     static var shared = WineNoteObservable()
     
     func reset() {
-        user = nil
         name = ""
         date = Date()
         type = wineTypes[2]
