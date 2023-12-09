@@ -17,7 +17,6 @@ struct ContentView: View {
     @Query private var user: [User]
     @State private var navigateToUserView = false
     
-    
     var body: some View {
         if user.isEmpty {
             SignInView()

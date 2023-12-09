@@ -11,6 +11,7 @@ struct AddNoteView: View {
     @Environment(NoteEnvironment.self) var noteEnvironment: NoteEnvironment
     @State private var columns = Array(repeating: GridItem(.flexible()), count: 4)
     @State private var navigate = false
+    @State private var scrollDisabled = true
     
     var body: some View {
         NavigationStack {
@@ -64,7 +65,16 @@ struct AddNoteView: View {
                             )
                         )
                     }
-                    .scrollDisabled(noteEnvironment.isNotePreparing)
+                    .scrollDisabled(scrollDisabled)
+                    .onChange(of: noteEnvironment.isNotePreparing) { _, newValue in
+                        if newValue {
+                            scrollDisabled = newValue
+                        } else {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                scrollDisabled = newValue
+                            }
+                        }
+                    }
                     
                     NextButton(disabled: noteEnvironment.isNotePreparing) {
                         Haptic.impact(style: .soft)
