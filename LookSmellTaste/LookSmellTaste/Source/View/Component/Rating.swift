@@ -19,7 +19,6 @@ struct Rating: View {
     var symbolColor: Color = .yellow
     var symbolBaseColor: Color = .appPickerGray
     
-    var textFont: Font = .title3
     var dragRange: CGFloat = 30
     
     var body: some View {

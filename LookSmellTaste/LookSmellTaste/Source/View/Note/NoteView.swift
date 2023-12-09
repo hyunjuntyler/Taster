@@ -73,13 +73,13 @@ struct NoteView: View {
                 VStack(alignment: .leading) {
                     HStack {
                         Text("와인 노트")
-                            .font(.gmarketSansTitle3)
+                            .font(.gmarketSansTitle2)
                         Spacer()
                         NavigationLink {
                             WineNoteView()
                         } label: {
                             Text("모두보기")
-                                .font(.gmarketSansCallout)
+                                .font(.gmarketSansBody)
                         }
                     }
                     .padding(.horizontal, 5)
@@ -88,7 +88,7 @@ struct NoteView: View {
                         
                         ForEach(recentWineNotes) { note in
                             NavigationLink {
-                                Text(note.name)
+                                WineNoteDetailView()
                             } label: {
                                 HStack {
                                     if let data = note.image {

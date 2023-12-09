@@ -180,6 +180,9 @@ struct AddWineView: View {
         .onTapGesture {
             isFocused = false
         }
+        .onAppear {
+            observable.reset()
+        }
         .onDisappear {
             observable.name = name
             observable.date = date

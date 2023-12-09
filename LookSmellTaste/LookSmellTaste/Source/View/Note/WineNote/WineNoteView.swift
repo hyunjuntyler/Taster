@@ -37,7 +37,7 @@ struct WineNoteView: View {
                     LazyVStack {
                         ForEach(sortedWineNotes) { note in
                             NavigationLink {
-                                Text(note.name)
+                                WineNoteDetailView()
                             } label: {
                                 HStack {
                                     if let data = note.image {
