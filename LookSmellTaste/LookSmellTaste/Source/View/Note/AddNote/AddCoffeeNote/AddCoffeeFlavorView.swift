@@ -71,7 +71,7 @@ struct AddCoffeeFlavorView: View {
                     navigate = true
                 }
                 .navigationDestination(isPresented: $navigate) {
-
+                    AddCoffeeTasteView()
                 }
             }
         }

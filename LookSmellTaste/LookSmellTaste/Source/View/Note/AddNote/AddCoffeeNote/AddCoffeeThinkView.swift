@@ -1,14 +1,14 @@
 //
-//  Add.swift
+//  AddCoffeeThinkView.swift
 //  LookSmellTaste
 //
-//  Created by hyunjun on 11/12/23.
+//  Created by Hyunjun Kim on 12/9/23.
 //
 
 import SwiftUI
 
-struct AddWineThinkView: View {
-    @Bindable private var observable = WineNoteObservable.shared
+struct AddCoffeeThinkView: View {
+    @Bindable private var observable = CoffeeNoteObservable.shared
     @Environment(NoteEnvironment.self) var noteEnvironment: NoteEnvironment
     @FocusState private var isFocused
 
@@ -109,7 +109,7 @@ struct AddWineThinkView: View {
 
 #Preview {
     NavigationStack {
-        AddWineThinkView()
+        AddCoffeeThinkView()
             .environment(NoteEnvironment())
     }
 }

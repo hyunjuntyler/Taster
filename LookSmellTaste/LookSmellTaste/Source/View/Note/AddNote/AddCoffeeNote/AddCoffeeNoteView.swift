@@ -173,7 +173,7 @@ struct AddCoffeeNoteView: View {
                 }
             }
             .padding(.top, 24)
-            .presentationDetents([.medium])
+            .presentationDetents([.height(300)])
             .presentationCornerRadius(24)
         }
         .onTapGesture {

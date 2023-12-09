@@ -77,9 +77,6 @@ struct NoteView: View {
                         Spacer()
                         NavigationLink {
                             WineNoteView()
-                                .onAppear {
-                                    Haptic.impact(style: .soft)
-                                }
                         } label: {
                             Text("모두보기")
                                 .font(.gmarketSansBody)
@@ -113,6 +110,18 @@ struct NoteView: View {
         .fullScreenCover(isPresented: $noteEnvironment.addNote) {
             AddNoteView()
                 .interactiveDismissDisabled()
+        }
+        .overlay {
+            if noteEnvironment.showCompleteView {
+                AddNoteCompleteView()
+                    .transition(.opacity.animation(.easeInOut(duration: 0.5)))
+                    .onAppear {
+                        noteEnvironment.addNote = false
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                            noteEnvironment.showCompleteView = false
+                        }
+                    }
+            }
         }
         .environment(noteEnvironment)
     }

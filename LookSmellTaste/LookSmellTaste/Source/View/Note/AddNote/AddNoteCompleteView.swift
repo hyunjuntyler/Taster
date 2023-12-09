@@ -10,7 +10,10 @@ import SwiftData
 
 struct AddNoteCompleteView: View {
     @Environment(\.modelContext) private var context
-    @Bindable private var observable = WineNoteObservable.shared
+    @Environment(NoteEnvironment.self) var noteEnvironment: NoteEnvironment
+    
+    @Bindable private var wineNoteObservable = WineNoteObservable.shared
+    @Bindable private var coffeeNoteObservable = CoffeeNoteObservable.shared
     @Query private var users: [User]
     private var user: User? { users.first }
     
@@ -33,7 +36,7 @@ struct AddNoteCompleteView: View {
         }
         .onDisappear {
             saveNote()
-            observable.reset()
+            reset()
         }
     }
     
@@ -55,16 +58,49 @@ struct AddNoteCompleteView: View {
     }
     
     private func saveNote() {
-        let wineNote = WineNote(name: observable.name, date: observable.date, type: observable.type, color: observable.color, scents: observable.scents, taste: observable.taste, think: observable.think, rating: observable.rating)
+        switch noteEnvironment.noteType {
+        case .wine:
+            saveWineNote()
+        case .coffee:
+            saveCoffeeNote()
+        case .cocktail:
+            break
+        case .whiskey:
+            break
+        case .none:
+            break
+        }
+    }
+    
+    private func saveWineNote() {
+        let wineNote = WineNote(name: wineNoteObservable.name, date: wineNoteObservable.date, type: wineNoteObservable.type, color: wineNoteObservable.color, scents: wineNoteObservable.scents, taste: wineNoteObservable.taste, think: wineNoteObservable.think, rating: wineNoteObservable.rating)
         
         wineNote.user = user
-        wineNote.image = observable.image
+        wineNote.image = wineNoteObservable.image
         
         user?.wineNotes?.append(wineNote)
+        try? context.save()
+    }
+    
+    private func saveCoffeeNote() {
+        let coffeeNote = CoffeeNote(name: coffeeNoteObservable.name, date: coffeeNoteObservable.date, type: coffeeNoteObservable.type, flavors: coffeeNoteObservable.flavors, taste: coffeeNoteObservable.taste, think: coffeeNoteObservable.think, rating: coffeeNoteObservable.rating)
+        
+        coffeeNote.user = user
+        coffeeNote.image = coffeeNoteObservable.image
+        
+        user?.coffeeNotes?.append(coffeeNote)
+        try? context.save()
+    }
+    
+    private func reset() {
+        wineNoteObservable.reset()
+        
+        noteEnvironment.noteType = nil
     }
 }
 
 #Preview {
     AddNoteCompleteView()
         .modelContainer(previewContainer)
+        .environment(NoteEnvironment())
 }

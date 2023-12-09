@@ -67,6 +67,8 @@
 		F0DE9BE12B2460B7004A9621 /* CoffeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BE02B2460B7004A9621 /* CoffeeModel.swift */; };
 		F0DE9BE42B246321004A9621 /* AddCoffeeNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BE32B246321004A9621 /* AddCoffeeNoteView.swift */; };
 		F0DE9BE62B246402004A9621 /* AddCoffeeFlavorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BE52B246401004A9621 /* AddCoffeeFlavorView.swift */; };
+		F0DE9BE82B2466A3004A9621 /* AddCoffeeTasteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BE72B2466A3004A9621 /* AddCoffeeTasteView.swift */; };
+		F0DE9BEA2B2466AF004A9621 /* AddCoffeeThinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BE92B2466AF004A9621 /* AddCoffeeThinkView.swift */; };
 		F0FBBFF62B22F81400F513BC /* UserEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBBFF52B22F81400F513BC /* UserEditView.swift */; };
 		F0FBBFF82B22FF3400F513BC /* UserDeleteAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBBFF72B22FF3400F513BC /* UserDeleteAlert.swift */; };
 		F0FBBFFA2B2310F500F513BC /* WineNoteObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBBFF92B2310F500F513BC /* WineNoteObservable.swift */; };
@@ -138,6 +140,8 @@
 		F0DE9BE02B2460B7004A9621 /* CoffeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeModel.swift; sourceTree = "<group>"; };
 		F0DE9BE32B246321004A9621 /* AddCoffeeNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoffeeNoteView.swift; sourceTree = "<group>"; };
 		F0DE9BE52B246401004A9621 /* AddCoffeeFlavorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoffeeFlavorView.swift; sourceTree = "<group>"; };
+		F0DE9BE72B2466A3004A9621 /* AddCoffeeTasteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoffeeTasteView.swift; sourceTree = "<group>"; };
+		F0DE9BE92B2466AF004A9621 /* AddCoffeeThinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoffeeThinkView.swift; sourceTree = "<group>"; };
 		F0FBBFF52B22F81400F513BC /* UserEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditView.swift; sourceTree = "<group>"; };
 		F0FBBFF72B22FF3400F513BC /* UserDeleteAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDeleteAlert.swift; sourceTree = "<group>"; };
 		F0FBBFF92B2310F500F513BC /* WineNoteObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineNoteObservable.swift; sourceTree = "<group>"; };
@@ -394,6 +398,8 @@
 			children = (
 				F0DE9BE32B246321004A9621 /* AddCoffeeNoteView.swift */,
 				F0DE9BE52B246401004A9621 /* AddCoffeeFlavorView.swift */,
+				F0DE9BE72B2466A3004A9621 /* AddCoffeeTasteView.swift */,
+				F0DE9BE92B2466AF004A9621 /* AddCoffeeThinkView.swift */,
 			);
 			path = AddCoffeeNote;
 			sourceTree = "<group>";
@@ -481,6 +487,7 @@
 				293FD1F82AFB426F00623B23 /* WineNote.swift in Sources */,
 				F0DE9BE42B246321004A9621 /* AddCoffeeNoteView.swift in Sources */,
 				F04B4FC52B11AF190000047D /* CoffeeNote.swift in Sources */,
+				F0DE9BE82B2466A3004A9621 /* AddCoffeeTasteView.swift in Sources */,
 				2921B0152B02673B00533A83 /* AddWineNoteView.swift in Sources */,
 				299A91512AF6E2F100D9C2D1 /* PreferenceKey.swift in Sources */,
 				29BD871A2B00F15D0082241D /* RadarChart.swift in Sources */,
@@ -497,6 +504,7 @@
 				F0DE9BD52B2420C0004A9621 /* RatingDisplay.swift in Sources */,
 				299A91262AF6AD6C00D9C2D1 /* ContentView.swift in Sources */,
 				29BD87142B00AE9E0082241D /* AddWineThinkView.swift in Sources */,
+				F0DE9BEA2B2466AF004A9621 /* AddCoffeeThinkView.swift in Sources */,
 				29B388BF2B02963B00E3942D /* ConfettiSample.swift in Sources */,
 				F003F5DB2B1318A6003D2499 /* ThumbnailPicker.swift in Sources */,
 				29B388BD2B0295FB00E3942D /* ConfettiShapes.swift in Sources */,

@@ -20,11 +20,11 @@ final class CoffeeNote {
     var think: String = ""
     var rating: Double = 0.0
     
-    init(name: String, date: Date, type: CoffeeType, flavor: [CoffeeFlavor], taste: [Double], think: String, rating: Double) {
+    init(name: String, date: Date, type: CoffeeType, flavors: [CoffeeFlavor], taste: [Double], think: String, rating: Double) {
         self.name = name
         self.date = date
         self.type = type
-        self.flavors = flavor
+        self.flavors = flavors
         self.taste = taste
         self.think = think
         self.rating = rating

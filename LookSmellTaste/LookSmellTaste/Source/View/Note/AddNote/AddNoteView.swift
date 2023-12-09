@@ -75,7 +75,7 @@ struct AddNoteView: View {
                         case .wine:
                             AddWineLookView()
                         case .coffee:
-                            EmptyView()
+                            AddCoffeeFlavorView()
                         case .cocktail:
                             EmptyView()
                         case .whiskey:
@@ -106,18 +106,6 @@ struct AddNoteView: View {
         .overlay {
             if noteEnvironment.showPermissionAlert {
                 PermissionAlert()
-            }
-        }
-        .overlay {
-            if noteEnvironment.showCompleteView {
-                AddNoteCompleteView()
-                    .transition(.opacity.animation(.easeInOut(duration: 0.5)))
-                    .onAppear {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                            noteEnvironment.addNote = false
-                            noteEnvironment.showCompleteView = false
-                        }
-                    }
             }
         }
     }
