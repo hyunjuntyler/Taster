@@ -51,6 +51,7 @@ struct WineNoteView: View {
         .navigationTitle("")
         .toolbar {
             Button {
+                Haptic.impact(style: .soft)
                 if sortOption == .date {
                     sortOption = .rating
                 } else {

@@ -77,6 +77,9 @@ struct NoteView: View {
                         Spacer()
                         NavigationLink {
                             WineNoteView()
+                                .onAppear {
+                                    Haptic.impact(style: .soft)
+                                }
                         } label: {
                             Text("모두보기")
                                 .font(.gmarketSansBody)
