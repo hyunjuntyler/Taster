@@ -10,6 +10,7 @@ import SwiftData
 
 struct NoteView: View {
     @Query(sort: \WineNote.date, order: .reverse) private var wineNotes: [WineNote]
+    @Query(sort: \CoffeeNote.date, order: .reverse) private var coffeeNotes: [CoffeeNote]
     @Query private var users: [User]
     private var user: User? { users.first }
     
@@ -18,7 +19,7 @@ struct NoteView: View {
     @Binding var navigateToUserView: Bool
     
     private var noteCount: Int {
-        wineNotes.count
+        wineNotes.count + coffeeNotes.count
     }
     
     var body: some View {
@@ -141,7 +142,7 @@ struct NoteView: View {
     }
     
     private func isNoteEmpty() -> Bool {
-        wineNotes.isEmpty
+        wineNotes.isEmpty && coffeeNotes.isEmpty
     }
 }
 
