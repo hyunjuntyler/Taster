@@ -9,7 +9,8 @@ import SwiftUI
 import SwiftData
 
 struct WineNoteDetailView: View {
-    let note: WineNote
+    @Bindable var note: WineNote
+    @State private var showEditSheet = false
 
     var body: some View {
         VStack {
@@ -22,6 +23,7 @@ struct WineNoteDetailView: View {
                             .font(.gmarketSansSubHeadline)
                             .foregroundStyle(.gray)
                             .padding(.leading, 5)
+                            .padding(.top)
                         HStack(spacing: 10) {
                             if let data = note.image {
                                 if let image = UIImage(data: data) {
@@ -73,14 +75,16 @@ struct WineNoteDetailView: View {
                                     HStack {
                                         RoundedRectangle(cornerRadius: 3, style: .continuous)
                                             .frame(width: 16, height: 16)
-                                            .foregroundStyle(.amberWine)
+                                            .foregroundStyle(getColor(color: note.color))
                                             .shadow(color: Color(.systemGray3), radius: 1)
                                         Text(note.color.colorName)
                                             .font(.gmarketSansSubHeadline)
                                     }
                                     .padding(.vertical, 3)
                                 }
-                                Divider()
+                                RoundedRectangle(cornerRadius: 3, style: .continuous)
+                                    .frame(height: 1)
+                                    .foregroundStyle(.appPickerGray)
                                 VStack {
                                     Text("후각")
                                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -117,13 +121,15 @@ struct WineNoteDetailView: View {
                                     .padding(.horizontal, -16)
                                     .padding(.bottom, 5)
                                 }
-                                Divider()
+                                RoundedRectangle(cornerRadius: 3, style: .continuous)
+                                    .frame(height: 1)
+                                    .foregroundStyle(.appPickerGray)
                                 Text("미각")
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                     .font(.gmarketSansSubHeadline)
                                     .foregroundStyle(.gray)
                                     .padding(.bottom, 10)
-                                RadarChart(data: ([3, 3, 2, 3, 5]),
+                                RadarChart(data: note.taste,
                                            frame: 100)
                             }
                             .frame(maxWidth: .infinity, alignment: .leading)
@@ -141,8 +147,9 @@ struct WineNoteDetailView: View {
                                 .padding(.leading, 5)
                                 .padding(.top)
                             VStack {
-                                Text("추가 노트")
+                                Text(note.think)
                                     .font(.gmarketSansBody)
+                                    .lineSpacing(5)
                             }
                             .font(.subheadline)
                             .frame(maxWidth: .infinity, alignment: .leading)
@@ -157,15 +164,48 @@ struct WineNoteDetailView: View {
                 }
             }
             .toolbar {
-                ToolbarItem {
+                ToolbarItem(placement: .principal) {
+                    Text(note.name)
+                        .font(.gmarketSansTitle3)
+                }
+                ToolbarItem(placement: .topBarTrailing) {
                     Button {
+                        showEditSheet = true
                     } label: {
                         Text("편집")
                             .font(.gmarketSansBody)
                     }
                 }
             }
+            .sheet(isPresented: $showEditSheet) {
+                WineNoteEditView(note: note)
+            }
         }
+        .navigationBarTitleDisplayMode(.inline)
+    }
+    
+    private enum WineColorName: String {
+        case 밀짚색, 노란색, 황금색, 호박색, 갈색, 구리색, 연어색, 분홍색, 루비색, 보라색, 석류색, 황갈색
+    }
+
+    private func getColor(color: WineColor) -> Color {
+        if let colorName = WineColorName(rawValue: color.colorName) {
+            switch colorName {
+            case .밀짚색: return .strawWine
+            case .노란색: return .yellowWine
+            case .황금색: return .goldWine
+            case .호박색: return .amberWine
+            case .갈색: return .brownWine
+            case .구리색: return .copperWine
+            case .연어색: return .salmonWine
+            case .분홍색: return .pinkWine
+            case .루비색: return .rubyWine
+            case .보라색: return .purpleWine
+            case .석류색: return .garnetWine
+            case .황갈색: return .tawnyWine
+            }
+        }
+        return .rubyWine
     }
 }
 
