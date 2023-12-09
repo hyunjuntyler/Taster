@@ -11,6 +11,7 @@ import PhotosUI
 struct EditImagePicker: View {
     @Binding var selectedImage: UIImage?
     @Binding var permissionDenied: Bool
+    @Binding var permissionType: PermissionType
     
     @State var showCamera = false
     @State var showImagePicker = false
@@ -115,6 +116,7 @@ struct EditImagePicker: View {
                 if granted {
                     self.showCamera = true
                 } else {
+                    self.permissionType = .camera
                     self.permissionDenied = true
                 }
             }
@@ -128,6 +130,7 @@ struct EditImagePicker: View {
                 case .authorized:
                     self.showImagePicker = true
                 case .denied, .restricted, .notDetermined: 
+                    self.permissionType = .album
                     self.permissionDenied = true
                 default:
                     break
@@ -141,7 +144,7 @@ struct EditImagePicker: View {
     ZStack {
         Color.appSheetBackground.ignoresSafeArea()
         ScrollView {
-            EditImagePicker(selectedImage: .constant(nil), permissionDenied: .constant(false))
+            EditImagePicker(selectedImage: .constant(nil), permissionDenied: .constant(false), permissionType: .constant(.album))
                 .padding(.horizontal)
                 .padding(.top, 300)
         }

@@ -62,6 +62,7 @@
 		F0DE9BD72B24250E004A9621 /* WineNoteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BD62B24250E004A9621 /* WineNoteList.swift */; };
 		F0DE9BD92B2434B3004A9621 /* WineNoteEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BD82B2434B3004A9621 /* WineNoteEditView.swift */; };
 		F0DE9BDB2B243BBC004A9621 /* EditImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BDA2B243BBC004A9621 /* EditImagePicker.swift */; };
+		F0DE9BDD2B245BC4004A9621 /* CameraPermissionAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BDC2B245BC4004A9621 /* CameraPermissionAlert.swift */; };
 		F0FBBFF62B22F81400F513BC /* UserEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBBFF52B22F81400F513BC /* UserEditView.swift */; };
 		F0FBBFF82B22FF3400F513BC /* UserDeleteAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBBFF72B22FF3400F513BC /* UserDeleteAlert.swift */; };
 		F0FBBFFA2B2310F500F513BC /* WineNoteObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBBFF92B2310F500F513BC /* WineNoteObservable.swift */; };
@@ -128,6 +129,7 @@
 		F0DE9BD62B24250E004A9621 /* WineNoteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineNoteList.swift; sourceTree = "<group>"; };
 		F0DE9BD82B2434B3004A9621 /* WineNoteEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineNoteEditView.swift; sourceTree = "<group>"; };
 		F0DE9BDA2B243BBC004A9621 /* EditImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditImagePicker.swift; sourceTree = "<group>"; };
+		F0DE9BDC2B245BC4004A9621 /* CameraPermissionAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermissionAlert.swift; sourceTree = "<group>"; };
 		F0FBBFF52B22F81400F513BC /* UserEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditView.swift; sourceTree = "<group>"; };
 		F0FBBFF72B22FF3400F513BC /* UserDeleteAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDeleteAlert.swift; sourceTree = "<group>"; };
 		F0FBBFF92B2310F500F513BC /* WineNoteObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineNoteObservable.swift; sourceTree = "<group>"; };
@@ -370,6 +372,7 @@
 				F0FBBFFD2B2348C700F513BC /* WineNoteView.swift */,
 				F02EED492B235173009AD6D1 /* WineNoteDetailView.swift */,
 				F0DE9BD82B2434B3004A9621 /* WineNoteEditView.swift */,
+				F0DE9BDC2B245BC4004A9621 /* CameraPermissionAlert.swift */,
 				F0DE9BD62B24250E004A9621 /* WineNoteList.swift */,
 			);
 			path = WineNote;
@@ -501,6 +504,7 @@
 				F04B4FC22B11A9530000047D /* User.swift in Sources */,
 				2949F2942AFA9593005AFEFC /* WineModel.swift in Sources */,
 				29431F992AF8654300BE17F1 /* NoteEnvironment.swift in Sources */,
+				F0DE9BDD2B245BC4004A9621 /* CameraPermissionAlert.swift in Sources */,
 				299A915E2AF74C6F00D9C2D1 /* AddNoteView.swift in Sources */,
 				F0FBBFF62B22F81400F513BC /* UserEditView.swift in Sources */,
 				F0DE9BDB2B243BBC004A9621 /* EditImagePicker.swift in Sources */,

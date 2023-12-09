@@ -26,11 +26,13 @@ struct WineNoteEditView: View {
     @State private var rating = 0.0
     
     @State private var permissionDenied = false
+    @State private var permissionType: PermissionType = .album
+    
     @State private var showDatePicker = false
     @State private var showWindTypePicker = false
-    @State private var lookColumns = Array(repeating: GridItem(.flexible()), count: 6)
-    @State private var smellColumns = Array(repeating: GridItem(.flexible()), count: 6)
     
+    private let lookColumns = Array(repeating: GridItem(.flexible()), count: 6)
+    private let smellColumns = Array(repeating: GridItem(.flexible()), count: 6)
     private let tasteLabels = ["바디", "당도", "산도", "타닌", "알코올"]
     private let symbolColors: [Color] = [.purple, .orange, .blue, .green, .red]
     
@@ -45,7 +47,7 @@ struct WineNoteEditView: View {
                             .foregroundStyle(.gray)
                             .padding(.leading)
                             .padding(.top, 5)
-                        EditImagePicker(selectedImage: $selectedImage, permissionDenied: $permissionDenied, defaultImageName: defaultImageName)
+                        EditImagePicker(selectedImage: $selectedImage, permissionDenied: $permissionDenied, permissionType: $permissionType, defaultImageName: defaultImageName)
                         
                         Text("와인 이름")
                             .font(.gmarketSansSubHeadline)
@@ -291,7 +293,7 @@ struct WineNoteEditView: View {
                             Text("\(rating, specifier: "%.1f")")
                                 .monospacedDigit()
                                 .animation(nil, value: rating)
-                                .font(.gmarketSansTitle3)
+                                .font(.gmarketSansButton)
                                 .foregroundStyle(.gray)
                         }
                         .padding()
@@ -307,6 +309,11 @@ struct WineNoteEditView: View {
             }
             .onAppear {
                 getNoteData()
+            }
+            .overlay {
+                if permissionDenied {
+                    CameraPermissionAlert(showPermissionAlert: $permissionDenied, type: permissionType)
+                }
             }
             .sheet(isPresented: $showDatePicker) {
                 VStack {

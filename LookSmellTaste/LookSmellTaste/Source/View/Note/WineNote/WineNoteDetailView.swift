@@ -148,7 +148,7 @@ struct WineNoteDetailView: View {
                                 .padding(.top)
                             VStack {
                                 Text(note.think)
-                                    .font(.gmarketSansBody)
+                                    .font(.gmarketSansCallout)
                                     .lineSpacing(5)
                             }
                             .font(.subheadline)
@@ -179,6 +179,7 @@ struct WineNoteDetailView: View {
             }
             .sheet(isPresented: $showEditSheet) {
                 WineNoteEditView(note: note)
+                    .presentationCornerRadius(24)
             }
         }
         .navigationBarTitleDisplayMode(.inline)

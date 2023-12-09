@@ -10,10 +10,11 @@ import SwiftUI
 struct AddWineSmellView: View {
     @Bindable private var observable = WineNoteObservable.shared
     @Environment(NoteEnvironment.self) var noteEnvironment: NoteEnvironment
-    @State private var columns = Array(repeating: GridItem(.flexible()), count: 5)
-    @State private var navigate = false
     
+    @State private var navigate = false
     @State private var scents: [WineScent] = []
+    
+    private let columns = Array(repeating: GridItem(.flexible()), count: 5)
     
     var body: some View {
         ZStack {

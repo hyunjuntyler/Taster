@@ -10,10 +10,11 @@ import SwiftUI
 struct AddWineLookView: View {
     @Bindable private var observable = WineNoteObservable.shared
     @Environment(NoteEnvironment.self) var noteEnvironment: NoteEnvironment
-    @State private var columns = Array(repeating: GridItem(.flexible()), count: 4)
-    @State private var navigate = false
     
+    @State private var navigate = false
     @State private var color: WineColor = wineColors[0]
+    
+    private let columns = Array(repeating: GridItem(.flexible()), count: 4)
     
     var body: some View {
         ZStack {
