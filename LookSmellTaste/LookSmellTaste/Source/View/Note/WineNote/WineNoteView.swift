@@ -27,49 +27,48 @@ struct WineNoteView: View {
             
             ScrollView {
                 VStack(alignment: .leading) {
-                    HStack {
-                        Text("전체 와인 노트")
-                            .font(.gmarketSansTitle)
-                        Spacer()
-                    }
-                    .padding(.horizontal, 5)
-                    
-                    LazyVStack {
-                        ForEach(sortedWineNotes) { note in
-                            NavigationLink {
-                                WineNoteDetailView(note: note)
-                            } label: {
-                                WineNoteList(note: note)
-                            }
-                            .buttonStyle(PressButtonStyle())
+                    ForEach(sortedWineNotes) { note in
+                        NavigationLink {
+                            WineNoteDetailView(note: note)
+                        } label: {
+                            WineNoteList(note: note)
                         }
+                        .buttonStyle(PressButtonStyle())
                     }
                 }
+                .padding(.top)
                 .padding(.horizontal)
             }
         }
         .navigationTitle("")
         .toolbar {
-            Button {
-                Haptic.impact(style: .soft)
-                if sortOption == .date {
-                    sortOption = .rating
-                } else {
-                    sortOption = .date
-                }
-            } label: {
-                VStack {
-                    Image(systemName: sortOption == .date ? "clock.fill" : "star.fill")
-                        .font(.footnote)
-                        .fontWeight(.semibold)
-                        .contentTransition(.symbolEffect(.replace))
-                        .frame(height: 20)
-                    Text(sortOption == .date ? "최신순" : "점수순")
-                        .font(.gmarketSansCaption2)
-                }
-                .foregroundStyle(.accent)
+            ToolbarItem(placement: .principal) {
+                Text("모든 와인 노트")
+                    .font(.gmarketSansTitle3)
             }
-            .buttonStyle(PressButtonStyle())
+            
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    Haptic.impact(style: .soft)
+                    if sortOption == .date {
+                        sortOption = .rating
+                    } else {
+                        sortOption = .date
+                    }
+                } label: {
+                    VStack {
+                        Image(systemName: sortOption == .date ? "clock.fill" : "star.fill")
+                            .font(.footnote)
+                            .fontWeight(.semibold)
+                            .contentTransition(.symbolEffect(.replace))
+                            .frame(height: 20)
+                        Text(sortOption == .date ? "최신순" : "점수순")
+                            .font(.gmarketSansCaption2)
+                    }
+                    .foregroundStyle(.accent)
+                }
+                .buttonStyle(PressButtonStyle())
+            }
         }
     }
 }
@@ -89,5 +88,6 @@ private extension [WineNote] {
     NavigationStack {
         WineNoteView()
             .modelContainer(previewContainer)
+            .navigationBarTitleDisplayMode(.inline)
     }
 }
