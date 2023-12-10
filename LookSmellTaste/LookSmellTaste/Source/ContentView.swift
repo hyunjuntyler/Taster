@@ -9,11 +9,6 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    
-    init() {
-        UINavigationBar.appearance().shadowImage = UIImage()
-    }
-    
     @Query private var user: [User]
     @State private var navigateToUserView = false
     @AppStorage("onboarding") private var onboarding = true
@@ -31,17 +26,17 @@ struct ContentView: View {
                 .navigationDestination(isPresented: $navigateToUserView) {
                     UserView(navigateToUserView: $navigateToUserView)
                 }
+                .sheet(isPresented: $onboarding) {
+                    OnboardingView()
+                        .interactiveDismissDisabled()
+                }
             }
             .ignoresSafeArea(edges: .bottom)
-            .sheet(isPresented: $onboarding) {
-                OnboardingView()
-                    .interactiveDismissDisabled()
-            }
         }
     }
 }
 
-#Preview { @MainActor in
+#Preview {
     ContentView()
         .modelContainer(previewContainer)
 }

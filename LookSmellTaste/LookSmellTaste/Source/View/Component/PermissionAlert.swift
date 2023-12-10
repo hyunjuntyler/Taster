@@ -56,13 +56,14 @@ struct PermissionAlert: View {
             
             VStack(spacing: 5) {
                 Image(systemName: image)
-                    .foregroundStyle(.gray)
-                    .font(.title)
-                    .padding(.bottom)
+                    .foregroundStyle(.accent)
+                    .font(.largeTitle)
+                    .padding(.bottom, 5)
                 Text(title)
                     .font(.gmarketSansHeadline)
                 Text(description)
                     .font(.gmarketSansSubHeadline)
+                    .foregroundStyle(.gray)
                     .padding(.bottom, 20)
                 
                 HStack {

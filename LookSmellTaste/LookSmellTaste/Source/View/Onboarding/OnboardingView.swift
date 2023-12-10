@@ -63,7 +63,9 @@ struct OnboardingView: View {
                 .padding(.top, 60)
                 
                 NextButton(label: "계속") {
-                    onboarding = false
+                    withAnimation {
+                        onboarding = false
+                    }
                 }
                 .padding(.bottom)
             }

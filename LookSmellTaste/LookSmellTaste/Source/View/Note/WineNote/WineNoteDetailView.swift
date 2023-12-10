@@ -9,8 +9,12 @@ import SwiftUI
 import SwiftData
 
 struct WineNoteDetailView: View {
+    @Environment(\.modelContext) private var context
+    @Environment(\.dismiss) private var dismiss
+    
     @Bindable var note: WineNote
     @State private var showEditSheet = false
+    @State private var showDeleteAlert = false
 
     var body: some View {
         VStack {
@@ -159,6 +163,13 @@ struct WineNoteDetailView: View {
                                     .foregroundStyle(.appSheetBoxBackground)
                             }
                         }
+                        
+                        DeleteButton {
+                            withAnimation {
+                                showDeleteAlert = true
+                            }
+                        }
+                        .padding(.vertical)
                     }
                     .padding(.horizontal)
                 }
@@ -182,7 +193,20 @@ struct WineNoteDetailView: View {
                     .presentationCornerRadius(24)
             }
         }
-        .navigationBarTitleDisplayMode(.inline)
+        .overlay {
+            if showDeleteAlert {
+                DeleteAlert(showDeleteAlert: $showDeleteAlert) {
+                    withAnimation {
+                        delete()
+                    }
+                }
+            }
+        }
+    }
+    
+    private func delete() {
+        context.delete(note)
+        dismiss()
     }
     
     private enum WineColorName: String {
@@ -222,5 +246,6 @@ struct WineNoteDetailPreview: View {
     NavigationStack {
         WineNoteDetailPreview()
             .modelContainer(previewContainer)
+            .navigationBarTitleDisplayMode(.inline)
     }
 }

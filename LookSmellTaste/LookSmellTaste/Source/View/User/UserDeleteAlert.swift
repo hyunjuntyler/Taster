@@ -24,14 +24,14 @@ struct UserDeleteAlert: View {
             
             VStack(spacing: 5) {
                 Image(systemName: "person.crop.circle.badge.exclamationmark.fill")
-                    .foregroundStyle(.accent, .appPickerGray)
-                    .symbolEffect(.pulse)
+                    .foregroundStyle(.accent)
                     .font(.largeTitle)
-                    .padding(.bottom)
+                    .padding(.bottom, 5)
                 Text("정말 로그아웃 하시겠어요?")
                     .font(.gmarketSansHeadline)
-                Text("로그아웃을 하게되면 모든 노트가 사라져요")
+                Text("모든 노트가 사라져요")
                     .font(.gmarketSansSubHeadline)
+                    .foregroundStyle(.gray)
                     .padding(.bottom, 20)
                 HStack {
                     Button("돌아가기") {

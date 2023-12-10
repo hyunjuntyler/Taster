@@ -46,13 +46,14 @@ struct CameraPermissionAlert: View {
             
             VStack(spacing: 5) {
                 Image(systemName: image)
-                    .foregroundStyle(.gray)
+                    .foregroundStyle(.accent)
                     .font(.title)
                     .padding(.bottom)
                 Text(title)
                     .font(.gmarketSansHeadline)
                 Text(description)
                     .font(.gmarketSansSubHeadline)
+                    .foregroundStyle(.gray)
                     .padding(.bottom, 20)
                 
                 HStack {

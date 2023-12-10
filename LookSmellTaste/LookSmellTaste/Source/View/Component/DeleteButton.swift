@@ -8,20 +8,24 @@
 import SwiftUI
 
 struct DeleteButton: View {
-    var label = "삭제"
+    var label = "삭제하기"
     var action: () -> Void
     
     var body: some View {
         Button(action: action) {
-            Text(label)
-                .foregroundStyle(.accent)
-                .font(.gmarketSansButton)
-                .frame(maxWidth: .infinity)
-                .padding()
-                .background {
-                    RoundedRectangle(cornerRadius: 12, style: .continuous)
-                        .foregroundStyle(.appListBoxBackground)
-                }
+            HStack {
+                Image(systemName: "trash.fill")
+                    .font(.callout)
+                Text(label)
+                    .font(.gmarketSansCallout)
+            }
+            .foregroundStyle(.accent)
+            .frame(maxWidth: .infinity)
+            .padding(12)
+            .background {
+                RoundedRectangle(cornerRadius: 12, style: .continuous)
+                    .foregroundStyle(.appListBoxBackground)
+            }
         }
         .buttonStyle(PressButtonStyle())
     }

@@ -18,14 +18,14 @@ struct CloseAlert: View {
             
             VStack(spacing: 5) {
                 Image(systemName: "questionmark.circle.fill")
-                    .foregroundStyle(.accent, .appPickerGray)
-                    .symbolEffect(.pulse)
+                    .foregroundStyle(.accent)
                     .font(.largeTitle)
-                    .padding(.bottom)
+                    .padding(.bottom, 5)
                 Text("정말 작성을 종료하시겠어요?")
                     .font(.gmarketSansHeadline)
                 Text("작성된 내용은 저장되지 않아요")
                     .font(.gmarketSansSubHeadline)
+                    .foregroundStyle(.gray)
                     .padding(.bottom, 20)
                 HStack {
                     Button("돌아가기") {

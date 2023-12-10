@@ -10,6 +10,11 @@ import SwiftData
 
 @main
 struct LookSmellTasteApp: App {
+    
+    init() {
+        UINavigationBar.appearance().shadowImage = UIImage()
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
