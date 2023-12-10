@@ -37,7 +37,7 @@ struct DeleteAlert: View {
                     }
                     .buttonStyle(AlertButtonStyle(type: .cancel))
                     Button("삭제하기") {
-                        Haptic.impact(style: .soft)
+                        Haptic.notification(type: .success)
                         action()
                     }
                     .buttonStyle(AlertButtonStyle(type: .destructive))
