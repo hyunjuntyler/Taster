@@ -36,7 +36,9 @@ struct ContentView: View {
     }
 }
 
-#Preview {
+#if DEBUG
+#Preview { @MainActor in
     ContentView()
         .modelContainer(previewContainer)
 }
+#endif

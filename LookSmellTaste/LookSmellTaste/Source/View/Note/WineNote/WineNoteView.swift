@@ -84,10 +84,12 @@ private extension [WineNote] {
     }
 }
 
-#Preview {
+#if DEBUG
+#Preview { @MainActor in
     NavigationStack {
         WineNoteView()
             .modelContainer(previewContainer)
             .navigationBarTitleDisplayMode(.inline)
     }
 }
+#endif

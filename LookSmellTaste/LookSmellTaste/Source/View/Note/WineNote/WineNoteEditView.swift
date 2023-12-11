@@ -415,6 +415,7 @@ struct WineNoteEditView: View {
     }
 }
 
+#if DEBUG
 struct WineNoteEditPreview: View {
     @Query private var wineNotes: [WineNote]
     
@@ -423,9 +424,10 @@ struct WineNoteEditPreview: View {
     }
 }
 
-#Preview {
+#Preview { @MainActor in
     NavigationStack {
         WineNoteEditPreview()
             .modelContainer(previewContainer)
     }
 }
+#endif

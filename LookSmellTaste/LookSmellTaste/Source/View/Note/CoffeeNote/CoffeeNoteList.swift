@@ -65,6 +65,7 @@ struct CoffeeNoteList: View {
     }
 }
 
+#if DEBUG
 struct CoffeeNoteListPreview: View {
     @Query private var coffeeNotes: [CoffeeNote]
     
@@ -73,7 +74,7 @@ struct CoffeeNoteListPreview: View {
     }
 }
 
-#Preview {
+#Preview { @MainActor in
     ZStack {
         Color.appBackground.ignoresSafeArea()
         CoffeeNoteListPreview()
@@ -81,3 +82,4 @@ struct CoffeeNoteListPreview: View {
             .padding(.horizontal)
     }
 }
+#endif

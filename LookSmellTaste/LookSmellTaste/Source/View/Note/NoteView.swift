@@ -177,6 +177,7 @@ struct NoteView: View {
     }
 }
 
+#if DEBUG
 #Preview { @MainActor in
     NavigationStack {
         ZStack {
@@ -187,3 +188,4 @@ struct NoteView: View {
         .navigationTitle("")
     }
 }
+#endif

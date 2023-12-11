@@ -99,8 +99,10 @@ struct AddNoteCompleteView: View {
     }
 }
 
-#Preview {
+#if DEBUG
+#Preview { @MainActor in
     AddNoteCompleteView()
         .modelContainer(previewContainer)
         .environment(NoteEnvironment())
 }
+#endif

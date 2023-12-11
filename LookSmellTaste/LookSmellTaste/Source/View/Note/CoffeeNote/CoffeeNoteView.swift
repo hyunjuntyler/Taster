@@ -81,10 +81,12 @@ private extension [CoffeeNote] {
     }
 }
 
-#Preview {
+#if DEBUG
+#Preview { @MainActor in
     NavigationStack {
         CoffeeNoteView()
             .modelContainer(previewContainer)
             .navigationBarTitleDisplayMode(.inline)
     }
 }
+#endif

@@ -65,6 +65,7 @@ struct WineNoteList: View {
     }
 }
 
+#if DEBUG
 struct WineNoteListPreview: View {
     @Query private var wineNotes: [WineNote]
     
@@ -73,7 +74,7 @@ struct WineNoteListPreview: View {
     }
 }
 
-#Preview {
+#Preview { @MainActor in
     ZStack {
         Color.appBackground.ignoresSafeArea()
         WineNoteListPreview()
@@ -81,3 +82,4 @@ struct WineNoteListPreview: View {
             .padding(.horizontal)
     }
 }
+#endif

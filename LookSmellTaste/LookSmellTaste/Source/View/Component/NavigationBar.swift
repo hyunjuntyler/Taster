@@ -135,6 +135,7 @@ struct InlineNavigationTitle: View {
     }
 }
 
+#if DEBUG
 #Preview { @MainActor in
     ScrollView {
         NavigationTitle(navigateToUserView: .constant(false))
@@ -145,3 +146,4 @@ struct InlineNavigationTitle: View {
             .modelContainer(previewContainer)
    }
 }
+#endif

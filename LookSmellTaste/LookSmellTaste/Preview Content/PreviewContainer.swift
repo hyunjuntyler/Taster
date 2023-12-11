@@ -10,7 +10,6 @@ import SwiftData
 
 @MainActor
 let previewContainer: ModelContainer = {
-    
     do {
         let container = try ModelContainer(for: User.self, configurations: ModelConfiguration(isStoredInMemoryOnly: true))
         container.mainContext.insert(SampleData.user.first ?? User(name: "에러", icon: "☠️"))

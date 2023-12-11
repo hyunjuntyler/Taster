@@ -199,10 +199,12 @@ struct CoffeeNoteDetailPreview: View {
     }
 }
 
-#Preview {
+#if DEBUG
+#Preview { @MainActor in
     NavigationStack {
         CoffeeNoteDetailPreview()         
             .navigationBarTitleDisplayMode(.inline)
             .modelContainer(previewContainer)
     }
 }
+#endif

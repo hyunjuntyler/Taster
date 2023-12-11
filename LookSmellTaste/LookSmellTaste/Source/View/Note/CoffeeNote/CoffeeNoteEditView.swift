@@ -382,9 +382,11 @@ struct CoffeeNoteEditPreview: View {
     }
 }
 
-#Preview {
+#if DEBUG
+#Preview { @MainActor in
     NavigationStack {
         CoffeeNoteEditPreview()
             .modelContainer(previewContainer)
     }
 }
+#endif

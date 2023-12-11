@@ -235,6 +235,7 @@ struct WineNoteDetailView: View {
     }
 }
 
+#if DEBUG
 struct WineNoteDetailPreview: View {
     @Query private var wineNotes: [WineNote]
     
@@ -243,10 +244,11 @@ struct WineNoteDetailPreview: View {
     }
 }
 
-#Preview {
+#Preview { @MainActor in
     NavigationStack {
         WineNoteDetailPreview()
             .modelContainer(previewContainer)
             .navigationBarTitleDisplayMode(.inline)
     }
 }
+#endif
