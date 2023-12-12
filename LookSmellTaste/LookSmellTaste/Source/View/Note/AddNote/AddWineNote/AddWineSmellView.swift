@@ -67,7 +67,6 @@ struct AddWineSmellView: View {
                 }
                 NextButton(disabled: false) {
                     observable.scents = scents
-                    Haptic.impact(style: .soft)
                     navigate = true
                 }
                 .navigationDestination(isPresented: $navigate) {
@@ -79,7 +78,6 @@ struct AddWineSmellView: View {
         .toolbar {
             CloseButton {
                 noteEnvironment.showCloseAlert = true
-                Haptic.impact(style: .soft)
             }
         }
     }

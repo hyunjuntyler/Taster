@@ -68,6 +68,7 @@
 		F0DCD1BF2B282F9200841A18 /* AddCocktailFactoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DCD1BE2B282F9200841A18 /* AddCocktailFactoryView.swift */; };
 		F0DCD1C12B283B2000841A18 /* CocktailFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DCD1C02B283B2000841A18 /* CocktailFactory.swift */; };
 		F0DCD1C32B2885CC00841A18 /* CustomDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DCD1C22B2885CC00841A18 /* CustomDivider.swift */; };
+		F0DCD1C72B28EB3800841A18 /* AddIngredientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DCD1C62B28EB3800841A18 /* AddIngredientButton.swift */; };
 		F0DE9BD52B2420C0004A9621 /* RatingDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BD42B2420C0004A9621 /* RatingDisplay.swift */; };
 		F0DE9BD72B24250E004A9621 /* WineNoteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BD62B24250E004A9621 /* WineNoteList.swift */; };
 		F0DE9BD92B2434B3004A9621 /* WineNoteEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BD82B2434B3004A9621 /* WineNoteEditView.swift */; };
@@ -156,6 +157,7 @@
 		F0DCD1BE2B282F9200841A18 /* AddCocktailFactoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCocktailFactoryView.swift; sourceTree = "<group>"; };
 		F0DCD1C02B283B2000841A18 /* CocktailFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailFactory.swift; sourceTree = "<group>"; };
 		F0DCD1C22B2885CC00841A18 /* CustomDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDivider.swift; sourceTree = "<group>"; };
+		F0DCD1C62B28EB3800841A18 /* AddIngredientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientButton.swift; sourceTree = "<group>"; };
 		F0DE9BD42B2420C0004A9621 /* RatingDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingDisplay.swift; sourceTree = "<group>"; };
 		F0DE9BD62B24250E004A9621 /* WineNoteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineNoteList.swift; sourceTree = "<group>"; };
 		F0DE9BD82B2434B3004A9621 /* WineNoteEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineNoteEditView.swift; sourceTree = "<group>"; };
@@ -331,16 +333,10 @@
 			isa = PBXGroup;
 			children = (
 				29B388B92B0295D900E3942D /* Confetti */,
+				F0DCD1C42B28EAF900841A18 /* Alert */,
+				F0DCD1C52B28EB0B00841A18 /* Button */,
 				299A914E2AF6DEC000D9C2D1 /* NavigationBar.swift */,
-				299A91692AF7BBF800D9C2D1 /* CloseAlert.swift */,
-				F0DCD1AF2B2499DC00841A18 /* DeleteAlert.swift */,
-				29B388B52B0281E700E3942D /* PermissionAlert.swift */,
-				F0DE9BDC2B245BC4004A9621 /* CameraPermissionAlert.swift */,
-				299A91612AF757F000D9C2D1 /* NextButton.swift */,
-				F0DCD1AD2B2498A600841A18 /* DeleteButton.swift */,
-				299A91672AF7B93000D9C2D1 /* CloseButton.swift */,
 				2990E4012AF9A21E0001617A /* ContentUnavailable.swift */,
-				2990E4062AF9E11D0001617A /* AddNoteButton.swift */,
 				29BD87172B00BD8D0082241D /* Rating.swift */,
 				29BD87192B00F15D0082241D /* RadarChart.swift */,
 				29B388B12B0276D100E3942D /* ImagePicker.swift */,
@@ -441,6 +437,29 @@
 				F0DCD1BC2B2829D500841A18 /* AddCocktailThinkView.swift */,
 			);
 			path = AddCocktailNote;
+			sourceTree = "<group>";
+		};
+		F0DCD1C42B28EAF900841A18 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				299A91692AF7BBF800D9C2D1 /* CloseAlert.swift */,
+				F0DCD1AF2B2499DC00841A18 /* DeleteAlert.swift */,
+				29B388B52B0281E700E3942D /* PermissionAlert.swift */,
+				F0DE9BDC2B245BC4004A9621 /* CameraPermissionAlert.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		F0DCD1C52B28EB0B00841A18 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				F0DCD1AD2B2498A600841A18 /* DeleteButton.swift */,
+				299A91612AF757F000D9C2D1 /* NextButton.swift */,
+				299A91672AF7B93000D9C2D1 /* CloseButton.swift */,
+				2990E4062AF9E11D0001617A /* AddNoteButton.swift */,
+				F0DCD1C62B28EB3800841A18 /* AddIngredientButton.swift */,
+			);
+			path = Button;
 			sourceTree = "<group>";
 		};
 		F0DE9BE22B246304004A9621 /* AddCoffeeNote */ = {
@@ -550,6 +569,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0DCD1C72B28EB3800841A18 /* AddIngredientButton.swift in Sources */,
 				29B388B42B027EDE00E3942D /* ImagePickerUI.swift in Sources */,
 				29BD87122B00AE3C0082241D /* AddWineTasteView.swift in Sources */,
 				F0DE9BEF2B247719004A9621 /* CoffeeNoteView.swift in Sources */,

@@ -11,7 +11,10 @@ struct CloseButton: View {
     var action: () -> Void
     
     var body: some View {
-        Button(action: action) {
+        Button {
+            Haptic.notification(type: .warning)
+            action()
+        } label: {
             Image(systemName: "xmark")
                 .foregroundStyle(.accent)
                 .fontWeight(.semibold)

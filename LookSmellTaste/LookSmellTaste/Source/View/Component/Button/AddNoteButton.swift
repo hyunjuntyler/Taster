@@ -14,7 +14,10 @@ struct AddNoteButton: View {
     var action: () -> Void
     
     var body: some View {
-        Button(action: action) {
+        Button {
+            Haptic.impact(style: .soft)
+            action()
+        } label: {
             VStack {
                 Text(title)
                     .font(.gmarketSansSubHeadline)

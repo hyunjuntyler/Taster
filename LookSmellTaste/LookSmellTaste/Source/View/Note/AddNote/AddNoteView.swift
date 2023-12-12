@@ -30,7 +30,6 @@ struct AddNoteView: View {
                         LazyVGrid(columns: columns, spacing: 0) {
                             ForEach(notes) { note in
                                 AddNoteButton(title: note.label, image: note.imageName, selected: noteEnvironment.noteType == note.type) {
-                                    Haptic.impact(style: .soft)
                                     withAnimation {
                                         noteEnvironment.selectType(type: note.type)
                                     }
@@ -77,7 +76,6 @@ struct AddNoteView: View {
                     }
                     
                     NextButton(disabled: noteEnvironment.isNotePreparing) {
-                        Haptic.impact(style: .soft)
                         navigate = true
                     }
                     .navigationDestination(isPresented: $navigate) {
@@ -104,7 +102,6 @@ struct AddNoteView: View {
                     } else {
                         noteEnvironment.showCloseAlert = true
                     }
-                    Haptic.impact(style: .soft)
                 }
             }
         }

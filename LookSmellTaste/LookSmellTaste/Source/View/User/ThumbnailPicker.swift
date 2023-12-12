@@ -129,7 +129,6 @@ struct ThumbnailPicker: View {
             .toolbar {
                 CloseButton {
                     showIconPicker = false
-                    Haptic.impact(style: .soft)
                 }
             }
         }

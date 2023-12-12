@@ -67,7 +67,6 @@ struct AddCoffeeFlavorView: View {
                 }
                 NextButton(disabled: false) {
                     observable.flavors = flavors
-                    Haptic.impact(style: .soft)
                     navigate = true
                 }
                 .navigationDestination(isPresented: $navigate) {
@@ -79,7 +78,6 @@ struct AddCoffeeFlavorView: View {
         .toolbar {
             CloseButton {
                 noteEnvironment.showCloseAlert = true
-                Haptic.impact(style: .soft)
             }
         }
     }

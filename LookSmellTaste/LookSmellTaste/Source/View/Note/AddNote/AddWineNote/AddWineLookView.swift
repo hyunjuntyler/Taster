@@ -64,7 +64,6 @@ struct AddWineLookView: View {
                 }
                 NextButton(disabled: false) {
                     observable.color = color
-                    Haptic.impact(style: .soft)
                     navigate = true
                 }
                 .navigationDestination(isPresented: $navigate) {
@@ -76,7 +75,6 @@ struct AddWineLookView: View {
         .toolbar {
             CloseButton {
                 noteEnvironment.showCloseAlert = true
-                Haptic.impact(style: .soft)
             }
         }
     }

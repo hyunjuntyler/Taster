@@ -146,7 +146,6 @@ struct CoffeeNoteDetailView: View {
                     }
                     
                     DeleteButton {
-                        Haptic.notification(type: .warning)
                         withAnimation {
                             showDeleteAlert = true
                         }

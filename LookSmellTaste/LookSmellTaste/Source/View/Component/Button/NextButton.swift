@@ -13,7 +13,10 @@ struct NextButton: View {
     var action: () -> Void
     
     var body: some View {
-        Button(action: action) {
+        Button {
+            Haptic.impact(style: .soft)
+            action()
+        } label: {
             Text(label)
                 .foregroundStyle(.background)
                 .font(.gmarketSansButton)

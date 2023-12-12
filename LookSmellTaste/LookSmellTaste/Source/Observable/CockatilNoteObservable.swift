@@ -14,6 +14,7 @@ final class CockatilNoteObservable {
     var type: CocktailType = cocktailTypes[0]
     var image: Data?
     var ingredients: [CocktailIngredient] = []
+    var isIce: Bool = false
     var taste: [Double] = [0.0, 0.0, 0.0]
     var think: String = ""
     var rating: Double = 0.0
@@ -25,6 +26,8 @@ final class CockatilNoteObservable {
         date = Date()
         type = cocktailTypes[0]
         image = nil
+        ingredients = []
+        isIce = false
         taste = [0, 0, 0]
         think = ""
         rating = 0.0

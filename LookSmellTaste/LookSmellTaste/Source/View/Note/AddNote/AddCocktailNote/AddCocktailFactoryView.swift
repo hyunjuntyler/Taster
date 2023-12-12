@@ -12,8 +12,10 @@ struct AddCocktailFactoryView: View {
     @Bindable private var observable = CockatilNoteObservable.shared
 
     @State private var navigate = false
+    @State private var addIngredientSheet = false
     
     @State private var ingredients: [CocktailIngredient] = []
+    @State private var isIce = false
 
     var body: some View {
         ZStack {
@@ -28,7 +30,13 @@ struct AddCocktailFactoryView: View {
                         .foregroundStyle(.gray)
                         .padding(.bottom)
                     VStack {
-                        CocktailFactory(ingredients: ingredients)
+                        CocktailFactory(ingredients: ingredients, isIce: isIce)
+                        
+                        CustomDivider()
+                        
+                        AddIngredientButton {
+                            addIngredientSheet = true
+                        }
                     }
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 10)
@@ -42,7 +50,6 @@ struct AddCocktailFactoryView: View {
                 }
                 
                 NextButton(disabled: false) {
-                    Haptic.impact(style: .soft)
                     navigate = true
                 }
             }
@@ -51,7 +58,6 @@ struct AddCocktailFactoryView: View {
         .toolbar {
             CloseButton {
                 noteEnvironment.showCloseAlert = true
-                Haptic.impact(style: .soft)
             }
         }
     }

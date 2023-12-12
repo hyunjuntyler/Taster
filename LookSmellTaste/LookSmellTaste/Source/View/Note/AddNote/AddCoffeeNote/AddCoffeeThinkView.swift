@@ -82,7 +82,6 @@ struct AddCoffeeThinkView: View {
                     isFocused = false
                     observable.think = think
                     observable.rating = rating
-                    Haptic.impact(style: .soft)
                     withAnimation {
                         noteEnvironment.showCompleteView = true
                     }
@@ -96,7 +95,6 @@ struct AddCoffeeThinkView: View {
         .toolbar {
             CloseButton {
                 noteEnvironment.showCloseAlert = true
-                Haptic.impact(style: .soft)
             }
         }
     }

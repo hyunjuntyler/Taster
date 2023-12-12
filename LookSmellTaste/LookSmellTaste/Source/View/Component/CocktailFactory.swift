@@ -9,34 +9,32 @@ import SwiftUI
 
 struct CocktailFactory: View {
     var ingredients: [CocktailIngredient]
+    var isIce: Bool
     var totalAmount: Double {
         ingredients.reduce(0) { $0 + $1.amount }
     }
-        
+    
     var body: some View {
         ZStack {
             ZStack {
                 glass
                 if !ingredients.isEmpty {
                     cocktail
-                    if ingredients.contains(where: { $0.name.lowercased() == "얼음" }) {
-                        ice
-                    }
+                }
+                if isIce {
+                    ice
                 }
             }
-            .padding(.trailing)
             .frame(maxWidth: .infinity, alignment: .center)
             ScrollView {
                 VStack(alignment: .leading) {
                     ForEach(ingredients) { ingredient in
-                        if ingredient.name != "얼음" {
-                            HStack {
-                                RoundedRectangle(cornerRadius: 2, style: .continuous)
-                                    .frame(width: 10, height: 10)
-                                    .foregroundStyle(getColor(colorName: ingredient.colorName))
-                                Text(ingredient.name)
-                                    .font(.gmarketSansCaption)
-                            }
+                        HStack {
+                            RoundedRectangle(cornerRadius: 2, style: .continuous)
+                                .frame(width: 10, height: 10)
+                                .foregroundStyle(getColor(colorName: ingredient.colorName))
+                            Text(ingredient.name)
+                                .font(.gmarketSansCaption)
                         }
                     }
                 }
@@ -156,13 +154,12 @@ struct CocktailFactory: View {
     ZStack {
         Color.appSheetBackground.ignoresSafeArea()
         CocktailFactory(ingredients: [
-            CocktailIngredient(name: "얼음", amount: 0, colorName: "black"),
             CocktailIngredient(name: "와인", amount: 1, colorName: "blue"),
             CocktailIngredient(name: "커피", amount: 2, colorName: "red"),
             CocktailIngredient(name: "칵테일", amount: 3, colorName: "green"),
             CocktailIngredient(name: "위스키", amount: 2, colorName: "orange"),
             CocktailIngredient(name: "자유", amount: 5, colorName: "yellow")
-        ])
+        ], isIce: true)
         .frame(maxWidth: .infinity)
         .padding(.top, 10)
         .padding(.bottom, 5)

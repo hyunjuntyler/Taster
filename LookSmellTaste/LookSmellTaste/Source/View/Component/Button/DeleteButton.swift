@@ -12,7 +12,10 @@ struct DeleteButton: View {
     var action: () -> Void
     
     var body: some View {
-        Button(action: action) {
+        Button {
+            Haptic.notification(type: .warning)
+            action()
+        } label: {
             HStack {
                 Image(systemName: "trash.fill")
                     .font(.callout)
