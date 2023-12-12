@@ -63,6 +63,11 @@
 		F0DCD1B32B2574A100841A18 /* AddCocktailNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DCD1B22B2574A100841A18 /* AddCocktailNoteView.swift */; };
 		F0DCD1B52B25750400841A18 /* CockatilNoteObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DCD1B42B25750400841A18 /* CockatilNoteObservable.swift */; };
 		F0DCD1B92B2576CE00841A18 /* CocktailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DCD1B82B2576CE00841A18 /* CocktailModel.swift */; };
+		F0DCD1BB2B28270100841A18 /* AddCocktailTasteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DCD1BA2B28270100841A18 /* AddCocktailTasteView.swift */; };
+		F0DCD1BD2B2829D500841A18 /* AddCocktailThinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DCD1BC2B2829D500841A18 /* AddCocktailThinkView.swift */; };
+		F0DCD1BF2B282F9200841A18 /* AddCocktailFactoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DCD1BE2B282F9200841A18 /* AddCocktailFactoryView.swift */; };
+		F0DCD1C12B283B2000841A18 /* CocktailFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DCD1C02B283B2000841A18 /* CocktailFactory.swift */; };
+		F0DCD1C32B2885CC00841A18 /* CustomDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DCD1C22B2885CC00841A18 /* CustomDivider.swift */; };
 		F0DE9BD52B2420C0004A9621 /* RatingDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BD42B2420C0004A9621 /* RatingDisplay.swift */; };
 		F0DE9BD72B24250E004A9621 /* WineNoteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BD62B24250E004A9621 /* WineNoteList.swift */; };
 		F0DE9BD92B2434B3004A9621 /* WineNoteEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BD82B2434B3004A9621 /* WineNoteEditView.swift */; };
@@ -146,6 +151,11 @@
 		F0DCD1B22B2574A100841A18 /* AddCocktailNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCocktailNoteView.swift; sourceTree = "<group>"; };
 		F0DCD1B42B25750400841A18 /* CockatilNoteObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CockatilNoteObservable.swift; sourceTree = "<group>"; };
 		F0DCD1B82B2576CE00841A18 /* CocktailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailModel.swift; sourceTree = "<group>"; };
+		F0DCD1BA2B28270100841A18 /* AddCocktailTasteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCocktailTasteView.swift; sourceTree = "<group>"; };
+		F0DCD1BC2B2829D500841A18 /* AddCocktailThinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCocktailThinkView.swift; sourceTree = "<group>"; };
+		F0DCD1BE2B282F9200841A18 /* AddCocktailFactoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCocktailFactoryView.swift; sourceTree = "<group>"; };
+		F0DCD1C02B283B2000841A18 /* CocktailFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailFactory.swift; sourceTree = "<group>"; };
+		F0DCD1C22B2885CC00841A18 /* CustomDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDivider.swift; sourceTree = "<group>"; };
 		F0DE9BD42B2420C0004A9621 /* RatingDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingDisplay.swift; sourceTree = "<group>"; };
 		F0DE9BD62B24250E004A9621 /* WineNoteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineNoteList.swift; sourceTree = "<group>"; };
 		F0DE9BD82B2434B3004A9621 /* WineNoteEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineNoteEditView.swift; sourceTree = "<group>"; };
@@ -337,6 +347,8 @@
 				F0DE9BDA2B243BBC004A9621 /* EditImagePicker.swift */,
 				29B388B72B028F0200E3942D /* PreparingContent.swift */,
 				F0DE9BD42B2420C0004A9621 /* RatingDisplay.swift */,
+				F0DCD1C02B283B2000841A18 /* CocktailFactory.swift */,
+				F0DCD1C22B2885CC00841A18 /* CustomDivider.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -424,6 +436,9 @@
 			isa = PBXGroup;
 			children = (
 				F0DCD1B22B2574A100841A18 /* AddCocktailNoteView.swift */,
+				F0DCD1BE2B282F9200841A18 /* AddCocktailFactoryView.swift */,
+				F0DCD1BA2B28270100841A18 /* AddCocktailTasteView.swift */,
+				F0DCD1BC2B2829D500841A18 /* AddCocktailThinkView.swift */,
 			);
 			path = AddCocktailNote;
 			sourceTree = "<group>";
@@ -539,6 +554,7 @@
 				29BD87122B00AE3C0082241D /* AddWineTasteView.swift in Sources */,
 				F0DE9BEF2B247719004A9621 /* CoffeeNoteView.swift in Sources */,
 				29BD870E2B006DA90082241D /* NoteModel.swift in Sources */,
+				F0DCD1C32B2885CC00841A18 /* CustomDivider.swift in Sources */,
 				293FD1F82AFB426F00623B23 /* WineNote.swift in Sources */,
 				F0DE9BE42B246321004A9621 /* AddCoffeeNoteView.swift in Sources */,
 				F04B4FC52B11AF190000047D /* CoffeeNote.swift in Sources */,
@@ -560,6 +576,7 @@
 				F003F5D92B1234AC003D2499 /* SignInView.swift in Sources */,
 				2990E4072AF9E11D0001617A /* AddNoteButton.swift in Sources */,
 				29B388BB2B0295E300E3942D /* Confetti.swift in Sources */,
+				F0DCD1BF2B282F9200841A18 /* AddCocktailFactoryView.swift in Sources */,
 				F0DE9BD52B2420C0004A9621 /* RatingDisplay.swift in Sources */,
 				299A91262AF6AD6C00D9C2D1 /* ContentView.swift in Sources */,
 				29BD87142B00AE9E0082241D /* AddWineThinkView.swift in Sources */,
@@ -575,6 +592,7 @@
 				F0DCD1B02B2499DC00841A18 /* DeleteAlert.swift in Sources */,
 				29BD87182B00BD8D0082241D /* Rating.swift in Sources */,
 				293FD1F02AFAF98600623B23 /* UIScreenExtension.swift in Sources */,
+				F0DCD1BB2B28270100841A18 /* AddCocktailTasteView.swift in Sources */,
 				293FD1F62AFB40D500623B23 /* Haptic.swift in Sources */,
 				F0FBBFFA2B2310F500F513BC /* WineNoteObservable.swift in Sources */,
 				F04B4FC72B11AF210000047D /* CocktailNote.swift in Sources */,
@@ -584,6 +602,8 @@
 				29BD87102B0097580082241D /* AddWineSmellView.swift in Sources */,
 				29B388B82B028F0200E3942D /* PreparingContent.swift in Sources */,
 				F0DCD1B52B25750400841A18 /* CockatilNoteObservable.swift in Sources */,
+				F0DCD1C12B283B2000841A18 /* CocktailFactory.swift in Sources */,
+				F0DCD1BD2B2829D500841A18 /* AddCocktailThinkView.swift in Sources */,
 				F0DCD1B32B2574A100841A18 /* AddCocktailNoteView.swift in Sources */,
 				299A916A2AF7BBF800D9C2D1 /* CloseAlert.swift in Sources */,
 				293FD1F42AFB096000623B23 /* AddWineLookView.swift in Sources */,

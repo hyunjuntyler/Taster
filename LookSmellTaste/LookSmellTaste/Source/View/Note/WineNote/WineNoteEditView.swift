@@ -236,7 +236,7 @@ struct WineNoteEditView: View {
                                 .padding(.top, 30)
                                 .padding(.bottom, 10)
                             ForEach(0..<5) { index in
-                                Divider()
+                                CustomDivider()
                                 HStack {
                                     Text(tasteLabels[index])
                                         .font(.gmarketSansCallout)

@@ -1,22 +1,22 @@
 //
-//  AddWineTasteView.swift
+//  AddCocktailTasteView.swift
 //  LookSmellTaste
 //
-//  Created by hyunjun on 11/12/23.
+//  Created by Hyunjun Kim on 12/12/23.
 //
 
 import SwiftUI
 
-struct AddWineTasteView: View {
-    @Bindable private var observable = WineNoteObservable.shared
+struct AddCocktailTasteView: View {
     @Environment(NoteEnvironment.self) var noteEnvironment: NoteEnvironment
+    @Bindable private var observable = CockatilNoteObservable.shared
+
+    @State private var taste: [Double] = [0, 0, 0]
     @State private var navigate = false
     
-    @State private var taste: [Double] = [0, 0, 0, 0, 0]
-    
-    private let tasteLabels = ["바디", "당도", "산도", "타닌", "알코올"]
-    private let symbolColors: [Color] = [.purple, .orange, .blue, .green, .red]
-    
+    private let tasteLabels = ["단맛", "신맛", "도수"]
+    private let symbolColors: [Color] = [.orange, .blue, .red]
+
     var body: some View {
         ZStack {
             Color.appSheetBackground.ignoresSafeArea()
@@ -25,14 +25,12 @@ struct AddWineTasteView: View {
                     Text("Taste")
                         .font(.gmarketSansTitle)
                         .padding(.bottom)
-                    Text("아래의 차트를 채워주세요")
+                    Text("아래의 내용을 채워주세요")
                         .font(.gmarketSansBody)
                         .foregroundStyle(.gray)
                         .padding(.bottom)
                     VStack {
-                        RadarChart(data: taste)
-                        ForEach(0..<5) { index in
-                            CustomDivider()
+                        ForEach(0..<3) { index in
                             HStack {
                                 Text(tasteLabels[index])
                                     .font(.gmarketSansHeadline)
@@ -42,11 +40,13 @@ struct AddWineTasteView: View {
                                        symbolFont: Font.system(size: 24),
                                        symbolColor: symbolColors[index])
                             }
+                            if index < 2 {
+                                CustomDivider()
+                            }
                         }
                     }
                     .frame(maxWidth: .infinity)
-                    .padding(.top, 40)
-                    .padding(.bottom, 10)
+                    .padding(.vertical, 10)
                     .padding(.horizontal)
                     .background {
                         RoundedRectangle(cornerRadius: 12)
@@ -55,13 +55,11 @@ struct AddWineTasteView: View {
                     .padding(.horizontal)
                     .padding(.bottom)
                 }
+                
                 NextButton(disabled: false) {
                     observable.taste = taste
                     Haptic.impact(style: .soft)
                     navigate = true
-                }
-                .navigationDestination(isPresented: $navigate) {
-                    AddWineThinkView()
                 }
             }
         }
@@ -77,7 +75,7 @@ struct AddWineTasteView: View {
 
 #Preview {
     NavigationStack {
-        AddWineTasteView()
+        AddCocktailTasteView()
             .environment(NoteEnvironment())
     }
 }

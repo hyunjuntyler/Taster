@@ -13,6 +13,7 @@ final class CockatilNoteObservable {
     var date: Date = Date()
     var type: CocktailType = cocktailTypes[0]
     var image: Data?
+    var ingredients: [CocktailIngredient] = []
     var taste: [Double] = [0.0, 0.0, 0.0]
     var think: String = ""
     var rating: Double = 0.0
@@ -27,5 +28,25 @@ final class CockatilNoteObservable {
         taste = [0, 0, 0]
         think = ""
         rating = 0.0
+    }
+    
+    func getColorName(for color: Color) -> String {
+        let colorMap: [Color: String] = [
+            .blue: "blue",
+            .red: "red",
+            .green: "green",
+            .indigo: "indigo",
+            .yellow: "yellow",
+            .gray: "gray",
+            .orange: "orange",
+            .brown: "brown",
+            .cyan: "cyan",
+            .mint: "mint",
+            .pink: "pink",
+            .purple: "purple",
+            .teal: "teal"
+        ]
+        
+        return colorMap[color] ?? "error"
     }
 }

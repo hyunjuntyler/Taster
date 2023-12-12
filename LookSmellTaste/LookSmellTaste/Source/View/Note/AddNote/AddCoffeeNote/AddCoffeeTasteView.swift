@@ -32,7 +32,7 @@ struct AddCoffeeTasteView: View {
                     VStack {
                         RadarChart(data: taste, valueList: ["신맛", "바디", "쓴맛", "향미", "단맛"])
                         ForEach(0..<5) { index in
-                            Divider()
+                            CustomDivider()
                             HStack {
                                 Text(tasteLabels[index])
                                     .font(.gmarketSansHeadline)

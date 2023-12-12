@@ -86,9 +86,7 @@ struct WineNoteDetailView: View {
                                     }
                                     .padding(.vertical, 3)
                                 }
-                                RoundedRectangle(cornerRadius: 3, style: .continuous)
-                                    .frame(height: 1)
-                                    .foregroundStyle(.appPickerGray)
+                                CustomDivider()
                                 VStack {
                                     Text("후각")
                                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -125,9 +123,7 @@ struct WineNoteDetailView: View {
                                     .padding(.horizontal, -16)
                                     .padding(.bottom, 5)
                                 }
-                                RoundedRectangle(cornerRadius: 3, style: .continuous)
-                                    .frame(height: 1)
-                                    .foregroundStyle(.appPickerGray)
+                                CustomDivider()
                                 Text("미각")
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                     .font(.gmarketSansSubHeadline)
