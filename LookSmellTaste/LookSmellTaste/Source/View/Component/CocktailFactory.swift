@@ -26,22 +26,8 @@ struct CocktailFactory: View {
                 }
             }
             .frame(maxWidth: .infinity, alignment: .center)
-            ScrollView {
-                VStack(alignment: .leading) {
-                    ForEach(ingredients) { ingredient in
-                        HStack {
-                            RoundedRectangle(cornerRadius: 2, style: .continuous)
-                                .frame(width: 10, height: 10)
-                                .foregroundStyle(getColor(colorName: ingredient.colorName))
-                            Text(ingredient.name)
-                                .font(.gmarketSansCaption)
-                        }
-                    }
-                }
-                .frame(maxWidth: .infinity)
-            }
-            .frame(width: 100, height: 100)
-            .frame(maxWidth: .infinity, alignment: .trailing)
+
+            cocktailIngredients
         }
     }
     
@@ -82,6 +68,25 @@ struct CocktailFactory: View {
             }
         }
         .offset(y: 12)
+    }
+    
+    private var cocktailIngredients: some View {
+        ScrollView {
+            VStack(alignment: .leading) {
+                ForEach(ingredients) { ingredient in
+                    HStack {
+                        RoundedRectangle(cornerRadius: 2, style: .continuous)
+                            .frame(width: 10, height: 10)
+                            .foregroundStyle(getColor(colorName: ingredient.colorName))
+                        Text(ingredient.name)
+                            .font(.gmarketSansCaption)
+                    }
+                }
+            }
+            .frame(maxWidth: .infinity)
+        }
+        .frame(width: 100, height: 100)
+        .frame(maxWidth: .infinity, alignment: .trailing)
     }
     
     private var glass: some View {

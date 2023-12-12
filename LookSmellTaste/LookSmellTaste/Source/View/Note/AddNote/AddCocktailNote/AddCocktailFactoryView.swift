@@ -31,12 +31,13 @@ struct AddCocktailFactoryView: View {
                         .padding(.bottom)
                     VStack {
                         CocktailFactory(ingredients: ingredients, isIce: isIce)
+                            .overlay(alignment: .bottomTrailing) {
+                                addIceButton
+                            }
                         
                         CustomDivider()
                         
-                        AddIngredientButton {
-                            addIngredientSheet = true
-                        }
+                        addIngredientButton
                     }
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 10)
@@ -55,11 +56,64 @@ struct AddCocktailFactoryView: View {
             }
         }
         .navigationTitle("")
+        .sheet(isPresented: $addIngredientSheet) {
+            addGredientSheet
+                .presentationDetents([.medium])
+                .presentationCornerRadius(20)
+        }
         .toolbar {
             CloseButton {
                 noteEnvironment.showCloseAlert = true
             }
         }
+    }
+    
+    private var addGredientSheet: some View {
+        ZStack {
+            Color.appSheetBackground.ignoresSafeArea()
+        }
+    }
+    
+    private var addIngredientButton: some View {
+        Button {
+            Haptic.impact(style: .soft)
+            addIngredientSheet = true
+        } label: {
+            HStack {
+                Image(systemName: "plus.circle.fill")
+                    .font(.title3)
+                Text("재료 추가하기")
+                    .font(.gmarketSansBody)
+            }
+            .foregroundStyle(.accent)
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 5)
+        }
+        .buttonStyle(PressButtonStyle())
+    }
+    
+    private var addIceButton: some View {
+        Button {
+            Haptic.impact(style: .soft)
+            withAnimation {
+                isIce.toggle()
+            }
+        } label: {
+            HStack(spacing: 3) {
+                if isIce {
+                    RoundedRectangle(cornerRadius: 3, style: .continuous)
+                        .frame(width: 12, height: 12)
+                } else {
+                    RoundedRectangle(cornerRadius: 3, style: .continuous)
+                        .strokeBorder(lineWidth: 2)
+                        .frame(width: 12, height: 12)
+                }
+                Text("얼음")
+                    .font(.gmarketSansSubHeadline)
+            }
+        }
+        .foregroundStyle(.accent)
+        .buttonStyle(PressButtonStyle())
     }
 }
 
