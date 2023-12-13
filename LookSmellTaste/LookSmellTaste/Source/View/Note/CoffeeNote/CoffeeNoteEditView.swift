@@ -374,6 +374,7 @@ struct CoffeeNoteEditView: View {
     }
 }
 
+#if DEBUG
 struct CoffeeNoteEditPreview: View {
     @Query private var coffeeNotes: [CoffeeNote]
     
@@ -382,7 +383,6 @@ struct CoffeeNoteEditPreview: View {
     }
 }
 
-#if DEBUG
 #Preview { @MainActor in
     NavigationStack {
         CoffeeNoteEditPreview()

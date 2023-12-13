@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AddCocktailTasteView: View {
     @Environment(NoteEnvironment.self) var noteEnvironment: NoteEnvironment
-    @Bindable private var observable = CockatilNoteObservable.shared
+    @Bindable private var observable = CocktailNoteObservable.shared
 
     @State private var taste: [Double] = [0, 0, 0]
     @State private var navigate = false

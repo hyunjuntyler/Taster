@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddCocktailNoteView: View {
-    @Bindable private var observable = CockatilNoteObservable.shared
+    @Bindable private var observable = CocktailNoteObservable.shared
     @State private var showDatePicker = false
     @FocusState private var isFocused
     

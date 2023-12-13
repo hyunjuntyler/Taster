@@ -1,0 +1,92 @@
+//
+//  CocktailNoteView.swift
+//  LookSmellTaste
+//
+//  Created by hyunjun on 12/13/23.
+//
+
+import SwiftUI
+import SwiftData
+
+struct CocktailNoteView: View {
+    @Query private var cocktailNotes: [CocktailNote]
+    @State private var sortOption: SortOption = .date
+    
+    private var sortedCocktailNotes: [CocktailNote] {
+        cocktailNotes.sort(on: sortOption)
+    }
+    
+    var body: some View {
+        ZStack {
+            Color.appBackground.ignoresSafeArea()
+
+            ScrollView {
+                VStack(alignment: .leading) {
+                    LazyVStack {
+                        ForEach(sortedCocktailNotes) { note in
+                            NavigationLink {
+                                CocktailNoteDetailView(note: note)
+                            } label: {
+                                CocktailNoteList(note: note)
+                            }
+                            .buttonStyle(PressButtonStyle())
+                        }
+                    }
+                }
+                .padding(.top)
+                .padding(.horizontal)
+            }
+        }
+        .navigationTitle("")
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Text("모든 칵테일 노트")
+                    .font(.gmarketSansTitle3)
+            }
+            
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    Haptic.impact(style: .soft)
+                    if sortOption == .date {
+                        sortOption = .rating
+                    } else {
+                        sortOption = .date
+                    }
+                } label: {
+                    VStack {
+                        Image(systemName: sortOption == .date ? "clock.fill" : "star.fill")
+                            .font(.footnote)
+                            .fontWeight(.semibold)
+                            .contentTransition(.symbolEffect(.replace))
+                            .frame(height: 20)
+                        Text(sortOption == .date ? "최신순" : "점수순")
+                            .font(.gmarketSansCaption2)
+                    }
+                    .foregroundStyle(.accent)
+                }
+                .buttonStyle(PressButtonStyle())
+            }
+        }
+    }
+}
+
+private extension [CocktailNote] {
+    func sort(on option: SortOption) -> [CocktailNote] {
+        switch option {
+        case .date:
+            self.sorted(by: { $0.date > $1.date })
+        case .rating:
+            self.sorted(by: { $0.rating > $1.rating })
+        }
+    }
+}
+
+#if DEBUG
+#Preview { @MainActor in
+    NavigationStack {
+        CocktailNoteView()
+            .modelContainer(previewContainer)
+            .navigationBarTitleDisplayMode(.inline)
+    }
+}
+#endif

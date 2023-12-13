@@ -21,11 +21,12 @@ final class CocktailNote {
     var think: String = ""
     var rating: Double = 0.0
     
-    init(user: User? = nil, name: String, date: Date, type: CocktailType, isIce: Bool, taste: [Double], think: String, rating: Double) {
+    init(user: User? = nil, name: String, date: Date, type: CocktailType, ingredients: [CocktailIngredient], isIce: Bool, taste: [Double], think: String, rating: Double) {
         self.user = user
         self.name = name
         self.date = date
         self.type = type
+        self.ingredients = ingredients
         self.isIce = isIce
         self.taste = taste
         self.think = think

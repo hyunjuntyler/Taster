@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AddCocktailThinkView: View {
     @Environment(NoteEnvironment.self) var noteEnvironment: NoteEnvironment
-    @Bindable private var observable = CockatilNoteObservable.shared
+    @Bindable private var observable = CocktailNoteObservable.shared
     @FocusState private var isFocused
 
     @State private var think = ""

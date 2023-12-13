@@ -8,7 +8,7 @@
 import SwiftUI
 
 @Observable
-final class CockatilNoteObservable {
+final class CocktailNoteObservable {
     var name: String = ""
     var date: Date = Date()
     var type: CocktailType = cocktailTypes[0]
@@ -19,7 +19,7 @@ final class CockatilNoteObservable {
     var think: String = ""
     var rating: Double = 0.0
     
-    static var shared = CockatilNoteObservable()
+    static var shared = CocktailNoteObservable()
     
     func reset() {
         name = ""
@@ -37,13 +37,13 @@ final class CockatilNoteObservable {
         if let ingredientColor = cocktailIngredientColors.first(where: { $0.color == color }) {
             return ingredientColor.name
         }
-        return "blue"
+        return "black"
     }
     
     func getColor(for name: String) -> Color {
         if let ingredientColor = cocktailIngredientColors.first(where: { $0.name == name }) {
             return ingredientColor.color
         }
-        return .blue
+        return .black
     }
 }

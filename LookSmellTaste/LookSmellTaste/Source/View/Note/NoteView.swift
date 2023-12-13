@@ -11,6 +11,7 @@ import SwiftData
 struct NoteView: View {
     @Query(sort: \WineNote.date, order: .reverse) private var wineNotes: [WineNote]
     @Query(sort: \CoffeeNote.date, order: .reverse) private var coffeeNotes: [CoffeeNote]
+    @Query(sort: \CocktailNote.date, order: .reverse) private var cocktailNotes: [CocktailNote]
     @Query private var users: [User]
     private var user: User? { users.first }
     
@@ -131,8 +132,40 @@ struct NoteView: View {
                 .padding(.horizontal)
                 .padding(.top)
             }
+            
+            if !cocktailNotes.isEmpty {
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text("칵테일 노트")
+                            .font(.gmarketSansTitle2)
+                        Spacer()
+                        NavigationLink {
+                            CocktailNoteView()
+                        } label: {
+                            Text("모두보기")
+                                .font(.gmarketSansBody)
+                        }
+                    }
+                    .padding(.horizontal, 5)
+                    LazyVStack {
+                        let recentCoffeeNotes = cocktailNotes.prefix(3)
+                        
+                        ForEach(recentCoffeeNotes) { note in
+                            NavigationLink {
+                                CocktailNoteDetailView(note: note)
+                            } label: {
+                                CocktailNoteList(note: note)
+                            }
+                            .buttonStyle(PressButtonStyle())
+                        }
+                    }
+                }
+                .padding(.horizontal)
+                .padding(.top)
+            }
         }
         .coordinateSpace(name: "scroll")
+        .safeAreaPadding(.bottom, 80)
         .overlay {
             InlineNavigationTitle(type: .note, scrollOffset: scrollOffset, navigateToUserView: $navigateToUserView)
         }
@@ -146,10 +179,10 @@ struct NoteView: View {
         .overlay {
             if noteEnvironment.showCompleteView {
                 AddNoteCompleteView()
-                    .transition(.opacity.animation(.easeInOut(duration: 0.5)))
+                    .transition(.opacity.animation(.easeInOut(duration: 0.3)))
                     .onAppear {
                         noteEnvironment.addNote = false
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                             noteEnvironment.showCompleteView = false
                         }
                     }
@@ -168,12 +201,18 @@ struct NoteView: View {
                 .foregroundStyle(.appBackground, .accent)
                 .shadow(radius: 1)
         }
-        .padding(.trailing, 20)
         .buttonStyle(PressButtonStyle())
+        .background {
+            Circle()
+                .frame(width: 100, height: 100)
+                .foregroundStyle(.appBackground)
+                .blur(radius: 8)
+        }
+        .padding(.trailing, 20)
     }
     
     private func isNoteEmpty() -> Bool {
-        wineNotes.isEmpty && coffeeNotes.isEmpty
+        wineNotes.isEmpty && coffeeNotes.isEmpty && cocktailNotes.isEmpty
     }
 }
 

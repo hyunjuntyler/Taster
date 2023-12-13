@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AddCocktailFactoryView: View {
     @Environment(NoteEnvironment.self) var noteEnvironment: NoteEnvironment
-    @Bindable private var observable = CockatilNoteObservable.shared
+    @Bindable private var observable = CocktailNoteObservable.shared
     
     @State private var navigate = false
     @State private var addIngredientSheet = false
@@ -122,7 +122,6 @@ struct AddCocktailFactoryView: View {
                             .foregroundStyle(.appSheetBoxBackground)
                     }
                     .padding(.horizontal)
-                    .padding(.bottom)
                 }
                 
                 NextButton(disabled: false) {
@@ -177,13 +176,25 @@ struct AddCocktailFactoryView: View {
                             .foregroundStyle(.gray)
                             .padding(.leading)
                             .padding(.top, 5)
-                        TextField("재료의 이름을 작성해 주세요", text: $name)
-                            .font(.gmarketSansBody)
-                            .padding()
-                            .background {
-                                RoundedRectangle(cornerRadius: 12, style: .continuous)
-                                    .foregroundStyle(.appPickerGray)
+                        HStack {
+                            TextField("재료의 이름을 작성해 주세요", text: $name)
+                                .font(.gmarketSansBody)
+                            Button {
+                                Haptic.impact(style: .soft)
+                                name = ""
+                            } label: {
+                                Image(systemName: "xmark.circle.fill")
+                                    .foregroundStyle(.appPickerGray, .appGrayButton)
+                                    .font(.title3)
                             }
+                            .buttonStyle(PressButtonStyle())
+                            .opacity(name.isEmpty ? 0 : 1)
+                        }
+                        .padding()
+                        .background {
+                            RoundedRectangle(cornerRadius: 12, style: .continuous)
+                                .foregroundStyle(.appPickerGray)
+                        }
                         Text("재료의 양 (비율로 입력해 주세요)")
                             .font(.gmarketSansSubHeadline)
                             .foregroundStyle(.gray)
