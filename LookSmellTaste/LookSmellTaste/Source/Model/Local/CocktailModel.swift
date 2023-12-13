@@ -18,7 +18,7 @@ let cocktailTypes: [CocktailType] = [
     CocktailType(name: "바 칵테일", imageName: "barCocktail")
 ]
 
-struct CocktailIngredient: Identifiable {
+struct CocktailIngredient: Identifiable, Codable, Hashable {
     var id = UUID()
     var name: String
     var amount: Double
