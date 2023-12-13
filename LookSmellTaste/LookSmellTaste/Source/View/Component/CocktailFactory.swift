@@ -39,7 +39,7 @@ struct CocktailFactory: View {
                     
                     Rectangle()
                         .frame(width: 60, height: height)
-                        .foregroundStyle(getColor(colorName: ingredient.colorName))
+                        .foregroundStyle(getColor(for: ingredient.colorName))
                 }
             }
             
@@ -51,7 +51,7 @@ struct CocktailFactory: View {
                     
                     Ellipse()
                         .frame(width: 60, height: 24)
-                        .foregroundStyle(getColor(colorName: ingredient.colorName))
+                        .foregroundStyle(getColor(for: ingredient.colorName))
                         .offset(y: height)
                         .zIndex(Double(ingredients.count-index))
                 }
@@ -61,7 +61,7 @@ struct CocktailFactory: View {
             if let ingredient = ingredients.first {
                 Ellipse()
                     .frame(width: 60, height: 24)
-                    .foregroundStyle(getColor(colorName: ingredient.colorName))
+                    .foregroundStyle(getColor(for: ingredient.colorName))
                     .offset(y: -12)
                     .brightness(0.1)
                     .grayscale(0.2)
@@ -77,7 +77,7 @@ struct CocktailFactory: View {
                     HStack {
                         RoundedRectangle(cornerRadius: 2, style: .continuous)
                             .frame(width: 10, height: 10)
-                            .foregroundStyle(getColor(colorName: ingredient.colorName))
+                            .foregroundStyle(getColor(for: ingredient.colorName))
                         Text(ingredient.name)
                             .font(.gmarketSansCaption)
                     }
@@ -134,24 +134,11 @@ struct CocktailFactory: View {
         .offset(y: 12)
     }
     
-    private func getColor(colorName: String) -> Color {
-        let colorMap: [String: Color] = [
-            "blue": .blue,
-            "red": .red,
-            "green": .green,
-            "indigo": .indigo,
-            "yellow": .yellow,
-            "gray": .gray,
-            "orange": .orange,
-            "brown": .brown,
-            "cyan": .cyan,
-            "mint": .mint,
-            "pink": .pink,
-            "purple": .purple,
-            "teal": .teal
-        ]
-        
-        return colorMap[colorName] ?? .blue
+    func getColor(for name: String) -> Color {
+        if let ingredientColor = cocktailIngredientColors.first(where: { $0.name == name }) {
+            return ingredientColor.color
+        }
+        return .blue
     }
 }
 
