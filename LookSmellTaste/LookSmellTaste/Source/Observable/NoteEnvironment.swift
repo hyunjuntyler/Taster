@@ -47,7 +47,7 @@ final class NoteEnvironment {
         case .coffee:
             isNotePreparing = false
         case .cocktail:
-            isNotePreparing = true
+            isNotePreparing = false
         case .whiskey:
             isNotePreparing = true
         case nil:

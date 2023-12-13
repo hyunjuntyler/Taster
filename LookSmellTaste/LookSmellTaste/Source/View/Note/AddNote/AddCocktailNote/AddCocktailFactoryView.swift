@@ -10,13 +10,21 @@ import SwiftUI
 struct AddCocktailFactoryView: View {
     @Environment(NoteEnvironment.self) var noteEnvironment: NoteEnvironment
     @Bindable private var observable = CockatilNoteObservable.shared
-
+    
     @State private var navigate = false
     @State private var addIngredientSheet = false
     
     @State private var ingredients: [CocktailIngredient] = []
     @State private var isIce = false
-
+    
+    @State private var name = ""
+    @State private var amount = 0
+    @State private var color = ""
+    @State private var selectedColor = ""
+    @State private var selectedIndex: Int?
+    
+    private let columns = Array(repeating: GridItem(.flexible()), count: 9)
+    
     var body: some View {
         ZStack {
             Color.appSheetBackground.ignoresSafeArea()
@@ -35,6 +43,59 @@ struct AddCocktailFactoryView: View {
                                 addIceButton
                             }
                         
+                        if !ingredients.isEmpty {
+                            VStack(alignment: .leading) {
+                                ForEach(ingredients.indices, id: \.self) { index in
+                                    CustomDivider()
+                                    HStack {
+                                        Text("\(index + 1)")
+                                            .monospacedDigit()
+                                            .fontDesign(.rounded)
+                                            .foregroundStyle(.gray)
+                                        Text(ingredients[index].name)
+                                            .font(.gmarketSansBody)
+                                        Spacer()
+                                        Text("\(ingredients[index].amount, specifier: "%.0f")")
+                                            .monospacedDigit()
+                                            .fontDesign(.rounded)
+                                            .padding(.trailing, 8)
+                                        
+                                        Button {
+                                            Haptic.impact(style: .soft)
+                                            selectedIndex = index
+                                            addIngredientSheet = true
+                                        } label: {
+                                            Text("편집")
+                                                .font(.gmarketSansFootnote)
+                                                .foregroundStyle(.gray)
+                                                .padding(12)
+                                                .background {
+                                                    RoundedRectangle(cornerRadius: 8, style: .continuous)
+                                                        .foregroundStyle(.appPickerGray)
+                                                }
+                                        }
+                                        .buttonStyle(PressButtonStyle())
+                                        
+                                        Button {
+                                            withAnimation {
+                                                Haptic.impact(style: .soft)
+                                                ingredients.remove(at: index)
+                                            }
+                                        } label: {
+                                            Text("삭제")
+                                                .font(.gmarketSansFootnote)
+                                                .foregroundStyle(.gray)
+                                                .padding(12)
+                                                .background {
+                                                    RoundedRectangle(cornerRadius: 8, style: .continuous)
+                                                        .foregroundStyle(.appPickerGray)
+                                                }
+                                        }
+                                        .buttonStyle(PressButtonStyle())
+                                    }
+                                }
+                            }
+                        }
                         CustomDivider()
                         
                         addIngredientButton
@@ -51,15 +112,18 @@ struct AddCocktailFactoryView: View {
                 }
                 
                 NextButton(disabled: false) {
+                    observable.ingredients = ingredients
+                    observable.isIce = isIce
                     navigate = true
+                }
+                .navigationDestination(isPresented: $navigate) {
+                    AddCocktailTasteView()
                 }
             }
         }
         .navigationTitle("")
         .sheet(isPresented: $addIngredientSheet) {
             addGredientSheet
-                .presentationDetents([.medium])
-                .presentationCornerRadius(20)
         }
         .toolbar {
             CloseButton {
@@ -69,9 +133,141 @@ struct AddCocktailFactoryView: View {
     }
     
     private var addGredientSheet: some View {
-        ZStack {
-            Color.appSheetBackground.ignoresSafeArea()
+        VStack {
+            Text("재료 추가")
+                .font(.gmarketSansTitle3)
+                .frame(maxWidth: .infinity)
+                .overlay(alignment: .trailing) {
+                    Button {
+                        Haptic.impact(style: .soft)
+                        addIngredientSheet = false
+                    } label: {
+                        Image(systemName: "xmark.circle.fill")
+                            .font(.title2)
+                            .fontWeight(.semibold)
+                            .foregroundStyle(.appGrayButton)
+                            .padding()
+                    }
+                    .buttonStyle(PressButtonStyle())
+                }
+            ScrollView {
+                VStack(alignment: .leading) {
+                    Text("재료 이름")
+                        .font(.gmarketSansSubHeadline)
+                        .foregroundStyle(.gray)
+                        .padding(.leading)
+                        .padding(.top, 5)
+                    TextField("재료의 이름을 작성해 주세요", text: $name)
+                        .font(.gmarketSansBody)
+                        .padding()
+                        .background {
+                            RoundedRectangle(cornerRadius: 12, style: .continuous)
+                                .foregroundStyle(.appPickerGray)
+                        }
+                    Text("재료의 양 (비율로 입력해 주세요)")
+                        .font(.gmarketSansSubHeadline)
+                        .foregroundStyle(.gray)
+                        .padding(.leading)
+                        .padding(.top, 5)
+                    HStack(spacing: 0) {
+                        Text("\(amount)")
+                            .font(.gmarketSansButton)
+                            .frame(maxWidth: .infinity)
+                        Button{
+                            if amount > 0 {
+                                Haptic.impact(style: .soft)
+                                amount -= 1
+                            } else {
+                                Haptic.notification(type: .error)
+                            }
+                        } label: {
+                            Image(systemName: "minus.square.fill")
+                                .font(.largeTitle)
+                                .foregroundStyle(.appGrayButton)
+                        }
+                        .buttonStyle(PressButtonStyle())
+                        Button{
+                            Haptic.impact(style: .soft)
+                            amount += 1
+                        } label: {
+                            Image(systemName: "plus.square.fill")
+                                .font(.largeTitle)
+                                .foregroundStyle(.appGrayButton)
+                        }
+                        .buttonStyle(PressButtonStyle())
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .frame(height: 20)
+                    .padding()
+                    .background {
+                        RoundedRectangle(cornerRadius: 12, style: .continuous)
+                            .foregroundStyle(.appPickerGray)
+                    }
+                    
+                    Text("표시할 색상")
+                        .font(.gmarketSansSubHeadline)
+                        .foregroundStyle(.gray)
+                        .padding(.leading)
+                        .padding(.top, 5)
+                    LazyVGrid(columns: columns) {
+                        ForEach(Array(observable.colorMap.keys), id: \.self) { color in
+                            Button {
+                                Haptic.impact(style: .soft)
+                                if selectedColor == observable.getColorName(for: color) {
+                                    selectedColor = ""
+                                } else {
+                                    selectedColor = observable.getColorName(for: color)
+                                }
+                            } label: {
+                                RoundedRectangle(cornerRadius: 6, style: .continuous)
+                                    .scaledToFit()
+                                    .foregroundColor(color)
+                                    .opacity(selectedColor == observable.getColorName(for: color) ? 1 : 0.3)
+                                    .overlay {
+                                        if selectedColor == observable.getColorName(for: color) {
+                                            RoundedRectangle(cornerRadius: 6, style: .continuous)
+                                                .stroke(.accent, lineWidth: 3)
+                                        }
+                                    }
+                            }
+                            .buttonStyle(PressButtonStyle())
+                        }
+                    }
+                    .padding()
+                    .background {
+                        RoundedRectangle(cornerRadius: 12, style: .continuous)
+                            .foregroundStyle(.appPickerGray)
+                    }
+                }
+                .padding(.horizontal)
+            }
+            
+            NextButton(label: "재료 추가", disabled: selectedColor.isEmpty || amount == 0) {
+                addIngredientSheet = false
+                let ingredient = CocktailIngredient(name: name, amount: Double(amount), colorName: selectedColor)
+                withAnimation {
+                    if let index = selectedIndex {
+                        ingredients[index] = ingredient
+                    } else {
+                        ingredients.append(ingredient)
+                    }
+                }
+                name = ""
+                amount = 0
+                selectedColor = ""
+                selectedIndex = nil
+            }
         }
+        .onAppear {
+            if let index = selectedIndex {
+                name = ingredients[index].name
+                amount = Int(ingredients[index].amount)
+                selectedColor = ingredients[index].colorName
+            }
+        }
+        .padding(.top, 24)
+        .presentationDetents([.medium])
+        .presentationCornerRadius(24)
     }
     
     private var addIngredientButton: some View {

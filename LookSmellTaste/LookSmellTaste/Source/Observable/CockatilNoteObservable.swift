@@ -19,6 +19,22 @@ final class CockatilNoteObservable {
     var think: String = ""
     var rating: Double = 0.0
     
+    let colorMap: [Color: String] = [
+        .blue: "blue",
+        .red: "red",
+        .green: "green",
+        .indigo: "indigo",
+        .yellow: "yellow",
+        .gray: "gray",
+        .orange: "orange",
+        .brown: "brown",
+        .cyan: "cyan",
+        .mint: "mint",
+        .pink: "pink",
+        .purple: "purple",
+        .teal: "teal"
+    ]
+    
     static var shared = CockatilNoteObservable()
     
     func reset() {
@@ -34,22 +50,6 @@ final class CockatilNoteObservable {
     }
     
     func getColorName(for color: Color) -> String {
-        let colorMap: [Color: String] = [
-            .blue: "blue",
-            .red: "red",
-            .green: "green",
-            .indigo: "indigo",
-            .yellow: "yellow",
-            .gray: "gray",
-            .orange: "orange",
-            .brown: "brown",
-            .cyan: "cyan",
-            .mint: "mint",
-            .pink: "pink",
-            .purple: "purple",
-            .teal: "teal"
-        ]
-        
         return colorMap[color] ?? "error"
     }
 }

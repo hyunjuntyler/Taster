@@ -60,6 +60,9 @@ struct AddCocktailTasteView: View {
                     observable.taste = taste
                     navigate = true
                 }
+                .navigationDestination(isPresented: $navigate) {
+                    AddCocktailThinkView()
+                }
             }
         }
         .navigationTitle("")

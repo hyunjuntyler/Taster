@@ -100,13 +100,15 @@ struct AddCocktailNoteView: View {
                     .font(.gmarketSansBody)
                 Spacer()
                 Button {
-                    isFocused = false
-                    type = cocktailTypes[0]
+                    withAnimation {
+                        isFocused = false
+                        type = cocktailTypes[0]
+                    }
                     Haptic.impact(style: .soft)
                 } label: {
                     Text("홈")
                         .font(.gmarketSansFootnote)
-                        .foregroundStyle(.gray)
+                        .foregroundStyle(type == cocktailTypes[0] ? .accent : .gray)
                         .padding()
                         .background {
                             RoundedRectangle(cornerRadius: 12, style: .continuous)
@@ -115,13 +117,15 @@ struct AddCocktailNoteView: View {
                 }
                 .buttonStyle(PressButtonStyle())
                 Button {
-                    isFocused = false
-                    type = cocktailTypes[1]
+                    withAnimation {
+                        isFocused = false
+                        type = cocktailTypes[1]
+                    }
                     Haptic.impact(style: .soft)
                 } label: {
                     Text("칵테일 바")
                         .font(.gmarketSansFootnote)
-                        .foregroundStyle(.gray)
+                        .foregroundStyle(type == cocktailTypes[1] ? .accent : .gray)
                         .padding()
                         .background {
                             RoundedRectangle(cornerRadius: 12, style: .continuous)
@@ -180,13 +184,6 @@ struct AddCocktailNoteView: View {
 }
 
 #Preview {
-    ScrollView {
-        ZStack {
-            Color.appBackground.ignoresSafeArea()
-            AddCocktailNoteView()
-                .environment(NoteEnvironment())
-        }
-    }
-//    AddNoteView()
-//        .environment(NoteEnvironment())
+    AddNoteView()
+        .environment(NoteEnvironment())
 }

@@ -50,7 +50,7 @@ struct AddNoteView: View {
                             case .coffee:
                                 AddCoffeeNoteView()
                             case .cocktail:
-                                PreparingContent()
+                                AddCocktailNoteView()
                             case .whiskey:
                                 PreparingContent()
                             case .none:
@@ -85,7 +85,7 @@ struct AddNoteView: View {
                         case .coffee:
                             AddCoffeeFlavorView()
                         case .cocktail:
-                            EmptyView()
+                            AddCocktailFactoryView()
                         case .whiskey:
                             EmptyView()
                         case .none:

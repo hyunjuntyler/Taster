@@ -26,7 +26,7 @@ struct CocktailFactory: View {
                 }
             }
             .frame(maxWidth: .infinity, alignment: .center)
-
+            
             cocktailIngredients
         }
     }
