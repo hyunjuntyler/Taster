@@ -63,13 +63,15 @@ struct AddCocktailFactoryView: View {
                                         Text("\(index + 1)")
                                             .monospacedDigit()
                                             .fontDesign(.rounded)
-                                            .foregroundStyle(.gray)
+                                            .bold()
+                                            .foregroundStyle(observable.getColor(for: ingredients[index].colorName))
                                         Text(ingredients[index].name)
                                             .font(.gmarketSansBody)
                                         Spacer()
                                         Text("\(ingredients[index].amount, specifier: "%.0f")")
                                             .monospacedDigit()
                                             .fontDesign(.rounded)
+                                            .bold()
                                             .padding(.trailing, 8)
                                         
                                         Button {
