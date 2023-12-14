@@ -61,7 +61,7 @@ struct AddWhiskeyThinkView: View {
                             HStack {
                                 Rating(rating: $rating)
                                 Spacer()
-                                Text("\(roundedRating, specifier: "%.1f")")
+                                Text("\(rating, specifier: "%.1f")")
                                     .monospacedDigit()
                                     .animation(nil, value: rating)
                                     .font(.gmarketSansTitle3)
@@ -97,11 +97,6 @@ struct AddWhiskeyThinkView: View {
                 noteEnvironment.showCloseAlert = true
             }
         }
-    }
-    
-    private var roundedRating: Double {
-        let boundedRating = min(max(rating, 0.0), 5.0)
-        return (boundedRating * 2).rounded() / 2
     }
 }
 

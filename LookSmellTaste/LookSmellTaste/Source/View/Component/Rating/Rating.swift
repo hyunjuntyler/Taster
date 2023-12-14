@@ -83,7 +83,8 @@ struct Rating: View {
                             .onChanged { gesture in
                                 withAnimation {
                                     let dragValue = gesture.location.x / dragRange
-                                    rating = min(max(Double(index) - 0.5 + dragValue, 0.0), 5.0)
+                                    let boundedRating = min(max(Double(index) - 0.5 + dragValue, 0.0), 5.0)
+                                    rating = (boundedRating * 2).rounded() / 2
                                     scaleUpWhenDragged = true
                                 }
                             }

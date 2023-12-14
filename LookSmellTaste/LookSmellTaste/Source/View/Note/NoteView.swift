@@ -27,178 +27,180 @@ struct NoteView: View {
     
     var body: some View {
         ScrollView {
-            ZStack {
-                Color.clear
-                    .frame(height: 0)
-                    .onScrollOffsetChanged { offset in
-                        scrollOffset = offset
-                    }
-                
-                NavigationTitle(type: .note, scrollOffset: scrollOffset, navigateToUserView: $navigateToUserView)
-            }
-            
-            if isNoteEmpty() {
-                ContentUnavailable(type: .note)
-                    .padding(.top, 250)
-            } else {
-                if let user = user {
-                    HStack {
-                        Text("👏")
-                            .font(.tossFaceXLarge)
-                        VStack(alignment: .leading) {
-                            Group {
-                                Text("반가워요 ")
-                                + Text("\(user.name)")
-                                    .foregroundStyle(.accent)
-                                + Text("님")
-                            }
-                            .font(.gmarketSansBody)
-                            
-                            Group {
-                                Text("총 ")
-                                + Text("\(noteCount)")
-                                    .foregroundStyle(.accent)
-                                + Text("개의 노트를 작성하셨어요")
-                            }
-                            .font(.gmarketSansBody)
+            VStack {
+                ZStack {
+                    Color.clear
+                        .frame(height: 0)
+                        .onScrollOffsetChanged { offset in
+                            scrollOffset = offset
                         }
+                    
+                    NavigationTitle(type: .note, scrollOffset: scrollOffset, navigateToUserView: $navigateToUserView)
+                }
+                
+                if isNoteEmpty() {
+                    ContentUnavailable(type: .note)
+                        .padding(.top, 250)
+                } else {
+                    if let user = user {
+                        HStack {
+                            Text("👏")
+                                .font(.tossFaceXLarge)
+                            VStack(alignment: .leading) {
+                                Group {
+                                    Text("반가워요 ")
+                                    + Text("\(user.name)")
+                                        .foregroundStyle(.accent)
+                                    + Text("님")
+                                }
+                                .font(.gmarketSansBody)
+                                
+                                Group {
+                                    Text("총 ")
+                                    + Text("\(noteCount)")
+                                        .foregroundStyle(.accent)
+                                    + Text("개의 노트를 작성하셨어요")
+                                }
+                                .font(.gmarketSansBody)
+                            }
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding()
+                        .background {
+                            RoundedRectangle(cornerRadius: 16)
+                                .foregroundStyle(.appSheetBoxBackground)
+                        }
+                        .padding(.horizontal)
                     }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding()
-                    .background {
-                        RoundedRectangle(cornerRadius: 16)
-                            .foregroundStyle(.appSheetBoxBackground)
+                }
+                
+                if !wineNotes.isEmpty {
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Text("와인 노트")
+                                .font(.gmarketSansTitle2)
+                            Spacer()
+                            NavigationLink {
+                                WineNoteView()
+                            } label: {
+                                Text("모두보기")
+                                    .font(.gmarketSansBody)
+                            }
+                        }
+                        .padding(.horizontal, 5)
+                        LazyVStack {
+                            let recentWineNotes = wineNotes.prefix(3)
+                            
+                            ForEach(recentWineNotes) { note in
+                                NavigationLink {
+                                    WineNoteDetailView(note: note)
+                                } label: {
+                                    WineNoteList(note: note)
+                                }
+                                .buttonStyle(PressButtonStyle())
+                            }
+                        }
                     }
                     .padding(.horizontal)
+                    .padding(.top)
                 }
-            }
-            
-            if !wineNotes.isEmpty {
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text("와인 노트")
-                            .font(.gmarketSansTitle2)
-                        Spacer()
-                        NavigationLink {
-                            WineNoteView()
-                        } label: {
-                            Text("모두보기")
-                                .font(.gmarketSansBody)
-                        }
-                    }
-                    .padding(.horizontal, 5)
-                    LazyVStack {
-                        let recentWineNotes = wineNotes.prefix(3)
-                        
-                        ForEach(recentWineNotes) { note in
+                
+                if !coffeeNotes.isEmpty {
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Text("커피 노트")
+                                .font(.gmarketSansTitle2)
+                            Spacer()
                             NavigationLink {
-                                WineNoteDetailView(note: note)
+                                CoffeeNoteView()
                             } label: {
-                                WineNoteList(note: note)
+                                Text("모두보기")
+                                    .font(.gmarketSansBody)
                             }
-                            .buttonStyle(PressButtonStyle())
+                        }
+                        .padding(.horizontal, 5)
+                        LazyVStack {
+                            let recentCoffeeNotes = coffeeNotes.prefix(3)
+                            
+                            ForEach(recentCoffeeNotes) { note in
+                                NavigationLink {
+                                    CoffeeNoteDetailView(note: note)
+                                } label: {
+                                    CoffeeNoteList(note: note)
+                                }
+                                .buttonStyle(PressButtonStyle())
+                            }
                         }
                     }
+                    .padding(.horizontal)
+                    .padding(.top)
                 }
-                .padding(.horizontal)
-                .padding(.top)
-            }
-            
-            if !coffeeNotes.isEmpty {
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text("커피 노트")
-                            .font(.gmarketSansTitle2)
-                        Spacer()
-                        NavigationLink {
-                            CoffeeNoteView()
-                        } label: {
-                            Text("모두보기")
-                                .font(.gmarketSansBody)
-                        }
-                    }
-                    .padding(.horizontal, 5)
-                    LazyVStack {
-                        let recentCoffeeNotes = coffeeNotes.prefix(3)
-                        
-                        ForEach(recentCoffeeNotes) { note in
+                
+                if !cocktailNotes.isEmpty {
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Text("칵테일 노트")
+                                .font(.gmarketSansTitle2)
+                            Spacer()
                             NavigationLink {
-                                CoffeeNoteDetailView(note: note)
+                                CocktailNoteView()
                             } label: {
-                                CoffeeNoteList(note: note)
+                                Text("모두보기")
+                                    .font(.gmarketSansBody)
                             }
-                            .buttonStyle(PressButtonStyle())
+                        }
+                        .padding(.horizontal, 5)
+                        LazyVStack {
+                            let recentCoffeeNotes = cocktailNotes.prefix(3)
+                            
+                            ForEach(recentCoffeeNotes) { note in
+                                NavigationLink {
+                                    CocktailNoteDetailView(note: note)
+                                } label: {
+                                    CocktailNoteList(note: note)
+                                }
+                                .buttonStyle(PressButtonStyle())
+                            }
                         }
                     }
+                    .padding(.horizontal)
+                    .padding(.top)
                 }
-                .padding(.horizontal)
-                .padding(.top)
-            }
-            
-            if !cocktailNotes.isEmpty {
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text("칵테일 노트")
-                            .font(.gmarketSansTitle2)
-                        Spacer()
-                        NavigationLink {
-                            CocktailNoteView()
-                        } label: {
-                            Text("모두보기")
-                                .font(.gmarketSansBody)
-                        }
-                    }
-                    .padding(.horizontal, 5)
-                    LazyVStack {
-                        let recentCoffeeNotes = cocktailNotes.prefix(3)
-                        
-                        ForEach(recentCoffeeNotes) { note in
+                
+                if !whiskeyNotes.isEmpty {
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Text("위스키 노트")
+                                .font(.gmarketSansTitle2)
+                            Spacer()
                             NavigationLink {
-                                CocktailNoteDetailView(note: note)
+                                WhiskeyNoteView()
                             } label: {
-                                CocktailNoteList(note: note)
+                                Text("모두보기")
+                                    .font(.gmarketSansBody)
                             }
-                            .buttonStyle(PressButtonStyle())
                         }
-                    }
-                }
-                .padding(.horizontal)
-                .padding(.top)
-            }
-            
-            if !whiskeyNotes.isEmpty {
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text("위스키 노트")
-                            .font(.gmarketSansTitle2)
-                        Spacer()
-                        NavigationLink {
-                            WhiskeyNoteView()
-                        } label: {
-                            Text("모두보기")
-                                .font(.gmarketSansBody)
-                        }
-                    }
-                    .padding(.horizontal, 5)
-                    LazyVStack {
-                        let recentWhiskeyNotes = whiskeyNotes.prefix(3)
-                        
-                        ForEach(recentWhiskeyNotes) { note in
-                            NavigationLink {
-                                WhiskeyNoteDetailView(note: note)
-                            } label: {
-                                WhiskeyNoteList(note: note)
+                        .padding(.horizontal, 5)
+                        LazyVStack {
+                            let recentWhiskeyNotes = whiskeyNotes.prefix(3)
+                            
+                            ForEach(recentWhiskeyNotes) { note in
+                                NavigationLink {
+                                    WhiskeyNoteDetailView(note: note)
+                                } label: {
+                                    WhiskeyNoteList(note: note)
+                                }
+                                .buttonStyle(PressButtonStyle())
                             }
-                            .buttonStyle(PressButtonStyle())
                         }
                     }
+                    .padding(.horizontal)
+                    .padding(.top)
                 }
-                .padding(.horizontal)
-                .padding(.top)
             }
+            .padding(.bottom, 90)
         }
         .coordinateSpace(name: "scroll")
-        .safeAreaPadding(.bottom, 80)
         .overlay {
             InlineNavigationTitle(type: .note, scrollOffset: scrollOffset, navigateToUserView: $navigateToUserView)
         }

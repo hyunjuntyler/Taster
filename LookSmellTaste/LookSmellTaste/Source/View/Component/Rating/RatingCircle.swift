@@ -1,37 +1,37 @@
 //
-//  RatingDisplay.swift
+//  RatingCircle.swift
 //  LookSmellTaste
 //
-//  Created by Hyunjun Kim on 12/9/23.
+//  Created by hyunjun on 12/13/23.
 //
 
 import SwiftUI
 
-struct RatingDisplay: View {
+struct RatingCircle: View {
     var rating: Double = 2.5
     var ratingColor: Color = .yellow
-    var ratingSymbol = "star.fill"
+    var ratingSymbol = "circle.fill"
     
     var body: some View {
         HStack(spacing: 5) {
+            Text("\(rating, specifier: "%.1f")")
+                .monospacedDigit()
+                .fontDesign(.rounded)
+                .fontWeight(.semibold)
+            
             starsView
                 .overlay {
                     overlayView
                         .mask(starsView)
                 }
-            Text("\(rating, specifier: "%.1f")")
-                .monospacedDigit()
-                .font(.gmarketSansCaption)
         }
     }
     
     @ViewBuilder
     private var starsView: some View {
-
         HStack(spacing: 0) {
             ForEach(0..<5) { _ in
                 Image(systemName: ratingSymbol)
-                    .font(.caption)
                     .fontWeight(.black)
                     .foregroundColor(Color(.systemGray5))
             }
@@ -51,5 +51,5 @@ struct RatingDisplay: View {
 }
 
 #Preview {
-    RatingDisplay()
+    RatingCircle()
 }

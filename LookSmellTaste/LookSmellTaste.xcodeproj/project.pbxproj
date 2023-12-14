@@ -387,15 +387,13 @@
 				29B388B92B0295D900E3942D /* Confetti */,
 				F0DCD1C42B28EAF900841A18 /* Alert */,
 				F0DCD1C52B28EB0B00841A18 /* Button */,
+				F020C4B42B2AF74D00C54144 /* RadarChart */,
+				F020C4BF2B2B259C00C54144 /* Rating */,
 				299A914E2AF6DEC000D9C2D1 /* NavigationBar.swift */,
 				2990E4012AF9A21E0001617A /* ContentUnavailable.swift */,
-				29BD87172B00BD8D0082241D /* Rating.swift */,
-				F020C4B42B2AF74D00C54144 /* RadarChart */,
 				29B388B12B0276D100E3942D /* ImagePicker.swift */,
 				F0DE9BDA2B243BBC004A9621 /* EditImagePicker.swift */,
 				29B388B72B028F0200E3942D /* PreparingContent.swift */,
-				F0DE9BD42B2420C0004A9621 /* RatingDisplay.swift */,
-				293BBF8D2B29A0D50032138E /* RatingCircle.swift */,
 				F0DCD1C02B283B2000841A18 /* CocktailFactory.swift */,
 				F0DCD1C22B2885CC00841A18 /* CustomDivider.swift */,
 			);
@@ -506,6 +504,16 @@
 				F020C4B22B2AF49900C54144 /* HexagonRadarChart.swift */,
 			);
 			path = RadarChart;
+			sourceTree = "<group>";
+		};
+		F020C4BF2B2B259C00C54144 /* Rating */ = {
+			isa = PBXGroup;
+			children = (
+				29BD87172B00BD8D0082241D /* Rating.swift */,
+				F0DE9BD42B2420C0004A9621 /* RatingDisplay.swift */,
+				293BBF8D2B29A0D50032138E /* RatingCircle.swift */,
+			);
+			path = Rating;
 			sourceTree = "<group>";
 		};
 		F02EED482B23515F009AD6D1 /* WineNote */ = {
