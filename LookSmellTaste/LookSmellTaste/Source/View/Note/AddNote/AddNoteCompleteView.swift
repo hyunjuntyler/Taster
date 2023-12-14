@@ -14,6 +14,7 @@ struct AddNoteCompleteView: View {
     
     @Bindable private var wineNoteObservable = WineNoteObservable.shared
     @Bindable private var coffeeNoteObservable = CoffeeNoteObservable.shared
+    @Bindable private var cocktailNoteObservable = CocktailNoteObservable.shared
     @Query private var users: [User]
     private var user: User? { users.first }
     
@@ -42,19 +43,16 @@ struct AddNoteCompleteView: View {
     
     private var confetti: some View {
         Confetti(counter: $counter,
-                 num: 80,
-                 confettiSize: 8,
+                 num: 150,
+                 confettiSize: 6,
                  rainHeight: UIScreen.main.bounds.height,
-                 openingAngle: .degrees(50),
-                 closingAngle: .degrees(130),
+                 openingAngle: .degrees(40),
+                 closingAngle: .degrees(140),
                  radius: UIScreen.main.bounds.width,
-                 repetitions: 1,
-                 repetitionInterval: 0.5)
-            .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
-                    counter += 1
-                }
-            }
+                 repetitions: 0)
+        .onAppear {
+            counter += 1
+        }
     }
     
     private func saveNote() {
@@ -64,7 +62,7 @@ struct AddNoteCompleteView: View {
         case .coffee:
             saveCoffeeNote()
         case .cocktail:
-            break
+            saveCocktailNote()
         case .whiskey:
             break
         case .none:
@@ -73,7 +71,16 @@ struct AddNoteCompleteView: View {
     }
     
     private func saveWineNote() {
-        let wineNote = WineNote(name: wineNoteObservable.name, date: wineNoteObservable.date, type: wineNoteObservable.type, color: wineNoteObservable.color, scents: wineNoteObservable.scents, taste: wineNoteObservable.taste, think: wineNoteObservable.think, rating: wineNoteObservable.rating)
+        let wineNote = WineNote(
+            name: wineNoteObservable.name,
+            date: wineNoteObservable.date,
+            type: wineNoteObservable.type,
+            color: wineNoteObservable.color,
+            scents: wineNoteObservable.scents,
+            taste: wineNoteObservable.taste,
+            think: wineNoteObservable.think,
+            rating: wineNoteObservable.rating
+        )
         
         wineNote.user = user
         wineNote.image = wineNoteObservable.image
@@ -83,12 +90,39 @@ struct AddNoteCompleteView: View {
     }
     
     private func saveCoffeeNote() {
-        let coffeeNote = CoffeeNote(name: coffeeNoteObservable.name, date: coffeeNoteObservable.date, type: coffeeNoteObservable.type, flavors: coffeeNoteObservable.flavors, taste: coffeeNoteObservable.taste, think: coffeeNoteObservable.think, rating: coffeeNoteObservable.rating)
+        let coffeeNote = CoffeeNote(
+            name: coffeeNoteObservable.name,
+            date: coffeeNoteObservable.date,
+            type: coffeeNoteObservable.type,
+            flavors: coffeeNoteObservable.flavors,
+            taste: coffeeNoteObservable.taste,
+            think: coffeeNoteObservable.think,
+            rating: coffeeNoteObservable.rating
+        )
         
         coffeeNote.user = user
         coffeeNote.image = coffeeNoteObservable.image
         
         user?.coffeeNotes?.append(coffeeNote)
+        try? context.save()
+    }
+    
+    private func saveCocktailNote() {
+        let cocktailNote = CocktailNote(
+            name: cocktailNoteObservable.name,
+            date: cocktailNoteObservable.date,
+            type: cocktailNoteObservable.type,
+            ingredients: cocktailNoteObservable.ingredients,
+            isIce: cocktailNoteObservable.isIce,
+            taste: cocktailNoteObservable.taste,
+            think: cocktailNoteObservable.think,
+            rating: cocktailNoteObservable.rating
+        )
+        
+        cocktailNote.user = user
+        cocktailNote.image = cocktailNoteObservable.image
+        
+        user?.cocktailNotes?.append(cocktailNote)
         try? context.save()
     }
     

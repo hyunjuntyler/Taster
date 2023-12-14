@@ -1,20 +1,23 @@
 //
-//  CoffeeNoteDetailView.swift
+//  CocktailNoteDetailView.swift
 //  LookSmellTaste
 //
-//  Created by Hyunjun Kim on 12/9/23.
+//  Created by hyunjun on 12/13/23.
 //
 
 import SwiftUI
 import SwiftData
 
-struct CoffeeNoteDetailView: View {
+struct CocktailNoteDetailView: View {
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
     
-    @Bindable var note: CoffeeNote
+    @Bindable var note: CocktailNote
     @State private var showEditSheet = false
     @State private var showDeleteAlert = false
+    
+    private let tasteLabels = ["단맛", "신맛", "도수"]
+    private let symbolColors: [Color] = [.orange, .blue, .red]
     
     var body: some View {
         ZStack {
@@ -70,54 +73,16 @@ struct CoffeeNoteDetailView: View {
                             .padding(.leading, 5)
                             .padding(.top)
                         VStack {
-                            VStack {
-                                Text("향미")
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                    .font(.gmarketSansSubHeadline)
-                                    .foregroundStyle(.gray)
-                                ScrollView(.horizontal) {
-                                    HStack {
-                                        ForEach(note.flavors) { flavor in
-                                                VStack {
-                                                    Image(flavor.imageName)
-                                                        .resizable()
-                                                        .scaledToFit()
-                                                        .frame(width: 30, height: 30)
-                                                    Text(flavor.name)
-                                                        .font(.gmarketSansCaption2)
-                                                        .fontWeight(.regular)
-                                                }
-                                                .padding(8)
-                                                .padding(.horizontal, 3)
-                                                .background {
-                                                    RoundedRectangle(cornerRadius: 12)
-                                                        .foregroundStyle(.appPickerGray)
-                                                }
-                                        }
-                                    }
-                                    .safeAreaInset(edge: .leading) {
-                                        Color.clear.frame(width: 6, height: 41)
-                                    }
-                                    .safeAreaInset(edge: .trailing) {
-                                        Color.clear.frame(width: 6, height: 41)
-                                    }
+                            CocktailFactory(ingredients: note.ingredients, isIce: note.isIce)
+                            ForEach(note.taste.indices, id: \.self) { index in
+                                CustomDivider()
+                                HStack {
+                                    Text(tasteLabels[index])
+                                        .font(.gmarketSansBody)
+                                    Spacer()
+                                    RatingCircle(rating: note.taste[index], ratingColor: symbolColors[index])
                                 }
-                                .scrollIndicators(.hidden)
-                                .padding(.horizontal, -16)
-                                .padding(.bottom, 5)
                             }
-                            RoundedRectangle(cornerRadius: 3, style: .continuous)
-                                .frame(height: 1)
-                                .foregroundStyle(.appPickerGray)
-                            Text("차트")
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .font(.gmarketSansSubHeadline)
-                                .foregroundStyle(.gray)
-                                .padding(.bottom, 10)
-                            RadarChart(
-                                data: note.taste,
-                                valueList: ["신맛", "바디", "쓴맛", "향미", "단맛"],
-                                frame: 100)
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
@@ -172,7 +137,7 @@ struct CoffeeNoteDetailView: View {
             }
         }
         .sheet(isPresented: $showEditSheet) {
-            CoffeeNoteEditView(note: note)
+            CocktailNoteEditView(note: note)
                 .presentationCornerRadius(24)
         }
         .overlay {
@@ -193,17 +158,17 @@ struct CoffeeNoteDetailView: View {
 }
 
 #if DEBUG
-struct CoffeeNoteDetailPreview: View {
-    @Query private var coffeeNotes: [CoffeeNote]
+struct CocktailNoteDetailPreview: View {
+    @Query private var cocktailNotes: [CocktailNote]
     
     var body: some View {
-        CoffeeNoteDetailView(note: coffeeNotes[0])
+        CocktailNoteDetailView(note: cocktailNotes[0])
     }
 }
 
 #Preview { @MainActor in
     NavigationStack {
-        CoffeeNoteDetailPreview()         
+        CocktailNoteDetailPreview()
             .navigationBarTitleDisplayMode(.inline)
             .modelContainer(previewContainer)
     }
