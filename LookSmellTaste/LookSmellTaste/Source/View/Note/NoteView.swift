@@ -22,7 +22,7 @@ struct NoteView: View {
     @Binding var navigateToUserView: Bool
     
     private var noteCount: Int {
-        wineNotes.count + coffeeNotes.count
+        wineNotes.count + coffeeNotes.count + cocktailNotes.count + whiskeyNotes.count
     }
     
     var body: some View {

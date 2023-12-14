@@ -10,7 +10,7 @@ import SwiftUI
 struct PentagonRadarChart: View {
     var data: [Double]
     var valueList = ["바디", "알코올", "당도", "산도", "타닌"]
-    var frame: CGFloat = 250
+    var frame: CGFloat = 200
     
     let maxValueData: [Double] = [5, 5, 5, 5, 5]
     let maxValue: Double = 5

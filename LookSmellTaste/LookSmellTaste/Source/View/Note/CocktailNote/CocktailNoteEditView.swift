@@ -274,11 +274,11 @@ struct CocktailNoteEditView: View {
                             ForEach(0..<3) { index in
                                 HStack {
                                     Text(tasteLabels[index])
-                                        .font(.gmarketSansHeadline)
+                                        .font(.gmarketSansCallout)
                                     Spacer()
                                     Rating(rating: $taste[index],
                                            symbolName: "circle.fill",
-                                           symbolFont: Font.system(size: 24),
+                                           symbolFont: .title3,
                                            symbolColor: symbolColors[index])
                                 }
                                 if index < 2 {

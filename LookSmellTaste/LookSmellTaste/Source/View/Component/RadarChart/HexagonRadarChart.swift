@@ -10,7 +10,7 @@ import SwiftUI
 struct HexagonRadarChart: View {
     var data: [Double]
     var valueList = ["FRUIT", "OAK", "SWEET", "SPICE", "GRAIN", "HERBAL"]
-    var frame: CGFloat = 180
+    var frame: CGFloat = 200
     
     let maxValueData: [Double] = [5, 5, 5, 5, 5, 5]
     let maxValue: Double = 5

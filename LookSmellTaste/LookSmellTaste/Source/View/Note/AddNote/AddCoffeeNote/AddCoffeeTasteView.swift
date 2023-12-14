@@ -31,6 +31,7 @@ struct AddCoffeeTasteView: View {
                         .padding(.bottom)
                     VStack {
                         PentagonRadarChart(data: taste, valueList: ["신맛", "바디", "쓴맛", "향미", "단맛"])
+                            .padding(.bottom, 8)
                         ForEach(0..<5) { index in
                             CustomDivider()
                             HStack {

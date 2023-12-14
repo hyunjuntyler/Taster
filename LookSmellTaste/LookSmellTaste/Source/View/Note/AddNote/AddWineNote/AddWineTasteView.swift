@@ -31,6 +31,7 @@ struct AddWineTasteView: View {
                         .padding(.bottom)
                     VStack {
                         PentagonRadarChart(data: taste)
+                            .padding(.bottom, 8)
                         ForEach(0..<5) { index in
                             CustomDivider()
                             HStack {
