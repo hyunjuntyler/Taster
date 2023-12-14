@@ -12,6 +12,8 @@ struct NoteView: View {
     @Query(sort: \WineNote.date, order: .reverse) private var wineNotes: [WineNote]
     @Query(sort: \CoffeeNote.date, order: .reverse) private var coffeeNotes: [CoffeeNote]
     @Query(sort: \CocktailNote.date, order: .reverse) private var cocktailNotes: [CocktailNote]
+    @Query(sort: \WhiskeyNote.date, order: .reverse) private var whiskeyNotes: [WhiskeyNote]
+
     @Query private var users: [User]
     private var user: User? { users.first }
     
@@ -163,6 +165,37 @@ struct NoteView: View {
                 .padding(.horizontal)
                 .padding(.top)
             }
+            
+            if !whiskeyNotes.isEmpty {
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text("위스키 노트")
+                            .font(.gmarketSansTitle2)
+                        Spacer()
+                        NavigationLink {
+                            WhiskeyNoteView()
+                        } label: {
+                            Text("모두보기")
+                                .font(.gmarketSansBody)
+                        }
+                    }
+                    .padding(.horizontal, 5)
+                    LazyVStack {
+                        let recentWhiskeyNotes = whiskeyNotes.prefix(3)
+                        
+                        ForEach(recentWhiskeyNotes) { note in
+                            NavigationLink {
+                                WhiskeyNoteDetailView(note: note)
+                            } label: {
+                                WhiskeyNoteList(note: note)
+                            }
+                            .buttonStyle(PressButtonStyle())
+                        }
+                    }
+                }
+                .padding(.horizontal)
+                .padding(.top)
+            }
         }
         .coordinateSpace(name: "scroll")
         .safeAreaPadding(.bottom, 80)
@@ -212,7 +245,7 @@ struct NoteView: View {
     }
     
     private func isNoteEmpty() -> Bool {
-        wineNotes.isEmpty && coffeeNotes.isEmpty && cocktailNotes.isEmpty
+        wineNotes.isEmpty && coffeeNotes.isEmpty && cocktailNotes.isEmpty && whiskeyNotes.isEmpty
     }
 }
 

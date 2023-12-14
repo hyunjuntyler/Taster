@@ -18,6 +18,7 @@ final class User {
     @Relationship(deleteRule: .cascade) var wineNotes: [WineNote]?
     @Relationship(deleteRule: .cascade) var coffeeNotes: [CoffeeNote]?
     @Relationship(deleteRule: .cascade) var cocktailNotes: [CocktailNote]?
+    @Relationship(deleteRule: .cascade) var whiskeyNotes: [WhiskeyNote]?
 
     init(name: String, icon: String) {
         self.name = name

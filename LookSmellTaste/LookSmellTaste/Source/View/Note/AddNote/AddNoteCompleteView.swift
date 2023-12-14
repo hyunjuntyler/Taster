@@ -15,6 +15,7 @@ struct AddNoteCompleteView: View {
     @Bindable private var wineNoteObservable = WineNoteObservable.shared
     @Bindable private var coffeeNoteObservable = CoffeeNoteObservable.shared
     @Bindable private var cocktailNoteObservable = CocktailNoteObservable.shared
+    @Bindable private var whiskeyNoteObservable = WhiskeyNoteObservable.shared
     @Query private var users: [User]
     private var user: User? { users.first }
     
@@ -64,7 +65,7 @@ struct AddNoteCompleteView: View {
         case .cocktail:
             saveCocktailNote()
         case .whiskey:
-            break
+            saveWhiskeyNote()
         case .none:
             break
         }
@@ -126,9 +127,30 @@ struct AddNoteCompleteView: View {
         try? context.save()
     }
     
+    private func saveWhiskeyNote() {
+        let whiskeyNote = WhiskeyNote(
+            name: whiskeyNoteObservable.name,
+            date: whiskeyNoteObservable.date,
+            type: whiskeyNoteObservable.type, 
+            color: whiskeyNoteObservable.color,
+            flavors: whiskeyNoteObservable.flavors,
+            taste: whiskeyNoteObservable.taste,
+            think: whiskeyNoteObservable.think,
+            rating: whiskeyNoteObservable.rating
+        )
+        
+        whiskeyNote.user = user
+        whiskeyNote.image = whiskeyNoteObservable.image
+        
+        user?.whiskeyNotes?.append(whiskeyNote)
+        try? context.save()
+    }
+    
     private func reset() {
         wineNoteObservable.reset()
         coffeeNoteObservable.reset()
+        cocktailNoteObservable.reset()
+        whiskeyNoteObservable.reset()
         noteEnvironment.noteType = nil
     }
 }

@@ -34,6 +34,10 @@ struct SampleData {
             CocktailNote(name: "칵테일 샘플1", date: Date(), type: cocktailTypes[0], ingredients: [CocktailIngredient(name: "재료1", amount: 1.0, colorName: "blue"), CocktailIngredient(name: "재료2", amount: 2.0, colorName: "orange"), CocktailIngredient(name: "재료3", amount: 2.0, colorName: "red")], isIce: true, taste: [1, 2, 3], think: "칵테일 후기1", rating: 3.5),
             CocktailNote(name: "칵테일 샘플2", date: Date() - 1000, type: cocktailTypes[1], ingredients: [CocktailIngredient(name: "재료1", amount: 2.0, colorName: "green"), CocktailIngredient(name: "재료2", amount: 1.0, colorName: "teal"), CocktailIngredient(name: "재료3", amount: 1.0, colorName: "yellow")], isIce: false, taste: [2, 2, 4], think: "칵테일 후기2", rating: 4.5)
         ]
+        user.whiskeyNotes = [
+            WhiskeyNote(name: "위스키 샘플1", date: Date(), type: whiskeyTypes[0], color: whiskeyColors[1], flavors: [whiskeyFlavors[0]], taste: [3, 4, 5, 1, 2, 4], think: "위스키 후기1", rating: 4.5),
+            WhiskeyNote(name: "위스키 샘플2", date: Date() - 100, type: whiskeyTypes[1], color: whiskeyColors[0], flavors: [whiskeyFlavors[2]], taste: [5, 3, 5, 4, 3, 4], think: "위스키 후기2", rating: 5.0)
+        ]
         return [user]
     }()
 }

@@ -35,7 +35,6 @@ struct CocktailNoteEditView: View {
     @State private var permissionType: PermissionType = .album
     
     @State private var showDatePicker = false
-    @State private var showCoffeeTypePicker = false
     @State private var addIngredientSheet = false
     
     private let tasteLabels = ["단맛", "신맛", "도수"]
@@ -357,6 +356,12 @@ struct CocktailNoteEditView: View {
                 VStack {
                     Text("마신 날짜 변경")
                         .font(.gmarketSansTitle3)
+                        .frame(maxWidth: .infinity)
+                        .overlay {
+                            SheetCloseButton {
+                                showDatePicker = false
+                            }
+                        }
                     DatePicker("마신 날짜", selection: $date, in: ...Date(), displayedComponents: .date)
                         .datePickerStyle(.graphical)
                         .tint(.accent)

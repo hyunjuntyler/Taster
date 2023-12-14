@@ -1,27 +1,27 @@
 //
-//  WineNoteEditView.swift
+//  WhiskeyNoteEditView.swift
 //  LookSmellTaste
 //
-//  Created by Hyunjun Kim on 12/9/23.
+//  Created by Hyunjun Kim on 12/14/23.
 //
 
 import SwiftUI
 import SwiftData
 
-struct WineNoteEditView: View {
+struct WhiskeyNoteEditView: View {
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
     
-    @Bindable var note: WineNote
+    @Bindable var note: WhiskeyNote
     
     @State private var selectedImage: UIImage?
     @State private var defaultImageName = ""
     @State private var name = ""
     @State private var date = Date()
-    @State private var type: WineType = wineTypes[2]
-    @State private var color: WineColor = wineColors[0]
-    @State private var scents: [WineScent] = []
-    @State private var taste: [Double] = [0, 0, 0, 0, 0]
+    @State private var type: WhiskeyType = whiskeyTypes[2]
+    @State private var color: WhiskeyColor = whiskeyColors[0]
+    @State private var flavors: [WhiskeyFlavor] = []
+    @State private var taste: [Double] = [0, 0, 0, 0, 0, 0]
     @State private var think = ""
     @State private var rating = 0.0
     
@@ -32,9 +32,9 @@ struct WineNoteEditView: View {
     @State private var showTypePicker = false
     
     private let lookColumns = Array(repeating: GridItem(.flexible()), count: 6)
-    private let smellColumns = Array(repeating: GridItem(.flexible()), count: 6)
-    private let tasteLabels = ["바디", "당도", "산도", "타닌", "알코올"]
-    private let symbolColors: [Color] = [.purple, .orange, .blue, .green, .red]
+    private let flavorColumns = Array(repeating: GridItem(.flexible()), count: 6)
+    private let tasteLabels = ["FRUIT", "SWEET", "SPICE", "HERBAL", "GRAIN", "OAK"]
+    private let symbolColors: [Color] = [.purple, .orange, .red, .green, .blue, .brown]
     
     var body: some View {
         NavigationStack {
@@ -114,7 +114,7 @@ struct WineNoteEditView: View {
                                 .foregroundStyle(.appSheetBoxBackground)
                         }
                         
-                        Text("와인 종류")
+                        Text("위스키 종류")
                             .font(.gmarketSansSubHeadline)
                             .foregroundStyle(.gray)
                             .padding(.leading)
@@ -155,26 +155,26 @@ struct WineNoteEditView: View {
                             .padding(.leading)
                             .padding(.top, 5)
                         LazyVGrid(columns: lookColumns, spacing: 5) {
-                            ForEach(wineColors) { wineColor in
+                            ForEach(whiskeyColors) { whiskeyColor in
                                 Button {
                                     withAnimation(.easeInOut) {
-                                        color = wineColor
+                                        color = whiskeyColor
                                     }
                                     Haptic.impact(style: .soft)
                                 } label: {
                                     VStack {
-                                        Image(wineColor.imageName)
+                                        Image(whiskeyColor.imageName)
                                             .resizable()
                                             .scaledToFit()
                                             .padding(.bottom, 5)
-                                        Text(wineColor.name)
+                                        Text(whiskeyColor.name)
                                             .font(.gmarketSansCaption2)
-                                            .foregroundStyle(color == wineColor ? .accent : .appGrayButton)
+                                            .foregroundStyle(color == whiskeyColor ? .accent : .appGrayButton)
                                     }
                                     .padding(5)
                                     .background {
                                         RoundedRectangle(cornerRadius: 12)
-                                            .foregroundStyle(color == wineColor ? .appPickerGray : .appSheetBoxBackground)
+                                            .foregroundStyle(color == whiskeyColor ? .appPickerGray : .appSheetBoxBackground)
                                     }
                                 }
                                 .buttonStyle(PressButtonStyle())
@@ -186,35 +186,35 @@ struct WineNoteEditView: View {
                                 .foregroundStyle(.appSheetBoxBackground)
                         }
                         
-                        Text("Smell")
+                        Text("Flavor")
                             .font(.gmarketSansSubHeadline)
                             .foregroundStyle(.gray)
                             .padding(.leading)
                             .padding(.top, 5)
-                        LazyVGrid(columns: smellColumns, spacing: 8) {
-                            ForEach(wineScents) { wineScent in
+                        LazyVGrid(columns: flavorColumns, spacing: 8) {
+                            ForEach(whiskeyFlavors) { whiskeyFlavor in
                                 Button {
-                                    if scents.contains(wineScent) {
-                                        if let index = scents.firstIndex(of: wineScent) {
-                                            scents.remove(at: index)
+                                    if flavors.contains(whiskeyFlavor) {
+                                        if let index = flavors.firstIndex(of: whiskeyFlavor) {
+                                            flavors.remove(at: index)
                                         }
                                     } else {
-                                        scents.append(wineScent)
+                                        flavors.append(whiskeyFlavor)
                                     }
                                     Haptic.impact(style: .soft)
                                 } label: {
                                     VStack {
-                                        Image(wineScent.imageName)
+                                        Image(whiskeyFlavor.imageName)
                                             .resizable()
                                             .scaledToFit()
-                                        Text(wineScent.name)
+                                        Text(whiskeyFlavor.name)
                                             .font(.gmarketSansCaption2)
-                                            .foregroundStyle(scents.contains(wineScent) ? .accent : .appGrayButton)
+                                            .foregroundStyle(flavors.contains(whiskeyFlavor) ? .accent : .appGrayButton)
                                     }
                                     .padding(4)
                                     .background {
                                         RoundedRectangle(cornerRadius: 12)
-                                            .foregroundStyle(scents.contains(wineScent) ? .appPickerGray : .appSheetBoxBackground)
+                                            .foregroundStyle(flavors.contains(whiskeyFlavor) ? .appPickerGray : .appSheetBoxBackground)
                                     }
                                 }
                                 .buttonStyle(PressButtonStyle())
@@ -232,9 +232,9 @@ struct WineNoteEditView: View {
                             .padding(.leading)
                             .padding(.top, 5)
                         VStack {
-                            PentagonRadarChart(data: taste, frame: 100)
+                            HexagonRadarChart(data: taste, frame: 100)
                                 .padding(.top, 30)
-                                .padding(.bottom, 10)
+                                .padding(.bottom, 15)
                             ForEach(0..<5) { index in
                                 CustomDivider()
                                 HStack {
@@ -339,7 +339,7 @@ struct WineNoteEditView: View {
             }
             .sheet(isPresented: $showTypePicker) {
                 VStack {
-                    Text("와인 종류 변경")
+                    Text("위스키 종류 변경")
                         .font(.gmarketSansTitle3)
                         .frame(maxWidth: .infinity)
                         .overlay {
@@ -348,19 +348,19 @@ struct WineNoteEditView: View {
                             }
                         }
                     ScrollView {
-                        ForEach(wineTypes) { wine in
+                        ForEach(whiskeyTypes) { whiskeyType in
                             Button {
-                                type = wine
+                                type = whiskeyType
                                 defaultImageName = type.imageName
                                 Haptic.impact(style: .soft)
                                 showTypePicker = false
                             } label: {
                                 HStack {
-                                    Image(wine.imageName)
+                                    Image(whiskeyType.imageName)
                                         .resizable()
                                         .scaledToFit()
                                         .frame(height: 40)
-                                    Text(wine.name)
+                                    Text(whiskeyType.name)
                                         .font(.gmarketSansBody)
                                 }
                             }
@@ -400,7 +400,7 @@ struct WineNoteEditView: View {
         date = note.date
         type = note.type
         color = note.color
-        scents = note.scents
+        flavors = note.flavors
         taste = note.taste
         think = note.think
         rating = note.rating
@@ -418,7 +418,7 @@ struct WineNoteEditView: View {
         note.date = date
         note.type = type
         note.color = color
-        note.scents = scents
+        note.flavors = flavors
         note.taste = taste
         note.think = think
         note.rating = rating
@@ -428,17 +428,17 @@ struct WineNoteEditView: View {
 }
 
 #if DEBUG
-struct WineNoteEditPreview: View {
-    @Query private var wineNotes: [WineNote]
+struct WhiskeyNoteEditPreview: View {
+    @Query private var whiskeyNotes: [WhiskeyNote]
     
     var body: some View {
-        WineNoteEditView(note: wineNotes[0])
+        WhiskeyNoteEditView(note: whiskeyNotes[0])
     }
 }
 
 #Preview { @MainActor in
     NavigationStack {
-        WineNoteEditPreview()
+        WhiskeyNoteEditPreview()
             .modelContainer(previewContainer)
     }
 }

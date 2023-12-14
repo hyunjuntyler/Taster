@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddWhiskeyTasteView: View {
-    @Bindable private var observable = WineNoteObservable.shared
+    @Bindable private var observable = WhiskeyNoteObservable.shared
     @Environment(NoteEnvironment.self) var noteEnvironment: NoteEnvironment
     @State private var navigate = false
     

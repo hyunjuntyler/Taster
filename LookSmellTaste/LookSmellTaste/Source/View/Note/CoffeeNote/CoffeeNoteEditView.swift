@@ -28,7 +28,7 @@ struct CoffeeNoteEditView: View {
     @State private var permissionType: PermissionType = .album
     
     @State private var showDatePicker = false
-    @State private var showCoffeeTypePicker = false
+    @State private var showTypePicker = false
     
     private let columns = Array(repeating: GridItem(.flexible()), count: 6)
     private let tasteLabels = ["신맛", "쓴맛", "향미", "단맛", "바디"]
@@ -126,7 +126,7 @@ struct CoffeeNoteEditView: View {
                                 .font(.gmarketSansBody)
                             Spacer()
                             Button {
-                                showCoffeeTypePicker = true
+                                showTypePicker = true
                                 Haptic.impact(style: .soft)
                             } label: {
                                 Text("바꾸기")
@@ -280,6 +280,12 @@ struct CoffeeNoteEditView: View {
                 VStack {
                     Text("마신 날짜 변경")
                         .font(.gmarketSansTitle3)
+                        .frame(maxWidth: .infinity)
+                        .overlay {
+                            SheetCloseButton {
+                                showDatePicker = false
+                            }
+                        }
                     DatePicker("마신 날짜", selection: $date, in: ...Date(), displayedComponents: .date)
                         .datePickerStyle(.graphical)
                         .tint(.accent)
@@ -292,17 +298,23 @@ struct CoffeeNoteEditView: View {
                 .presentationDetents([.medium])
                 .presentationCornerRadius(24)
             }
-            .sheet(isPresented: $showCoffeeTypePicker) {
+            .sheet(isPresented: $showTypePicker) {
                 VStack {
                     Text("커피 종류 변경")
                         .font(.gmarketSansTitle3)
+                        .frame(maxWidth: .infinity)
+                        .overlay {
+                            SheetCloseButton {
+                                showTypePicker = false
+                            }
+                        }
                     ScrollView {
                         ForEach(coffeeTypes) { coffee in
                             Button {
                                 type = coffee
                                 defaultImageName = type.imageName
                                 Haptic.impact(style: .soft)
-                                showCoffeeTypePicker = false
+                                showTypePicker = false
                             } label: {
                                 HStack {
                                     Image(coffee.imageName)
