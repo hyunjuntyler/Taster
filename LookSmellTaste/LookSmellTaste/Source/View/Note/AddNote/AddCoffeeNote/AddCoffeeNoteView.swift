@@ -10,7 +10,7 @@ import SwiftUI
 struct AddCoffeeNoteView: View {
     @Bindable private var observable = CoffeeNoteObservable.shared
     @State private var showDatePicker = false
-    @State private var showCoffeeTypePicker = false
+    @State private var showTypePicker = false
     @FocusState private var isFocused
     
     @State private var name = ""
@@ -102,7 +102,7 @@ struct AddCoffeeNoteView: View {
                 Spacer()
                 Button {
                     isFocused = false
-                    showCoffeeTypePicker = true
+                    showTypePicker = true
                     Haptic.impact(style: .soft)
                 } label: {
                     Text("바꾸기")
@@ -136,6 +136,12 @@ struct AddCoffeeNoteView: View {
             VStack {
                 Text("마신 날짜 변경")
                     .font(.gmarketSansTitle3)
+                    .frame(maxWidth: .infinity)
+                    .overlay {
+                        SheetCloseButton {
+                            showDatePicker = false
+                        }
+                    }
                 DatePicker("마신 날짜", selection: $date, in: ...Date(), displayedComponents: .date)
                     .datePickerStyle(.graphical)
                     .tint(.accent)
@@ -148,16 +154,22 @@ struct AddCoffeeNoteView: View {
             .presentationDetents([.medium])
             .presentationCornerRadius(24)
         }
-        .sheet(isPresented: $showCoffeeTypePicker) {
+        .sheet(isPresented: $showTypePicker) {
             VStack {
                 Text("커피 종류 변경")
                     .font(.gmarketSansTitle3)
+                    .frame(maxWidth: .infinity)
+                    .overlay {
+                        SheetCloseButton {
+                            showTypePicker = false
+                        }
+                    }
                 ScrollView {
                     ForEach(coffeeTypes) { coffee in
                         Button {
                             type = coffee
                             Haptic.impact(style: .soft)
-                            showCoffeeTypePicker = false
+                            showTypePicker = false
                         } label: {
                             HStack {
                                 Image(coffee.imageName)

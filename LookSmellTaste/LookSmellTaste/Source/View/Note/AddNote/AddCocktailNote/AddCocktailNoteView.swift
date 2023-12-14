@@ -154,6 +154,12 @@ struct AddCocktailNoteView: View {
             VStack {
                 Text("마신 날짜 변경")
                     .font(.gmarketSansTitle3)
+                    .frame(maxWidth: .infinity)
+                    .overlay {
+                        SheetCloseButton {
+                            showDatePicker = false
+                        }
+                    }
                 DatePicker("마신 날짜", selection: $date, in: ...Date(), displayedComponents: .date)
                     .datePickerStyle(.graphical)
                     .tint(.accent)

@@ -66,6 +66,7 @@
 		F020C4AB2B2AD96600C54144 /* AddWhiskeyThinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F020C4AA2B2AD96600C54144 /* AddWhiskeyThinkView.swift */; };
 		F020C4AD2B2AD9CF00C54144 /* AddWhiskeySmellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F020C4AC2B2AD9CF00C54144 /* AddWhiskeySmellView.swift */; };
 		F020C4AF2B2ADA2C00C54144 /* AddWhiskeyTasteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F020C4AE2B2ADA2C00C54144 /* AddWhiskeyTasteView.swift */; };
+		F020C4B12B2AEE6200C54144 /* SheetCloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F020C4B02B2AEE6200C54144 /* SheetCloseButton.swift */; };
 		F02EED4A2B235173009AD6D1 /* WineNoteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02EED492B235173009AD6D1 /* WineNoteDetailView.swift */; };
 		F04B4FC22B11A9530000047D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04B4FC12B11A9530000047D /* User.swift */; };
 		F04B4FC52B11AF190000047D /* CoffeeNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04B4FC42B11AF190000047D /* CoffeeNote.swift */; };
@@ -167,6 +168,7 @@
 		F020C4AA2B2AD96600C54144 /* AddWhiskeyThinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWhiskeyThinkView.swift; sourceTree = "<group>"; };
 		F020C4AC2B2AD9CF00C54144 /* AddWhiskeySmellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWhiskeySmellView.swift; sourceTree = "<group>"; };
 		F020C4AE2B2ADA2C00C54144 /* AddWhiskeyTasteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWhiskeyTasteView.swift; sourceTree = "<group>"; };
+		F020C4B02B2AEE6200C54144 /* SheetCloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetCloseButton.swift; sourceTree = "<group>"; };
 		F02EED492B235173009AD6D1 /* WineNoteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineNoteDetailView.swift; sourceTree = "<group>"; };
 		F04B4FC12B11A9530000047D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F04B4FC32B11ACAD0000047D /* LookSmellTaste.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LookSmellTaste.entitlements; sourceTree = "<group>"; };
@@ -521,6 +523,7 @@
 				299A91672AF7B93000D9C2D1 /* CloseButton.swift */,
 				2990E4062AF9E11D0001617A /* AddNoteButton.swift */,
 				F0DCD1C62B28EB3800841A18 /* AddIngredientButton.swift */,
+				F020C4B02B2AEE6200C54144 /* SheetCloseButton.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -668,6 +671,7 @@
 				29B388BB2B0295E300E3942D /* Confetti.swift in Sources */,
 				F0DCD1BF2B282F9200841A18 /* AddCocktailFactoryView.swift in Sources */,
 				F0DE9BD52B2420C0004A9621 /* RatingDisplay.swift in Sources */,
+				F020C4B12B2AEE6200C54144 /* SheetCloseButton.swift in Sources */,
 				299A91262AF6AD6C00D9C2D1 /* ContentView.swift in Sources */,
 				29BD87142B00AE9E0082241D /* AddWineThinkView.swift in Sources */,
 				F0DE9BEA2B2466AF004A9621 /* AddCoffeeThinkView.swift in Sources */,

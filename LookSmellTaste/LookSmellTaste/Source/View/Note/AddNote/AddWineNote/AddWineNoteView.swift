@@ -10,7 +10,7 @@ import SwiftUI
 struct AddWineNoteView: View {
     @Bindable private var observable = WineNoteObservable.shared
     @State private var showDatePicker = false
-    @State private var showWineTypePicker = false
+    @State private var showTypePicker = false
     @FocusState private var isFocused
     
     @State private var name = ""
@@ -102,7 +102,7 @@ struct AddWineNoteView: View {
                 Spacer()
                 Button {
                     isFocused = false
-                    showWineTypePicker = true
+                    showTypePicker = true
                     Haptic.impact(style: .soft)
                 } label: {
                     Text("바꾸기")
@@ -136,6 +136,12 @@ struct AddWineNoteView: View {
             VStack {
                 Text("마신 날짜 변경")
                     .font(.gmarketSansTitle3)
+                    .frame(maxWidth: .infinity)
+                    .overlay {
+                        SheetCloseButton {
+                            showDatePicker = false
+                        }
+                    }
                 DatePicker("마신 날짜", selection: $date, in: ...Date(), displayedComponents: .date)
                     .datePickerStyle(.graphical)
                     .tint(.accent)
@@ -148,16 +154,22 @@ struct AddWineNoteView: View {
             .presentationDetents([.medium])
             .presentationCornerRadius(24)
         }
-        .sheet(isPresented: $showWineTypePicker) {
+        .sheet(isPresented: $showTypePicker) {
             VStack {
                 Text("와인 종류 변경")
                     .font(.gmarketSansTitle3)
+                    .frame(maxWidth: .infinity)
+                    .overlay {
+                        SheetCloseButton {
+                            showTypePicker = false
+                        }
+                    }
                 ScrollView {
                     ForEach(wineTypes) { wine in
                         Button {
                             type = wine
                             Haptic.impact(style: .soft)
-                            showWineTypePicker = false
+                            showTypePicker = false
                         } label: {
                             HStack {
                                 Image(wine.imageName)
