@@ -52,7 +52,7 @@ struct AddNoteView: View {
                             case .cocktail:
                                 AddCocktailNoteView()
                             case .whiskey:
-                                PreparingContent()
+                                AddWhiskeyNoteView()
                             case .none:
                                 EmptyView()
                             }
@@ -87,7 +87,7 @@ struct AddNoteView: View {
                         case .cocktail:
                             AddCocktailFactoryView()
                         case .whiskey:
-                            EmptyView()
+                            AddWhiskeyLookView()
                         case .none:
                             EmptyView()
                         }

@@ -11,10 +11,10 @@ import SwiftUI
 final class WhiskeyNoteObservable {
     var name: String = ""
     var date: Date = Date()
-    var type: WhiskeyType?
+    var type: WhiskeyType = whiskeyTypes[0]
     var image: Data?
     var color: WhiskeyColor = whiskeyColors[0]
-    var scents: [WineScent] = []
+    var scents: [WhiskeyScent] = []
     var taste: [Double] = [0, 0, 0, 0, 0]
     var think: String = ""
     var rating: Double = 0.0
@@ -24,6 +24,7 @@ final class WhiskeyNoteObservable {
     func reset() {
         name = ""
         date = Date()
+        type = whiskeyTypes[0]
         image = nil
         color = whiskeyColors[0]
         scents = []
