@@ -53,6 +53,7 @@
 		F003F5D92B1234AC003D2499 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F003F5D82B1234AC003D2499 /* SignInView.swift */; };
 		F003F5DB2B1318A6003D2499 /* ThumbnailPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F003F5DA2B1318A6003D2499 /* ThumbnailPicker.swift */; };
 		F003F5DF2B13299E003D2499 /* SignInPermissionAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F003F5DE2B13299E003D2499 /* SignInPermissionAlert.swift */; };
+		F020C49F2B2ACF9500C54144 /* WhiskeyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F020C49E2B2ACF9500C54144 /* WhiskeyModel.swift */; };
 		F02EED4A2B235173009AD6D1 /* WineNoteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02EED492B235173009AD6D1 /* WineNoteDetailView.swift */; };
 		F04B4FC22B11A9530000047D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04B4FC12B11A9530000047D /* User.swift */; };
 		F04B4FC52B11AF190000047D /* CoffeeNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04B4FC42B11AF190000047D /* CoffeeNote.swift */; };
@@ -141,6 +142,7 @@
 		F003F5D82B1234AC003D2499 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		F003F5DA2B1318A6003D2499 /* ThumbnailPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailPicker.swift; sourceTree = "<group>"; };
 		F003F5DE2B13299E003D2499 /* SignInPermissionAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPermissionAlert.swift; sourceTree = "<group>"; };
+		F020C49E2B2ACF9500C54144 /* WhiskeyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiskeyModel.swift; sourceTree = "<group>"; };
 		F02EED492B235173009AD6D1 /* WineNoteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineNoteDetailView.swift; sourceTree = "<group>"; };
 		F04B4FC12B11A9530000047D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F04B4FC32B11ACAD0000047D /* LookSmellTaste.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LookSmellTaste.entitlements; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 				2949F2932AFA9593005AFEFC /* WineModel.swift */,
 				F0DE9BE02B2460B7004A9621 /* CoffeeModel.swift */,
 				F0DCD1B82B2576CE00841A18 /* CocktailModel.swift */,
+				F020C49E2B2ACF9500C54144 /* WhiskeyModel.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -619,6 +622,7 @@
 				299A914F2AF6DEC000D9C2D1 /* NavigationBar.swift in Sources */,
 				2990E4052AF9ACEF0001617A /* ButtonStyle.swift in Sources */,
 				F0FBBFFC2B231D2100F513BC /* PreviewContainer.swift in Sources */,
+				F020C49F2B2ACF9500C54144 /* WhiskeyModel.swift in Sources */,
 				29BD87102B0097580082241D /* AddWineSmellView.swift in Sources */,
 				29B388B82B028F0200E3942D /* PreparingContent.swift in Sources */,
 				F0DCD1B52B25750400841A18 /* CockatilNoteObservable.swift in Sources */,

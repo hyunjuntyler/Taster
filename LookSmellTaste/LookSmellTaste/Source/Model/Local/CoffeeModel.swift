@@ -13,18 +13,18 @@ struct CoffeeType: Identifiable, Codable, Hashable {
     var imageName: String
 }
 
+struct CoffeeFlavor: Identifiable, Codable, Hashable {
+    var id = UUID()
+    var name: String
+    var imageName: String
+}
+
 let coffeeTypes: [CoffeeType] = [
     CoffeeType(name: "드립 커피", imageName: "dripCoffee"),
     CoffeeType(name: "캡슐 커피", imageName: "capsuleCoffee"),
     CoffeeType(name: "카페 커피", imageName: "cafeCoffee"),
     CoffeeType(name: "홈 커피", imageName: "homeCoffee")
 ]
-
-struct CoffeeFlavor: Identifiable, Codable, Hashable {
-    var id = UUID()
-    var name: String
-    var imageName: String
-}
 
 let coffeeFlavors: [CoffeeFlavor] = [
     CoffeeFlavor(name: "레몬", imageName: "lemon"),
