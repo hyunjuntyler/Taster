@@ -14,7 +14,7 @@ final class WhiskeyNoteObservable {
     var type: WhiskeyType = whiskeyTypes[0]
     var image: Data?
     var color: WhiskeyColor = whiskeyColors[0]
-    var scents: [WhiskeyScent] = []
+    var flavors: [WhiskeyFlavor] = []
     var taste: [Double] = [0, 0, 0, 0, 0]
     var think: String = ""
     var rating: Double = 0.0
@@ -27,7 +27,7 @@ final class WhiskeyNoteObservable {
         type = whiskeyTypes[0]
         image = nil
         color = whiskeyColors[0]
-        scents = []
+        flavors = []
         taste = [0, 0, 0, 0, 0]
         think = ""
         rating = 0.0

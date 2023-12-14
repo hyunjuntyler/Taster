@@ -30,7 +30,7 @@ struct AddWineTasteView: View {
                         .foregroundStyle(.gray)
                         .padding(.bottom)
                     VStack {
-                        RadarChart(data: taste)
+                        PentagonRadarChart(data: taste)
                         ForEach(0..<5) { index in
                             CustomDivider()
                             HStack {

@@ -114,7 +114,7 @@ struct CoffeeNoteDetailView: View {
                                 .font(.gmarketSansSubHeadline)
                                 .foregroundStyle(.gray)
                                 .padding(.bottom, 10)
-                            RadarChart(
+                            PentagonRadarChart(
                                 data: note.taste,
                                 valueList: ["신맛", "바디", "쓴맛", "향미", "단맛"],
                                 frame: 100)

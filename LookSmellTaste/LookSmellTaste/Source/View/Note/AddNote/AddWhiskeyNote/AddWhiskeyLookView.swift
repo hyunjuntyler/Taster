@@ -67,7 +67,7 @@ struct AddWhiskeyLookView: View {
                     navigate = true
                 }
                 .navigationDestination(isPresented: $navigate) {
-                    AddWhiskeySmellView()
+                    AddWhiskeyFlavorView()
                 }
             }
         }

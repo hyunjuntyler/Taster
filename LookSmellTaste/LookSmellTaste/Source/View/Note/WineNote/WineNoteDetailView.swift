@@ -129,7 +129,7 @@ struct WineNoteDetailView: View {
                                     .font(.gmarketSansSubHeadline)
                                     .foregroundStyle(.gray)
                                     .padding(.bottom, 10)
-                                RadarChart(data: note.taste,
+                                PentagonRadarChart(data: note.taste,
                                            frame: 100)
                             }
                             .frame(maxWidth: .infinity, alignment: .leading)

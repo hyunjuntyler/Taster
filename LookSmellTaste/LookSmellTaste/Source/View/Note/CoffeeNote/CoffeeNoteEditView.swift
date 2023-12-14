@@ -193,7 +193,7 @@ struct CoffeeNoteEditView: View {
                             .padding(.leading)
                             .padding(.top, 5)
                         VStack {
-                            RadarChart(data: taste, valueList: ["신맛", "바디", "쓴맛", "향미", "단맛"], frame: 100)
+                            PentagonRadarChart(data: taste, valueList: ["신맛", "바디", "쓴맛", "향미", "단맛"], frame: 100)
                                 .padding(.top, 30)
                                 .padding(.bottom, 10)
                             ForEach(0..<5) { index in

@@ -232,7 +232,7 @@ struct WineNoteEditView: View {
                             .padding(.leading)
                             .padding(.top, 5)
                         VStack {
-                            RadarChart(data: taste, frame: 100)
+                            PentagonRadarChart(data: taste, frame: 100)
                                 .padding(.top, 30)
                                 .padding(.bottom, 10)
                             ForEach(0..<5) { index in
