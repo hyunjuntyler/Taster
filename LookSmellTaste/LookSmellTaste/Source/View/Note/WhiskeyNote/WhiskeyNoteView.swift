@@ -47,10 +47,12 @@ struct WhiskeyNoteView: View {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
                     Haptic.impact(style: .soft)
-                    if sortOption == .date {
-                        sortOption = .rating
-                    } else {
-                        sortOption = .date
+                    withAnimation {
+                        if sortOption == .date {
+                            sortOption = .rating
+                        } else {
+                            sortOption = .date
+                        }
                     }
                 } label: {
                     VStack {
