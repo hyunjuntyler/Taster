@@ -59,6 +59,13 @@
 		F003F5DB2B1318A6003D2499 /* ThumbnailPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F003F5DA2B1318A6003D2499 /* ThumbnailPicker.swift */; };
 		F003F5DF2B13299E003D2499 /* SignInPermissionAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F003F5DE2B13299E003D2499 /* SignInPermissionAlert.swift */; };
 		F020C49F2B2ACF9500C54144 /* WhiskeyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F020C49E2B2ACF9500C54144 /* WhiskeyModel.swift */; };
+		F020C4A22B2AD38700C54144 /* WhiskeyNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F020C4A12B2AD38700C54144 /* WhiskeyNoteView.swift */; };
+		F020C4A52B2AD42100C54144 /* AddWhiskeyNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F020C4A42B2AD42100C54144 /* AddWhiskeyNoteView.swift */; };
+		F020C4A72B2AD48200C54144 /* AddWhiskeyLookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F020C4A62B2AD48200C54144 /* AddWhiskeyLookView.swift */; };
+		F020C4A92B2AD4C000C54144 /* WhiskeyNoteObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F020C4A82B2AD4C000C54144 /* WhiskeyNoteObservable.swift */; };
+		F020C4AB2B2AD96600C54144 /* AddWhiskeyThinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F020C4AA2B2AD96600C54144 /* AddWhiskeyThinkView.swift */; };
+		F020C4AD2B2AD9CF00C54144 /* AddWhiskeySmellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F020C4AC2B2AD9CF00C54144 /* AddWhiskeySmellView.swift */; };
+		F020C4AF2B2ADA2C00C54144 /* AddWhiskeyTasteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F020C4AE2B2ADA2C00C54144 /* AddWhiskeyTasteView.swift */; };
 		F02EED4A2B235173009AD6D1 /* WineNoteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02EED492B235173009AD6D1 /* WineNoteDetailView.swift */; };
 		F04B4FC22B11A9530000047D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04B4FC12B11A9530000047D /* User.swift */; };
 		F04B4FC52B11AF190000047D /* CoffeeNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04B4FC42B11AF190000047D /* CoffeeNote.swift */; };
@@ -153,6 +160,13 @@
 		F003F5DA2B1318A6003D2499 /* ThumbnailPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailPicker.swift; sourceTree = "<group>"; };
 		F003F5DE2B13299E003D2499 /* SignInPermissionAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPermissionAlert.swift; sourceTree = "<group>"; };
 		F020C49E2B2ACF9500C54144 /* WhiskeyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiskeyModel.swift; sourceTree = "<group>"; };
+		F020C4A12B2AD38700C54144 /* WhiskeyNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiskeyNoteView.swift; sourceTree = "<group>"; };
+		F020C4A42B2AD42100C54144 /* AddWhiskeyNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWhiskeyNoteView.swift; sourceTree = "<group>"; };
+		F020C4A62B2AD48200C54144 /* AddWhiskeyLookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWhiskeyLookView.swift; sourceTree = "<group>"; };
+		F020C4A82B2AD4C000C54144 /* WhiskeyNoteObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiskeyNoteObservable.swift; sourceTree = "<group>"; };
+		F020C4AA2B2AD96600C54144 /* AddWhiskeyThinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWhiskeyThinkView.swift; sourceTree = "<group>"; };
+		F020C4AC2B2AD9CF00C54144 /* AddWhiskeySmellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWhiskeySmellView.swift; sourceTree = "<group>"; };
+		F020C4AE2B2ADA2C00C54144 /* AddWhiskeyTasteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWhiskeyTasteView.swift; sourceTree = "<group>"; };
 		F02EED492B235173009AD6D1 /* WineNoteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineNoteDetailView.swift; sourceTree = "<group>"; };
 		F04B4FC12B11A9530000047D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F04B4FC32B11ACAD0000047D /* LookSmellTaste.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LookSmellTaste.entitlements; sourceTree = "<group>"; };
@@ -222,6 +236,7 @@
 				F0FBBFF92B2310F500F513BC /* WineNoteObservable.swift */,
 				F0DE9BDE2B245FA0004A9621 /* CoffeeNoteObservable.swift */,
 				F0DCD1B42B25750400841A18 /* CocktailNoteObservable.swift */,
+				F020C4A82B2AD4C000C54144 /* WhiskeyNoteObservable.swift */,
 			);
 			path = Observable;
 			sourceTree = "<group>";
@@ -380,6 +395,7 @@
 				F02EED482B23515F009AD6D1 /* WineNote */,
 				F0DE9BEB2B2475CB004A9621 /* CoffeeNote */,
 				293BBF862B2999E40032138E /* CocktailNote */,
+				F020C4A02B2AD37300C54144 /* WhiskeyNote */,
 				299A915C2AF74C6200D9C2D1 /* AddNote */,
 			);
 			path = Note;
@@ -393,6 +409,7 @@
 				2949F28F2AFA5599005AFEFC /* AddWineNote */,
 				F0DE9BE22B246304004A9621 /* AddCoffeeNote */,
 				F0DCD1B12B25748A00841A18 /* AddCocktailNote */,
+				F020C4A32B2AD41000C54144 /* AddWhiskeyNote */,
 			);
 			path = AddNote;
 			sourceTree = "<group>";
@@ -441,6 +458,26 @@
 				F0FBBFF52B22F81400F513BC /* UserEditView.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		F020C4A02B2AD37300C54144 /* WhiskeyNote */ = {
+			isa = PBXGroup;
+			children = (
+				F020C4A12B2AD38700C54144 /* WhiskeyNoteView.swift */,
+			);
+			path = WhiskeyNote;
+			sourceTree = "<group>";
+		};
+		F020C4A32B2AD41000C54144 /* AddWhiskeyNote */ = {
+			isa = PBXGroup;
+			children = (
+				F020C4A42B2AD42100C54144 /* AddWhiskeyNoteView.swift */,
+				F020C4A62B2AD48200C54144 /* AddWhiskeyLookView.swift */,
+				F020C4AC2B2AD9CF00C54144 /* AddWhiskeySmellView.swift */,
+				F020C4AE2B2ADA2C00C54144 /* AddWhiskeyTasteView.swift */,
+				F020C4AA2B2AD96600C54144 /* AddWhiskeyThinkView.swift */,
+			);
+			path = AddWhiskeyNote;
 			sourceTree = "<group>";
 		};
 		F02EED482B23515F009AD6D1 /* WineNote */ = {
@@ -600,14 +637,18 @@
 				29BD87122B00AE3C0082241D /* AddWineTasteView.swift in Sources */,
 				F0DE9BEF2B247719004A9621 /* CoffeeNoteView.swift in Sources */,
 				29BD870E2B006DA90082241D /* NoteModel.swift in Sources */,
+				F020C4AF2B2ADA2C00C54144 /* AddWhiskeyTasteView.swift in Sources */,
 				F0DCD1C32B2885CC00841A18 /* CustomDivider.swift in Sources */,
+				F020C4A92B2AD4C000C54144 /* WhiskeyNoteObservable.swift in Sources */,
 				293FD1F82AFB426F00623B23 /* WineNote.swift in Sources */,
 				F0DE9BE42B246321004A9621 /* AddCoffeeNoteView.swift in Sources */,
 				F04B4FC52B11AF190000047D /* CoffeeNote.swift in Sources */,
 				F0DE9BE82B2466A3004A9621 /* AddCoffeeTasteView.swift in Sources */,
+				F020C4A52B2AD42100C54144 /* AddWhiskeyNoteView.swift in Sources */,
 				2921B0152B02673B00533A83 /* AddWineNoteView.swift in Sources */,
 				F0DCD1AE2B2498A600841A18 /* DeleteButton.swift in Sources */,
 				293BBF8A2B299D120032138E /* CocktailNoteList.swift in Sources */,
+				F020C4A22B2AD38700C54144 /* WhiskeyNoteView.swift in Sources */,
 				299A91512AF6E2F100D9C2D1 /* PreferenceKey.swift in Sources */,
 				F0DE9BED2B2475D9004A9621 /* CoffeeNoteList.swift in Sources */,
 				29BD871A2B00F15D0082241D /* RadarChart.swift in Sources */,
@@ -622,6 +663,7 @@
 				F0DE9BD72B24250E004A9621 /* WineNoteList.swift in Sources */,
 				F0DE9BF12B247820004A9621 /* CoffeeNoteDetailView.swift in Sources */,
 				F003F5D92B1234AC003D2499 /* SignInView.swift in Sources */,
+				F020C4AB2B2AD96600C54144 /* AddWhiskeyThinkView.swift in Sources */,
 				2990E4072AF9E11D0001617A /* AddNoteButton.swift in Sources */,
 				29B388BB2B0295E300E3942D /* Confetti.swift in Sources */,
 				F0DCD1BF2B282F9200841A18 /* AddCocktailFactoryView.swift in Sources */,
@@ -632,6 +674,7 @@
 				29B388BF2B02963B00E3942D /* ConfettiSample.swift in Sources */,
 				F003F5DB2B1318A6003D2499 /* ThumbnailPicker.swift in Sources */,
 				29B388BD2B0295FB00E3942D /* ConfettiShapes.swift in Sources */,
+				F020C4AD2B2AD9CF00C54144 /* AddWhiskeySmellView.swift in Sources */,
 				F0FBBFF82B22FF3400F513BC /* UserDeleteAlert.swift in Sources */,
 				29B388B22B0276D100E3942D /* ImagePicker.swift in Sources */,
 				F0DE9BE12B2460B7004A9621 /* CoffeeModel.swift in Sources */,
@@ -649,6 +692,7 @@
 				F0FBBFFC2B231D2100F513BC /* PreviewContainer.swift in Sources */,
 				F020C49F2B2ACF9500C54144 /* WhiskeyModel.swift in Sources */,
 				29BD87102B0097580082241D /* AddWineSmellView.swift in Sources */,
+				F020C4A72B2AD48200C54144 /* AddWhiskeyLookView.swift in Sources */,
 				29B388B82B028F0200E3942D /* PreparingContent.swift in Sources */,
 				293BBF902B29A21D0032138E /* CocktailNoteEditView.swift in Sources */,
 				F0DCD1B52B25750400841A18 /* CocktailNoteObservable.swift in Sources */,

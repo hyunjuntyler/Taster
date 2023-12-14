@@ -32,8 +32,7 @@ let whiskeyColors = [
     WhiskeyColor(name: "호박색", imageName: "amberWhiskey"),
     WhiskeyColor(name: "갈색", imageName: "brownWhiskey"),
     WhiskeyColor(name: "구리색", imageName: "copperWhiskey"),
-    WhiskeyColor(name: "황갈색", imageName: "tawnyWhiskey"),
-    WhiskeyColor(name: "적갈색", imageName: "rustBrownWhiskey"),
+    WhiskeyColor(name: "적갈색", imageName: "tawnyWhiskey"),
     WhiskeyColor(name: "오크색", imageName: "oakWhisky"),
     WhiskeyColor(name: "진갈색", imageName: "burgundyWhiskey"),
     WhiskeyColor(name: "고동색", imageName: "rustWhiskey")
