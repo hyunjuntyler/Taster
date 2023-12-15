@@ -345,6 +345,7 @@ struct CoffeeNoteEditView: View {
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("저장") {
+                        Haptic.notification(type: .success)
                         saveData()
                         dismiss()
                     }

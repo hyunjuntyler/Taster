@@ -40,6 +40,7 @@ struct Filter: View {
                             }
                             .padding(5)
                         }
+                        .disabled(!showFilter)
                         
                         if filter.sort != .lowestRated {
                             CustomDivider()
