@@ -63,7 +63,7 @@ struct AddCocktailFactoryView: View {
                                         Text("\(index + 1)")
                                             .monospacedDigit()
                                             .fontDesign(.rounded)
-                                            .bold()
+                                            .fontWeight(.semibold)
                                             .foregroundStyle(observable.getColor(for: ingredients[index].colorName))
                                         Text(ingredients[index].name)
                                             .font(.gmarketSansBody)
@@ -71,8 +71,8 @@ struct AddCocktailFactoryView: View {
                                         Text("\(ingredients[index].amount, specifier: "%.0f")")
                                             .monospacedDigit()
                                             .fontDesign(.rounded)
-                                            .bold()
-                                            .padding(.trailing, 8)
+                                            .fontWeight(.medium)
+                                            .padding(.trailing, 6)
                                         
                                         Button {
                                             Haptic.impact(style: .soft)

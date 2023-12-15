@@ -13,7 +13,7 @@ struct RatingDisplay: View {
     var ratingSymbol = "star.fill"
     
     var body: some View {
-        HStack(spacing: 5) {
+        HStack(alignment: .bottom, spacing: 5) {
             starsView
                 .overlay {
                     overlayView
@@ -21,7 +21,9 @@ struct RatingDisplay: View {
                 }
             Text("\(rating, specifier: "%.1f")")
                 .monospacedDigit()
-                .font(.gmarketSansCaption)
+                .font(.caption)
+                .fontWeight(.regular)
+                .fontDesign(.rounded)
         }
     }
     

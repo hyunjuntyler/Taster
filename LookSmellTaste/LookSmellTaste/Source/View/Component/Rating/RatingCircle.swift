@@ -13,11 +13,11 @@ struct RatingCircle: View {
     var ratingSymbol = "circle.fill"
     
     var body: some View {
-        HStack(spacing: 5) {
+        HStack(spacing: 8) {
             Text("\(rating, specifier: "%.1f")")
                 .monospacedDigit()
+                .fontWeight(.regular)
                 .fontDesign(.rounded)
-                .fontWeight(.semibold)
             
             starsView
                 .overlay {

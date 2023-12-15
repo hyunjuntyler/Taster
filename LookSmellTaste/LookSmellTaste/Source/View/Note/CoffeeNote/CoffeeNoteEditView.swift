@@ -254,8 +254,11 @@ struct CoffeeNoteEditView: View {
                             Text("\(rating, specifier: "%.1f")")
                                 .monospacedDigit()
                                 .animation(nil, value: rating)
-                                .font(.gmarketSansButton)
+                                .font(.title3)
+                                .fontDesign(.rounded)
+                                .fontWeight(.medium)
                                 .foregroundStyle(.gray)
+                                .padding(.trailing, 3)
                         }
                         .padding()
                         .frame(height: 60)
