@@ -10,7 +10,8 @@ import SwiftData
 
 struct CocktailNoteView: View {
     @Query private var cocktailNotes: [CocktailNote]
-    @State private var sortOption: SortOption = .date
+    @State private var sortOption: SortOption = .mostRecent
+    @State private var showFilter = false
     
     private var sortedCocktailNotes: [CocktailNote] {
         cocktailNotes.sort(on: sortOption)
@@ -45,28 +46,18 @@ struct CocktailNoteView: View {
             }
             
             ToolbarItem(placement: .topBarTrailing) {
-                Button {
+                Button("필터") {
                     Haptic.impact(style: .soft)
                     withAnimation {
-                        if sortOption == .date {
-                            sortOption = .rating
-                        } else {
-                            sortOption = .date
-                        }
+                        showFilter.toggle()
                     }
-                } label: {
-                    VStack {
-                        Image(systemName: sortOption == .date ? "clock.fill" : "star.fill")
-                            .font(.footnote)
-                            .fontWeight(.semibold)
-                            .contentTransition(.symbolEffect(.replace))
-                            .frame(height: 20)
-                        Text(sortOption == .date ? "최신순" : "점수순")
-                            .font(.gmarketSansCaption2)
-                    }
-                    .foregroundStyle(.accent)
                 }
-                .buttonStyle(PressButtonStyle())
+                .font(.gmarketSansBody)
+            }
+        }
+        .overlay(alignment: .topTrailing) {
+            if showFilter {
+                Filter(showFilter: $showFilter, sortOption: $sortOption)
             }
         }
     }
@@ -75,10 +66,14 @@ struct CocktailNoteView: View {
 private extension [CocktailNote] {
     func sort(on option: SortOption) -> [CocktailNote] {
         switch option {
-        case .date:
+        case .mostRecent:
             self.sorted(by: { $0.date > $1.date })
-        case .rating:
+        case .oldestFirst:
+            self.sorted(by: { $0.date < $1.date })
+        case .highestRated:
             self.sorted(by: { $0.rating > $1.rating })
+        case .lowestRated:
+            self.sorted(by: { $0.rating < $1.rating })
         }
     }
 }

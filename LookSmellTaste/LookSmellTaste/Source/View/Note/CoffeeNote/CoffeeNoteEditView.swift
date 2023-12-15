@@ -328,7 +328,7 @@ struct CoffeeNoteEditView: View {
                                         .font(.gmarketSansBody)
                                 }
                             }
-                            .buttonStyle(WineTypeButtonStyle())
+                            .buttonStyle(TypeButtonStyle())
                         }
                     }
                 }

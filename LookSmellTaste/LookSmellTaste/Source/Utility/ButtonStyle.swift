@@ -15,7 +15,7 @@ struct PressButtonStyle: ButtonStyle {
     }
 }
 
-struct WineTypeButtonStyle: ButtonStyle {
+struct TypeButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .padding(5)

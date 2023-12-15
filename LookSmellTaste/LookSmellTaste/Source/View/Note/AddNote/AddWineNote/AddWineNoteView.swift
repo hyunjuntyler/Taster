@@ -180,7 +180,7 @@ struct AddWineNoteView: View {
                                     .font(.gmarketSansBody)
                             }
                         }
-                        .buttonStyle(WineTypeButtonStyle())
+                        .buttonStyle(TypeButtonStyle())
                     }
                 }
             }

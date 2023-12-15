@@ -367,7 +367,7 @@ struct WineNoteEditView: View {
                                         .font(.gmarketSansBody)
                                 }
                             }
-                            .buttonStyle(WineTypeButtonStyle())
+                            .buttonStyle(TypeButtonStyle())
                         }
                     }
                 }
