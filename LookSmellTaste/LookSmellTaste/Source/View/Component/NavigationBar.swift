@@ -24,7 +24,7 @@ struct NavigationTitle: View {
     
     var body: some View {
         HStack {
-            Text(type.rawValue)
+            Text(LocalizedStringKey(type.rawValue))
                 .font(.gmarketSansLargeTitle)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .scaleEffect(min(1 + scrollOffset / 300, 1.2), anchor: .leading)
@@ -83,7 +83,7 @@ struct InlineNavigationTitle: View {
     
     var body: some View {
         HStack {
-            Text(type.rawValue)
+            Text(LocalizedStringKey(type.rawValue))
                 .font(.gmarketSansLargeTitle)
                 .frame(maxWidth: .infinity, alignment: .leading)
             if let user = user {

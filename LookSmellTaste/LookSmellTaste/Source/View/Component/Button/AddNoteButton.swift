@@ -19,7 +19,7 @@ struct AddNoteButton: View {
             action()
         } label: {
             VStack {
-                Text(title)
+                Text(LocalizedStringKey(title))
                     .font(.gmarketSansSubHeadline)
                     .foregroundStyle(selected ? .accent : .gray)
                 Image(image)
@@ -29,7 +29,7 @@ struct AddNoteButton: View {
                     .frame(height: 40)
             }
             .frame(maxWidth: .infinity)
-            .padding(10)
+            .padding(.vertical, 10)
             .background {
                 RoundedRectangle(cornerRadius: 12, style: .continuous)
                     .foregroundStyle(selected ? .appPickerGray : .appSheetBoxBackground)

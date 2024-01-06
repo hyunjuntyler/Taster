@@ -118,7 +118,14 @@ struct AddNoteView: View {
     }
 }
 
-#Preview {
+#Preview("Korean") {
     AddNoteView()
         .environment(NoteEnvironment())
+        .environment(\.locale, .init(identifier: "ko"))
+}
+
+#Preview("English") {
+    AddNoteView()
+        .environment(NoteEnvironment())
+        .environment(\.locale, .init(identifier: "en"))
 }

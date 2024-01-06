@@ -58,6 +58,7 @@
 		F003F5D92B1234AC003D2499 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F003F5D82B1234AC003D2499 /* SignInView.swift */; };
 		F003F5DB2B1318A6003D2499 /* ThumbnailPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F003F5DA2B1318A6003D2499 /* ThumbnailPicker.swift */; };
 		F003F5DF2B13299E003D2499 /* SignInPermissionAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F003F5DE2B13299E003D2499 /* SignInPermissionAlert.swift */; };
+		F011045E2B2E97950051DDEB /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F011045D2B2E97950051DDEB /* Localizable.xcstrings */; };
 		F020C49F2B2ACF9500C54144 /* WhiskeyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F020C49E2B2ACF9500C54144 /* WhiskeyModel.swift */; };
 		F020C4A22B2AD38700C54144 /* WhiskeyNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F020C4A12B2AD38700C54144 /* WhiskeyNoteView.swift */; };
 		F020C4A52B2AD42100C54144 /* AddWhiskeyNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F020C4A42B2AD42100C54144 /* AddWhiskeyNoteView.swift */; };
@@ -107,6 +108,7 @@
 		F0DE9BF12B247820004A9621 /* CoffeeNoteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BF02B247820004A9621 /* CoffeeNoteDetailView.swift */; };
 		F0DE9BF32B2479AE004A9621 /* CoffeeNoteEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BF22B2479AE004A9621 /* CoffeeNoteEditView.swift */; };
 		F0DE9BF62B2482BF004A9621 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BF52B2482BF004A9621 /* OnboardingView.swift */; };
+		F0F749212B31598A0045A9C2 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F0F749202B31598A0045A9C2 /* InfoPlist.xcstrings */; };
 		F0FBBFF62B22F81400F513BC /* UserEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBBFF52B22F81400F513BC /* UserEditView.swift */; };
 		F0FBBFF82B22FF3400F513BC /* UserDeleteAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBBFF72B22FF3400F513BC /* UserDeleteAlert.swift */; };
 		F0FBBFFA2B2310F500F513BC /* WineNoteObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBBFF92B2310F500F513BC /* WineNoteObservable.swift */; };
@@ -168,6 +170,7 @@
 		F003F5D82B1234AC003D2499 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		F003F5DA2B1318A6003D2499 /* ThumbnailPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailPicker.swift; sourceTree = "<group>"; };
 		F003F5DE2B13299E003D2499 /* SignInPermissionAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPermissionAlert.swift; sourceTree = "<group>"; };
+		F011045D2B2E97950051DDEB /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		F020C49E2B2ACF9500C54144 /* WhiskeyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiskeyModel.swift; sourceTree = "<group>"; };
 		F020C4A12B2AD38700C54144 /* WhiskeyNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiskeyNoteView.swift; sourceTree = "<group>"; };
 		F020C4A42B2AD42100C54144 /* AddWhiskeyNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWhiskeyNoteView.swift; sourceTree = "<group>"; };
@@ -218,6 +221,7 @@
 		F0DE9BF02B247820004A9621 /* CoffeeNoteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeNoteDetailView.swift; sourceTree = "<group>"; };
 		F0DE9BF22B2479AE004A9621 /* CoffeeNoteEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeNoteEditView.swift; sourceTree = "<group>"; };
 		F0DE9BF52B2482BF004A9621 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		F0F749202B31598A0045A9C2 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = InfoPlist.xcstrings; path = Source/View/Note/AddNote/InfoPlist.xcstrings; sourceTree = "<group>"; };
 		F0FBBFF52B22F81400F513BC /* UserEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditView.swift; sourceTree = "<group>"; };
 		F0FBBFF72B22FF3400F513BC /* UserDeleteAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDeleteAlert.swift; sourceTree = "<group>"; };
 		F0FBBFF92B2310F500F513BC /* WineNoteObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineNoteObservable.swift; sourceTree = "<group>"; };
@@ -301,6 +305,8 @@
 			children = (
 				F04B4FC32B11ACAD0000047D /* LookSmellTaste.entitlements */,
 				299A91412AF6C07900D9C2D1 /* Info.plist */,
+				F011045D2B2E97950051DDEB /* Localizable.xcstrings */,
+				F0F749202B31598A0045A9C2 /* InfoPlist.xcstrings */,
 				299A91362AF6BFAB00D9C2D1 /* Source */,
 				299A91372AF6BFD900D9C2D1 /* Resource */,
 				299A91292AF6AD6D00D9C2D1 /* Preview Content */,
@@ -663,8 +669,10 @@
 				299A91282AF6AD6D00D9C2D1 /* Asset.xcassets in Resources */,
 				299A91592AF744BB00D9C2D1 /* Color.xcassets in Resources */,
 				299A915B2AF7451D00D9C2D1 /* Image.xcassets in Resources */,
+				F0F749212B31598A0045A9C2 /* InfoPlist.xcstrings in Resources */,
 				299A913F2AF6C03800D9C2D1 /* GmarketSansTTFBold.ttf in Resources */,
 				299A91402AF6C03800D9C2D1 /* GmarketSansTTFMedium.ttf in Resources */,
+				F011045E2B2E97950051DDEB /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

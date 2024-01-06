@@ -73,6 +73,12 @@ struct OnboardingView: View {
     }
 }
 
-#Preview {
+#Preview("Korean") {
     OnboardingView()
+        .environment(\.locale, .init(identifier: "ko"))
+}
+
+#Preview("English") {
+    OnboardingView()
+        .environment(\.locale, .init(identifier: "en"))
 }

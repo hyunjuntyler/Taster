@@ -46,6 +46,7 @@ struct ImagePicker: View {
                 Text("선택한 이미지는 썸네일 이미지로 활용돼요")
                     .font(.gmarketSansCaption)
                     .foregroundStyle(.gray)
+                    .lineSpacing(5)
                     .frame(maxHeight: .infinity)
                 HStack {
                     Button {
@@ -93,6 +94,7 @@ struct ImagePicker: View {
                     }
                     .buttonStyle(PressButtonStyle())
                 }
+                .frame(maxWidth: .infinity, alignment: .trailing)
             }
         }
         .padding(8)
@@ -122,7 +124,7 @@ struct ImagePicker: View {
             }
         }
     }
-
+    
     private func checkAlbumPermission() {
         PHPhotoLibrary.requestAuthorization { status in
             DispatchQueue.main.async {
@@ -140,7 +142,7 @@ struct ImagePicker: View {
     }
 }
 
-#Preview {
+#Preview("Korean") {
     ZStack {
         Color.appSheetBackground.ignoresSafeArea()
         ScrollView {
@@ -148,6 +150,20 @@ struct ImagePicker: View {
                 .padding(.horizontal)
                 .padding(.top, 300)
                 .environment(NoteEnvironment())
+                .environment(\.locale, .init(identifier: "ko"))
+        }
+    }
+}
+
+#Preview("English") {
+    ZStack {
+        Color.appSheetBackground.ignoresSafeArea()
+        ScrollView {
+            ImagePicker(selectedImage: .constant(nil))
+                .padding(.horizontal)
+                .padding(.top, 300)
+                .environment(NoteEnvironment())
+                .environment(\.locale, .init(identifier: "en"))
         }
     }
 }

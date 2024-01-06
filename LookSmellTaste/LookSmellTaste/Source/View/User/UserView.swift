@@ -83,7 +83,7 @@ struct UserView: View {
                     withAnimation {
                         showDeleteAlert = true
                     }
-                    Haptic.impact(style: .soft)
+                    Haptic.notification(type: .warning)
                 } label: {
                     Text("로그아웃")
                         .font(.gmarketSansBody)

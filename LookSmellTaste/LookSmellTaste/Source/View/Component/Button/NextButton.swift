@@ -17,7 +17,7 @@ struct NextButton: View {
             Haptic.impact(style: .soft)
             action()
         } label: {
-            Text(label)
+            Text(LocalizedStringKey(label))
                 .foregroundStyle(.background)
                 .font(.gmarketSansButton)
                 .frame(maxWidth: .infinity)
