@@ -62,7 +62,7 @@ struct Rating: View {
                     .foregroundStyle(symbolBaseColor)
                     .scaleEffect(
                         rating >= Double(index) && scaleUpWhenTapped ||
-                        rating + 1 >= Double(index) && scaleUpWhenDragged ? 1.16 : 1)
+                        rating + 1 > Double(index) && scaleUpWhenDragged ? 1.16 : 1)
                     .onTapGesture {
                         withAnimation {
                             if Double(index) == rating {
