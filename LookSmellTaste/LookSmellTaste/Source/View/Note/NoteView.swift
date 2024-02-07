@@ -17,7 +17,7 @@ struct NoteView: View {
     @Query private var users: [User]
     private var user: User? { users.first }
     
-    @Bindable private var noteEnvironment = NoteEnvironment()
+    @State private var noteEnvironment = NoteEnvironment()
     @State private var scrollOffset = 0.0
     @Binding var navigateToUserView: Bool
     
