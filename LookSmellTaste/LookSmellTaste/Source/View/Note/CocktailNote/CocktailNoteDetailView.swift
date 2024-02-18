@@ -111,6 +111,7 @@ struct CocktailNoteDetailView: View {
                                 .foregroundStyle(.appSheetBoxBackground)
                         }
                     }
+                    .padding(.bottom)
                     
                     DeleteButton {
                         withAnimation {

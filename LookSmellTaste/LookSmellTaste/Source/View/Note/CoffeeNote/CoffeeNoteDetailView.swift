@@ -146,6 +146,7 @@ struct CoffeeNoteDetailView: View {
                                 .foregroundStyle(.appSheetBoxBackground)
                         }
                     }
+                    .padding(.bottom)
                     
                     DeleteButton {
                         withAnimation {

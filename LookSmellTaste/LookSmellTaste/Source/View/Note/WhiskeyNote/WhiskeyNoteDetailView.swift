@@ -160,6 +160,7 @@ struct WhiskeyNoteDetailView: View {
                                     .foregroundStyle(.appSheetBoxBackground)
                             }
                         }
+                        .padding(.bottom)
                         
                         DeleteButton {
                             withAnimation {

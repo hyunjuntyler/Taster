@@ -159,6 +159,7 @@ struct WineNoteDetailView: View {
                                     .foregroundStyle(.appSheetBoxBackground)
                             }
                         }
+                        .padding(.bottom)
                         
                         DeleteButton {
                             withAnimation {
