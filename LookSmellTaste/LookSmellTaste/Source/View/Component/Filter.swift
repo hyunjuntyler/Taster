@@ -30,7 +30,7 @@ struct Filter: View {
                             }
                         } label: {
                             HStack {
-                                Text(filter.label)
+                                Text(LocalizedStringKey(filter.label))
                                 Spacer()
                                 if sortOption == filter.sort {
                                     Image(systemName: "checkmark")
@@ -67,6 +67,11 @@ struct Filter: View {
     }
 }
 
-#Preview {
+#Preview("Korean") {
     Filter(showFilter: .constant(true), sortOption: .constant(.mostRecent))
+}
+
+#Preview("English") {
+    Filter(showFilter: .constant(true), sortOption: .constant(.mostRecent))
+        .environment(\.locale, .init(identifier: "en"))
 }

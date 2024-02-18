@@ -2,7 +2,14 @@
   "sourceLanguage" : "ko",
   "strings" : {
     "" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "%.0f" : {
       "localizations" : {
@@ -527,6 +534,28 @@
         }
       }
     },
+    "별점 낮은순" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lowest rated"
+          }
+        }
+      }
+    },
+    "별점 높은순" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Highest rated"
+          }
+        }
+      }
+    },
     "사진찍기" : {
       "localizations" : {
         "en" : {
@@ -763,6 +792,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ice"
+          }
+        }
+      }
+    },
+    "오래된 순" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oldest first"
           }
         }
       }
@@ -1106,6 +1146,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "So far "
+          }
+        }
+      }
+    },
+    "최신순" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Most recent"
           }
         }
       }
