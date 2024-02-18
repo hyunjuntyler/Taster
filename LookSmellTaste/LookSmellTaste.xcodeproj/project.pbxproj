@@ -190,7 +190,6 @@
 		F020C4C42B2C944600C54144 /* FilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterModel.swift; sourceTree = "<group>"; };
 		F02EED492B235173009AD6D1 /* WineNoteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineNoteDetailView.swift; sourceTree = "<group>"; };
 		F04B4FC12B11A9530000047D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		F04B4FC32B11ACAD0000047D /* LookSmellTaste.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LookSmellTaste.entitlements; sourceTree = "<group>"; };
 		F04B4FC42B11AF190000047D /* CoffeeNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeNote.swift; sourceTree = "<group>"; };
 		F04B4FC62B11AF210000047D /* CocktailNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailNote.swift; sourceTree = "<group>"; };
 		F07D515B2B20073F0059A62C /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
@@ -303,7 +302,6 @@
 		299A91222AF6AD6C00D9C2D1 /* LookSmellTaste */ = {
 			isa = PBXGroup;
 			children = (
-				F04B4FC32B11ACAD0000047D /* LookSmellTaste.entitlements */,
 				299A91412AF6C07900D9C2D1 /* Info.plist */,
 				F011045D2B2E97950051DDEB /* Localizable.xcstrings */,
 				F0F749202B31598A0045A9C2 /* InfoPlist.xcstrings */,
@@ -912,7 +910,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = LookSmellTaste/LookSmellTaste.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LookSmellTaste/Preview Content\"";
@@ -950,7 +948,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = LookSmellTaste/LookSmellTaste.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LookSmellTaste/Preview Content\"";
