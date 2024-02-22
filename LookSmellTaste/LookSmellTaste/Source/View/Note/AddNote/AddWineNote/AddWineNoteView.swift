@@ -97,7 +97,7 @@ struct AddWineNoteView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(height: 30)
-                Text(type.name)
+                Text(LocalizedStringKey(type.name))
                     .font(.gmarketSansBody)
                 Spacer()
                 Button {
@@ -176,7 +176,7 @@ struct AddWineNoteView: View {
                                     .resizable()
                                     .scaledToFit()
                                     .frame(height: 40)
-                                Text(wine.name)
+                                Text(LocalizedStringKey(wine.name))
                                     .font(.gmarketSansBody)
                             }
                         }

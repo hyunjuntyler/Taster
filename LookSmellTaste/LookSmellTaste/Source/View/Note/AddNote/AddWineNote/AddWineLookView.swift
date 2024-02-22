@@ -10,6 +10,7 @@ import SwiftUI
 struct AddWineLookView: View {
     @Bindable private var observable = WineNoteObservable.shared
     @Environment(NoteEnvironment.self) var noteEnvironment: NoteEnvironment
+    @Environment(\.locale) var locale
     
     @State private var navigate = false
     @State private var color: WineColor = wineColors[0]
@@ -41,8 +42,8 @@ struct AddWineLookView: View {
                                         .resizable()
                                         .scaledToFit()
                                         .padding(.bottom, 5)
-                                    Text(wineColor.name)
-                                        .font(.gmarketSansSubHeadline)
+                                    Text(LocalizedStringKey(wineColor.name))
+                                        .font(locale == .init(identifier: "ko") ? .gmarketSansSubHeadline : .gmarketSansCaption2)
                                         .foregroundStyle(color == wineColor ? .accent : .appGrayButton)
                                 }
                                 .padding()
@@ -84,5 +85,6 @@ struct AddWineLookView: View {
     NavigationStack {
         AddWineLookView()
             .environment(NoteEnvironment())
+            .environment(\.locale, .init(identifier: "en"))
     }
 }

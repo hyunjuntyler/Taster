@@ -44,7 +44,7 @@ struct AddWhiskeyFlavorView: View {
                                     Image(scent.imageName)
                                         .resizable()
                                         .scaledToFit()
-                                    Text(scent.name)
+                                    Text(LocalizedStringKey(scent.name))
                                         .font(.gmarketSansCaption2)
                                         .foregroundStyle(flavors.contains(scent) ? .accent : .appGrayButton)
                                 }
@@ -83,9 +83,18 @@ struct AddWhiskeyFlavorView: View {
     }
 }
 
-#Preview {
+#Preview("Korean") {
     NavigationStack {
         AddWhiskeyFlavorView()
             .environment(NoteEnvironment())
+            .environment(\.locale, .init(identifier: "ko"))
+    }
+}
+
+#Preview("English") {
+    NavigationStack {
+        AddWhiskeyFlavorView()
+            .environment(NoteEnvironment())
+            .environment(\.locale, .init(identifier: "en"))
     }
 }

@@ -96,7 +96,7 @@ struct AddCocktailNoteView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(height: 30)
-                Text(type.name)
+                Text(LocalizedStringKey(type.name))
                     .font(.gmarketSansBody)
                 Spacer()
                 Button {

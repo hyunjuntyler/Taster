@@ -35,7 +35,7 @@ struct AddCoffeeTasteView: View {
                         ForEach(0..<5) { index in
                             CustomDivider()
                             HStack {
-                                Text(tasteLabels[index])
+                                Text(LocalizedStringKey(tasteLabels[index]))
                                     .font(.gmarketSansHeadline)
                                 Spacer()
                                 Rating(rating: $taste[index],
@@ -78,5 +78,6 @@ struct AddCoffeeTasteView: View {
     NavigationStack {
         AddCoffeeTasteView()
             .environment(NoteEnvironment())
+            .environment(\.locale, .init(identifier: "en"))
     }
 }

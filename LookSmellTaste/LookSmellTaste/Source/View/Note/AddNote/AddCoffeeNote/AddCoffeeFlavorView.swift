@@ -44,7 +44,7 @@ struct AddCoffeeFlavorView: View {
                                     Image(coffeeFlavor.imageName)
                                         .resizable()
                                         .scaledToFit()
-                                    Text(coffeeFlavor.name)
+                                    Text(LocalizedStringKey(coffeeFlavor.name))
                                         .font(.gmarketSansCaption2)
                                         .foregroundStyle(flavors.contains(coffeeFlavor) ? .accent : .appGrayButton)
                                 }

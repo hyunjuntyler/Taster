@@ -26,5 +26,4 @@ extension Font {
     static let gmarketSansFootnote = Font.custom("GmarketSansTTFMedium", size: 12, relativeTo: .footnote)
     static let gmarketSansCaption = Font.custom("GmarketSansTTFMedium", size: 11, relativeTo: .caption)
     static let gmarketSansCaption2 = Font.custom("GmarketSansTTFMedium", size: 10, relativeTo: .caption2)
-    static let gmarketSansTab = Font.custom("GmarketSansTTFMedium", size: 0, relativeTo: .caption2)
 }

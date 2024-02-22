@@ -47,23 +47,23 @@ struct PentagonRadarChart: View {
             if frame >= 150 {
                 Group {
                     VStack(spacing: 0) {
-                        Text(valueList[0])
+                        Text(LocalizedStringKey(valueList[0]))
                     }
                     .offset(y: -frame / 1.8)
                     VStack {
-                        Text(valueList[1])
+                        Text(LocalizedStringKey(valueList[1]))
                     }
                     .offset(x: -frame / 1.8, y: -frame / 5)
                     VStack {
-                        Text(valueList[2])
+                        Text(LocalizedStringKey(valueList[2]))
                     }
                     .offset(x: frame / 1.9, y: -frame / 5)
                     VStack {
-                        Text(valueList[3])
+                        Text(LocalizedStringKey(valueList[3]))
                     }
                     .offset(x: frame / 2.8, y: frame / 2.2)
                     VStack {
-                        Text(valueList[4])
+                        Text(LocalizedStringKey(valueList[4]))
                     }
                     .offset(x: frame / -2.9, y: frame / 2.2)
                 }

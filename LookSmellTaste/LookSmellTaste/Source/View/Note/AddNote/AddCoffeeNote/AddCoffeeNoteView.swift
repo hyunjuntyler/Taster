@@ -97,7 +97,7 @@ struct AddCoffeeNoteView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(height: 30)
-                Text(type.name)
+                Text(LocalizedStringKey(type.name))
                     .font(.gmarketSansBody)
                 Spacer()
                 Button {
@@ -176,7 +176,7 @@ struct AddCoffeeNoteView: View {
                                     .resizable()
                                     .scaledToFit()
                                     .frame(height: 40)
-                                Text(coffee.name)
+                                Text(LocalizedStringKey(coffee.name))
                                     .font(.gmarketSansBody)
                             }
                         }
@@ -205,7 +205,14 @@ struct AddCoffeeNoteView: View {
     }
 }
 
-#Preview {
+#Preview("Korean") {
     AddNoteView()
         .environment(NoteEnvironment())
+        .environment(\.locale, .init(identifier: "ko"))
+}
+
+#Preview("English") {
+    AddNoteView()
+        .environment(NoteEnvironment())
+        .environment(\.locale, .init(identifier: "en"))
 }

@@ -32,7 +32,7 @@ struct AddCocktailTasteView: View {
                     VStack {
                         ForEach(0..<3) { index in
                             HStack {
-                                Text(tasteLabels[index])
+                                Text(LocalizedStringKey(tasteLabels[index]))
                                     .font(.gmarketSansHeadline)
                                 Spacer()
                                 Rating(rating: $taste[index],

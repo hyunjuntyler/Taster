@@ -10,7 +10,8 @@ import SwiftUI
 struct AddWhiskeyLookView: View {
     @Bindable private var observable = WhiskeyNoteObservable.shared
     @Environment(NoteEnvironment.self) var noteEnvironment: NoteEnvironment
-    
+    @Environment(\.locale) var locale
+
     @State private var navigate = false
     @State private var color: WhiskeyColor = whiskeyColors[0]
     
@@ -41,8 +42,8 @@ struct AddWhiskeyLookView: View {
                                         .resizable()
                                         .scaledToFit()
                                         .padding(.bottom, 5)
-                                    Text(whiskeyColor.name)
-                                        .font(.gmarketSansSubHeadline)
+                                    Text(LocalizedStringKey(whiskeyColor.name))
+                                        .font(locale == .init(identifier: "ko") ? .gmarketSansSubHeadline : .gmarketSansCaption2)
                                         .foregroundStyle(color == whiskeyColor ? .accent : .appGrayButton)
                                 }
                                 .padding()
@@ -80,9 +81,18 @@ struct AddWhiskeyLookView: View {
     }
 }
 
-#Preview {
+#Preview("Korean") {
     NavigationStack {
         AddWhiskeyLookView()
             .environment(NoteEnvironment())
+            .environment(\.locale, .init(identifier: "ko"))
+    }
+}
+
+#Preview("English") {
+    NavigationStack {
+        AddWhiskeyLookView()
+            .environment(NoteEnvironment())
+            .environment(\.locale, .init(identifier: "en"))
     }
 }

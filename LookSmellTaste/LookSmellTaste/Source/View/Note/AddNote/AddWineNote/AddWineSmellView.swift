@@ -10,6 +10,7 @@ import SwiftUI
 struct AddWineSmellView: View {
     @Bindable private var observable = WineNoteObservable.shared
     @Environment(NoteEnvironment.self) var noteEnvironment: NoteEnvironment
+    @Environment(\.locale) var locale
     
     @State private var navigate = false
     @State private var scents: [WineScent] = []
@@ -44,9 +45,8 @@ struct AddWineSmellView: View {
                                     Image(wineScent.imageName)
                                         .resizable()
                                         .scaledToFit()
-                                    Text(wineScent.name)
-                                        .font(.gmarketSansCaption2)
-                                        .foregroundStyle(scents.contains(wineScent) ? .accent : .appGrayButton)
+                                    Text(LocalizedStringKey(wineScent.name))
+                                        .font(.gmarketSansCaption2)                 .foregroundStyle(scents.contains(wineScent) ? .accent : .appGrayButton)
                                 }
                                 .padding(4)
                                 .background {
@@ -83,9 +83,18 @@ struct AddWineSmellView: View {
     }
 }
 
-#Preview {
+#Preview("Korean") {
     NavigationStack {
         AddWineSmellView()
             .environment(NoteEnvironment())
+            .environment(\.locale, .init(identifier: "ko"))
+    }
+}
+
+#Preview("English") {
+    NavigationStack {
+        AddWineSmellView()
+            .environment(NoteEnvironment())
+            .environment(\.locale, .init(identifier: "en"))
     }
 }
