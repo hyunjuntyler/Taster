@@ -1,5 +1,5 @@
 <div align="center">
-<img width = "100" src="https://github.com/hyunjuntyler/Taster/assets/120548537/da4c1ae6-f80d-4660-9720-55e953dd35ef">
+<img width = "80" src="https://github.com/hyunjuntyler/Taster/assets/120548537/da4c1ae6-f80d-4660-9720-55e953dd35ef">
 
 # Taster
  🍷 테이스팅 노트 앱
@@ -7,7 +7,7 @@
 
 <div align="center">
  
-[<img width = "160" src="https://github-production-user-asset-6210df.s3.amazonaws.com/120548537/251533420-0eb9b31b-8203-48b7-8dcd-3725a8c9da49.png">](https://apps.apple.com/kr/app/%ED%85%8C%EC%9D%B4%EC%8A%A4%ED%84%B0/id6474084454)
+[<img width = "200" src="https://github-production-user-asset-6210df.s3.amazonaws.com/120548537/251533420-0eb9b31b-8203-48b7-8dcd-3725a8c9da49.png">](https://apps.apple.com/kr/app/%ED%85%8C%EC%9D%B4%EC%8A%A4%ED%84%B0/id6474084454)
 
 <img width = "1000" src="https://github.com/hyunjuntyler/Taster/assets/120548537/3a9bbf78-c8f0-4f37-9216-8fca788aa97b">
 
