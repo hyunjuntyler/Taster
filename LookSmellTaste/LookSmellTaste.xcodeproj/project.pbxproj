@@ -17,6 +17,8 @@
 		291D2E302C69F9AB00C767C2 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 291D2E282C69F9AB00C767C2 /* Pretendard-ExtraLight.otf */; };
 		291D2E322C69F9C600C767C2 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 291D2E312C69F9C600C767C2 /* Pretendard-Light.otf */; };
 		291D2E342C6A103800C767C2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 291D2E332C6A103800C767C2 /* README.md */; };
+		291D2E362C6A44A400C767C2 /* OnboardingCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291D2E352C6A44A400C767C2 /* OnboardingCellView.swift */; };
+		291D2E382C6A450100C767C2 /* OnboardingConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291D2E372C6A450100C767C2 /* OnboardingConfettiView.swift */; };
 		2921B0152B02673B00533A83 /* AddWineNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2921B0142B02673B00533A83 /* AddWineNoteView.swift */; };
 		293BBF882B2999F80032138E /* CocktailNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293BBF872B2999F80032138E /* CocktailNoteView.swift */; };
 		293BBF8A2B299D120032138E /* CocktailNoteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293BBF892B299D120032138E /* CocktailNoteList.swift */; };
@@ -137,6 +139,8 @@
 		291D2E282C69F9AB00C767C2 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
 		291D2E312C69F9C600C767C2 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
 		291D2E332C6A103800C767C2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		291D2E352C6A44A400C767C2 /* OnboardingCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCellView.swift; sourceTree = "<group>"; };
+		291D2E372C6A450100C767C2 /* OnboardingConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingConfettiView.swift; sourceTree = "<group>"; };
 		2921B0142B02673B00533A83 /* AddWineNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWineNoteView.swift; sourceTree = "<group>"; };
 		293BBF872B2999F80032138E /* CocktailNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailNoteView.swift; sourceTree = "<group>"; };
 		293BBF892B299D120032138E /* CocktailNoteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailNoteList.swift; sourceTree = "<group>"; };
@@ -636,6 +640,8 @@
 			isa = PBXGroup;
 			children = (
 				F0DE9BF52B2482BF004A9621 /* OnboardingView.swift */,
+				291D2E352C6A44A400C767C2 /* OnboardingCellView.swift */,
+				291D2E372C6A450100C767C2 /* OnboardingConfettiView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -760,6 +766,7 @@
 				2990E4022AF9A21E0001617A /* ContentUnavailable.swift in Sources */,
 				F003F5DF2B13299E003D2499 /* SignInPermissionAlert.swift in Sources */,
 				F07D515C2B20073F0059A62C /* UserView.swift in Sources */,
+				291D2E362C6A44A400C767C2 /* OnboardingCellView.swift in Sources */,
 				F0DE9BD72B24250E004A9621 /* WineNoteList.swift in Sources */,
 				F0DE9BF12B247820004A9621 /* CoffeeNoteDetailView.swift in Sources */,
 				F003F5D92B1234AC003D2499 /* SignInView.swift in Sources */,
@@ -789,6 +796,7 @@
 				293FD1F02AFAF98600623B23 /* UIScreenExtension.swift in Sources */,
 				F020C4B62B2AF7A600C54144 /* PolygonChart.swift in Sources */,
 				F0DCD1BB2B28270100841A18 /* AddCocktailTasteView.swift in Sources */,
+				291D2E382C6A450100C767C2 /* OnboardingConfettiView.swift in Sources */,
 				293FD1F62AFB40D500623B23 /* Haptic.swift in Sources */,
 				F0FBBFFA2B2310F500F513BC /* WineNoteObservable.swift in Sources */,
 				F04B4FC72B11AF210000047D /* CocktailNote.swift in Sources */,

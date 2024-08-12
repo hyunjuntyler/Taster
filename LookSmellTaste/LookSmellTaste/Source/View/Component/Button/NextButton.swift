@@ -19,7 +19,7 @@ struct NextButton: View {
         } label: {
             Text(LocalizedStringKey(label))
                 .foregroundStyle(.background)
-                .font(.gmarketSansButton)
+                .font(.pretendard(.body, weight: .medium))
                 .frame(maxWidth: .infinity)
                 .padding()
                 .background {
