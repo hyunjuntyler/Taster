@@ -16,6 +16,7 @@
 		291D2E2F2C69F9AB00C767C2 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 291D2E272C69F9AA00C767C2 /* Pretendard-Regular.otf */; };
 		291D2E302C69F9AB00C767C2 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 291D2E282C69F9AB00C767C2 /* Pretendard-ExtraLight.otf */; };
 		291D2E322C69F9C600C767C2 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 291D2E312C69F9C600C767C2 /* Pretendard-Light.otf */; };
+		291D2E342C6A103800C767C2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 291D2E332C6A103800C767C2 /* README.md */; };
 		2921B0152B02673B00533A83 /* AddWineNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2921B0142B02673B00533A83 /* AddWineNoteView.swift */; };
 		293BBF882B2999F80032138E /* CocktailNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293BBF872B2999F80032138E /* CocktailNoteView.swift */; };
 		293BBF8A2B299D120032138E /* CocktailNoteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293BBF892B299D120032138E /* CocktailNoteList.swift */; };
@@ -135,6 +136,7 @@
 		291D2E272C69F9AA00C767C2 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		291D2E282C69F9AB00C767C2 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
 		291D2E312C69F9C600C767C2 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
+		291D2E332C6A103800C767C2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		2921B0142B02673B00533A83 /* AddWineNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWineNoteView.swift; sourceTree = "<group>"; };
 		293BBF872B2999F80032138E /* CocktailNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailNoteView.swift; sourceTree = "<group>"; };
 		293BBF892B299D120032138E /* CocktailNoteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailNoteList.swift; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 		299A91172AF6AD6C00D9C2D1 = {
 			isa = PBXGroup;
 			children = (
+				291D2E332C6A103800C767C2 /* README.md */,
 				299A91222AF6AD6C00D9C2D1 /* LookSmellTaste */,
 				299A91212AF6AD6C00D9C2D1 /* Products */,
 			);
@@ -698,6 +701,7 @@
 			files = (
 				291D2E302C69F9AB00C767C2 /* Pretendard-ExtraLight.otf in Resources */,
 				299A912B2AF6AD6D00D9C2D1 /* Preview Assets.xcassets in Resources */,
+				291D2E342C6A103800C767C2 /* README.md in Resources */,
 				291D2E2A2C69F9AB00C767C2 /* Pretendard-Bold.otf in Resources */,
 				291D2E2C2C69F9AB00C767C2 /* Pretendard-ExtraBold.otf in Resources */,
 				291D2E2E2C69F9AB00C767C2 /* Pretendard-SemiBold.otf in Resources */,
