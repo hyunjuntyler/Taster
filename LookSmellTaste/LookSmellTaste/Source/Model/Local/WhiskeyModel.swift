@@ -87,6 +87,7 @@ let whiskeyFlavors = [
     WhiskeyFlavor(name: "밀", imageName: "wheat"),
     WhiskeyFlavor(name: "빵", imageName: "bread"),
     WhiskeyFlavor(name: "연기", imageName: "smoke"),
+    WhiskeyFlavor(name: "피트", imageName: "peak"),
     WhiskeyFlavor(name: "후추", imageName: "blackpepper"),
     WhiskeyFlavor(name: "계피", imageName: "cinamon"),
     WhiskeyFlavor(name: "고수", imageName: "cilantro"),

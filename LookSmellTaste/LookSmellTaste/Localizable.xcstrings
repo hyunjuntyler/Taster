@@ -82,6 +82,7 @@
       }
     },
     "📝" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -122,6 +123,7 @@
       }
     },
     "🧑‍🍳" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -130,6 +132,9 @@
           }
         }
       }
+    },
+    "🧑🏻‍💻" : {
+
     },
     "😌" : {
       "localizations" : {
@@ -253,6 +258,7 @@
       }
     },
     "간단하게 나만의\n테이스팅 노트를 작성해보세요" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -467,6 +473,7 @@
       }
     },
     "다양한 종류의 노트를 작성하여\n맛잘알이 되어보세요" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1751,17 +1758,6 @@
         }
       }
     },
-    "잎" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Leaf"
-          }
-        }
-      }
-    },
     "이름 변경" : {
       "localizations" : {
         "en" : {
@@ -1789,6 +1785,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Japanese"
+          }
+        }
+      }
+    },
+    "잎" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leaf"
           }
         }
       }
@@ -2454,6 +2461,7 @@
       }
     },
     "플러스 버튼을 눌러\n노트를 추가해보세요" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
