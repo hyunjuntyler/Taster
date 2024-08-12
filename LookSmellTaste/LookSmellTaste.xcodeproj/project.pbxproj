@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		291D2E292C69F9AB00C767C2 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 291D2E212C69F9AA00C767C2 /* Pretendard-Thin.otf */; };
+		291D2E2A2C69F9AB00C767C2 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 291D2E222C69F9AA00C767C2 /* Pretendard-Bold.otf */; };
+		291D2E2B2C69F9AB00C767C2 /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 291D2E232C69F9AA00C767C2 /* Pretendard-Black.otf */; };
+		291D2E2C2C69F9AB00C767C2 /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 291D2E242C69F9AA00C767C2 /* Pretendard-ExtraBold.otf */; };
+		291D2E2D2C69F9AB00C767C2 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 291D2E252C69F9AA00C767C2 /* Pretendard-Medium.otf */; };
+		291D2E2E2C69F9AB00C767C2 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 291D2E262C69F9AA00C767C2 /* Pretendard-SemiBold.otf */; };
+		291D2E2F2C69F9AB00C767C2 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 291D2E272C69F9AA00C767C2 /* Pretendard-Regular.otf */; };
+		291D2E302C69F9AB00C767C2 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 291D2E282C69F9AB00C767C2 /* Pretendard-ExtraLight.otf */; };
+		291D2E322C69F9C600C767C2 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 291D2E312C69F9C600C767C2 /* Pretendard-Light.otf */; };
 		2921B0152B02673B00533A83 /* AddWineNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2921B0142B02673B00533A83 /* AddWineNoteView.swift */; };
 		293BBF882B2999F80032138E /* CocktailNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293BBF872B2999F80032138E /* CocktailNoteView.swift */; };
 		293BBF8A2B299D120032138E /* CocktailNoteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293BBF892B299D120032138E /* CocktailNoteList.swift */; };
@@ -117,6 +126,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		291D2E212C69F9AA00C767C2 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
+		291D2E222C69F9AA00C767C2 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		291D2E232C69F9AA00C767C2 /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
+		291D2E242C69F9AA00C767C2 /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
+		291D2E252C69F9AA00C767C2 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		291D2E262C69F9AA00C767C2 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		291D2E272C69F9AA00C767C2 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		291D2E282C69F9AB00C767C2 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
+		291D2E312C69F9C600C767C2 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
 		2921B0142B02673B00533A83 /* AddWineNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWineNoteView.swift; sourceTree = "<group>"; };
 		293BBF872B2999F80032138E /* CocktailNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailNoteView.swift; sourceTree = "<group>"; };
 		293BBF892B299D120032138E /* CocktailNoteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailNoteList.swift; sourceTree = "<group>"; };
@@ -239,6 +257,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		291D2E202C69F98E00C767C2 /* Pretendard */ = {
+			isa = PBXGroup;
+			children = (
+				291D2E232C69F9AA00C767C2 /* Pretendard-Black.otf */,
+				291D2E242C69F9AA00C767C2 /* Pretendard-ExtraBold.otf */,
+				291D2E222C69F9AA00C767C2 /* Pretendard-Bold.otf */,
+				291D2E262C69F9AA00C767C2 /* Pretendard-SemiBold.otf */,
+				291D2E252C69F9AA00C767C2 /* Pretendard-Medium.otf */,
+				291D2E272C69F9AA00C767C2 /* Pretendard-Regular.otf */,
+				291D2E312C69F9C600C767C2 /* Pretendard-Light.otf */,
+				291D2E282C69F9AB00C767C2 /* Pretendard-ExtraLight.otf */,
+				291D2E212C69F9AA00C767C2 /* Pretendard-Thin.otf */,
+			);
+			path = Pretendard;
+			sourceTree = "<group>";
+		};
 		293BBF862B2999E40032138E /* CocktailNote */ = {
 			isa = PBXGroup;
 			children = (
@@ -359,6 +393,7 @@
 		299A91382AF6BFED00D9C2D1 /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				291D2E202C69F98E00C767C2 /* Pretendard */,
 				299A913C2AF6C03800D9C2D1 /* GmarketSansTTFBold.ttf */,
 				299A913B2AF6C03800D9C2D1 /* GmarketSansTTFLight.ttf */,
 				299A913D2AF6C03800D9C2D1 /* GmarketSansTTFMedium.ttf */,
@@ -661,15 +696,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				291D2E302C69F9AB00C767C2 /* Pretendard-ExtraLight.otf in Resources */,
 				299A912B2AF6AD6D00D9C2D1 /* Preview Assets.xcassets in Resources */,
+				291D2E2A2C69F9AB00C767C2 /* Pretendard-Bold.otf in Resources */,
+				291D2E2C2C69F9AB00C767C2 /* Pretendard-ExtraBold.otf in Resources */,
+				291D2E2E2C69F9AB00C767C2 /* Pretendard-SemiBold.otf in Resources */,
 				299A913E2AF6C03800D9C2D1 /* GmarketSansTTFLight.ttf in Resources */,
 				299A913A2AF6C00400D9C2D1 /* TossFaceFontMac.ttf in Resources */,
 				299A91282AF6AD6D00D9C2D1 /* Asset.xcassets in Resources */,
+				291D2E2B2C69F9AB00C767C2 /* Pretendard-Black.otf in Resources */,
 				299A91592AF744BB00D9C2D1 /* Color.xcassets in Resources */,
+				291D2E322C69F9C600C767C2 /* Pretendard-Light.otf in Resources */,
 				299A915B2AF7451D00D9C2D1 /* Image.xcassets in Resources */,
 				F0F749212B31598A0045A9C2 /* InfoPlist.xcstrings in Resources */,
+				291D2E2F2C69F9AB00C767C2 /* Pretendard-Regular.otf in Resources */,
 				299A913F2AF6C03800D9C2D1 /* GmarketSansTTFBold.ttf in Resources */,
+				291D2E2D2C69F9AB00C767C2 /* Pretendard-Medium.otf in Resources */,
 				299A91402AF6C03800D9C2D1 /* GmarketSansTTFMedium.ttf in Resources */,
+				291D2E292C69F9AB00C767C2 /* Pretendard-Thin.otf in Resources */,
 				F011045E2B2E97950051DDEB /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
