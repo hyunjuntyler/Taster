@@ -63,7 +63,7 @@ let coffeeFlavors: [CoffeeFlavor] = [
     CoffeeFlavor(name: "팝콘", imageName: "popcorn"),
     CoffeeFlavor(name: "밀", imageName: "wheat"),
     CoffeeFlavor(name: "빵", imageName: "bread"),
-    CoffeeFlavor(name: "연기", imageName: "smoke"),
+    CoffeeFlavor(name: "스모크", imageName: "smoke"),
     CoffeeFlavor(name: "후추", imageName: "blackpepper"),
     CoffeeFlavor(name: "계피", imageName: "cinamon"),
     CoffeeFlavor(name: "고수", imageName: "cilantro"),
