@@ -43,10 +43,10 @@ struct SignInView: View {
     var greet: some View {
         VStack {
             Text("😍")
-                .font(.tossFaceXLarge)
+                .font(.tossFace(.large))
                 .padding(.bottom, 5)
             Text("안녕하세요 반가워요!")
-                .font(.gmarketSansTitle)
+                .font(.pretendard(.title))
         }
         .padding(.bottom, 50)
         .onAppear {
@@ -96,13 +96,13 @@ struct SignInView: View {
     private var headline: some View {
         VStack {
             Text(moveToThumbnail ? "🥳" : "😌")
-                .font(.tossFaceXLarge)
+                .font(.tossFace(.large))
                 .padding(.bottom, 5)
             Text(moveToThumbnail ? "반가워요! 썸네일도 설정해주세요." : "어떻게 불러드릴까요?")
-                .font(.gmarketSansTitle2)
+                .font(.pretendard(.title2))
                 .padding(.bottom, 5)
             Text("지금 설정한 정보는 언제나 변경 가능해요")
-                .font(.gmarketSansSubHeadline)
+                .font(.pretendard(.headline))
                 .foregroundStyle(.gray)
         }
     }
@@ -110,7 +110,7 @@ struct SignInView: View {
     private var nameInput: some View {
         HStack {
             TextField("", text: $name, axis: .horizontal)
-                .font(.gmarketSansTitle3)
+                .font(.pretendard(.title3))
                 .focused($isFocused)
                 .onAppear {
                     isFocused = true
@@ -135,7 +135,7 @@ struct SignInView: View {
         }
         .overlay(alignment: .leading) {
             Text("닉네임")
-                .font(.gmarketSansTitle3)
+                .font(.pretendard(.title3))
                 .foregroundStyle(.tertiary)
                 .padding(.leading)
                 .scaleEffect(name.isEmpty ? 1 : 0.8, anchor: .bottomLeading)
@@ -149,7 +149,7 @@ struct SignInView: View {
     private var thumbnailInput: some View {
         VStack(alignment: .leading, spacing: 5) {
             Text("썸네일")
-                .font(.gmarketSansTitle3)
+                .font(.pretendard(.title3))
                 .foregroundStyle(.tertiary)
                 .scaleEffect(0.8, anchor: .bottomLeading)
                 .padding(.leading)

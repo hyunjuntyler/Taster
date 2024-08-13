@@ -11,13 +11,13 @@ struct PreparingContent: View {
     var body: some View {
         VStack {
             Text("👨🏻‍💻")
-                .font(.tossFaceXLarge)
+                .font(.tossFace(.large))
                 .padding(.bottom)
             Text("콘텐츠 준비중")
-                .font(.gmarketSansBody)
+                .font(.pretendard(.body))
                 .padding(.bottom, 5)
             Text("멋진 콘텐츠를 준비중이예요")
-                .font(.gmarketSansCaption)
+                .font(.pretendard(.caption))
                 .foregroundStyle(.secondary)
         }
         .padding(.top, 100)

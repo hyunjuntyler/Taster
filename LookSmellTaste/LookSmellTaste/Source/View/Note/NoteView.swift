@@ -45,7 +45,7 @@ struct NoteView: View {
                     if let user = user {
                         HStack {
                             Text("👏")
-                                .font(.tossFaceXLarge)
+                                .font(.tossFace(.large))
                             VStack(alignment: .leading) {
                                 Group {
                                     Text("반가워요 ")
@@ -53,15 +53,15 @@ struct NoteView: View {
                                         .foregroundStyle(.accent)
                                     + Text("님")
                                 }
-                                .font(.gmarketSansBody)
-                                
+                                .font(.pretendard(.body))
+
                                 Group {
                                     Text("총 ")
                                     + Text("\(noteCount)")
                                         .foregroundStyle(.accent)
                                     + Text("개의 노트를 작성하셨어요")
                                 }
-                                .font(.gmarketSansBody)
+                                .font(.pretendard(.body))
                             }
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -78,13 +78,13 @@ struct NoteView: View {
                     VStack(alignment: .leading) {
                         HStack {
                             Text("와인 노트")
-                                .font(.gmarketSansTitle2)
+                                .font(.pretendard(.title2))
                             Spacer()
                             NavigationLink {
                                 WineNoteView()
                             } label: {
                                 Text("모두보기")
-                                    .font(.gmarketSansBody)
+                                    .font(.pretendard(.body))
                             }
                         }
                         .padding(.horizontal, 5)
@@ -109,13 +109,13 @@ struct NoteView: View {
                     VStack(alignment: .leading) {
                         HStack {
                             Text("커피 노트")
-                                .font(.gmarketSansTitle2)
+                                .font(.pretendard(.title2))
                             Spacer()
                             NavigationLink {
                                 CoffeeNoteView()
                             } label: {
                                 Text("모두보기")
-                                    .font(.gmarketSansBody)
+                                    .font(.pretendard(.body))
                             }
                         }
                         .padding(.horizontal, 5)
@@ -140,13 +140,13 @@ struct NoteView: View {
                     VStack(alignment: .leading) {
                         HStack {
                             Text("칵테일 노트")
-                                .font(.gmarketSansTitle2)
+                                .font(.pretendard(.title2))
                             Spacer()
                             NavigationLink {
                                 CocktailNoteView()
                             } label: {
                                 Text("모두보기")
-                                    .font(.gmarketSansBody)
+                                    .font(.pretendard(.body))
                             }
                         }
                         .padding(.horizontal, 5)
@@ -171,13 +171,13 @@ struct NoteView: View {
                     VStack(alignment: .leading) {
                         HStack {
                             Text("위스키 노트")
-                                .font(.gmarketSansTitle2)
+                                .font(.pretendard(.title2))
                             Spacer()
                             NavigationLink {
                                 WhiskeyNoteView()
                             } label: {
                                 Text("모두보기")
-                                    .font(.gmarketSansBody)
+                                    .font(.pretendard(.body))
                             }
                         }
                         .padding(.horizontal, 5)

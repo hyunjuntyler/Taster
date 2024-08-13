@@ -40,7 +40,7 @@ struct WineNoteView: View {
         .toolbar {
             ToolbarItem(placement: .principal) {
                 Text("모든 와인 노트")
-                    .font(.gmarketSansTitle3)
+                    .font(.pretendard(.title3))
             }
             
             ToolbarItem(placement: .topBarTrailing) {
@@ -50,7 +50,7 @@ struct WineNoteView: View {
                         showFilter.toggle()
                     }
                 }
-                .font(.gmarketSansBody)
+                .font(.pretendard(.body))
             }
         }
         .overlay(alignment: .topTrailing) {

@@ -25,7 +25,7 @@ struct NavigationTitle: View {
     var body: some View {
         HStack {
             Text(LocalizedStringKey(type.rawValue))
-                .font(.gmarketSansLargeTitle)
+                .font(.pretendard(.largeTitle, weight: .semibold))
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .scaleEffect(min(1 + scrollOffset / 300, 1.2), anchor: .leading)
             if let user = user {
@@ -54,7 +54,7 @@ struct NavigationTitle: View {
                             Circle()
                                 .foregroundStyle(.appListBoxBackground)
                             Text(user.icon)
-                                .font(.tossFaceMedium)
+                                .font(.tossFace(.regular))
                         }
                         .frame(width: 30)
                         .scaleEffect(min(1 + scrollOffset / 300, 1.2), anchor: .center)
@@ -84,7 +84,7 @@ struct InlineNavigationTitle: View {
     var body: some View {
         HStack {
             Text(LocalizedStringKey(type.rawValue))
-                .font(.gmarketSansLargeTitle)
+                .font(.pretendard(.largeTitle, weight: .semibold))
                 .frame(maxWidth: .infinity, alignment: .leading)
             if let user = user {
                 if let data = user.image {
@@ -112,7 +112,7 @@ struct InlineNavigationTitle: View {
                             Circle()
                                 .foregroundStyle(.appListBoxBackground)
                             Text(user.icon)
-                                .font(.tossFaceMedium)
+                                .font(.tossFace(.regular))
                         }
                         .frame(width: 30)
                     }

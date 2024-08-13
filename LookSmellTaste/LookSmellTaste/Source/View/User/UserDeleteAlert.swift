@@ -28,9 +28,9 @@ struct UserDeleteAlert: View {
                     .font(.largeTitle)
                     .padding(.bottom, 5)
                 Text("정말 로그아웃 하시겠어요?")
-                    .font(.gmarketSansHeadline)
+                    .font(.pretendard(.headline))
                 Text("모든 노트가 사라져요")
-                    .font(.gmarketSansSubHeadline)
+                    .font(.pretendard(.subheadline))
                     .foregroundStyle(.gray)
                     .padding(.bottom, 20)
                 HStack {

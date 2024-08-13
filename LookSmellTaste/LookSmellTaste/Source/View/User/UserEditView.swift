@@ -44,7 +44,7 @@ struct UserEditView: View {
                                 .frame(width: 100)
                                 .padding(.bottom, 5)
                             Text(icon)
-                                .font(.tossFaceXXLarge)
+                                .font(.tossFace(.extraLarge))
                         }
                     } else {
                         ZStack {
@@ -53,14 +53,14 @@ struct UserEditView: View {
                                 .frame(width: 100)
                                 .padding(.bottom, 5)
                             Text("🤢")
-                                .font(.tossFaceXXLarge)
+                                .font(.tossFace(.extraLarge))
                         }
                         .padding(.top)
                     }
                     
                     VStack(alignment: .leading, spacing: 5) {
                         Text("이름 변경")
-                            .font(.gmarketSansTitle3)
+                            .font(.pretendard(.title3))
                             .foregroundStyle(.tertiary)
                             .scaleEffect(0.8, anchor: .bottomLeading)
                             .padding(.leading)
@@ -72,7 +72,7 @@ struct UserEditView: View {
                                         name = user.name
                                     }
                                 }
-                                .font(.gmarketSansTitle3)
+                                .font(.pretendard(.title3))
                                 .padding(.leading)
                                 .padding(.vertical)
                             
@@ -97,7 +97,7 @@ struct UserEditView: View {
                     
                     VStack(alignment: .leading, spacing: 5) {
                         Text("썸네일 변경")
-                            .font(.gmarketSansTitle3)
+                            .font(.pretendard(.title3))
                             .foregroundStyle(.tertiary)
                             .scaleEffect(0.8, anchor: .bottomLeading)
                             .padding(.leading)
@@ -122,7 +122,7 @@ struct UserEditView: View {
                         showUserEditSheet = false
                     } label: {
                         Text("취소")
-                            .font(.gmarketSansBody)
+                            .font(.pretendard(.body, weight: .medium))
                     }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
@@ -139,7 +139,7 @@ struct UserEditView: View {
                         }
                     } label: {
                         Text("저장")
-                            .font(.gmarketSansBody)
+                            .font(.pretendard(.body, weight: .medium))
                     }
                     .disabled(name.isEmpty)
                 }

@@ -26,7 +26,7 @@ struct CocktailNoteDetailView: View {
             ScrollView {
                 VStack(alignment: .leading) {
                     Text("기본정보")
-                        .font(.gmarketSansSubHeadline)
+                        .font(.pretendard(.subheadline))
                         .foregroundStyle(.gray)
                         .padding(.leading, 5)
                         .padding(.top)
@@ -54,21 +54,21 @@ struct CocktailNoteDetailView: View {
                         }
                         VStack(alignment: .leading, spacing: 5) {
                             Text(note.type.name)
-                                .font(.gmarketSansCaption)
+                                .font(.pretendard(.caption))
                             Text(note.name)
-                                .font(.gmarketSansBody)
+                                .font(.pretendard(.body))
                                 .fontWeight(.semibold)
                                 .foregroundColor(.accentColor)
                             RatingDisplay(rating: note.rating)
                             Text("\(note.date.formatted(date: .abbreviated, time: .omitted))")
-                                .font(.gmarketSansCaption)
+                                .font(.pretendard(.caption))
                         }
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     
                     VStack(alignment: .leading) {
                         Text("테이스팅 노트")
-                            .font(.gmarketSansSubHeadline)
+                            .font(.pretendard(.subheadline))
                             .foregroundStyle(.gray)
                             .padding(.leading, 5)
                             .padding(.top)
@@ -78,7 +78,7 @@ struct CocktailNoteDetailView: View {
                                 CustomDivider()
                                 HStack {
                                     Text(tasteLabels[index])
-                                        .font(.gmarketSansBody)
+                                        .font(.pretendard(.body))
                                     Spacer()
                                     RatingCircle(rating: note.taste[index], ratingColor: symbolColors[index])
                                 }
@@ -94,13 +94,13 @@ struct CocktailNoteDetailView: View {
                     
                     VStack(alignment: .leading) {
                         Text("추가 노트")
-                            .font(.gmarketSansSubHeadline)
+                            .font(.pretendard(.subheadline))
                             .foregroundStyle(.gray)
                             .padding(.leading, 5)
                             .padding(.top)
                         VStack {
                             Text(note.think)
-                                .font(.gmarketSansCallout)
+                                .font(.pretendard(.callout))
                                 .lineSpacing(5)
                         }
                         .font(.subheadline)
@@ -126,14 +126,14 @@ struct CocktailNoteDetailView: View {
         .toolbar {
             ToolbarItem(placement: .principal) {
                 Text(note.name)
-                    .font(.gmarketSansTitle3)
+                    .font(.pretendard(.title3))
             }
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
                     showEditSheet = true
                 } label: {
                     Text("편집")
-                        .font(.gmarketSansBody)
+                        .font(.pretendard(.body))
                 }
             }
         }

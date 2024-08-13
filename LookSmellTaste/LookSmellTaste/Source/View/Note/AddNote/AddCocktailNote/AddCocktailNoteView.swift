@@ -20,13 +20,13 @@ struct AddCocktailNoteView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text("칵테일 이름")
-                .font(.gmarketSansSubHeadline)
+                .font(.pretendard(.subheadline))
                 .foregroundStyle(.gray)
                 .padding(.leading)
                 .padding(.top, 5)
             HStack {
                 TextField("칵테일 이름을 입력해주세요", text: $name, axis: .vertical)
-                    .font(.gmarketSansBody)
+                    .font(.pretendard(.body))
                     .focused($isFocused)
                     .tint(.accent)
                     .onTapGesture {
@@ -51,13 +51,13 @@ struct AddCocktailNoteView: View {
             }
             
             Text("마신 날짜")
-                .font(.gmarketSansSubHeadline)
+                .font(.pretendard(.subheadline))
                 .foregroundStyle(.gray)
                 .padding(.leading)
                 .padding(.top, 5)
             HStack {
                 Text("\(date.formatted(date: .complete, time: .omitted))")
-                    .font(.gmarketSansBody)
+                    .font(.pretendard(.body))
                     .onChange(of: date) { _, _ in
                         Haptic.impact(style: .soft)
                     }
@@ -68,7 +68,7 @@ struct AddCocktailNoteView: View {
                     Haptic.impact(style: .soft)
                 } label: {
                     Text("바꾸기")
-                        .font(.gmarketSansFootnote)
+                        .font(.pretendard(.footnote))
                         .foregroundStyle(.gray)
                         .padding()
                         .background {
@@ -87,7 +87,7 @@ struct AddCocktailNoteView: View {
             }
             
             Text("칵테일 종류")
-                .font(.gmarketSansSubHeadline)
+                .font(.pretendard(.subheadline))
                 .foregroundStyle(.gray)
                 .padding(.leading)
                 .padding(.top, 5)
@@ -97,7 +97,7 @@ struct AddCocktailNoteView: View {
                     .scaledToFit()
                     .frame(height: 30)
                 Text(LocalizedStringKey(type.name))
-                    .font(.gmarketSansBody)
+                    .font(.pretendard(.body))
                 Spacer()
                 Button {
                     withAnimation {
@@ -107,7 +107,7 @@ struct AddCocktailNoteView: View {
                     Haptic.impact(style: .soft)
                 } label: {
                     Text("홈")
-                        .font(.gmarketSansFootnote)
+                        .font(.pretendard(.footnote))
                         .foregroundStyle(type == cocktailTypes[0] ? .accent : .gray)
                         .padding()
                         .background {
@@ -124,7 +124,7 @@ struct AddCocktailNoteView: View {
                     Haptic.impact(style: .soft)
                 } label: {
                     Text("칵테일 바")
-                        .font(.gmarketSansFootnote)
+                        .font(.pretendard(.footnote))
                         .foregroundStyle(type == cocktailTypes[1] ? .accent : .gray)
                         .padding()
                         .background {
@@ -142,7 +142,7 @@ struct AddCocktailNoteView: View {
             }
             
             Text("대표 이미지")
-                .font(.gmarketSansSubHeadline)
+                .font(.pretendard(.subheadline))
                 .foregroundStyle(.gray)
                 .padding(.leading)
                 .padding(.top, 5)
@@ -153,7 +153,7 @@ struct AddCocktailNoteView: View {
         .sheet(isPresented: $showDatePicker) {
             VStack {
                 Text("마신 날짜 변경")
-                    .font(.gmarketSansTitle3)
+                    .font(.pretendard(.title3))
                     .frame(maxWidth: .infinity)
                     .overlay {
                         SheetCloseButton {

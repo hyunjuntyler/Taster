@@ -20,7 +20,7 @@ struct DeleteButton: View {
                 Image(systemName: "trash.fill")
                     .font(.callout)
                 Text(label)
-                    .font(.gmarketSansCallout)
+                    .font(.pretendard(.callout))
             }
             .foregroundStyle(.accent)
             .frame(maxWidth: .infinity)

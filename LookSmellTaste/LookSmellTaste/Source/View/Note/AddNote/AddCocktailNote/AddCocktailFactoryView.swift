@@ -31,10 +31,10 @@ struct AddCocktailFactoryView: View {
             VStack {
                 ScrollView {
                     Text("Factory")
-                        .font(.gmarketSansTitle)
+                        .font(.pretendard(.title))
                         .padding(.bottom)
                     Text("마셨던 칵테일을 만들어 보세요")
-                        .font(.gmarketSansBody)
+                        .font(.pretendard(.body))
                         .foregroundStyle(.gray)
                         .padding(.bottom)
                     VStack {
@@ -43,7 +43,7 @@ struct AddCocktailFactoryView: View {
                         ZStack {
                             if !observable.name.isEmpty {
                                 Text(observable.name)
-                                    .font(.gmarketSansBody)
+                                    .font(.pretendard(.body))
                                     .padding(5)
                                     .background {
                                         RoundedRectangle(cornerRadius: 6, style: .continuous)
@@ -66,7 +66,7 @@ struct AddCocktailFactoryView: View {
                                             .fontWeight(.semibold)
                                             .foregroundStyle(observable.getColor(for: ingredients[index].colorName))
                                         Text(ingredients[index].name)
-                                            .font(.gmarketSansBody)
+                                            .font(.pretendard(.body))
                                         Spacer()
                                         Text("\(ingredients[index].amount, specifier: "%.0f")")
                                             .monospacedDigit()
@@ -80,7 +80,7 @@ struct AddCocktailFactoryView: View {
                                             addIngredientSheet = true
                                         } label: {
                                             Text("편집")
-                                                .font(.gmarketSansFootnote)
+                                                .font(.pretendard(.footnote))
                                                 .foregroundStyle(.gray)
                                                 .padding(12)
                                                 .background {
@@ -97,7 +97,7 @@ struct AddCocktailFactoryView: View {
                                             }
                                         } label: {
                                             Text("삭제")
-                                                .font(.gmarketSansFootnote)
+                                                .font(.pretendard(.footnote))
                                                 .foregroundStyle(.gray)
                                                 .padding(12)
                                                 .background {
@@ -153,7 +153,7 @@ struct AddCocktailFactoryView: View {
     private var addGredientSheet: some View {
         VStack {
             Text(selectedIndex == nil ? "재료 추가" : "재료 편집")
-                .font(.gmarketSansTitle3)
+                .font(.pretendard(.title3))
                 .frame(maxWidth: .infinity)
                 .overlay(alignment: .trailing) {
                     Button {
@@ -172,13 +172,13 @@ struct AddCocktailFactoryView: View {
                 ScrollView {
                     VStack(alignment: .leading) {
                         Text("재료 이름")
-                            .font(.gmarketSansSubHeadline)
+                            .font(.pretendard(.subheadline))
                             .foregroundStyle(.gray)
                             .padding(.leading)
                             .padding(.top, 5)
                         HStack {
                             TextField("재료의 이름을 작성해 주세요", text: $name)
-                                .font(.gmarketSansBody)
+                                .font(.pretendard(.body))
                             Button {
                                 Haptic.impact(style: .soft)
                                 name = ""
@@ -196,13 +196,13 @@ struct AddCocktailFactoryView: View {
                                 .foregroundStyle(.appPickerGray)
                         }
                         Text("재료의 양 (비율로 입력해 주세요)")
-                            .font(.gmarketSansSubHeadline)
+                            .font(.pretendard(.subheadline))
                             .foregroundStyle(.gray)
                             .padding(.leading)
                             .padding(.top, 5)
                         HStack(spacing: 0) {
                             Text("\(amount)")
-                                .font(.gmarketSansButton)
+                                .font(.pretendard(.body))
                                 .frame(maxWidth: .infinity)
                             Button{
                                 if amount > 0 {
@@ -236,7 +236,7 @@ struct AddCocktailFactoryView: View {
                         }
                         
                         Text("표시할 색상")
-                            .font(.gmarketSansSubHeadline)
+                            .font(.pretendard(.subheadline))
                             .foregroundStyle(.gray)
                             .padding(.leading)
                             .padding(.top, 5)
@@ -313,7 +313,7 @@ struct AddCocktailFactoryView: View {
                 Image(systemName: "plus.circle.fill")
                     .font(.title3)
                 Text("재료 추가하기")
-                    .font(.gmarketSansBody)
+                    .font(.pretendard(.body))
             }
             .foregroundStyle(.accent)
             .frame(maxWidth: .infinity)
@@ -339,7 +339,7 @@ struct AddCocktailFactoryView: View {
                         .frame(width: 12, height: 12)
                 }
                 Text("얼음")
-                    .font(.gmarketSansSubHeadline)
+                    .font(.pretendard(.subheadline))
             }
         }
         .foregroundStyle(.accent)

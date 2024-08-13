@@ -22,10 +22,10 @@ struct AddCoffeeFlavorView: View {
             VStack {
                 ScrollView {
                     Text("Flavor")
-                        .font(.gmarketSansTitle)
+                        .font(.pretendard(.title))
                         .padding(.bottom)
                     Text("어떠한 향과 맛이 나나요?")
-                        .font(.gmarketSansBody)
+                        .font(.pretendard(.body))
                         .foregroundStyle(.gray)
                         .padding(.bottom)
                     LazyVGrid(columns: columns, spacing: 8) {
@@ -45,7 +45,7 @@ struct AddCoffeeFlavorView: View {
                                         .resizable()
                                         .scaledToFit()
                                     Text(LocalizedStringKey(coffeeFlavor.name))
-                                        .font(.gmarketSansCaption2)
+                                        .font(.pretendard(.caption2))
                                         .foregroundStyle(flavors.contains(coffeeFlavor) ? .accent : .appGrayButton)
                                 }
                                 .padding(4)

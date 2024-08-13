@@ -35,7 +35,7 @@ struct ThumbnailPicker: View {
                         .frame(width: 60, height: 60)
                         .foregroundStyle(.appPickerGray.opacity(0.5))
                     Text(selectedIcon)
-                        .font(.tossFaceLarge)
+                        .font(.tossFace(.medium))
                 }
             }
             
@@ -43,7 +43,7 @@ struct ThumbnailPicker: View {
             
             VStack {
                 Text("선택한 이미지는 썸네일 이미지로 활용돼요")
-                    .font(.gmarketSansCaption)
+                    .font(.pretendard(.caption))
                     .foregroundStyle(.gray)
                     .padding(.bottom, 5)
                 HStack {
@@ -52,7 +52,7 @@ struct ThumbnailPicker: View {
                         showIconPicker = true
                     } label: {
                         Text("아이콘 고르기")
-                            .font(.gmarketSansFootnote)
+                            .font(.pretendard(.footnote))
                             .foregroundStyle(.gray)
                             .padding(12)
                             .background {
@@ -67,7 +67,7 @@ struct ThumbnailPicker: View {
                         checkAlbumPermission()
                     } label: {
                         Text("앨범에서 선택")
-                            .font(.gmarketSansFootnote)
+                            .font(.pretendard(.footnote))
                             .foregroundStyle(.gray)
                             .padding(12)
                             .background {
@@ -100,7 +100,7 @@ struct ThumbnailPicker: View {
                 Color.appSheetBackground.ignoresSafeArea()
                 VStack {
                     Text("원하시는 아이콘을 골라주세요")
-                        .font(.gmarketSansTitle3)
+                        .font(.pretendard(.title3))
                         .padding(.bottom)
                     ScrollView {
                         LazyVGrid(columns: columns) {
@@ -111,7 +111,7 @@ struct ThumbnailPicker: View {
                                     selectedIcon = icon
                                     showIconPicker = false
                                 }
-                                .font(.tossFaceLarge)
+                                .font(.tossFace(.medium))
                                 .padding(5)
                                 .buttonStyle(PressButtonStyle())
                             }

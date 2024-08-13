@@ -42,7 +42,7 @@ struct CoffeeNoteView: View {
         .toolbar {
             ToolbarItem(placement: .principal) {
                 Text("모든 커피 노트")
-                    .font(.gmarketSansTitle3)
+                    .font(.pretendard(.title3))
             }
             
             ToolbarItem(placement: .topBarTrailing) {
@@ -52,7 +52,7 @@ struct CoffeeNoteView: View {
                         showFilter.toggle()
                     }
                 }
-                .font(.gmarketSansBody)
+                .font(.pretendard(.body))
             }
         }
         .overlay(alignment: .topTrailing) {

@@ -43,20 +43,20 @@ struct WhiskeyNoteEditView: View {
                 ScrollView {
                     VStack(alignment: .leading) {
                         Text("대표 이미지")
-                            .font(.gmarketSansSubHeadline)
+                            .font(.pretendard(.subheadline))
                             .foregroundStyle(.gray)
                             .padding(.leading)
                             .padding(.top, 5)
                         EditImagePicker(selectedImage: $selectedImage, permissionDenied: $permissionDenied, permissionType: $permissionType, defaultImageName: defaultImageName)
                         
                         Text("와인 이름")
-                            .font(.gmarketSansSubHeadline)
+                            .font(.pretendard(.subheadline))
                             .foregroundStyle(.gray)
                             .padding(.leading)
                             .padding(.top, 5)
                         HStack {
                             TextField("와인 이름을 입력해주세요", text: $name, axis: .vertical)
-                                .font(.gmarketSansBody)
+                                .font(.pretendard(.body))
                                 .tint(.accent)
                                 .onTapGesture {
                                     Haptic.impact(style: .soft)
@@ -80,13 +80,13 @@ struct WhiskeyNoteEditView: View {
                         }
                         
                         Text("마신 날짜")
-                            .font(.gmarketSansSubHeadline)
+                            .font(.pretendard(.subheadline))
                             .foregroundStyle(.gray)
                             .padding(.leading)
                             .padding(.top, 5)
                         HStack {
                             Text("\(date.formatted(date: .complete, time: .omitted))")
-                                .font(.gmarketSansBody)
+                                .font(.pretendard(.body))
                                 .onChange(of: date) { _, _ in
                                     Haptic.impact(style: .soft)
                                 }
@@ -96,7 +96,7 @@ struct WhiskeyNoteEditView: View {
                                 Haptic.impact(style: .soft)
                             } label: {
                                 Text("바꾸기")
-                                    .font(.gmarketSansFootnote)
+                                    .font(.pretendard(.footnote))
                                     .foregroundStyle(.gray)
                                     .padding()
                                     .background {
@@ -115,7 +115,7 @@ struct WhiskeyNoteEditView: View {
                         }
                         
                         Text("위스키 종류")
-                            .font(.gmarketSansSubHeadline)
+                            .font(.pretendard(.subheadline))
                             .foregroundStyle(.gray)
                             .padding(.leading)
                             .padding(.top, 5)
@@ -125,14 +125,14 @@ struct WhiskeyNoteEditView: View {
                                 .scaledToFit()
                                 .frame(height: 30)
                             Text(type.name)
-                                .font(.gmarketSansBody)
+                                .font(.pretendard(.body))
                             Spacer()
                             Button {
                                 showTypePicker = true
                                 Haptic.impact(style: .soft)
                             } label: {
                                 Text("바꾸기")
-                                    .font(.gmarketSansFootnote)
+                                    .font(.pretendard(.footnote))
                                     .foregroundStyle(.gray)
                                     .padding()
                                     .background {
@@ -150,7 +150,7 @@ struct WhiskeyNoteEditView: View {
                         }
                         
                         Text("Look")
-                            .font(.gmarketSansSubHeadline)
+                            .font(.pretendard(.subheadline))
                             .foregroundStyle(.gray)
                             .padding(.leading)
                             .padding(.top, 5)
@@ -168,7 +168,7 @@ struct WhiskeyNoteEditView: View {
                                             .scaledToFit()
                                             .padding(.bottom, 5)
                                         Text(whiskeyColor.name)
-                                            .font(.gmarketSansCaption2)
+                                            .font(.pretendard(.caption2))
                                             .foregroundStyle(color == whiskeyColor ? .accent : .appGrayButton)
                                     }
                                     .padding(5)
@@ -187,7 +187,7 @@ struct WhiskeyNoteEditView: View {
                         }
                         
                         Text("Flavor")
-                            .font(.gmarketSansSubHeadline)
+                            .font(.pretendard(.subheadline))
                             .foregroundStyle(.gray)
                             .padding(.leading)
                             .padding(.top, 5)
@@ -208,7 +208,7 @@ struct WhiskeyNoteEditView: View {
                                             .resizable()
                                             .scaledToFit()
                                         Text(whiskeyFlavor.name)
-                                            .font(.gmarketSansCaption2)
+                                            .font(.pretendard(.caption2))
                                             .foregroundStyle(flavors.contains(whiskeyFlavor) ? .accent : .appGrayButton)
                                     }
                                     .padding(4)
@@ -227,7 +227,7 @@ struct WhiskeyNoteEditView: View {
                         }
                         
                         Text("Taste")
-                            .font(.gmarketSansSubHeadline)
+                            .font(.pretendard(.subheadline))
                             .foregroundStyle(.gray)
                             .padding(.leading)
                             .padding(.top, 5)
@@ -239,7 +239,7 @@ struct WhiskeyNoteEditView: View {
                                 CustomDivider()
                                 HStack {
                                     Text(tasteLabels[index])
-                                        .font(.gmarketSansCallout)
+                                        .font(.pretendard(.callout))
                                     Spacer()
                                     Rating(rating: $taste[index],
                                            symbolName: "circle.fill",
@@ -257,14 +257,14 @@ struct WhiskeyNoteEditView: View {
                         }
                         
                         Text("Think")
-                            .font(.gmarketSansSubHeadline)
+                            .font(.pretendard(.subheadline))
                             .foregroundStyle(.gray)
                             .padding(.leading)
                             .padding(.top, 5)
                         HStack(alignment: .top, spacing: 3) {
                             TextField("더 추가하고 싶은 내용을 입력해주세요", text: $think, axis: .vertical)
                                 .frame(height: 150, alignment: .topLeading)
-                                .font(.gmarketSansCallout)
+                                .font(.pretendard(.callout))
                             Button {
                                 Haptic.impact(style: .soft)
                                 think = ""
@@ -283,7 +283,7 @@ struct WhiskeyNoteEditView: View {
                         }
                         
                         Text("평점")
-                            .font(.gmarketSansSubHeadline)
+                            .font(.pretendard(.subheadline))
                             .foregroundStyle(.gray)
                             .padding(.leading)
                             .padding(.top, 5)
@@ -321,7 +321,7 @@ struct WhiskeyNoteEditView: View {
             .sheet(isPresented: $showDatePicker) {
                 VStack {
                     Text("마신 날짜 변경")
-                        .font(.gmarketSansTitle3)
+                        .font(.pretendard(.title3))
                         .frame(maxWidth: .infinity)
                         .overlay {
                             SheetCloseButton {
@@ -343,7 +343,7 @@ struct WhiskeyNoteEditView: View {
             .sheet(isPresented: $showTypePicker) {
                 VStack {
                     Text("위스키 종류 변경")
-                        .font(.gmarketSansTitle3)
+                        .font(.pretendard(.title3))
                         .frame(maxWidth: .infinity)
                         .overlay {
                             SheetCloseButton {
@@ -364,7 +364,7 @@ struct WhiskeyNoteEditView: View {
                                         .scaledToFit()
                                         .frame(height: 40)
                                     Text(whiskeyType.name)
-                                        .font(.gmarketSansBody)
+                                        .font(.pretendard(.body))
                                 }
                             }
                             .buttonStyle(TypeButtonStyle())
@@ -380,7 +380,7 @@ struct WhiskeyNoteEditView: View {
                     Button("취소") {
                         dismiss()
                     }
-                    .font(.gmarketSansBody)
+                    .font(.pretendard(.body))
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("저장") {
@@ -388,7 +388,7 @@ struct WhiskeyNoteEditView: View {
                         saveData()
                         dismiss()
                     }
-                    .font(.gmarketSansBody)
+                    .font(.pretendard(.body))
                 }
             }
         }

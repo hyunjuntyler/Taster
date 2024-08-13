@@ -22,17 +22,17 @@ struct AddCoffeeThinkView: View {
                 ScrollView {
                     VStack {
                         Text("Think")
-                            .font(.gmarketSansTitle)
+                            .font(.pretendard(.title))
                             .padding(.bottom)
                         Text("더 추가하고 싶은 내용이 있으신가요?")
-                            .font(.gmarketSansBody)
+                            .font(.pretendard(.body))
                             .foregroundStyle(.gray)
                             .padding(.bottom)
                         HStack(alignment: .top, spacing: 3) {
                             TextField("더 추가하고 싶은 내용을 입력해주세요", text: $think, axis: .vertical)
                                 .focused($isFocused)
                                 .frame(height: 200, alignment: .topLeading)
-                                .font(.gmarketSansBody)
+                                .font(.pretendard(.body))
                             Button {
                                 Haptic.impact(style: .soft)
                                 think = ""
@@ -54,7 +54,7 @@ struct AddCoffeeThinkView: View {
                         
                         VStack(alignment: .leading) {
                             Text("평점")
-                                .font(.gmarketSansSubHeadline)
+                                .font(.pretendard(.subheadline))
                                 .foregroundStyle(.gray)
                                 .padding(.leading)
                                 .padding(.top, 5)

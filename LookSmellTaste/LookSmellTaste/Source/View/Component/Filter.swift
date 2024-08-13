@@ -48,7 +48,7 @@ struct Filter: View {
                     }
                 }
             }
-            .font(.gmarketSansBody)
+            .font(.pretendard(.body))
             .frame(width: 200)
             .padding(12)
             .background {

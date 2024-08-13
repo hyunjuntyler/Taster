@@ -23,10 +23,10 @@ struct AddWineLookView: View {
             VStack {
                 ScrollView {
                     Text("Look")
-                        .font(.gmarketSansTitle)
+                        .font(.pretendard(.title))
                         .padding(.bottom)
                     Text("와인의 색상을 선택해주세요")
-                        .font(.gmarketSansBody)
+                        .font(.pretendard(.body))
                         .foregroundStyle(.gray)
                         .padding(.bottom)
                     LazyVGrid(columns: columns, spacing: 0) {
@@ -43,7 +43,7 @@ struct AddWineLookView: View {
                                         .scaledToFit()
                                         .padding(.bottom, 5)
                                     Text(LocalizedStringKey(wineColor.name))
-                                        .font(locale == .init(identifier: "ko") ? .gmarketSansSubHeadline : .gmarketSansCaption2)
+                                        .font(locale == .init(identifier: "ko") ? .pretendard(.subheadline) : .pretendard(.caption2))
                                         .foregroundStyle(color == wineColor ? .accent : .appGrayButton)
                                 }
                                 .padding()

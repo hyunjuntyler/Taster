@@ -14,9 +14,9 @@ struct CameraPermissionAlert: View {
     var image: String {
         switch type {
         case .camera:
-            return "camera.fill"
+            return "📷"
         case .album:
-            return "photo"
+            return "🖼️"
         }
     }
     
@@ -39,45 +39,15 @@ struct CameraPermissionAlert: View {
     }
     
     var body: some View {
-        ZStack {
-            Rectangle()
-                .foregroundStyle(.ultraThinMaterial)
-                .ignoresSafeArea()
-            
-            VStack(spacing: 5) {
-                Image(systemName: image)
-                    .foregroundStyle(.accent)
-                    .font(.title)
-                    .padding(.bottom)
-                Text(title)
-                    .font(.gmarketSansHeadline)
-                Text(description)
-                    .font(.gmarketSansSubHeadline)
-                    .foregroundStyle(.gray)
-                    .padding(.bottom, 20)
-                
-                HStack {
-                    Button("돌아가기") {
-                        showPermissionAlert = false
-                        Haptic.impact(style: .soft)
-                    }
-                    .buttonStyle(AlertButtonStyle(type: .cancel))
-                    Button("설정으로") {
-                        showPermissionAlert = false
-                        openAppSetting()
-                        Haptic.impact(style: .soft)
-                    }
-                    .buttonStyle(AlertButtonStyle(type: .destructive))
-                }
+        Alert(
+            isPresented: $showPermissionAlert,
+            emoji: image,
+            title: title,
+            message: description,
+            buttonLabel: "설정으로") {
+                showPermissionAlert = false
+                openAppSetting()
             }
-            .padding()
-            .background {
-                RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    .foregroundStyle(.appAlertBackground)
-            }
-            .padding(.horizontal, 50)
-            .padding(.bottom)
-        }
     }
     
     private func openAppSetting() {

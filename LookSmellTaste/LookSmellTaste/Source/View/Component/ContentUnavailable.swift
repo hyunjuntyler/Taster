@@ -44,10 +44,10 @@ struct ContentUnavailable: View {
                     .padding(.bottom)
             }
             Text(title)
-                .font(.gmarketSansBody)
+                .font(.pretendard(.body))
                 .padding(.bottom, 5)
             Text(description)
-                .font(.gmarketSansCaption)
+                .font(.pretendard(.caption))
                 .foregroundStyle(.secondary)
         }
     }

@@ -23,10 +23,10 @@ struct AddWineSmellView: View {
             VStack {
                 ScrollView {
                     Text("Smell")
-                        .font(.gmarketSansTitle)
+                        .font(.pretendard(.title))
                         .padding(.bottom)
                     Text("어떠한 향이 나나요?")
-                        .font(.gmarketSansBody)
+                        .font(.pretendard(.body))
                         .foregroundStyle(.gray)
                         .padding(.bottom)
                     LazyVGrid(columns: columns, spacing: 8) {
@@ -46,7 +46,8 @@ struct AddWineSmellView: View {
                                         .resizable()
                                         .scaledToFit()
                                     Text(LocalizedStringKey(wineScent.name))
-                                        .font(.gmarketSansCaption2)                 .foregroundStyle(scents.contains(wineScent) ? .accent : .appGrayButton)
+                                        .font(.pretendard(.caption2))
+                                        .foregroundStyle(scents.contains(wineScent) ? .accent : .appGrayButton)
                                 }
                                 .padding(4)
                                 .background {

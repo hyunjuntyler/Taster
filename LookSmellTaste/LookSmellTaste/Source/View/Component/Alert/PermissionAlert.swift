@@ -18,11 +18,11 @@ struct PermissionAlert: View {
     var image: String {
         switch noteEnvironment.permissionType {
         case .camera:
-            return "camera.fill"
+            return "📷"
         case .album:
-            return "photo"
+            return "🖼️"
         case .none:
-            return "exclamationmark.triangle.fill"
+            return "⚠️"
         }
     }
     
@@ -49,45 +49,16 @@ struct PermissionAlert: View {
     }
     
     var body: some View {
-        ZStack {
-            Rectangle()
-                .foregroundStyle(.ultraThinMaterial)
-                .ignoresSafeArea()
-            
-            VStack(spacing: 5) {
-                Image(systemName: image)
-                    .foregroundStyle(.accent)
-                    .font(.largeTitle)
-                    .padding(.bottom, 5)
-                Text(title)
-                    .font(.gmarketSansHeadline)
-                Text(description)
-                    .font(.gmarketSansSubHeadline)
-                    .foregroundStyle(.gray)
-                    .padding(.bottom, 20)
-                
-                HStack {
-                    Button("돌아가기") {
-                        noteEnvironment.showPermissionAlert = false
-                        Haptic.impact(style: .soft)
-                    }
-                    .buttonStyle(AlertButtonStyle(type: .cancel))
-                    Button("설정으로") {
-                        noteEnvironment.showPermissionAlert = false
-                        noteEnvironment.openAppSetting()
-                        Haptic.impact(style: .soft)
-                    }
-                    .buttonStyle(AlertButtonStyle(type: .destructive))
-                }
+        @Bindable var noteEnvironment = noteEnvironment
+        Alert(
+            isPresented: $noteEnvironment.showCloseAlert,
+            emoji: image,
+            title: title,
+            message: description,
+            buttonLabel: "설정으로") {
+                noteEnvironment.showPermissionAlert = false
+                noteEnvironment.openAppSetting()
             }
-            .padding()
-            .background {
-                RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    .foregroundStyle(.appAlertBackground)
-            }
-            .padding(.horizontal, 50)
-            .padding(.bottom)
-        }
     }
 }
 

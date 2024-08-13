@@ -23,17 +23,17 @@ struct AddCocktailTasteView: View {
             VStack {
                 ScrollView {
                     Text("Taste")
-                        .font(.gmarketSansTitle)
+                        .font(.pretendard(.title))
                         .padding(.bottom)
                     Text("아래의 내용을 채워주세요")
-                        .font(.gmarketSansBody)
+                        .font(.pretendard(.body))
                         .foregroundStyle(.gray)
                         .padding(.bottom)
                     VStack {
                         ForEach(0..<3) { index in
                             HStack {
                                 Text(LocalizedStringKey(tasteLabels[index]))
-                                    .font(.gmarketSansHeadline)
+                                    .font(.pretendard(.headline))
                                 Spacer()
                                 Rating(rating: $taste[index],
                                        symbolName: "circle.fill",

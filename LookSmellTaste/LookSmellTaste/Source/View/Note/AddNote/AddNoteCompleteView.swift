@@ -28,10 +28,10 @@ struct AddNoteCompleteView: View {
                 .ignoresSafeArea()
             VStack {
                 Text("🎉")
-                    .font(.tossFaceXXLarge)
+                    .font(.tossFace(.extraLarge))
                     .padding(.bottom)
                 Text("성공적으로 기록되었어요")
-                    .font(.gmarketSansTitle2)
+                    .font(.pretendard(.title2))
                     .overlay(confetti)
             }
             .padding(.bottom, 100)

@@ -20,10 +20,10 @@ struct AddNoteView: View {
                 VStack {
                     ScrollView {
                         Text("Add note")
-                            .font(.gmarketSansTitle)
+                            .font(.pretendard(.title))
                             .padding(.bottom)
                         Text(noteEnvironment.isNotePreparing ? "어떤 노트를 추가하고 싶으신가요?" : "아래 간단한 정보를 입력해주세요")
-                            .font(.gmarketSansBody)
+                            .font(.pretendard(.body))
                             .foregroundStyle(.gray)
                             .animation(nil, value: noteEnvironment.noteType)
                         

@@ -20,7 +20,7 @@ struct AddNoteButton: View {
         } label: {
             VStack {
                 Text(LocalizedStringKey(title))
-                    .font(.gmarketSansSubHeadline)
+                    .font(.pretendard(.subheadline))
                     .foregroundStyle(selected ? .accent : .gray)
                 Image(image)
                     .resizable()

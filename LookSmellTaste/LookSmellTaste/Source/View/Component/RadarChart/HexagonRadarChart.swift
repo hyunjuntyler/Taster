@@ -71,7 +71,7 @@ struct HexagonRadarChart: View {
                     }
                     .offset(y: frame / 1.7)
                 }
-                .font(.gmarketSansFootnote)
+                .font(.pretendard(.footnote))
                 .foregroundColor(.gray)
             } else {
                 Group {
@@ -100,7 +100,7 @@ struct HexagonRadarChart: View {
                     }
                     .offset(y: frame / 1.65)
                 }
-                .font(.gmarketSansCaption2)
+                .font(.pretendard(.caption2))
                 .foregroundColor(.gray)
             }
         }

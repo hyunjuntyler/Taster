@@ -216,6 +216,9 @@
         }
       }
     },
+    "Preview" : {
+
+    },
     "Smell" : {
       "localizations" : {
         "en" : {
@@ -1112,6 +1115,7 @@
       }
     },
     "삭제하기" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1122,6 +1126,7 @@
       }
     },
     "삭제한 내용은 되돌릴 수 없어요" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1459,6 +1464,7 @@
       }
     },
     "앱 시작하기" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1517,6 +1523,9 @@
           }
         }
       }
+    },
+    "에 오신걸 환영해요" : {
+
     },
     "연기" : {
       "extractionState" : "manual",
@@ -1845,6 +1854,7 @@
       }
     },
     "작성된 내용은 저장되지 않아요" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1969,6 +1979,7 @@
       }
     },
     "정말 노트를 삭제하시겠어요?" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1989,6 +2000,7 @@
       }
     },
     "정말 작성을 종료하시겠어요?" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2020,6 +2032,7 @@
       }
     },
     "종료하기" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2376,6 +2389,9 @@
         }
       }
     },
+    "테이스터" : {
+
+    },
     "테이스팅 노트" : {
       "localizations" : {
         "en" : {
@@ -2502,6 +2518,17 @@
         }
       }
     },
+    "호박색" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Amber"
+          }
+        }
+      }
+    },
     "홈" : {
       "localizations" : {
         "en" : {
@@ -2519,17 +2546,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pumpkin"
-          }
-        }
-      }
-    },
-    "호박색" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Amber"
           }
         }
       }

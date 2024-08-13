@@ -19,7 +19,7 @@ struct AddIngredientButton: View {
                 Image(systemName: "plus.circle.fill")
                     .font(.title3)
                 Text("재료 추가하기")
-                    .font(.gmarketSansBody)
+                    .font(.pretendard(.body))
             }
             .foregroundStyle(.accent)
             .frame(maxWidth: .infinity)

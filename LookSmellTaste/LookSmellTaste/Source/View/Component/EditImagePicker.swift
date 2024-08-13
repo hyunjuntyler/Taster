@@ -44,7 +44,7 @@ struct EditImagePicker: View {
             
             VStack {
                 Text("선택한 이미지는 썸네일 이미지로 활용돼요")
-                    .font(.gmarketSansCaption)
+                    .font(.pretendard(.caption))
                     .foregroundStyle(.gray)
                     .frame(maxHeight: .infinity)
                 HStack {
@@ -53,7 +53,7 @@ struct EditImagePicker: View {
                         selectedImage = nil
                     } label: {
                         Text("기본")
-                            .font(.gmarketSansFootnote)
+                            .font(.pretendard(.footnote))
                             .foregroundStyle(.gray)
                             .padding(12)
                             .background {
@@ -68,7 +68,7 @@ struct EditImagePicker: View {
                         checkAlbumPermission()
                     } label: {
                         Text("앨범에서 선택")
-                            .font(.gmarketSansFootnote)
+                            .font(.pretendard(.footnote))
                             .foregroundStyle(.gray)
                             .padding(12)
                             .background {
@@ -83,7 +83,7 @@ struct EditImagePicker: View {
                         checkCameraPermission()
                     } label: {
                         Text("사진찍기")
-                            .font(.gmarketSansFootnote)
+                            .font(.pretendard(.footnote))
                             .foregroundStyle(.gray)
                             .padding(12)
                             .background {

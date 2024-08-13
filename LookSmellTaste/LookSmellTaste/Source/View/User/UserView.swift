@@ -43,7 +43,7 @@ struct UserView: View {
                                 .foregroundStyle(.appListBoxBackground)
                                 .padding(.bottom, 5)
                             Text(user.icon)
-                                .font(.tossFaceXXLarge)
+                                .font(.tossFace(.extraLarge))
                         }
                         .frame(width: 100)
                         .padding(.top)
@@ -55,20 +55,20 @@ struct UserView: View {
                             .frame(width: 100)
                             .padding(.bottom, 5)
                         Text("🤢")
-                            .font(.tossFaceXXLarge)
+                            .font(.tossFace(.extraLarge))
                     }
                     .padding(.top)
                 }
                 
                 Text(user?.name ?? "이름 없음")
-                    .font(.gmarketSansTitle3)
-                
+                    .font(.pretendard(.title3))
+
                 Button {
                     showUserEditSheet = true
                     Haptic.impact(style: .soft)
                 } label: {
                     Text("정보수정")
-                        .font(.gmarketSansBody)
+                        .font(.pretendard(.body, weight: .medium))
                         .frame(maxWidth: .infinity)
                         .padding()
                         .background {
@@ -86,7 +86,7 @@ struct UserView: View {
                     Haptic.notification(type: .warning)
                 } label: {
                     Text("로그아웃")
-                        .font(.gmarketSansBody)
+                        .font(.pretendard(.body, weight: .medium))
                         .foregroundStyle(.accent)
                         .frame(maxWidth: .infinity)
                         .padding()

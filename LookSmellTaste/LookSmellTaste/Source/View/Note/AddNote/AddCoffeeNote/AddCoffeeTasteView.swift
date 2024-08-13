@@ -23,10 +23,10 @@ struct AddCoffeeTasteView: View {
             VStack {
                 ScrollView {
                     Text("Taste")
-                        .font(.gmarketSansTitle)
+                        .font(.pretendard(.title))
                         .padding(.bottom)
                     Text("아래의 차트를 채워주세요")
-                        .font(.gmarketSansBody)
+                        .font(.pretendard(.body))
                         .foregroundStyle(.gray)
                         .padding(.bottom)
                     VStack {
@@ -36,7 +36,7 @@ struct AddCoffeeTasteView: View {
                             CustomDivider()
                             HStack {
                                 Text(LocalizedStringKey(tasteLabels[index]))
-                                    .font(.gmarketSansHeadline)
+                                    .font(.pretendard(.headline))
                                 Spacer()
                                 Rating(rating: $taste[index],
                                        symbolName: "circle.fill",

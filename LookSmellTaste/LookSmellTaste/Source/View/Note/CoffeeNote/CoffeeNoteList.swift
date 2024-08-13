@@ -39,10 +39,10 @@ struct CoffeeNoteList: View {
                 VStack(alignment: .leading, spacing: 5) {
                     HStack {
                         Text(note.type.name)
-                            .font(.gmarketSansCaption)
+                            .font(.pretendard(.caption))
                         Spacer()
                         Text("\(note.date.formatted(date: .abbreviated, time: .omitted))")
-                            .font(.gmarketSansCaption)
+                            .font(.pretendard(.caption))
                         Image(systemName: "chevron.right")
                             .foregroundColor(.accentColor)
                             .fontWeight(.semibold)
@@ -51,7 +51,7 @@ struct CoffeeNoteList: View {
                     Text(note.name)
                         .lineLimit(1)
                         .foregroundColor(.accentColor)
-                        .font(.gmarketSansHeadline)
+                        .font(.pretendard(.headline))
                     RatingDisplay(rating: note.rating)
                 }
             }

@@ -79,7 +79,7 @@ struct CocktailFactory: View {
                             .frame(width: 10, height: 10)
                             .foregroundStyle(getColor(for: ingredient.colorName))
                         Text(ingredient.name)
-                            .font(.gmarketSansCaption)
+                            .font(.pretendard(.caption))
                     }
                 }
             }
@@ -129,7 +129,7 @@ struct CocktailFactory: View {
             }
         }
         .frame(width: 60, height: 70, alignment: .top)
-        .font(.tossFaceMedium)
+        .font(.tossFace(.regular))
         .opacity(0.4)
         .offset(y: 12)
     }

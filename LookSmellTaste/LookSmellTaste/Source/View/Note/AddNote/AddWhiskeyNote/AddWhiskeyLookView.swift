@@ -23,10 +23,10 @@ struct AddWhiskeyLookView: View {
             VStack {
                 ScrollView {
                     Text("Look")
-                        .font(.gmarketSansTitle)
+                        .font(.pretendard(.title))
                         .padding(.bottom)
                     Text("위스키의 색상을 선택해주세요")
-                        .font(.gmarketSansBody)
+                        .font(.pretendard(.body))
                         .foregroundStyle(.gray)
                         .padding(.bottom)
                     LazyVGrid(columns: columns, spacing: 0) {
@@ -43,7 +43,7 @@ struct AddWhiskeyLookView: View {
                                         .scaledToFit()
                                         .padding(.bottom, 5)
                                     Text(LocalizedStringKey(whiskeyColor.name))
-                                        .font(locale == .init(identifier: "ko") ? .gmarketSansSubHeadline : .gmarketSansCaption2)
+                                        .font(.pretendard(.subheadline))
                                         .foregroundStyle(color == whiskeyColor ? .accent : .appGrayButton)
                                 }
                                 .padding()

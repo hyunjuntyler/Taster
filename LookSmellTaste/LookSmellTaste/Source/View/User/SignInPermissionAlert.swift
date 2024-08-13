@@ -22,9 +22,9 @@ struct SignInPermissionAlert: View {
                     .font(.title)
                     .padding(.bottom)
                 Text("앨범에 접근할 수 없어요")
-                    .font(.gmarketSansHeadline)
+                    .font(.pretendard(.headline))
                 Text("설정에서 앨범 권한을 허용해주세요")
-                    .font(.gmarketSansSubHeadline)
+                    .font(.pretendard(.subheadline))
                     .padding(.bottom, 20)
                 
                 HStack {
