@@ -21,7 +21,16 @@ final class WineNote {
     var think: String = ""
     var rating: Double = 0.0
     
-    init(name: String, date: Date, type: WineType, color: WineColor, scents: [WineScent], taste: [Double], think: String, rating: Double) {
+    init(
+        name: String,
+        date: Date,
+        type: WineType,
+        color: WineColor,
+        scents: [WineScent],
+        taste: [Double],
+        think: String,
+        rating: Double
+    ) {
         self.name = name
         self.date = date
         self.type = type

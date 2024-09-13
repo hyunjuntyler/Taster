@@ -21,7 +21,16 @@ final class WhiskeyNote {
     var think: String = ""
     var rating: Double = 0.0
     
-    init(name: String, date: Date, type: WhiskeyType, color: WhiskeyColor, flavors: [WhiskeyFlavor], taste: [Double], think: String, rating: Double) {
+    init(
+        name: String,
+        date: Date,
+        type: WhiskeyType,
+        color: WhiskeyColor,
+        flavors: [WhiskeyFlavor],
+        taste: [Double],
+        think: String,
+        rating: Double
+    ) {
         self.name = name
         self.date = date
         self.type = type

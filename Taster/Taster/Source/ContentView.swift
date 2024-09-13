@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  LookSmellTaste
+//  Taster
 //
 //  Created by hyunjun on 11/5/23.
 //

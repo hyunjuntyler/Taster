@@ -35,7 +35,7 @@
 		2990E4022AF9A21E0001617A /* ContentUnavailable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2990E4012AF9A21E0001617A /* ContentUnavailable.swift */; };
 		2990E4052AF9ACEF0001617A /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2990E4042AF9ACEF0001617A /* ButtonStyle.swift */; };
 		2990E4072AF9E11D0001617A /* AddNoteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2990E4062AF9E11D0001617A /* AddNoteButton.swift */; };
-		299A91242AF6AD6C00D9C2D1 /* LookSmellTasteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A91232AF6AD6C00D9C2D1 /* LookSmellTasteApp.swift */; };
+		299A91242AF6AD6C00D9C2D1 /* TasterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A91232AF6AD6C00D9C2D1 /* TasterApp.swift */; };
 		299A91262AF6AD6C00D9C2D1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A91252AF6AD6C00D9C2D1 /* ContentView.swift */; };
 		299A91282AF6AD6D00D9C2D1 /* Asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 299A91272AF6AD6D00D9C2D1 /* Asset.xcassets */; };
 		299A912B2AF6AD6D00D9C2D1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 299A912A2AF6AD6D00D9C2D1 /* Preview Assets.xcassets */; };
@@ -68,7 +68,6 @@
 		F003F5D92B1234AC003D2499 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F003F5D82B1234AC003D2499 /* SignInView.swift */; };
 		F003F5DB2B1318A6003D2499 /* ThumbnailPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F003F5DA2B1318A6003D2499 /* ThumbnailPicker.swift */; };
 		F003F5DF2B13299E003D2499 /* SignInPermissionAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F003F5DE2B13299E003D2499 /* SignInPermissionAlert.swift */; };
-		F011045E2B2E97950051DDEB /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F011045D2B2E97950051DDEB /* Localizable.xcstrings */; };
 		F020C49F2B2ACF9500C54144 /* WhiskeyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F020C49E2B2ACF9500C54144 /* WhiskeyModel.swift */; };
 		F020C4A22B2AD38700C54144 /* WhiskeyNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F020C4A12B2AD38700C54144 /* WhiskeyNoteView.swift */; };
 		F020C4A52B2AD42100C54144 /* AddWhiskeyNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F020C4A42B2AD42100C54144 /* AddWhiskeyNoteView.swift */; };
@@ -118,7 +117,6 @@
 		F0DE9BF12B247820004A9621 /* CoffeeNoteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BF02B247820004A9621 /* CoffeeNoteDetailView.swift */; };
 		F0DE9BF32B2479AE004A9621 /* CoffeeNoteEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BF22B2479AE004A9621 /* CoffeeNoteEditView.swift */; };
 		F0DE9BF62B2482BF004A9621 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DE9BF52B2482BF004A9621 /* OnboardingView.swift */; };
-		F0F749212B31598A0045A9C2 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F0F749202B31598A0045A9C2 /* InfoPlist.xcstrings */; };
 		F0FBBFF62B22F81400F513BC /* UserEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBBFF52B22F81400F513BC /* UserEditView.swift */; };
 		F0FBBFF82B22FF3400F513BC /* UserDeleteAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBBFF72B22FF3400F513BC /* UserDeleteAlert.swift */; };
 		F0FBBFFA2B2310F500F513BC /* WineNoteObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBBFF92B2310F500F513BC /* WineNoteObservable.swift */; };
@@ -155,8 +153,8 @@
 		2990E4012AF9A21E0001617A /* ContentUnavailable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentUnavailable.swift; sourceTree = "<group>"; };
 		2990E4042AF9ACEF0001617A /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		2990E4062AF9E11D0001617A /* AddNoteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteButton.swift; sourceTree = "<group>"; };
-		299A91202AF6AD6C00D9C2D1 /* LookSmellTaste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LookSmellTaste.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		299A91232AF6AD6C00D9C2D1 /* LookSmellTasteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookSmellTasteApp.swift; sourceTree = "<group>"; };
+		299A91202AF6AD6C00D9C2D1 /* Taster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taster.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		299A91232AF6AD6C00D9C2D1 /* TasterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasterApp.swift; sourceTree = "<group>"; };
 		299A91252AF6AD6C00D9C2D1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		299A91272AF6AD6D00D9C2D1 /* Asset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Asset.xcassets; sourceTree = "<group>"; };
 		299A912A2AF6AD6D00D9C2D1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -190,7 +188,6 @@
 		F003F5D82B1234AC003D2499 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		F003F5DA2B1318A6003D2499 /* ThumbnailPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailPicker.swift; sourceTree = "<group>"; };
 		F003F5DE2B13299E003D2499 /* SignInPermissionAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPermissionAlert.swift; sourceTree = "<group>"; };
-		F011045D2B2E97950051DDEB /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		F020C49E2B2ACF9500C54144 /* WhiskeyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiskeyModel.swift; sourceTree = "<group>"; };
 		F020C4A12B2AD38700C54144 /* WhiskeyNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiskeyNoteView.swift; sourceTree = "<group>"; };
 		F020C4A42B2AD42100C54144 /* AddWhiskeyNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWhiskeyNoteView.swift; sourceTree = "<group>"; };
@@ -240,7 +237,6 @@
 		F0DE9BF02B247820004A9621 /* CoffeeNoteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeNoteDetailView.swift; sourceTree = "<group>"; };
 		F0DE9BF22B2479AE004A9621 /* CoffeeNoteEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeNoteEditView.swift; sourceTree = "<group>"; };
 		F0DE9BF52B2482BF004A9621 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		F0F749202B31598A0045A9C2 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = InfoPlist.xcstrings; path = Source/View/Note/AddNote/InfoPlist.xcstrings; sourceTree = "<group>"; };
 		F0FBBFF52B22F81400F513BC /* UserEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditView.swift; sourceTree = "<group>"; };
 		F0FBBFF72B22FF3400F513BC /* UserDeleteAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDeleteAlert.swift; sourceTree = "<group>"; };
 		F0FBBFF92B2310F500F513BC /* WineNoteObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineNoteObservable.swift; sourceTree = "<group>"; };
@@ -331,7 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				291D2E332C6A103800C767C2 /* README.md */,
-				299A91222AF6AD6C00D9C2D1 /* LookSmellTaste */,
+				299A91222AF6AD6C00D9C2D1 /* Taster */,
 				299A91212AF6AD6C00D9C2D1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -339,22 +335,20 @@
 		299A91212AF6AD6C00D9C2D1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				299A91202AF6AD6C00D9C2D1 /* LookSmellTaste.app */,
+				299A91202AF6AD6C00D9C2D1 /* Taster.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		299A91222AF6AD6C00D9C2D1 /* LookSmellTaste */ = {
+		299A91222AF6AD6C00D9C2D1 /* Taster */ = {
 			isa = PBXGroup;
 			children = (
 				299A91412AF6C07900D9C2D1 /* Info.plist */,
-				F011045D2B2E97950051DDEB /* Localizable.xcstrings */,
-				F0F749202B31598A0045A9C2 /* InfoPlist.xcstrings */,
 				299A91362AF6BFAB00D9C2D1 /* Source */,
 				299A91372AF6BFD900D9C2D1 /* Resource */,
 				299A91292AF6AD6D00D9C2D1 /* Preview Content */,
 			);
-			path = LookSmellTaste;
+			path = Taster;
 			sourceTree = "<group>";
 		};
 		299A91292AF6AD6D00D9C2D1 /* Preview Content */ = {
@@ -380,7 +374,7 @@
 		299A91362AF6BFAB00D9C2D1 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				299A91232AF6AD6C00D9C2D1 /* LookSmellTasteApp.swift */,
+				299A91232AF6AD6C00D9C2D1 /* TasterApp.swift */,
 				299A91252AF6AD6C00D9C2D1 /* ContentView.swift */,
 				299A91352AF6B2BE00D9C2D1 /* View */,
 				29431F972AF8647B00BE17F1 /* Observable */,
@@ -651,9 +645,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		299A911F2AF6AD6C00D9C2D1 /* LookSmellTaste */ = {
+		299A911F2AF6AD6C00D9C2D1 /* Taster */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 299A912E2AF6AD6D00D9C2D1 /* Build configuration list for PBXNativeTarget "LookSmellTaste" */;
+			buildConfigurationList = 299A912E2AF6AD6D00D9C2D1 /* Build configuration list for PBXNativeTarget "Taster" */;
 			buildPhases = (
 				299A911C2AF6AD6C00D9C2D1 /* Sources */,
 				299A911D2AF6AD6C00D9C2D1 /* Frameworks */,
@@ -663,9 +657,9 @@
 			);
 			dependencies = (
 			);
-			name = LookSmellTaste;
+			name = Taster;
 			productName = LookSmellTaste;
-			productReference = 299A91202AF6AD6C00D9C2D1 /* LookSmellTaste.app */;
+			productReference = 299A91202AF6AD6C00D9C2D1 /* Taster.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -683,12 +677,11 @@
 					};
 				};
 			};
-			buildConfigurationList = 299A911B2AF6AD6C00D9C2D1 /* Build configuration list for PBXProject "LookSmellTaste" */;
+			buildConfigurationList = 299A911B2AF6AD6C00D9C2D1 /* Build configuration list for PBXProject "Taster" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = ko;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
 				ko,
 			);
@@ -697,7 +690,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				299A911F2AF6AD6C00D9C2D1 /* LookSmellTaste */,
+				299A911F2AF6AD6C00D9C2D1 /* Taster */,
 			);
 		};
 /* End PBXProject section */
@@ -719,11 +712,9 @@
 				299A91592AF744BB00D9C2D1 /* Color.xcassets in Resources */,
 				291D2E322C69F9C600C767C2 /* Pretendard-Light.otf in Resources */,
 				299A915B2AF7451D00D9C2D1 /* Image.xcassets in Resources */,
-				F0F749212B31598A0045A9C2 /* InfoPlist.xcstrings in Resources */,
 				291D2E2F2C69F9AB00C767C2 /* Pretendard-Regular.otf in Resources */,
 				291D2E2D2C69F9AB00C767C2 /* Pretendard-Medium.otf in Resources */,
 				291D2E292C69F9AB00C767C2 /* Pretendard-Thin.otf in Resources */,
-				F011045E2B2E97950051DDEB /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -820,7 +811,7 @@
 				F0DE9BD92B2434B3004A9621 /* WineNoteEditView.swift in Sources */,
 				299A91322AF6B1FF00D9C2D1 /* NoteView.swift in Sources */,
 				F0DE9BDF2B245FA0004A9621 /* CoffeeNoteObservable.swift in Sources */,
-				299A91242AF6AD6C00D9C2D1 /* LookSmellTasteApp.swift in Sources */,
+				299A91242AF6AD6C00D9C2D1 /* TasterApp.swift in Sources */,
 				293BBF882B2999F80032138E /* CocktailNoteView.swift in Sources */,
 				F0DCD1B92B2576CE00841A18 /* CocktailModel.swift in Sources */,
 				F02EED4A2B235173009AD6D1 /* WineNoteDetailView.swift in Sources */,
@@ -969,11 +960,11 @@
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"LookSmellTaste/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Taster/Preview Content\"";
 				DEVELOPMENT_TEAM = 77745NX67K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = LookSmellTaste/Info.plist;
+				INFOPLIST_FILE = Taster/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "테이스터";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_NSCameraUsageDescription = "특별한 순간을 사진으로 남겨보세요! 추가한 사진은 썸네일 이외의 용도로 사용되지 않아요.";
@@ -1007,11 +998,11 @@
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"LookSmellTaste/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Taster/Preview Content\"";
 				DEVELOPMENT_TEAM = 77745NX67K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = LookSmellTaste/Info.plist;
+				INFOPLIST_FILE = Taster/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "테이스터";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_NSCameraUsageDescription = "특별한 순간을 사진으로 남겨보세요! 추가한 사진은 썸네일 이외의 용도로 사용되지 않아요.";
@@ -1040,7 +1031,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		299A911B2AF6AD6C00D9C2D1 /* Build configuration list for PBXProject "LookSmellTaste" */ = {
+		299A911B2AF6AD6C00D9C2D1 /* Build configuration list for PBXProject "Taster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				299A912C2AF6AD6D00D9C2D1 /* Debug */,
@@ -1049,7 +1040,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		299A912E2AF6AD6D00D9C2D1 /* Build configuration list for PBXNativeTarget "LookSmellTaste" */ = {
+		299A912E2AF6AD6D00D9C2D1 /* Build configuration list for PBXNativeTarget "Taster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				299A912F2AF6AD6D00D9C2D1 /* Debug */,
