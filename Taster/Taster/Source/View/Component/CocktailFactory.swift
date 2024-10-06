@@ -96,22 +96,22 @@ struct CocktailFactory: View {
                     .frame(width: 70, height: 30)
                     .offset(y: 15)
                     .zIndex(1)
-                    .foregroundStyle(.glass)
+                    .foregroundStyle(.appGlass)
                     .brightness(0.1)
                 Rectangle()
                     .frame(width: 70, height: 100)
-                    .foregroundStyle(.glass)
+                    .foregroundStyle(.appGlass)
                 Ellipse()
                     .frame(width: 70, height: 30)
                     .offset(y: -15)
-                    .foregroundStyle(.glass)
+                    .foregroundStyle(.appGlass)
             }
             Ellipse()
                 .strokeBorder(lineWidth: 4)
                 .frame(width: 70, height: 30)
                 .offset(y: 15)
                 .zIndex(1)
-                .foregroundStyle(.glass)
+                .foregroundStyle(.appGlass)
         }
     }
     

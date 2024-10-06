@@ -38,7 +38,7 @@ struct ContentUnavailable: View {
                     .padding(.bottom)
             case .share:
                 Image(systemName: "questionmark.circle.fill")
-                    .foregroundStyle(.cocktail, .quaternary)
+                    .foregroundStyle(.accent, .quaternary)
                     .symbolEffect(.pulse)
                     .font(.largeTitle)
                     .padding(.bottom)
