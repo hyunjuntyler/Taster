@@ -1,5 +1,5 @@
 //
-//  CocktailView.swift
+//  Cocktail.swift
 //  Taster
 //
 //  Created by hyunjun on 10/7/24.
@@ -7,35 +7,7 @@
 
 import SwiftUI
 
-struct CocktailView: View {
-    @State private var phase1: CGFloat = 0
-    @State private var phase2: CGFloat = .pi / 3
-    
-    var body: some View {
-        VStack {
-            ZStack(alignment: .top) {
-                GlassShape()
-                    .frame(width: 60, height: 90)
-                    .foregroundStyle(.appGlass)
-                ZStack {
-                    WaveShape(amplitude: 3, frequency: 1, phase: phase1)
-                        .frame(width: 48, height: 53)
-                        .foregroundStyle(.rubyWine)
-                    WaveShape(amplitude: 3, frequency: 1, phase: phase2)
-                        .frame(width: 48, height: 53)
-                        .foregroundStyle(.rubyWine.opacity(0.7))
-                }
-                .clipShape(LiquidShape())
-            }
-            .onAppear {
-                withAnimation(.linear(duration: 4).repeatForever(autoreverses: false)) {
-                    phase1 += .pi * 2
-                    phase2 += .pi * 4
-                }
-            }
-        }
-    }
-    
+enum Cocktail {
     struct GlassShape: Shape {
         func path(in rect: CGRect) -> Path {
             var path = Path()
@@ -74,9 +46,4 @@ struct CocktailView: View {
             return path
         }
     }
-
-}
-
-#Preview {
-    CocktailView()
 }
