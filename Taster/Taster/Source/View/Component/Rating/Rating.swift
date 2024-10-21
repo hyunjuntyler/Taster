@@ -29,9 +29,9 @@ struct Rating: View {
             )
             .onChange(of: roundedRating) { oldRating, newRating in
                 if (roundedRating == 0.0 || roundedRating == 5.0) && roundedRating != oldRating {
-                    Haptic.impact(style: .light)
+                    
                 } else if abs(newRating - oldRating) >= 0.5 {
-                    Haptic.impact(style: .soft)
+                    
                 }
             }
     }

@@ -67,7 +67,6 @@ struct PentagonRadarChart: View {
                     }
                     .offset(x: frame / -2.9, y: frame / 2.2)
                 }
-                .font(.pretendard(.footnote))
                 .foregroundColor(.gray)
             } else {
                 Group {
@@ -92,7 +91,6 @@ struct PentagonRadarChart: View {
                     }
                     .offset(x: frame / -2.9, y: frame / 2)
                 }
-                .font(.pretendard(.caption2))
                 .foregroundColor(.gray)
             }
         }

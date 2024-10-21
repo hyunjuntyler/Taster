@@ -16,7 +16,6 @@ struct OnboardingCellView: View {
             Text(emoji)
                 .font(.tossFace(.medium))
             Text(text)
-                .font(.pretendard(.body))
         }
     }
 }

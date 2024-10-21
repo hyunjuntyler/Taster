@@ -81,7 +81,6 @@ struct CocktailFactory: View {
                             .frame(width: 10, height: 10)
                             .foregroundStyle(getColor(for: ingredient.colorName))
                         Text(ingredient.name)
-                            .font(.pretendard(.caption))
                     }
                 }
             }
