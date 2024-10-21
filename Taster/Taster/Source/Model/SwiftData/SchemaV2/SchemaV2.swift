@@ -170,3 +170,84 @@ extension SchemaV2 {
     }
 }
 
+extension SchemaV2 {
+    static var previewContainer: ModelContainer {
+        do {
+            let schema = Schema(versionedSchema: SchemaV2.self)
+            let configurations = ModelConfiguration(isStoredInMemoryOnly: true)
+            let container = try ModelContainer(for: schema, configurations: configurations)
+            
+            return container
+        } catch {
+            fatalError(error.localizedDescription)
+        }
+    }
+    
+    static var wineTastingNotes: [WineTastingNote] {
+        [
+            .init(
+                title: "와인 1",
+                category: "redWine",
+                createdAt: .now,
+                look: "copper",
+                smell: ["olive", "plum"],
+                taste: [5, 4, 3, 2, 4],
+                think: "think",
+                rating: 5.0
+            )
+        ]
+    }
+    
+    static var whiskeyTastingNotes: [WhiskeyTastingNote] {
+        [
+            .init(
+                title: "위스키 1",
+                category: "bourbonWhiskey",
+                createdAt: .now,
+                look: "gold",
+                smell: ["lemon", "raisin"],
+                taste: [3, 4, 5, 1, 2, 4],
+                think: "think",
+                rating: 3.5
+            )
+        ]
+    }
+    
+    static var coffeeTastingNotes: [CoffeeTastingNote] {
+        [
+            .init(
+                title: "커피 1",
+                category: "capsuleCoffee",
+                createdAt: .now,
+                look: "",
+                smell: [""],
+                taste: [3, 4, 3, 3, 4],
+                think: "think",
+                rating: 4.5
+            )
+        ]
+    }
+    
+    static var cocktailTastingNotes: [CocktailTastingNote] {
+        [
+            .init(
+                title: "칵테일 1",
+                category: "",
+                createdAt: .now,
+                look: "",
+                smell: [],
+                taste: [1, 2, 3],
+                think: "think",
+                rating: 4.0,
+                ingredients: [
+                    Ingredient(
+                        name: "name",
+                        amount: 1.0,
+                        colorString: "red"
+                    )
+                ],
+                containsIce: true
+            )
+        ]
+    }
+}
