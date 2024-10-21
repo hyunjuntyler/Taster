@@ -10,15 +10,26 @@ import SwiftData
 
 @main
 struct TasterApp: App {
+    var container: ModelContainer
     
     init() {
-        UINavigationBar.appearance().shadowImage = UIImage()
+        let schema = Schema(versionedSchema: SchemaV2.self)
+        let migrationPlan = MigrationPlan.self
+        
+        do {
+            container = try ModelContainer(
+                for: schema,
+                migrationPlan: migrationPlan
+            )
+        } catch {
+            fatalError(error.localizedDescription)
+        }
     }
     
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .modelContainer(for: [User.self])
+                .modelContainer(container)
         }
     }
 }

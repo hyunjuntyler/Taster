@@ -9,8 +9,6 @@ import SwiftUI
 import PhotosUI
 
 struct ImagePicker: View {
-    @Environment(NoteEnvironment.self) var noteEnvironment: NoteEnvironment
-    
     @Binding var selectedImage: UIImage?
     
     @State var showCamera = false
@@ -118,8 +116,7 @@ struct ImagePicker: View {
                 if granted {
                     self.showCamera = true
                 } else {
-                    noteEnvironment.showPermissionAlert = true
-                    noteEnvironment.permissionType = .camera
+                    
                 }
             }
         }
@@ -131,39 +128,11 @@ struct ImagePicker: View {
                 switch status {
                 case .authorized:
                     self.showImagePicker = true
-                case .denied, .restricted, .notDetermined:
-                    noteEnvironment.showPermissionAlert = true
-                    noteEnvironment.permissionType = .album
+                case .denied, .restricted, .notDetermined: break
                 default:
                     break
                 }
             }
-        }
-    }
-}
-
-#Preview("Korean") {
-    ZStack {
-        Color.appSheetBackground.ignoresSafeArea()
-        ScrollView {
-            ImagePicker(selectedImage: .constant(nil))
-                .padding(.horizontal)
-                .padding(.top, 300)
-                .environment(NoteEnvironment())
-                .environment(\.locale, .init(identifier: "ko"))
-        }
-    }
-}
-
-#Preview("English") {
-    ZStack {
-        Color.appSheetBackground.ignoresSafeArea()
-        ScrollView {
-            ImagePicker(selectedImage: .constant(nil))
-                .padding(.horizontal)
-                .padding(.top, 300)
-                .environment(NoteEnvironment())
-                .environment(\.locale, .init(identifier: "en"))
         }
     }
 }

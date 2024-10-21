@@ -50,18 +50,9 @@ struct OnboardingView: View {
     }
 }
 
-#Preview("Korean") {
+#Preview {
     Text("Preview")
         .sheet(isPresented: .constant(true)) {
             OnboardingView()
-                .environment(\.locale, .init(identifier: "ko"))
-        }
-}
-
-#Preview("English") {
-    Text("Preview")
-        .sheet(isPresented: .constant(true)) {
-            OnboardingView()
-                .environment(\.locale, .init(identifier: "en"))
         }
 }

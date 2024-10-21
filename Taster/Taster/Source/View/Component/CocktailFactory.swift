@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+typealias CocktailIngredient = SchemaV1.CocktailIngredient
+
 struct CocktailFactory: View {
     var ingredients: [CocktailIngredient]
     var isIce: Bool
@@ -135,7 +137,7 @@ struct CocktailFactory: View {
     }
     
     func getColor(for name: String) -> Color {
-        if let ingredientColor = cocktailIngredientColors.first(where: { $0.name == name }) {
+        if let ingredientColor = SchemaV1StoredProperty.cocktailIngredientColors.first(where: { $0.name == name }) {
             return ingredientColor.color
         }
         return .blue
