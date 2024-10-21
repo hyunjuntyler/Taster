@@ -8,7 +8,7 @@
 import Foundation
 import SwiftData
 
-enum MigrationPlan: SchemaMigrationPlan {
+actor MigrationPlan: SchemaMigrationPlan {
     static var schemas: [any VersionedSchema.Type] {
         [SchemaV1.self, SchemaV2.self]
     }

@@ -8,7 +8,7 @@
 import Foundation
 import SwiftData
 
-enum SchemaV2: VersionedSchema {
+actor SchemaV2: VersionedSchema {
     static var models: [any PersistentModel.Type] {
         [WineTastingNote.self, CoffeeTastingNote.self, WhiskeyTastingNote.self, CocktailTastingNote.self]
     }
@@ -163,7 +163,7 @@ extension SchemaV2 {
         }
     }
     
-    struct Ingredient: Codable {
+    struct Ingredient: Hashable, Codable {
         var name: String
         var amount: Double
         var colorString: String

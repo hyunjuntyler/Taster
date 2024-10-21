@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 import SwiftUI
 
-enum SchemaV1: VersionedSchema {
+actor SchemaV1: VersionedSchema {
     static var models: [any PersistentModel.Type] {
         [User.self, WineNote.self, CoffeeNote.self, WhiskeyNote.self, CocktailNote.self]
     }
