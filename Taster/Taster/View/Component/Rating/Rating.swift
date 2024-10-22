@@ -10,8 +10,8 @@ import SwiftUI
 struct Rating: View {
     @Binding var rating: Double
     
-    @State var scaleUpWhenDragged = false
-    @State var scaleUpWhenTapped = false
+    @State private var scaleUpWhenDragged = false
+    @State private var scaleUpWhenTapped = false
     
     var systemName: String = "star.fill"
     var font: Font = .title

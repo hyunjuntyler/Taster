@@ -16,7 +16,7 @@ struct Thumnail: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 12, style: .continuous)
+            Rectangle()
                 .frame(width: width, height: height)
                 .foregroundStyle(Color(uiColor))
             
@@ -33,7 +33,7 @@ struct Thumnail: View {
             }
         }
         .clipShape(
-            RoundedRectangle(cornerRadius: 12, style: .continuous)
+            RoundedRectangle(cornerRadius: height * 0.2, style: .continuous)
         )
     }
 }

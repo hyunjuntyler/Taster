@@ -23,7 +23,7 @@ struct PolygonChart: View {
         ZStack {
             Polygon(values: maxValues, maxValue: maxValue)
                 .foregroundStyle(Color(.systemGroupedBackground))
-
+            
             Polygon(values: values, maxValue: maxValue)
                 .foregroundStyle(foregroundColor)
             
