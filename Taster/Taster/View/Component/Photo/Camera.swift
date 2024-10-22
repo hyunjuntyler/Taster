@@ -1,33 +1,32 @@
 //
-//  ImagePickerUI.swift
-//  LookSmellTaste
+//  Camera.swift
+//  Taster
 //
-//  Created by hyunjun on 11/14/23.
+//  Created by hyunjun on 10/22/24.
 //
 
 import SwiftUI
 
-struct ImagePickerUI: UIViewControllerRepresentable {
+struct Camera: UIViewControllerRepresentable {
     @Binding var selectedImage: UIImage?
-    var sourceType: UIImagePickerController.SourceType = .photoLibrary
     
     func makeUIViewController(context: Context) -> UIImagePickerController {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = context.coordinator
-        imagePickerController.sourceType = sourceType
+        imagePickerController.sourceType = .camera
         return imagePickerController
     }
     
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {}
+    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) { }
     
     func makeCoordinator() -> Coordinator {
         Coordinator(parent: self)
     }
     
     class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-        let parent: ImagePickerUI
+        let parent: Camera
 
-        init(parent: ImagePickerUI) {
+        init(parent: Camera) {
             self.parent = parent
         }
 
@@ -39,8 +38,8 @@ struct ImagePickerUI: UIViewControllerRepresentable {
             if let selectedImage = info[.originalImage] as? UIImage {
                 parent.selectedImage = selectedImage
             }
+                        
             picker.dismiss(animated: true, completion: nil)
         }
     }
 }
-

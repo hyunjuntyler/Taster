@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "brownWine.svg",
+      "filename" : "Whiskey-8.png",
       "idiom" : "universal"
     },
     {
@@ -11,7 +11,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "brownWine 1.svg",
+      "filename" : "Whiskey-dark-8.png",
       "idiom" : "universal"
     }
   ],

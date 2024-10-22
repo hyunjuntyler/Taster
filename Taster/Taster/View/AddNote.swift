@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 typealias Category = SchemaV2StoredProperty.Category
 typealias Look = SchemaV2StoredProperty.Look
@@ -14,6 +15,7 @@ typealias Smell = SchemaV2StoredProperty.Smell
 struct AddNote: View {
     @Environment(\.dismiss) private var dismiss
     
+    @State private var selectedImage: UIImage?
     @State private var title = ""
     @State private var createdAt = Date()
     @State private var selectedCategory: Category?
@@ -22,6 +24,8 @@ struct AddNote: View {
     @State private var tastes: [Double] = []
     @State private var think = ""
     @State private var rating = 0.0
+    
+    @State private var showCloseAlert = false
     
     let categories: [Category]
     let looks: [Look]
@@ -33,7 +37,11 @@ struct AddNote: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section {
+                Section("이미지 선택") {
+                    AddThumnail(selectedImage: $selectedImage, category: selectedCategory)
+                }
+
+                Section("기본 정보") {
                     LabeledContent("이름") {
                         TextField("이름을 입력해주세요", text: $title)
                             .multilineTextAlignment(.trailing)
@@ -46,7 +54,7 @@ struct AddNote: View {
                     
                     LabeledContent("종류") {
                         Menu {
-                            ForEach(SchemaV2StoredProperty.Wine.categories, id: \.self) { category in
+                            ForEach(categories, id: \.self) { category in
                                 Button {
                                     selectedCategory = category
                                 } label: {
@@ -70,18 +78,18 @@ struct AddNote: View {
                             }
                         }
                     }
-                } header: {
-                    Text("기본 정보")
                 }
                 
-                Section {
+                Section("시각") {
                     LazyVGrid(columns: lookColumns, spacing: 5) {
                         ForEach(looks, id: \.self) { look in
                             Button {
                                 selectedLook = look
                             } label: {
                                 VStack {
-                                    WaveFilledGlass(width: 30, height: 45, category: .wine, foregroundColor: look.color)
+                                    Image("\(look.rawValue + "Wine")")
+                                        .resizable()
+                                        .scaledToFit()
                                     Text(look.description)
                                         .foregroundStyle(.accent)
                                         .font(.caption2)
@@ -90,11 +98,9 @@ struct AddNote: View {
                             .buttonStyle(.plain)
                         }
                     }
-                } header: {
-                    Text("시각")
                 }
                 
-                Section {
+                Section("후각") {
                     LazyVGrid(columns: smellColumns, spacing: 8) {
                         ForEach(smells, id: \.self) { smell in
                             Button {
@@ -118,28 +124,22 @@ struct AddNote: View {
                             .buttonStyle(.plain)
                         }
                     }
-                } header: {
-                    Text("후각")
                 }
                 
                 
-                Section {
+                Section("미각") {
                     PolygonChart(labels: [], values: [2,3,3,4,3], maxValue: 5, height: 60)
                     LabeledContent("미각") {
                         Rating(rating: .constant(4.0), systemName: "circle.fill", font: .title3, foregroundColor: .accent)
                     }
-                } header: {
-                    Text("미각")
                 }
                 
-                Section {
+                Section("추가 노트") {
                     TextField("더 추가하고 싶은 내용을 입력해주세요", text: $think, axis: .vertical)
                         .frame(height: 150, alignment: .top)
-                } header: {
-                    Text("추가 노트")
                 }
                 
-                Section {
+                Section("평점") {
                     LabeledContent {
                         Text("\(rating, specifier: "%.1f")")
                             .contentTransition(.numericText(value: rating))
@@ -150,8 +150,6 @@ struct AddNote: View {
                     } label: {
                         Rating(rating: $rating)
                     }
-                } header: {
-                    Text("평점")
                 }
             }
             .navigationTitle("노트 추가")
@@ -159,7 +157,7 @@ struct AddNote: View {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button("닫기") {
-                        dismiss()
+                        showCloseAlert = true
                     }
                 }
                 
@@ -168,6 +166,13 @@ struct AddNote: View {
                         dismiss()
                     }
                 }
+            }
+            .alert("정말 닫으시겠어요?", isPresented: $showCloseAlert) {
+                Button("닫기", role: .destructive) {
+                    dismiss()
+                }
+            } message: {
+                Text("작성된 내용은 저장되지 않아요")
             }
         }
     }

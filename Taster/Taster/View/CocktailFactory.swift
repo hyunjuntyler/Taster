@@ -145,7 +145,6 @@ struct CocktailFactory: View {
 
 #Preview {
     ZStack {
-        Color.appSheetBackground.ignoresSafeArea()
         CocktailFactory(ingredients: [
             CocktailIngredient(name: "와인", amount: 1, colorName: "blue"),
             CocktailIngredient(name: "커피", amount: 2, colorName: "red"),
@@ -159,7 +158,6 @@ struct CocktailFactory: View {
         .padding(.horizontal)
         .background {
             RoundedRectangle(cornerRadius: 12)
-                .foregroundStyle(.appSheetBoxBackground)
         }
         .padding(.horizontal)
         .padding(.bottom)
