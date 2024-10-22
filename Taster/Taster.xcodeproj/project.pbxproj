@@ -19,7 +19,7 @@
 		29E13BBB2CB2DDB1006864A3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				App/Info.plist,
 			);
 			target = 299A911F2AF6AD6C00D9C2D1 /* Taster */;
 		};
@@ -268,7 +268,7 @@
 				DEVELOPMENT_TEAM = 77745NX67K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Taster/Info.plist;
+				INFOPLIST_FILE = Taster/App/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "테이스터";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_NSCameraUsageDescription = "특별한 순간을 사진으로 남겨보세요! 추가한 사진은 썸네일 이외의 용도로 사용되지 않아요.";
@@ -306,7 +306,7 @@
 				DEVELOPMENT_TEAM = 77745NX67K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Taster/Info.plist;
+				INFOPLIST_FILE = Taster/App/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "테이스터";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_NSCameraUsageDescription = "특별한 순간을 사진으로 남겨보세요! 추가한 사진은 썸네일 이외의 용도로 사용되지 않아요.";

@@ -130,7 +130,7 @@ struct CocktailFactory: View {
             }
         }
         .frame(width: 60, height: 70, alignment: .top)
-        .font(.tossFace(.regular))
+        .font(.TossFace.title3)
         .opacity(0.4)
         .offset(y: 12)
     }

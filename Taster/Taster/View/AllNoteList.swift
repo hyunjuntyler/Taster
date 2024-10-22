@@ -9,13 +9,23 @@ import SwiftData
 import SwiftUI
 
 struct AllNoteList: View {
+    @State private var text = ""
+
     @Query private var wineNotes: [SchemaV2.WineTastingNote]
     @Query private var coffeeNotes: [SchemaV2.CoffeeTastingNote]
     @Query private var whiskeyNotes: [SchemaV2.WhiskeyTastingNote]
     @Query private var cocktailNotes: [SchemaV2.CocktailTastingNote]
     
+    private var isEmpty: Bool {
+        wineNotes.isEmpty && coffeeNotes.isEmpty && whiskeyNotes.isEmpty && cocktailNotes.isEmpty
+    }
+    
     var body: some View {
         List {
+            if isEmpty {
+                ContentUnavailableView("기록이 없어요", systemImage: "questionmark.circle.fill", description: Text("나만의 노트를 추가해 보세요"))
+            }
+            
             NoteSection(title: "와인 노트", notes: wineNotes)
             NoteSection(title: "커피 노트", notes: coffeeNotes)
             NoteSection(title: "위스키 노트", notes: whiskeyNotes)
@@ -23,6 +33,8 @@ struct AllNoteList: View {
         }
         .listRowSpacing(8)
         .headerProminence(.increased)
+        .searchable(text: $text)
+        .navigationTitle("노트")
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Menu("노트 추가", systemImage: "plus") {

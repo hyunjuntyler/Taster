@@ -8,14 +8,10 @@
 import SwiftData
 import SwiftUI
 
-struct Content: View {
-    @State private var text = ""
-    
+struct Content: View {    
     var body: some View {
         NavigationStack {
             AllNoteList()
-            .searchable(text: $text)
-            .navigationTitle("노트")
         }
     }
 }
