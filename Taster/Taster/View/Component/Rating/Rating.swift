@@ -13,53 +13,63 @@ struct Rating: View {
     @State var scaleUpWhenDragged = false
     @State var scaleUpWhenTapped = false
     
-    // 새로운 값을 줘서 모양이나 드래그 정도 커스텀 가능
-    var symbolName: String = "star.fill"
-    var symbolFont: Font = .title
-    var symbolColor: Color = .yellow
-    var symbolBaseColor: Color = .appPickerGray
+    var systemName: String = "star.fill"
+    var font: Font = .title
+    var foregroundColor: Color = .yellow
     
-    var dragRange: CGFloat = 30
-    
-    var body: some View {
-        starsView
-            .overlay(
-                overlayView
-                    .mask(starsView)
-            )
-            .onChange(of: roundedRating) { oldRating, newRating in
-                if (roundedRating == 0.0 || roundedRating == 5.0) && roundedRating != oldRating {
-                    
-                } else if abs(newRating - oldRating) >= 0.5 {
-                    
-                }
-            }
-    }
+    private let dragRange: CGFloat = 30
     
     private var roundedRating: Double {
         let boundedRating = min(max(rating, 0.0), 5.0)
         return (boundedRating * 2).rounded() / 2
     }
     
-    private var overlayView: some View {
-        GeometryReader { geometry in
-            if roundedRating >= 0 && geometry.size.width.isNormal {
+    var body: some View {
+        Symbol(
+            rating: $rating,
+            scaleUpWhenDragged: $scaleUpWhenDragged,
+            scaleUpWhenTapped: $scaleUpWhenTapped,
+            systemName: systemName,
+            font: font
+        )
+        .overlay(
+            GeometryReader { geometry in
                 Rectangle()
-                    .foregroundStyle(symbolColor)
+                    .foregroundStyle(foregroundColor)
                     .frame(width: CGFloat(roundedRating) / 5 * geometry.size.width)
                     .animation(nil, value: rating)
-            }
-        }
-        .allowsHitTesting(false)
+                    .allowsHitTesting(false)
+            }.mask(
+                Symbol(
+                    rating: $rating,
+                    scaleUpWhenDragged: $scaleUpWhenDragged,
+                    scaleUpWhenTapped: $scaleUpWhenTapped,
+                    systemName: systemName,
+                    font: font
+                )
+            )
+        )
     }
+}
+
+private struct Symbol: View {
+    @Binding var rating: Double
+    @Binding var scaleUpWhenDragged: Bool
+    @Binding var scaleUpWhenTapped: Bool
     
-    private var starsView: some View {
+    let systemName: String
+    let font: Font
+    
+    private let dragRange: CGFloat = 30
+    private let foregroundColor = Color(.systemGray5)
+    
+    var body: some View {
         HStack(spacing: 0) {
             ForEach(1..<6) { index in
-                Image(systemName: symbolName)
-                    .font(symbolFont)
+                Image(systemName: systemName)
+                    .font(font)
                     .fontWeight(.black)
-                    .foregroundStyle(symbolBaseColor)
+                    .foregroundStyle(foregroundColor)
                     .scaleEffect(
                         rating >= Double(index) && scaleUpWhenTapped ||
                         rating + 1 > Double(index) && scaleUpWhenDragged ? 1.16 : 1)
@@ -96,6 +106,7 @@ struct Rating: View {
                     )
             }
         }
+        
     }
 }
 
