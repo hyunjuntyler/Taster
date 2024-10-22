@@ -1,31 +1,31 @@
 //
-//  PolygonChart.swift
-//  LookSmellTaste
+//  Polygon.swift
+//  Taster
 //
 //  Created by Hyunjun Kim on 12/14/23.
 //
 
 import SwiftUI
 
-struct PolygonChart: Shape {
-    let data: [Double]
+struct Polygon: Shape {
+    let values: [Double]
     let maxValue: Double
     
     func path(in rect: CGRect) -> Path {
         var path = Path()
-        
+    
         let center = CGPoint(x: rect.width / 2, y: rect.height / 2)
         let radius = min(rect.width, rect.height) / 2
         
-        let segmentAngle = 2 * .pi / Double(data.count)
+        let segmentAngle = 2 * .pi / Double(values.count)
         
-        for (index, value) in data.enumerated() {
+        for (index, value) in values.enumerated() {
             let angle = segmentAngle * Double(index) - .pi / 2
-            let valueRadius = radius * CGFloat(value / maxValue)
+            let radius = radius * CGFloat(value / maxValue)
             
             let point = CGPoint(
-                x: center.x + valueRadius * CGFloat(cos(angle)),
-                y: center.y + valueRadius * CGFloat(sin(angle))
+                x: center.x + radius * CGFloat(cos(angle)),
+                y: center.y + radius * CGFloat(sin(angle))
             )
             
             if index == 0 {
@@ -34,6 +34,7 @@ struct PolygonChart: Shape {
                 path.addLine(to: point)
             }
         }
+        
         path.closeSubpath()
 
         return path
