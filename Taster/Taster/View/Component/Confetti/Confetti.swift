@@ -8,7 +8,6 @@
 import SwiftUI
 
 enum ConfettiType: CaseIterable, Hashable {
-    
     enum Shape {
         case circle
         case smallCircle
@@ -29,30 +28,19 @@ enum ConfettiType: CaseIterable, Hashable {
     
     var view: AnyView {
         switch self {
-        case .shape(.smallCircle):
-            return AnyView(Circle().scaleEffect(0.7))
-        case .shape(.square):
-            return AnyView(Rectangle())
-        case .shape(.smallSquare):
-            return AnyView(Rectangle().scaleEffect(0.7))
-        case .shape(.triangle):
-            return AnyView(Triangle())
-        case .shape(.slimRectangle):
-            return AnyView(SlimRectangle())
-        case .shape(.hexagon):
-            return AnyView(Hexagon())
-        case .shape(.roundedCross):
-            return AnyView(RoundedCross())
-        case .shape(.star):
-            return AnyView(Star().scaleEffect(1.2))
-        case .shape(.starPop):
-            return AnyView(StarPop().scaleEffect(1.2))
-        case let .text(text):
-            return AnyView(Text(text))
-        case .sfSymbol(let symbolName):
-            return AnyView(Image(systemName: symbolName))
-        default:
-            return AnyView(Circle())
+        case .shape(.circle): AnyView(Circle())
+        case .shape(.smallCircle): AnyView(Circle().scaleEffect(0.7))
+        case .shape(.square): AnyView(Rectangle())
+        case .shape(.smallSquare): AnyView(Rectangle().scaleEffect(0.7))
+        case .shape(.triangle): AnyView(Triangle())
+        case .shape(.slimRectangle): AnyView(SlimRectangle())
+        case .shape(.hexagon): AnyView(Hexagon())
+        case .shape(.roundedCross): AnyView(RoundedCross())
+        case .shape(.star): AnyView(Star().scaleEffect(1.2))
+        case .shape(.starPop): AnyView(StarPop().scaleEffect(1.2))
+        case .shape(.blink): AnyView(Blink())
+        case .text(let text): AnyView(Text(text))
+        case .sfSymbol(let symbolName): AnyView(Image(systemName: symbolName))
         }
     }
     
@@ -64,6 +52,7 @@ enum ConfettiType: CaseIterable, Hashable {
 @available(iOS 14.0, macOS 11.0, watchOS 7, tvOS 14.0, *)
 struct Confetti: View {
     @Binding var counter: Int
+    
     @StateObject private var confettiConfig: ConfettiConfig
 
     @State var animate: [Bool] = []
@@ -71,7 +60,6 @@ struct Confetti: View {
     @State var firstAppear = false
     @State var error = ""
     
-    /// 초기 Confetti Setting
     init(counter: Binding<Int>,
          num: Int = 20,
          confettis: [ConfettiType] = ConfettiType.allCases,
@@ -238,7 +226,6 @@ struct ConfettiComponentView: View {
     func deg2rad(_ number: CGFloat) -> CGFloat {
         return number * CGFloat.pi / 180
     }
-    
 }
 
 struct ConfettiAnimationView: View {
@@ -270,8 +257,36 @@ struct ConfettiAnimationView: View {
     }
 }
 
-class ConfettiConfig: ObservableObject {
-    internal init(num: Int, shapes: [AnyView], colors: [Color], confettiSize: CGFloat, rainHeight: CGFloat, fadesOut: Bool, opacity: Double, openingAngle: Angle, closingAngle: Angle, radius: CGFloat, repetitions: Int, repetitionInterval: Double) {
+final class ConfettiConfig: ObservableObject {
+    @Published var num: Int
+    @Published var shapes: [AnyView]
+    @Published var colors: [Color]
+    @Published var confettiSize: CGFloat
+    @Published var rainHeight: CGFloat
+    @Published var fadesOut: Bool
+    @Published var opacity: Double
+    @Published var openingAngle: Angle
+    @Published var closingAngle: Angle
+    @Published var radius: CGFloat
+    @Published var repetitions: Int
+    @Published var repetitionInterval: Double
+    @Published var explosionAnimationDuration: Double
+    @Published var rainAnimationDuration: Double
+    
+    init(
+        num: Int,
+        shapes: [AnyView],
+        colors: [Color],
+        confettiSize: CGFloat,
+        rainHeight: CGFloat,
+        fadesOut: Bool,
+        opacity: Double,
+        openingAngle: Angle,
+        closingAngle: Angle,
+        radius: CGFloat,
+        repetitions: Int,
+        repetitionInterval: Double
+    ) {
         self.num = num
         self.shapes = shapes
         self.colors = colors
@@ -287,21 +302,6 @@ class ConfettiConfig: ObservableObject {
         self.explosionAnimationDuration = Double(radius / 1300)
         self.rainAnimationDuration = Double((rainHeight + radius) / 200)
     }
-    
-    @Published var num: Int
-    @Published var shapes: [AnyView]
-    @Published var colors: [Color]
-    @Published var confettiSize: CGFloat
-    @Published var rainHeight: CGFloat
-    @Published var fadesOut: Bool
-    @Published var opacity: Double
-    @Published var openingAngle: Angle
-    @Published var closingAngle: Angle
-    @Published var radius: CGFloat
-    @Published var repetitions: Int
-    @Published var repetitionInterval: Double
-    @Published var explosionAnimationDuration: Double
-    @Published var rainAnimationDuration: Double
 
     var animationDuration: Double {
         return explosionAnimationDuration + rainAnimationDuration

@@ -11,6 +11,8 @@ struct ShapesView: View {
     var body: some View {
         VStack {
             Text("Confetti Components")
+                .padding(.bottom)
+            
             Group {
                 RoundedCross()
                 SlimRectangle()

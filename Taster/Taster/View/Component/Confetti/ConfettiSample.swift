@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct ConfettiSample: View {
-    
     @State private var counter = 0
     
     var body: some View {
         ZStack {
             /// - Parameters:
-            ///   - counter: Counter가 변하는 것이 애니메이션트리거입니다.
+            ///   - counter: 애니메이션 트리거
             ///   - num: 요소들의 갯수
             ///   - confettis: 요소들의 종류
             ///   - colors: 색상 배열
@@ -49,7 +48,7 @@ struct ConfettiSample: View {
                      radius: 400,
                      repetitions: 1,
                      repetitionInterval: 1)
-            Button("Confetti") {
+            Button("Animate!") {
                 counter += 1
             }
             .buttonStyle(.bordered)
