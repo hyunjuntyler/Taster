@@ -37,7 +37,7 @@ actor MigrationPlan: SchemaMigrationPlan {
                     category: $0.type.imageName,
                     createdAt: $0.date,
                     look: $0.color.imageName,
-                    smell: $0.scents.map { $0.imageName },
+                    smells: $0.scents.map { $0.imageName },
                     taste: $0.taste,
                     think: $0.think,
                     rating: $0.rating
@@ -50,7 +50,7 @@ actor MigrationPlan: SchemaMigrationPlan {
                     category: $0.type.imageName,
                     createdAt: $0.date,
                     look: "",
-                    smell: $0.flavors.map { $0.imageName },
+                    smells: $0.flavors.map { $0.imageName },
                     taste: $0.taste,
                     think: $0.think,
                     rating: $0.rating
@@ -63,7 +63,7 @@ actor MigrationPlan: SchemaMigrationPlan {
                     category: $0.type.imageName,
                     createdAt: $0.date,
                     look: $0.color.imageName,
-                    smell: $0.flavors.map { $0.imageName },
+                    smells: $0.flavors.map { $0.imageName },
                     taste: $0.taste,
                     think: $0.think,
                     rating: $0.rating
@@ -76,7 +76,7 @@ actor MigrationPlan: SchemaMigrationPlan {
                     category: $0.type.imageName,
                     createdAt: $0.date,
                     look: "",
-                    smell: [],
+                    smells: [],
                     taste: $0.taste,
                     think: $0.think,
                     rating: $0.rating,

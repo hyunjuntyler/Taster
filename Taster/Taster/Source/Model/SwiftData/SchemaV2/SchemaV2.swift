@@ -17,13 +17,13 @@ actor SchemaV2: VersionedSchema {
 }
 
 extension SchemaV2 {
-    protocol TastingNote {
+    protocol TastingNote: PersistentModel {
         var title: String { get set }
         var category: String { get set }
         var createdAt: Date { get set }
         var thumnail: Data? { get set }
         var look: String { get set }
-        var smell: [String] { get set }
+        var smells: [String] { get set }
         var taste: [Double] { get set }
         var think: String { get set }
         var rating: Double { get set }
@@ -35,7 +35,7 @@ extension SchemaV2 {
         var createdAt: Date
         @Attribute(.externalStorage) var thumnail: Data?
         var look: String
-        var smell: [String]
+        var smells: [String]
         var taste: [Double]
         var think: String
         var rating: Double
@@ -45,7 +45,7 @@ extension SchemaV2 {
             category: String,
             createdAt: Date,
             look: String,
-            smell: [String],
+            smells: [String],
             taste: [Double],
             think: String,
             rating: Double
@@ -54,7 +54,7 @@ extension SchemaV2 {
             self.category = category
             self.createdAt = createdAt
             self.look = look
-            self.smell = smell
+            self.smells = smells
             self.taste = taste
             self.think = think
             self.rating = rating
@@ -67,7 +67,7 @@ extension SchemaV2 {
         var createdAt: Date
         @Attribute(.externalStorage) var thumnail: Data?
         var look: String
-        var smell: [String]
+        var smells: [String]
         var taste: [Double]
         var think: String
         var rating: Double
@@ -77,7 +77,7 @@ extension SchemaV2 {
             category: String,
             createdAt: Date,
             look: String,
-            smell: [String],
+            smells: [String],
             taste: [Double],
             think: String,
             rating: Double
@@ -86,7 +86,7 @@ extension SchemaV2 {
             self.category = category
             self.createdAt = createdAt
             self.look = look
-            self.smell = smell
+            self.smells = smells
             self.taste = taste
             self.think = think
             self.rating = rating
@@ -99,7 +99,7 @@ extension SchemaV2 {
         var createdAt: Date
         @Attribute(.externalStorage) var thumnail: Data?
         var look: String
-        var smell: [String]
+        var smells: [String]
         var taste: [Double]
         var think: String
         var rating: Double
@@ -109,7 +109,7 @@ extension SchemaV2 {
             category: String,
             createdAt: Date,
             look: String,
-            smell: [String],
+            smells: [String],
             taste: [Double],
             think: String,
             rating: Double
@@ -118,7 +118,7 @@ extension SchemaV2 {
             self.category = category
             self.createdAt = createdAt
             self.look = look
-            self.smell = smell
+            self.smells = smells
             self.taste = taste
             self.think = think
             self.rating = rating
@@ -131,7 +131,7 @@ extension SchemaV2 {
         var createdAt: Date
         @Attribute(.externalStorage) var thumnail: Data?
         var look: String
-        var smell: [String]
+        var smells: [String]
         var taste: [Double]
         var think: String
         var rating: Double
@@ -143,7 +143,7 @@ extension SchemaV2 {
             category: String,
             createdAt: Date,
             look: String,
-            smell: [String],
+            smells: [String],
             taste: [Double],
             think: String,
             rating: Double,
@@ -154,7 +154,7 @@ extension SchemaV2 {
             self.category = category
             self.createdAt = createdAt
             self.look = look
-            self.smell = smell
+            self.smells = smells
             self.taste = taste
             self.think = think
             self.rating = rating
@@ -171,11 +171,16 @@ extension SchemaV2 {
 }
 
 extension SchemaV2 {
+    @MainActor
     static var previewContainer: ModelContainer {
         do {
             let schema = Schema(versionedSchema: SchemaV2.self)
             let configurations = ModelConfiguration(isStoredInMemoryOnly: true)
             let container = try ModelContainer(for: schema, configurations: configurations)
+            wineTastingNotes.forEach { container.mainContext.insert($0) }
+            whiskeyTastingNotes.forEach { container.mainContext.insert($0) }
+            coffeeTastingNotes.forEach { container.mainContext.insert($0) }
+            cocktailTastingNotes.forEach { container.mainContext.insert($0) }
             
             return container
         } catch {
@@ -190,10 +195,20 @@ extension SchemaV2 {
                 category: "redWine",
                 createdAt: .now,
                 look: "copper",
-                smell: ["olive", "plum"],
+                smells: ["olive", "plum"],
                 taste: [5, 4, 3, 2, 4],
                 think: "think",
                 rating: 5.0
+            ),
+            .init(
+                title: "와인 2",
+                category: "whiteWine",
+                createdAt: .now,
+                look: "gold",
+                smells: ["jasmine", "butter"],
+                taste: [4, 3, 2, 2, 3],
+                think: "think",
+                rating: 4.0
             )
         ]
     }
@@ -205,10 +220,20 @@ extension SchemaV2 {
                 category: "bourbonWhiskey",
                 createdAt: .now,
                 look: "gold",
-                smell: ["lemon", "raisin"],
+                smells: ["lemon", "raisin"],
                 taste: [3, 4, 5, 1, 2, 4],
                 think: "think",
                 rating: 3.5
+            ),
+            .init(
+                title: "위스키 2",
+                category: "scotchWhiskey",
+                createdAt: .now,
+                look: "copper",
+                smells: ["popcorn", "strawberry"],
+                taste: [2, 5, 5, 3, 2, 5],
+                think: "think",
+                rating: 4.5
             )
         ]
     }
@@ -220,10 +245,20 @@ extension SchemaV2 {
                 category: "capsuleCoffee",
                 createdAt: .now,
                 look: "",
-                smell: [""],
+                smells: ["mango"],
                 taste: [3, 4, 3, 3, 4],
                 think: "think",
                 rating: 4.5
+            ),
+            .init(
+                title: "커피 2",
+                category: "cafeCoffee",
+                createdAt: .now,
+                look: "",
+                smells: ["kiwi", "cherry"],
+                taste: [5, 4, 2, 3, 3],
+                think: "think",
+                rating: 4.0
             )
         ]
     }
@@ -232,18 +267,41 @@ extension SchemaV2 {
         [
             .init(
                 title: "칵테일 1",
-                category: "",
+                category: "homeCocktail",
                 createdAt: .now,
                 look: "",
-                smell: [],
+                smells: [],
                 taste: [1, 2, 3],
                 think: "think",
                 rating: 4.0,
                 ingredients: [
                     Ingredient(
-                        name: "name",
+                        name: "red",
                         amount: 1.0,
                         colorString: "red"
+                    )
+                ],
+                containsIce: true
+            ),
+            .init(
+                title: "칵테일 2",
+                category: "barCocktail",
+                createdAt: .now,
+                look: "",
+                smells: [],
+                taste: [2, 3, 3],
+                think: "think",
+                rating: 4.5,
+                ingredients: [
+                    Ingredient(
+                        name: "yellow",
+                        amount: 1.0,
+                        colorString: "yellow"
+                    ),
+                    Ingredient(
+                        name: "mint",
+                        amount: 2.0,
+                        colorString: "mint"
                     )
                 ],
                 containsIce: true
