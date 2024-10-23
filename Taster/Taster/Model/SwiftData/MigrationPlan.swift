@@ -38,7 +38,7 @@ actor MigrationPlan: SchemaMigrationPlan {
                     createdAt: $0.date,
                     look: $0.color.imageName,
                     smells: $0.scents.map { $0.imageName },
-                    taste: $0.taste,
+                    tastes: zip(Wine.labels, $0.taste).map { Taste(label: $0, value: $1) },
                     think: $0.think,
                     rating: $0.rating
                 )
@@ -51,7 +51,7 @@ actor MigrationPlan: SchemaMigrationPlan {
                     createdAt: $0.date,
                     look: "",
                     smells: $0.flavors.map { $0.imageName },
-                    taste: $0.taste,
+                    tastes: zip(Coffee.labels, $0.taste).map { Taste(label: $0, value: $1) },
                     think: $0.think,
                     rating: $0.rating
                 )
@@ -64,7 +64,7 @@ actor MigrationPlan: SchemaMigrationPlan {
                     createdAt: $0.date,
                     look: $0.color.imageName,
                     smells: $0.flavors.map { $0.imageName },
-                    taste: $0.taste,
+                    tastes: zip(Whiskey.labels, $0.taste).map { Taste(label: $0, value: $1) },
                     think: $0.think,
                     rating: $0.rating
                 )
@@ -77,7 +77,7 @@ actor MigrationPlan: SchemaMigrationPlan {
                     createdAt: $0.date,
                     look: "",
                     smells: [],
-                    taste: $0.taste,
+                    tastes: zip(Cocktail.labels, $0.taste).map { Taste(label: $0, value: $1) },
                     think: $0.think,
                     rating: $0.rating,
                     ingredients: $0.ingredients.map { $0.converted },

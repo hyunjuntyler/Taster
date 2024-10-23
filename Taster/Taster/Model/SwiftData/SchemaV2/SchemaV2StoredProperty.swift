@@ -8,11 +8,23 @@
 import Foundation
 import SwiftUI
 
+typealias Property = SchemaV2StoredProperty
+typealias Category = Property.Category
+typealias Look = Property.Look
+typealias Smell = Property.Smell
+typealias IngredientColor = Property.Cocktail.IngredientColor
+typealias Wine = Property.Wine
+typealias Coffee = Property.Coffee
+typealias Whiskey = Property.Whiskey
+typealias Cocktail = Property.Cocktail
+
 enum SchemaV2StoredProperty {
     enum Wine {
         static let categories: [Category] = [
             .sparklingWine, .whiteWine, .redWine, .naturalWine, .dessertWine, .roseWine, .orangeWine, .portWine, .champagne, .otherWine
         ]
+        
+        static let labels = ["바디", "알코올", "당도", "산도", "타닌"]
         
         static let looks: [Look] = [
             .straw, .yellow, .gold, .amber, .brown, .copper, .salmon, .pink, .ruby, .purple, .garnet, .tawny
@@ -27,6 +39,8 @@ enum SchemaV2StoredProperty {
         static let categories: [Category] = [
             .dripCoffee, .capsuleCoffee, .cafeCoffee, .homeCoffee
         ]
+        
+        static let labels = ["신맛", "바디", "쓴맛", "향미", "단맛"]
         
         static let smells: [Smell] = [
             .lemon, .lime, .grapefruit, .orange, .apple, .pear, .watermelon, .greengrape, .redgrape, .lychee,
@@ -43,6 +57,8 @@ enum SchemaV2StoredProperty {
             .blendedWhiskey, .bourbonWhiskey, .canadianWhiskey, .cornWhiskey, .grainWhiskey, .irishWhiskey, .japaneseWhiskey, .otherWhiskey, .potstillWhiskey, .ryeWhiskey, .scotchWhiskey, .singlemaltWhiskey, .tennesseeWhiskey, .whiteWhiskey
         ]
         
+        static let labels = ["과일", "오크", "단맛", "향신료", "곡물", "허브"]
+        
         static let looks: [Look] = [
             .straw, .yellow, .gold, .amber, .brown, .copper, .tawny, .oak, .burgundy, .rust
         ]
@@ -58,6 +74,8 @@ enum SchemaV2StoredProperty {
     }
     
     enum Cocktail {
+        static let labels = ["단맛", "신맛", "도수"]
+        
         static let categories: [Category] = [
             .homeCocktail, .barCocktail
         ]
@@ -355,4 +373,6 @@ enum SchemaV2StoredProperty {
             }
         }
     }
+    
+    static let labelColors: [Color] = [.purple, .cyan, .orange, .red, .brown, .green]
 }

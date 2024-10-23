@@ -8,6 +8,11 @@
 import Foundation
 import SwiftData
 
+typealias Taste = SchemaV2.Taste
+typealias Ingredient = SchemaV2.Ingredient
+typealias TastingNote = SchemaV2.TastingNote
+typealias CocktailTastingNote = SchemaV2.CocktailTastingNote
+
 actor SchemaV2: VersionedSchema {
     static var models: [any PersistentModel.Type] {
         [WineTastingNote.self, CoffeeTastingNote.self, WhiskeyTastingNote.self, CocktailTastingNote.self]
@@ -24,7 +29,7 @@ extension SchemaV2 {
         var thumnail: Data? { get set }
         var look: String { get set }
         var smells: [String] { get set }
-        var taste: [Double] { get set }
+        var tastes: [Taste] { get set }
         var think: String { get set }
         var rating: Double { get set }
     }
@@ -36,7 +41,7 @@ extension SchemaV2 {
         @Attribute(.externalStorage) var thumnail: Data?
         var look: String
         var smells: [String]
-        var taste: [Double]
+        var tastes: [Taste]
         var think: String
         var rating: Double
         
@@ -46,7 +51,7 @@ extension SchemaV2 {
             createdAt: Date,
             look: String,
             smells: [String],
-            taste: [Double],
+            tastes: [Taste],
             think: String,
             rating: Double
         ) {
@@ -55,7 +60,7 @@ extension SchemaV2 {
             self.createdAt = createdAt
             self.look = look
             self.smells = smells
-            self.taste = taste
+            self.tastes = tastes
             self.think = think
             self.rating = rating
         }
@@ -68,7 +73,7 @@ extension SchemaV2 {
         @Attribute(.externalStorage) var thumnail: Data?
         var look: String
         var smells: [String]
-        var taste: [Double]
+        var tastes: [Taste]
         var think: String
         var rating: Double
         
@@ -78,7 +83,7 @@ extension SchemaV2 {
             createdAt: Date,
             look: String,
             smells: [String],
-            taste: [Double],
+            tastes: [Taste],
             think: String,
             rating: Double
         ) {
@@ -87,7 +92,7 @@ extension SchemaV2 {
             self.createdAt = createdAt
             self.look = look
             self.smells = smells
-            self.taste = taste
+            self.tastes = tastes
             self.think = think
             self.rating = rating
         }
@@ -100,7 +105,7 @@ extension SchemaV2 {
         @Attribute(.externalStorage) var thumnail: Data?
         var look: String
         var smells: [String]
-        var taste: [Double]
+        var tastes: [Taste]
         var think: String
         var rating: Double
         
@@ -110,7 +115,7 @@ extension SchemaV2 {
             createdAt: Date,
             look: String,
             smells: [String],
-            taste: [Double],
+            tastes: [Taste],
             think: String,
             rating: Double
         ) {
@@ -119,7 +124,7 @@ extension SchemaV2 {
             self.createdAt = createdAt
             self.look = look
             self.smells = smells
-            self.taste = taste
+            self.tastes = tastes
             self.think = think
             self.rating = rating
         }
@@ -132,7 +137,7 @@ extension SchemaV2 {
         @Attribute(.externalStorage) var thumnail: Data?
         var look: String
         var smells: [String]
-        var taste: [Double]
+        var tastes: [Taste]
         var think: String
         var rating: Double
         var ingredients: [Ingredient] = []
@@ -144,7 +149,7 @@ extension SchemaV2 {
             createdAt: Date,
             look: String,
             smells: [String],
-            taste: [Double],
+            tastes: [Taste],
             think: String,
             rating: Double,
             ingredients: [Ingredient],
@@ -155,12 +160,17 @@ extension SchemaV2 {
             self.createdAt = createdAt
             self.look = look
             self.smells = smells
-            self.taste = taste
+            self.tastes = tastes
             self.think = think
             self.rating = rating
             self.ingredients = ingredients
             self.containsIce = containsIce
         }
+    }
+    
+    struct Taste: Hashable, Codable {
+        let label: String
+        var value: Double
     }
     
     struct Ingredient: Hashable, Codable {
@@ -171,6 +181,7 @@ extension SchemaV2 {
 }
 
 extension SchemaV2 {
+#if DEBUG
     @MainActor
     static var previewContainer: ModelContainer {
         do {
@@ -196,7 +207,7 @@ extension SchemaV2 {
                 createdAt: .now,
                 look: "copper",
                 smells: ["olive", "plum"],
-                taste: [5, 4, 3, 2, 4],
+                tastes: zip(Wine.labels, [5, 4, 3, 2, 4]).map { Taste(label: $0, value: $1) },
                 think: "think",
                 rating: 5.0
             ),
@@ -206,7 +217,7 @@ extension SchemaV2 {
                 createdAt: .now,
                 look: "gold",
                 smells: ["jasmine", "butter"],
-                taste: [4, 3, 2, 2, 3],
+                tastes: zip(Wine.labels, [4, 3, 2, 2, 3]).map { Taste(label: $0, value: $1) },
                 think: "think",
                 rating: 4.0
             )
@@ -221,7 +232,7 @@ extension SchemaV2 {
                 createdAt: .now,
                 look: "gold",
                 smells: ["lemon", "raisin"],
-                taste: [3, 4, 5, 1, 2, 4],
+                tastes: zip(Whiskey.labels, [3, 4, 5, 1, 2, 4]).map { Taste(label: $0, value: $1) },
                 think: "think",
                 rating: 3.5
             ),
@@ -231,7 +242,7 @@ extension SchemaV2 {
                 createdAt: .now,
                 look: "copper",
                 smells: ["popcorn", "strawberry"],
-                taste: [2, 5, 5, 3, 2, 5],
+                tastes: zip(Whiskey.labels, [2, 5, 5, 3, 2, 5]).map { Taste(label: $0, value: $1) },
                 think: "think",
                 rating: 4.5
             )
@@ -246,7 +257,7 @@ extension SchemaV2 {
                 createdAt: .now,
                 look: "",
                 smells: ["mango"],
-                taste: [3, 4, 3, 3, 4],
+                tastes: zip(Coffee.labels, [3, 4, 3, 3, 4]).map { Taste(label: $0, value: $1) },
                 think: "think",
                 rating: 4.5
             ),
@@ -256,7 +267,7 @@ extension SchemaV2 {
                 createdAt: .now,
                 look: "",
                 smells: ["kiwi", "cherry"],
-                taste: [5, 4, 2, 3, 3],
+                tastes: zip(Coffee.labels, [5, 4, 2, 3, 3]).map { Taste(label: $0, value: $1) },
                 think: "think",
                 rating: 4.0
             )
@@ -271,7 +282,7 @@ extension SchemaV2 {
                 createdAt: .now,
                 look: "",
                 smells: [],
-                taste: [1, 2, 3],
+                tastes: zip(Cocktail.labels, [2, 2, 3]).map { Taste(label: $0, value: $1) },
                 think: "think",
                 rating: 4.0,
                 ingredients: [
@@ -289,7 +300,7 @@ extension SchemaV2 {
                 createdAt: .now,
                 look: "",
                 smells: [],
-                taste: [2, 3, 3],
+                tastes: zip(Cocktail.labels, [2, 3, 3]).map { Taste(label: $0, value: $1) },
                 think: "think",
                 rating: 4.5,
                 ingredients: [
@@ -308,4 +319,5 @@ extension SchemaV2 {
             )
         ]
     }
+#endif
 }

@@ -1,5 +1,5 @@
 //
-//  CocktailFactory.swift
+//  CustomCocktail.swift
 //  LookSmellTaste
 //
 //  Created by Hyunjun Kim on 12/12/23.
@@ -7,10 +7,7 @@
 
 import SwiftUI
 
-typealias Ingredient = SchemaV2.Ingredient
-typealias IngredientColor = SchemaV2StoredProperty.Cocktail.IngredientColor
-
-struct CocktailFactory: View {
+struct CustomCocktail: View {
     var ingredients: [Ingredient]
     var containsIce: Bool
     var width: CGFloat
@@ -20,7 +17,7 @@ struct CocktailFactory: View {
         VStack {
             Glass(width: width, height: height)
                 .overlay(alignment: .bottom) {
-                    Cocktail(ingredients: ingredients, width: width, height: height)
+                    Liquid(ingredients: ingredients, width: width, height: height)
                         .scaleEffect(0.85)
                     Ice(containsIce: containsIce, width: width, height: height)
                 }
@@ -64,7 +61,7 @@ private struct Glass: View {
     }
 }
 
-private struct Cocktail: View {
+private struct Liquid: View {
     var ingredients: [Ingredient]
     let width: CGFloat
     let height: CGFloat
@@ -162,7 +159,7 @@ private struct Ice: View {
                 .rotationEffect(.degrees(20))
         }
         .offset(y: height * 0.05)
-        .font(.TossFace.title3)
+        .font(.TossFace.body)
         .opacity(containsIce ? 0.4 : 0)
     }
 }
@@ -170,13 +167,13 @@ private struct Ice: View {
 #Preview {
     List {
         ZStack {
-            CocktailFactory(ingredients: [
+            CustomCocktail(ingredients: [
                 Ingredient(name: "와인", amount: 1, colorString: "blue"),
                 Ingredient(name: "커피", amount: 2, colorString: "red"),
                 Ingredient(name: "칵테일", amount: 3, colorString: "green"),
                 Ingredient(name: "위스키", amount: 2, colorString: "orange"),
                 Ingredient(name: "자유", amount: 5, colorString: "yellow")
-            ], containsIce: true, width: 70, height: 100)
+            ], containsIce: true, width: 60, height: 90)
         }
     }
 }

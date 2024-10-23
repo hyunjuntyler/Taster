@@ -5,9 +5,15 @@
 //  Created by Hyunjun Kim on 10/21/24.
 //
 
+import SwiftData
 import SwiftUI
 
-struct NoteDetail<T: SchemaV2.TastingNote>: View {
+struct NoteDetail<T: TastingNote & PersistentModel>: View {
+    @Environment(\.modelContext) private var context
+    @Environment(\.dismiss) private var dismiss
+    
+    @State private var showDeleteAlert = false
+    
     let note: T
     
     var body: some View {
@@ -26,7 +32,7 @@ struct NoteDetail<T: SchemaV2.TastingNote>: View {
                         VStack(alignment: .leading) {
                             Text("\(note.createdAt.formatted(date: .abbreviated, time: .omitted))")
                                 .font(.caption2)
-                            if let category = SchemaV2StoredProperty.Category(rawValue: note.category) {
+                            if let category = Category(rawValue: note.category) {
                                 Text(category.description)
                                     .font(.caption)
                             }
@@ -42,7 +48,7 @@ struct NoteDetail<T: SchemaV2.TastingNote>: View {
             .listRowBackground(Color.clear)
             
             Section("테이스팅 노트") {
-                if let look = SchemaV2StoredProperty.Look(rawValue: note.look) {
+                if let look = Look(rawValue: note.look) {
                     VStack(alignment: .leading) {
                         Text("시각")
                             .font(.caption)
@@ -69,7 +75,7 @@ struct NoteDetail<T: SchemaV2.TastingNote>: View {
                         ScrollView(.horizontal) {
                             HStack {
                                 ForEach(note.smells, id: \.self) { smell in
-                                    if let smell = SchemaV2StoredProperty.Smell(rawValue: smell) {
+                                    if let smell = Smell(rawValue: smell) {
                                         VStack {
                                             Image(uiImage: smell.uiImage)
                                                 .resizable()
@@ -92,10 +98,47 @@ struct NoteDetail<T: SchemaV2.TastingNote>: View {
                     }
                 }
                 
+                if let note = note as? CocktailTastingNote {
+                    VStack(alignment: .leading) {
+                        Text("칵테일")
+                            .font(.caption)
+                            .foregroundStyle(.gray)
+                        
+                        CustomCocktail(
+                            ingredients: note.ingredients,
+                            containsIce: note.containsIce,
+                            width: 60,
+                            height: 90
+                        )
+                    }
+                }
+                
                 VStack(alignment: .leading) {
                     Text("미각")
                         .font(.caption)
                         .foregroundStyle(.gray)
+                    
+                    if note.tastes.count > 4 {
+                        PolygonChart(
+                            labels: note.tastes.map { $0.label },
+                            values: note.tastes.map { $0.value },
+                            maxValue: 5,
+                            height: 80)
+                        .padding(.vertical, 8)
+                    }
+                    
+                    ForEach(Array(zip(Property.labelColors, note.tastes)), id: \.1) { color, taste in
+                        if taste != note.tastes.first {
+                            Divider()
+                        }
+                        
+                        LabeledContent {
+                            RatingDisplay(rating: taste.value, color: color, systemName: "circle.fill", font: .subheadline)
+                        } label: {
+                            Text(taste.label)
+                                .font(.subheadline)
+                        }
+                    }
                 }
             }
             
@@ -112,8 +155,14 @@ struct NoteDetail<T: SchemaV2.TastingNote>: View {
                 }
                 
                 Button("삭제", systemImage: "trash", role: .destructive) {
-                    
+                    showDeleteAlert = true
                 }
+            }
+        }
+        .alert("정말 삭제하시겠어요?", isPresented: $showDeleteAlert) {
+            Button("삭제", role: .destructive) {
+                dismiss()
+                context.delete(note)
             }
         }
     }
@@ -121,6 +170,6 @@ struct NoteDetail<T: SchemaV2.TastingNote>: View {
 
 #Preview {
     NavigationStack {
-        NoteDetail(note: SchemaV2.wineTastingNotes[0])
+        NoteDetail(note: SchemaV2.cocktailTastingNotes[0])
     }
 }

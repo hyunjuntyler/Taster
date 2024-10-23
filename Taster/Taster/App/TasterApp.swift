@@ -13,6 +13,9 @@ struct TasterApp: App {
     var container: ModelContainer
     
     init() {
+#if DEBUG
+        container = SchemaV2.previewContainer
+#else
         let schema = Schema(versionedSchema: SchemaV2.self)
         let migrationPlan = MigrationPlan.self
         
@@ -24,6 +27,7 @@ struct TasterApp: App {
         } catch {
             fatalError(error.localizedDescription)
         }
+#endif
     }
     
     var body: some Scene {

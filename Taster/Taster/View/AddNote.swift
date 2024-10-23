@@ -5,14 +5,12 @@
 //  Created by hyunjun on 10/22/24.
 //
 
+import SwiftData
 import SwiftUI
 import PhotosUI
 
-typealias Category = SchemaV2StoredProperty.Category
-typealias Look = SchemaV2StoredProperty.Look
-typealias Smell = SchemaV2StoredProperty.Smell
-
 struct AddNote: View {
+    @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
     
     @State private var selectedImage: UIImage?
