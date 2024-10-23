@@ -13,21 +13,23 @@ struct AddNote: View {
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
     
-    @State private var selectedImage: UIImage?
-    @State private var title = ""
-    @State private var createdAt = Date()
-    @State private var selectedCategory: Category?
-    @State private var selectedLook: Look?
-    @State private var selectedSmells: [Smell] = []
-    @State private var think = ""
-    @State private var rating = 0.0
-    
     @State private var showCloseAlert = false
     
-    @State var tastes: [Taste]
-    let categories: [Category]
-    let looks: [Look]
-    let smells: [Smell]
+    @State var selectedImage: UIImage?
+    @State var title = ""
+    @State var createdAt = Date()
+    @State var selectedCategory: Category?
+    @State var selectedLook: Look?
+    @State var selectedSmells: [Smell] = []
+    @State var tastes: [Taste] = []
+    @State var think = ""
+    @State var rating = 0.0
+    @State var ingredients: [Ingredient] = []
+    @State var containsIce = false
+    
+    var categories: [Category] = []
+    var looks: [Look] = []
+    var smells: [Smell] = []
     
     private let lookColumns = Array(repeating: GridItem(.flexible()), count: 6)
     private let smellColumns = Array(repeating: GridItem(.flexible()), count: 6)
@@ -38,7 +40,7 @@ struct AddNote: View {
                 Section("이미지 선택") {
                     AddThumnail(selectedImage: $selectedImage, category: selectedCategory)
                 }
-
+                
                 Section("기본 정보") {
                     LabeledContent("이름") {
                         TextField("이름을 입력해주세요", text: $title)
@@ -78,79 +80,93 @@ struct AddNote: View {
                     }
                 }
                 
-                Section("시각") {
-                    LazyVGrid(columns: lookColumns, spacing: 5) {
-                        ForEach(looks, id: \.self) { look in
-                            let isSelected = selectedLook == look
-                            
-                            Button {
-                                if isSelected {
-                                    selectedLook = nil
-                                } else {
-                                    selectedLook = look
+                if !looks.isEmpty {
+                    Section("시각") {
+                        LazyVGrid(columns: lookColumns, spacing: 5) {
+                            ForEach(looks, id: \.self) { look in
+                                let isSelected = selectedLook == look
+                                
+                                Button {
+                                    if isSelected {
+                                        selectedLook = nil
+                                    } else {
+                                        selectedLook = look
+                                    }
+                                } label: {
+                                    VStack {
+                                        Image("\(look.rawValue + "Wine")")
+                                            .resizable()
+                                            .scaledToFit()
+                                        Text(look.description)
+                                            .bold(isSelected)
+                                            .foregroundStyle(isSelected ? .accent : .secondary)
+                                            .font(.caption2)
+                                    }
+                                    .padding(2)
+                                    .background {
+                                        RoundedRectangle(cornerRadius: 8, style: .continuous)
+                                            .foregroundStyle(isSelected ? Color(.systemGroupedBackground) : .clear)
+                                    }
                                 }
-                            } label: {
-                                VStack {
-                                    Image("\(look.rawValue + "Wine")")
-                                        .resizable()
-                                        .scaledToFit()
-                                    Text(look.description)
-                                        .bold(isSelected)
-                                        .foregroundStyle(isSelected ? .accent : .secondary)
-                                        .font(.caption2)
-                                }
-                                .padding(2)
-                                .background {
-                                    RoundedRectangle(cornerRadius: 8, style: .continuous)
-                                        .foregroundStyle(isSelected ? Color(.systemGroupedBackground) : .clear)
-                                }
+                                .buttonStyle(.plain)
                             }
-                            .buttonStyle(.plain)
                         }
                     }
                 }
                 
-                Section("후각") {
-                    LazyVGrid(columns: smellColumns, spacing: 8) {
-                        ForEach(smells, id: \.self) { smell in
-                            let isContains = selectedSmells.contains(smell)
-                            
-                            Button {
-                                if isContains {
-                                    selectedSmells.removeAll(where: { $0 == smell })
-                                } else {
-                                    selectedSmells.append(smell)
+                if !smells.isEmpty {
+                    Section("후각") {
+                        LazyVGrid(columns: smellColumns, spacing: 8) {
+                            ForEach(smells, id: \.self) { smell in
+                                let isContains = selectedSmells.contains(smell)
+                                
+                                Button {
+                                    if isContains {
+                                        selectedSmells.removeAll(where: { $0 == smell })
+                                    } else {
+                                        selectedSmells.append(smell)
+                                    }
+                                } label: {
+                                    VStack {
+                                        Image(uiImage: smell.uiImage)
+                                            .resizable()
+                                            .scaledToFit()
+                                        Text(smell.description)
+                                            .bold(isContains)
+                                            .foregroundStyle(isContains ? .accent : .secondary)
+                                            .font(.caption2)
+                                    }
+                                    .padding(2)
+                                    .background {
+                                        RoundedRectangle(cornerRadius: 8, style: .continuous)
+                                            .foregroundStyle(isContains ? Color(.systemGroupedBackground) : .clear)
+                                    }
                                 }
-                            } label: {
-                                VStack {
-                                    Image(uiImage: smell.uiImage)
-                                        .resizable()
-                                        .scaledToFit()
-                                    Text(smell.description)
-                                        .bold(isContains)
-                                        .foregroundStyle(isContains ? .accent : .secondary)
-                                        .font(.caption2)
-                                }
-                                .padding(2)
-                                .background {
-                                    RoundedRectangle(cornerRadius: 8, style: .continuous)
-                                        .foregroundStyle(isContains ? Color(.systemGroupedBackground) : .clear)
-                                }
+                                .buttonStyle(.plain)
                             }
-                            .buttonStyle(.plain)
                         }
                     }
                 }
                 
+                if categories.contains(where: { $0 == .homeCocktail }) {
+                    Section("커스텀 칵테일") {
+                        CocktailFactory(
+                            ingredients: $ingredients,
+                            containsIce: $containsIce
+                        )
+                    }
+                }
                 
                 Section("미각") {
-                    PolygonChart(
-                        labels: tastes.map { $0.label },
-                        values: tastes.map { $0.value },
-                        maxValue: 5,
-                        height: 120
-                    )
-                    .padding(.vertical, 8)
+                    if tastes.count > 4 {
+                        PolygonChart(
+                            labels: tastes.map { $0.label },
+                            values: tastes.map { $0.value },
+                            maxValue: 5,
+                            height: 120
+                        )
+                        .padding(.vertical, 8)
+                    }
                     
                     ForEach(tastes.indices, id: \.self) { index in
                         LabeledContent(tastes[index].label) {
@@ -207,10 +223,9 @@ struct AddNote: View {
     Text("Preview")
         .sheet(isPresented: .constant(true)) {
             AddNote(
-                tastes: zip(Wine.labels, [4, 4, 3, 3, 2]).map { Taste(label: $0, value: $1) },
-                categories: Wine.categories,
-                looks: Wine.looks,
-                smells: Wine.smells
+                tastes: zip(Cocktail.labels, [0, 0, 0]).map { Taste(label: $0, value: $1) },
+                ingredients: [Ingredient(name: "재료", amount: 1, colorString: "red")],
+                categories: Cocktail.categories
             )
         }
 }

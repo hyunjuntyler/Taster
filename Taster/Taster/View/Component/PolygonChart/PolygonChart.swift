@@ -43,7 +43,7 @@ struct PolygonChart: View {
     
     private func labelPositions(in rect: CGRect) -> [CGPoint] {
         let center = CGPoint(x: rect.width / 2, y: rect.height / 2)
-        let radius = min(rect.width, rect.height) / 2 * 1.4
+        let radius = min(rect.width, rect.height) / 2 * 1.3
         let segmentAngle = 2 * .pi / Double(maxValues.count)
         
         return values.enumerated().map { (index, _) in

@@ -80,7 +80,7 @@ enum SchemaV2StoredProperty {
             .homeCocktail, .barCocktail
         ]
         
-        enum IngredientColor: String {
+        enum IngredientColor: String, CaseIterable {
             case red, orange, yellow, green, mint, cyan, teal, blue, indigo, purple, pink, brown, gray
             
             var color: Color {
