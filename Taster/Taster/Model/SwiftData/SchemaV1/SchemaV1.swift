@@ -9,6 +9,12 @@ import Foundation
 import SwiftData
 import SwiftUI
 
+typealias User = SchemaV1.User
+typealias WineNote = SchemaV1.WineNote
+typealias CoffeeNote = SchemaV1.CoffeeNote
+typealias WhiskeyNote = SchemaV1.WhiskeyNote
+typealias CocktailNote = SchemaV1.CocktailNote
+
 actor SchemaV1: VersionedSchema {
     static var models: [any PersistentModel.Type] {
         [User.self, WineNote.self, CoffeeNote.self, WhiskeyNote.self, CocktailNote.self]

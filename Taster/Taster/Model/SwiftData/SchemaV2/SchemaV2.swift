@@ -11,6 +11,9 @@ import SwiftData
 typealias Taste = SchemaV2.Taste
 typealias Ingredient = SchemaV2.Ingredient
 typealias TastingNote = SchemaV2.TastingNote
+typealias WineTastingNote = SchemaV2.WineTastingNote
+typealias CoffeeTastingNote = SchemaV2.CoffeeTastingNote
+typealias WhiskeyTastingNote = SchemaV2.WhiskeyTastingNote
 typealias CocktailTastingNote = SchemaV2.CocktailTastingNote
 
 actor SchemaV2: VersionedSchema {

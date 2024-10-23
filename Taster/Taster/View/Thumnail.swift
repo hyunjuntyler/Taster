@@ -25,7 +25,7 @@ struct Thumnail: View {
                     .resizable()
                     .scaledToFill()
                     .frame(width: width, height: height)
-            } else if let category = SchemaV2StoredProperty.Category(rawValue: category) {
+            } else if let category = Category(rawValue: category) {
                 Image(uiImage: category.uiImage)
                     .resizable()
                     .scaledToFit()

@@ -17,22 +17,22 @@ actor MigrationPlan: SchemaMigrationPlan {
         [migrateV1toV2]
     }
     
-    private static var wineTastingNotes: [SchemaV2.WineTastingNote] = []
-    private static var coffeeTastingNotes: [SchemaV2.CoffeeTastingNote] = []
-    private static var whiskeyTastingNotes: [SchemaV2.WhiskeyTastingNote] = []
-    private static var cocktailTastingNotes: [SchemaV2.CocktailTastingNote] = []
+    private static var wineTastingNotes: [WineTastingNote] = []
+    private static var coffeeTastingNotes: [CoffeeTastingNote] = []
+    private static var whiskeyTastingNotes: [WhiskeyTastingNote] = []
+    private static var cocktailTastingNotes: [CocktailTastingNote] = []
     
     static let migrateV1toV2 = MigrationStage.custom(
         fromVersion: SchemaV1.self,
         toVersion: SchemaV2.self,
         willMigrate: { context in
-            let wineNotes = try context.fetch(FetchDescriptor<SchemaV1.WineNote>())
-            let coffeeNotes = try context.fetch(FetchDescriptor<SchemaV1.CoffeeNote>())
-            let whiskeyNotes = try context.fetch(FetchDescriptor<SchemaV1.WhiskeyNote>())
-            let cocktailNotes = try context.fetch(FetchDescriptor<SchemaV1.CocktailNote>())
+            let wineNotes = try context.fetch(FetchDescriptor<WineNote>())
+            let coffeeNotes = try context.fetch(FetchDescriptor<CoffeeNote>())
+            let whiskeyNotes = try context.fetch(FetchDescriptor<WhiskeyNote>())
+            let cocktailNotes = try context.fetch(FetchDescriptor<CocktailNote>())
             
             wineTastingNotes = wineNotes.map {
-                SchemaV2.WineTastingNote(
+                WineTastingNote(
                     title: $0.name,
                     category: $0.type.imageName,
                     createdAt: $0.date,
@@ -45,7 +45,7 @@ actor MigrationPlan: SchemaMigrationPlan {
             }
             
             coffeeTastingNotes = coffeeNotes.map {
-                SchemaV2.CoffeeTastingNote(
+                CoffeeTastingNote(
                     title: $0.name,
                     category: $0.type.imageName,
                     createdAt: $0.date,
@@ -58,7 +58,7 @@ actor MigrationPlan: SchemaMigrationPlan {
             }
             
             whiskeyTastingNotes = whiskeyNotes.map {
-                SchemaV2.WhiskeyTastingNote(
+                WhiskeyTastingNote(
                     title: $0.name,
                     category: $0.type.imageName,
                     createdAt: $0.date,
@@ -71,7 +71,7 @@ actor MigrationPlan: SchemaMigrationPlan {
             }
             
             cocktailTastingNotes = cocktailNotes.map {
-                SchemaV2.CocktailTastingNote(
+                CocktailTastingNote(
                     title: $0.name,
                     category: $0.type.imageName,
                     createdAt: $0.date,

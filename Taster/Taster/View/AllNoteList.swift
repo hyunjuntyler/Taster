@@ -11,10 +11,10 @@ import SwiftUI
 struct AllNoteList: View {
     @State private var text = ""
 
-    @Query private var wineNotes: [SchemaV2.WineTastingNote]
-    @Query private var coffeeNotes: [SchemaV2.CoffeeTastingNote]
-    @Query private var whiskeyNotes: [SchemaV2.WhiskeyTastingNote]
-    @Query private var cocktailNotes: [SchemaV2.CocktailTastingNote]
+    @Query private var wineNotes: [WineTastingNote]
+    @Query private var coffeeNotes: [CoffeeTastingNote]
+    @Query private var whiskeyNotes: [WhiskeyTastingNote]
+    @Query private var cocktailNotes: [CocktailTastingNote]
     
     private var isEmpty: Bool {
         wineNotes.isEmpty && coffeeNotes.isEmpty && whiskeyNotes.isEmpty && cocktailNotes.isEmpty
