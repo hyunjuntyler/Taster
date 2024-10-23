@@ -8,7 +8,7 @@
 import SwiftData
 import SwiftUI
 
-struct Content: View {    
+struct Content: View {
     var body: some View {
         NavigationStack {
             AllNoteList()
@@ -18,5 +18,5 @@ struct Content: View {
 
 #Preview {
     Content()
-        .modelContainer(SchemaV2.previewContainer)
+        .modelContainer(SchemaV2.sample)
 }

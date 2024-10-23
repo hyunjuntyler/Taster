@@ -14,7 +14,7 @@ struct TasterApp: App {
     
     init() {
 #if DEBUG
-        container = SchemaV2.previewContainer
+        container = SchemaV2.sample
 #else
         let schema = Schema(versionedSchema: SchemaV2.self)
         let migrationPlan = MigrationPlan.self

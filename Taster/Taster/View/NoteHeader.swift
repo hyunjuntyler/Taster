@@ -5,7 +5,6 @@
 //  Created by Hyunjun Kim on 10/21/24.
 //
 
-import SwiftData
 import SwiftUI
 
 struct NoteHeader<T: TastingNote & Identifiable>: View {

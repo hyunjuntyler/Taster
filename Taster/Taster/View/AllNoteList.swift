@@ -10,7 +10,7 @@ import SwiftUI
 
 struct AllNoteList: View {
     @State private var text = ""
-
+    
     @Query private var wineNotes: [WineTastingNote]
     @Query private var coffeeNotes: [CoffeeTastingNote]
     @Query private var whiskeyNotes: [WhiskeyTastingNote]
@@ -64,5 +64,5 @@ struct AllNoteList: View {
         AllNoteList()
             .navigationTitle("노트")
     }
-    .modelContainer(SchemaV2.previewContainer)
+    .modelContainer(SchemaV2.sample)
 }

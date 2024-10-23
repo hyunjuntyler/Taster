@@ -185,17 +185,18 @@ extension SchemaV2 {
 
 extension SchemaV2 {
 #if DEBUG
-    @MainActor
-    static var previewContainer: ModelContainer {
+    static var sample: ModelContainer {
         do {
             let schema = Schema(versionedSchema: SchemaV2.self)
             let configurations = ModelConfiguration(isStoredInMemoryOnly: true)
             let container = try ModelContainer(for: schema, configurations: configurations)
-            wineTastingNotes.forEach { container.mainContext.insert($0) }
-            whiskeyTastingNotes.forEach { container.mainContext.insert($0) }
-            coffeeTastingNotes.forEach { container.mainContext.insert($0) }
-            cocktailTastingNotes.forEach { container.mainContext.insert($0) }
-            
+            Task { @MainActor in
+                wineTastingNotes.forEach { container.mainContext.insert($0) }
+                whiskeyTastingNotes.forEach { container.mainContext.insert($0) }
+                coffeeTastingNotes.forEach { container.mainContext.insert($0) }
+                cocktailTastingNotes.forEach { container.mainContext.insert($0) }
+            }
+                
             return container
         } catch {
             fatalError(error.localizedDescription)

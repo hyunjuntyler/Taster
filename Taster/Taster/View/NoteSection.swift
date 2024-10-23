@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SwiftData
 
 struct NoteSection<T: TastingNote & Identifiable>: View {
     let title: String

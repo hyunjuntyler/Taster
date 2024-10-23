@@ -1,5 +1,5 @@
 //
-//  AddPhoto.swift
+//  EditThumnail.swift
 //  Taster
 //
 //  Created by hyunjun on 10/22/24.
@@ -9,7 +9,7 @@ import SwiftUI
 import AVFoundation
 import Photos
 
-struct AddThumnail: View {
+struct EditThumnail: View {
     @Binding var selectedImage: UIImage?
     
     @State private var showCamera = false
@@ -119,6 +119,6 @@ struct AddThumnail: View {
 
 #Preview {
     List {
-        AddThumnail(selectedImage: .constant(nil), category: .bourbonWhiskey)
+        EditThumnail(selectedImage: .constant(nil), category: .bourbonWhiskey)
     }
 }

@@ -164,6 +164,8 @@ struct NoteDetail<T: TastingNote & PersistentModel>: View {
                 dismiss()
                 context.delete(note)
             }
+        } message: {
+            Text("삭제한 노트는 복구가 불가능해요.")
         }
     }
 }

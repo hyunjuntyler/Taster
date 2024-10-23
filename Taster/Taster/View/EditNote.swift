@@ -1,5 +1,5 @@
 //
-//  AddNote.swift
+//  EditNote.swift
 //  Taster
 //
 //  Created by hyunjun on 10/22/24.
@@ -9,7 +9,7 @@ import SwiftData
 import SwiftUI
 import PhotosUI
 
-struct AddNote: View {
+struct EditNote: View {
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
     
@@ -38,7 +38,7 @@ struct AddNote: View {
         NavigationStack {
             Form {
                 Section("이미지 선택") {
-                    AddThumnail(selectedImage: $selectedImage, category: selectedCategory)
+                    EditThumnail(selectedImage: $selectedImage, category: selectedCategory)
                 }
                 
                 Section("기본 정보") {
@@ -222,7 +222,7 @@ struct AddNote: View {
 #Preview {
     Text("Preview")
         .sheet(isPresented: .constant(true)) {
-            AddNote(
+            EditNote(
                 tastes: zip(Cocktail.labels, [0, 0, 0]).map { Taste(label: $0, value: $1) },
                 ingredients: [Ingredient(name: "재료", amount: 1, colorString: "red")],
                 categories: Cocktail.categories
