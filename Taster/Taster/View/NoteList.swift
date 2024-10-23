@@ -8,7 +8,7 @@
 import SwiftData
 import SwiftUI
 
-struct NoteList<T: SchemaV2.TastingNote & Identifiable>: View {
+struct NoteList<T: TastingNote & PersistentModel>: View {
     @Environment(\.modelContext) var context
     @State private var showDeleteAlert = false
     var notes: [T]

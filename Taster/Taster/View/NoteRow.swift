@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NoteRow<T: SchemaV2.TastingNote>: View {
+struct NoteRow<T: TastingNote>: View {
     var note: T
     
     var body: some View {

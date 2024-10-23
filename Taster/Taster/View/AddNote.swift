@@ -19,12 +19,12 @@ struct AddNote: View {
     @State private var selectedCategory: Category?
     @State private var selectedLook: Look?
     @State private var selectedSmells: [Smell] = []
-    @State private var tastes: [Double] = []
     @State private var think = ""
     @State private var rating = 0.0
     
     @State private var showCloseAlert = false
     
+    @State var tastes: [Taste]
     let categories: [Category]
     let looks: [Look]
     let smells: [Smell]
@@ -81,16 +81,28 @@ struct AddNote: View {
                 Section("시각") {
                     LazyVGrid(columns: lookColumns, spacing: 5) {
                         ForEach(looks, id: \.self) { look in
+                            let isSelected = selectedLook == look
+                            
                             Button {
-                                selectedLook = look
+                                if isSelected {
+                                    selectedLook = nil
+                                } else {
+                                    selectedLook = look
+                                }
                             } label: {
                                 VStack {
                                     Image("\(look.rawValue + "Wine")")
                                         .resizable()
                                         .scaledToFit()
                                     Text(look.description)
-                                        .foregroundStyle(.accent)
+                                        .bold(isSelected)
+                                        .foregroundStyle(isSelected ? .accent : .secondary)
                                         .font(.caption2)
+                                }
+                                .padding(2)
+                                .background {
+                                    RoundedRectangle(cornerRadius: 8, style: .continuous)
+                                        .foregroundStyle(isSelected ? Color(.systemGroupedBackground) : .clear)
                                 }
                             }
                             .buttonStyle(.plain)
@@ -101,11 +113,11 @@ struct AddNote: View {
                 Section("후각") {
                     LazyVGrid(columns: smellColumns, spacing: 8) {
                         ForEach(smells, id: \.self) { smell in
+                            let isContains = selectedSmells.contains(smell)
+                            
                             Button {
-                                if selectedSmells.contains(smell) {
-                                    if let index = selectedSmells.firstIndex(of: smell) {
-                                        selectedSmells.remove(at: index)
-                                    }
+                                if isContains {
+                                    selectedSmells.removeAll(where: { $0 == smell })
                                 } else {
                                     selectedSmells.append(smell)
                                 }
@@ -115,8 +127,14 @@ struct AddNote: View {
                                         .resizable()
                                         .scaledToFit()
                                     Text(smell.description)
-                                        .foregroundStyle(.accent)
+                                        .bold(isContains)
+                                        .foregroundStyle(isContains ? .accent : .secondary)
                                         .font(.caption2)
+                                }
+                                .padding(2)
+                                .background {
+                                    RoundedRectangle(cornerRadius: 8, style: .continuous)
+                                        .foregroundStyle(isContains ? Color(.systemGroupedBackground) : .clear)
                                 }
                             }
                             .buttonStyle(.plain)
@@ -126,9 +144,18 @@ struct AddNote: View {
                 
                 
                 Section("미각") {
-                    PolygonChart(labels: [], values: [2,3,3,4,3], maxValue: 5, height: 60)
-                    LabeledContent("미각") {
-                        Rating(rating: .constant(4.0), systemName: "circle.fill", font: .title3, foregroundColor: .accent)
+                    PolygonChart(
+                        labels: tastes.map { $0.label },
+                        values: tastes.map { $0.value },
+                        maxValue: 5,
+                        height: 120
+                    )
+                    .padding(.vertical, 8)
+                    
+                    ForEach(tastes.indices, id: \.self) { index in
+                        LabeledContent(tastes[index].label) {
+                            Rating(rating: $tastes[index].value, systemName: "circle.fill", font: .title3, foregroundColor: Property.labelColors[index])
+                        }
                     }
                 }
                 
@@ -180,9 +207,10 @@ struct AddNote: View {
     Text("Preview")
         .sheet(isPresented: .constant(true)) {
             AddNote(
-                categories: SchemaV2StoredProperty.Wine.categories,
-                looks: SchemaV2StoredProperty.Wine.looks,
-                smells: SchemaV2StoredProperty.Wine.smells
+                tastes: zip(Wine.labels, [4, 4, 3, 3, 2]).map { Taste(label: $0, value: $1) },
+                categories: Wine.categories,
+                looks: Wine.looks,
+                smells: Wine.smells
             )
         }
 }

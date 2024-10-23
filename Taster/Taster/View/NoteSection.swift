@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-struct NoteSection<T: SchemaV2.TastingNote & Identifiable>: View {
+struct NoteSection<T: TastingNote & Identifiable>: View {
     let title: String
     var notes: [T]
     
