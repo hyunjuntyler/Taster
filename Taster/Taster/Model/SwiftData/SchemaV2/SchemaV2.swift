@@ -29,7 +29,7 @@ extension SchemaV2 {
         var title: String { get set }
         var category: String { get set }
         var createdAt: Date { get set }
-        var thumnail: Data? { get set }
+        var imageData: Data? { get set }
         var look: String { get set }
         var smells: [String] { get set }
         var tastes: [Taste] { get set }
@@ -41,7 +41,7 @@ extension SchemaV2 {
         var title: String
         var category: String
         var createdAt: Date
-        @Attribute(.externalStorage) var thumnail: Data?
+        @Attribute(.externalStorage) var imageData: Data?
         var look: String
         var smells: [String]
         var tastes: [Taste]
@@ -66,6 +66,19 @@ extension SchemaV2 {
             self.tastes = tastes
             self.think = think
             self.rating = rating
+        }
+        
+        convenience init() {
+            self.init(
+                title: "",
+                category: "",
+                createdAt: .now,
+                look: "",
+                smells: [],
+                tastes: [],
+                think: "",
+                rating: 0.0
+            )
         }
     }
     
@@ -73,7 +86,7 @@ extension SchemaV2 {
         var title: String
         var category: String
         var createdAt: Date
-        @Attribute(.externalStorage) var thumnail: Data?
+        @Attribute(.externalStorage) var imageData: Data?
         var look: String
         var smells: [String]
         var tastes: [Taste]
@@ -98,6 +111,19 @@ extension SchemaV2 {
             self.tastes = tastes
             self.think = think
             self.rating = rating
+        }
+        
+        convenience init() {
+            self.init(
+                title: "",
+                category: "",
+                createdAt: .now,
+                look: "",
+                smells: [],
+                tastes: [],
+                think: "",
+                rating: 0.0
+            )
         }
     }
     
@@ -105,7 +131,7 @@ extension SchemaV2 {
         var title: String
         var category: String
         var createdAt: Date
-        @Attribute(.externalStorage) var thumnail: Data?
+        @Attribute(.externalStorage) var imageData: Data?
         var look: String
         var smells: [String]
         var tastes: [Taste]
@@ -131,20 +157,33 @@ extension SchemaV2 {
             self.think = think
             self.rating = rating
         }
+        
+        convenience init() {
+            self.init(
+                title: "",
+                category: "",
+                createdAt: .now,
+                look: "",
+                smells: [],
+                tastes: [],
+                think: "",
+                rating: 0.0
+            )
+        }
     }
     
     @Model final class CocktailTastingNote: TastingNote {
         var title: String
         var category: String
         var createdAt: Date
-        @Attribute(.externalStorage) var thumnail: Data?
+        @Attribute(.externalStorage) var imageData: Data?
         var look: String
         var smells: [String]
         var tastes: [Taste]
         var think: String
         var rating: Double
-        var ingredients: [Ingredient] = []
-        var containsIce: Bool = false
+        var ingredients: [Ingredient]
+        var containsIce: Bool
         
         init(
             title: String,
@@ -168,6 +207,21 @@ extension SchemaV2 {
             self.rating = rating
             self.ingredients = ingredients
             self.containsIce = containsIce
+        }
+        
+        convenience init() {
+            self.init(
+                title: "",
+                category: "",
+                createdAt: .now,
+                look: "",
+                smells: [],
+                tastes: [],
+                think: "",
+                rating: 0.0,
+                ingredients: [],
+                containsIce: false
+            )
         }
     }
     

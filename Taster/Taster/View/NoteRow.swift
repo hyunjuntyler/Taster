@@ -16,7 +16,7 @@ struct NoteRow<T: TastingNote>: View {
         } label: {
             HStack {
                 Thumnail(
-                    data: note.thumnail,
+                    data: note.imageData,
                     category: note.category,
                     width: 60,
                     height: 60,

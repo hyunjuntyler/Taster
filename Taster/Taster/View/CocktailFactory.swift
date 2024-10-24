@@ -146,10 +146,10 @@ struct IngredientSheet: View {
                 }
             }
             .onAppear {
-                if let index = selectedIndex {
-                    name = ingredients[index].name
-                    amount = ingredients[index].amount
-                    selectedColor = IngredientColor(rawValue: ingredients[index].colorString)
+                if let selectedIndex {
+                    name = ingredients[selectedIndex].name
+                    amount = ingredients[selectedIndex].amount
+                    selectedColor = IngredientColor(rawValue: ingredients[selectedIndex].colorString)
                 }
             }
         }

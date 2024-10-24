@@ -12,6 +12,7 @@ struct NoteDetail<T: TastingNote & PersistentModel>: View {
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
     
+    @State private var showEditNote = false
     @State private var showDeleteAlert = false
     
     let note: T
@@ -21,7 +22,7 @@ struct NoteDetail<T: TastingNote & PersistentModel>: View {
             Section("기본 정보") {
                 HStack {
                     Thumnail(
-                        data: note.thumnail,
+                        data: note.imageData,
                         category: note.category,
                         width: 80,
                         height: 80,
@@ -151,13 +152,16 @@ struct NoteDetail<T: TastingNote & PersistentModel>: View {
         .toolbar {
             Menu("메뉴", systemImage: "ellipsis") {
                 Button("수정", systemImage: "pencil") {
-                    
+                    showEditNote = true
                 }
                 
                 Button("삭제", systemImage: "trash", role: .destructive) {
                     showDeleteAlert = true
                 }
             }
+        }
+        .sheet(isPresented: $showEditNote) {
+            EditNote(category: NoteCategory.getCategory(from: note), note: note)
         }
         .alert("정말 삭제하시겠어요?", isPresented: $showDeleteAlert) {
             Button("삭제", role: .destructive) {

@@ -27,7 +27,7 @@ struct PHPicker: UIViewControllerRepresentable {
         Coordinator(self)
     }
     
-    class Coordinator: NSObject, PHPickerViewControllerDelegate {
+    final class Coordinator: NSObject, PHPickerViewControllerDelegate {
         var parent: PHPicker
 
         init(_ parent: PHPicker) {

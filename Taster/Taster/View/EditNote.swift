@@ -9,27 +9,26 @@ import SwiftData
 import SwiftUI
 import PhotosUI
 
-struct EditNote: View {
+struct EditNote<T: TastingNote & PersistentModel>: View {
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
     
     @State private var showCloseAlert = false
     
-    @State var selectedImage: UIImage?
-    @State var title = ""
-    @State var createdAt = Date()
-    @State var selectedCategory: Category?
-    @State var selectedLook: Look?
-    @State var selectedSmells: [Smell] = []
-    @State var tastes: [Taste] = []
-    @State var think = ""
-    @State var rating = 0.0
-    @State var ingredients: [Ingredient] = []
-    @State var containsIce = false
+    @State private var selectedImage: UIImage?
+    @State private var title = ""
+    @State private var createdAt = Date()
+    @State private var selectedCategory: Category?
+    @State private var selectedLook: Look?
+    @State private var selectedSmells: [Smell] = []
+    @State private var tastes: [Taste] = []
+    @State private var think = ""
+    @State private var rating = 0.0
+    @State private var ingredients: [Ingredient] = []
+    @State private var containsIce = false
     
-    var categories: [Category] = []
-    var looks: [Look] = []
-    var smells: [Smell] = []
+    let category: NoteCategory
+    var note: T?
     
     private let lookColumns = Array(repeating: GridItem(.flexible()), count: 6)
     private let smellColumns = Array(repeating: GridItem(.flexible()), count: 6)
@@ -54,7 +53,7 @@ struct EditNote: View {
                     
                     LabeledContent("종류") {
                         Menu {
-                            ForEach(categories, id: \.self) { category in
+                            ForEach(category.categories, id: \.self) { category in
                                 Button {
                                     selectedCategory = category
                                 } label: {
@@ -80,10 +79,10 @@ struct EditNote: View {
                     }
                 }
                 
-                if !looks.isEmpty {
+                if !category.looks.isEmpty {
                     Section("시각") {
                         LazyVGrid(columns: lookColumns, spacing: 5) {
-                            ForEach(looks, id: \.self) { look in
+                            ForEach(category.looks, id: \.self) { look in
                                 let isSelected = selectedLook == look
                                 
                                 Button {
@@ -94,7 +93,7 @@ struct EditNote: View {
                                     }
                                 } label: {
                                     VStack {
-                                        Image("\(look.rawValue + "Wine")")
+                                        Image("\(look.rawValue + category.imageSuffix)")
                                             .resizable()
                                             .scaledToFit()
                                         Text(look.description)
@@ -114,10 +113,10 @@ struct EditNote: View {
                     }
                 }
                 
-                if !smells.isEmpty {
+                if !category.smells.isEmpty {
                     Section("후각") {
                         LazyVGrid(columns: smellColumns, spacing: 8) {
-                            ForEach(smells, id: \.self) { smell in
+                            ForEach(category.smells, id: \.self) { smell in
                                 let isContains = selectedSmells.contains(smell)
                                 
                                 Button {
@@ -148,7 +147,7 @@ struct EditNote: View {
                     }
                 }
                 
-                if categories.contains(where: { $0 == .homeCocktail }) {
+                if category.categories.contains(where: { $0 == .homeCocktail }) {
                     Section("커스텀 칵테일") {
                         CocktailFactory(
                             ingredients: $ingredients,
@@ -193,7 +192,7 @@ struct EditNote: View {
                     }
                 }
             }
-            .navigationTitle("노트 추가")
+            .navigationTitle(note == nil ? "\(category.description) 노트 추가" : "\(category.description) 노트 수정")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
@@ -204,6 +203,7 @@ struct EditNote: View {
                 
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("저장") {
+                        save()
                         dismiss()
                     }
                 }
@@ -215,6 +215,68 @@ struct EditNote: View {
             } message: {
                 Text("작성된 내용은 저장되지 않아요")
             }
+            .onAppear {
+                tastes = category.tastes
+                
+                if let note {
+                    title = note.title
+                    selectedCategory = Category(rawValue: note.category)
+                    createdAt = note.createdAt
+                    if let data = note.imageData {
+                        selectedImage = UIImage(data: data)
+                    }
+                    selectedLook = Look(rawValue: note.look)
+                    selectedSmells = note.smells.compactMap { Smell(rawValue: $0) }
+                    tastes = note.tastes
+                    think = note.think
+                    rating = note.rating
+                    
+                    if let note = note as? CocktailTastingNote {
+                        ingredients = note.ingredients
+                        containsIce = note.containsIce
+                    }
+                }
+            }
+        }
+    }
+    
+    func save() {
+        if let note {
+            note.title = title
+            note.category = selectedCategory?.rawValue ?? ""
+            note.createdAt = createdAt
+            note.imageData = selectedImage?.pngData()
+            note.look = selectedLook?.rawValue ?? ""
+            note.smells = selectedSmells.map { $0.rawValue }
+            note.tastes = tastes
+            note.think = think
+            note.rating = rating
+            
+            if let note = note as? CocktailTastingNote {
+                note.ingredients = ingredients
+                note.containsIce = containsIce
+            }
+            
+            try? context.save()
+        } else {
+            if let note = category.model as? T {
+                note.title = title
+                note.category = selectedCategory?.rawValue ?? ""
+                note.createdAt = createdAt
+                note.imageData = selectedImage?.pngData()
+                note.look = selectedLook?.rawValue ?? ""
+                note.smells = selectedSmells.map { $0.rawValue }
+                note.tastes = tastes
+                note.think = think
+                note.rating = rating
+                
+                if let note = note as? CocktailTastingNote {
+                    note.ingredients = ingredients
+                    note.containsIce = containsIce
+                }
+                
+                context.insert(note)
+            }
         }
     }
 }
@@ -222,10 +284,6 @@ struct EditNote: View {
 #Preview {
     Text("Preview")
         .sheet(isPresented: .constant(true)) {
-            EditNote(
-                tastes: zip(Cocktail.labels, [0, 0, 0]).map { Taste(label: $0, value: $1) },
-                ingredients: [Ingredient(name: "재료", amount: 1, colorString: "red")],
-                categories: Cocktail.categories
-            )
+            EditNote<CocktailTastingNote>(category: .cocktail)
         }
 }
