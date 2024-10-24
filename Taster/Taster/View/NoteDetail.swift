@@ -9,6 +9,7 @@ import SwiftData
 import SwiftUI
 
 struct NoteDetail<T: TastingNote>: View {
+    @Environment(\.colorScheme) private var colorScheme
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
     
@@ -25,8 +26,7 @@ struct NoteDetail<T: TastingNote>: View {
                         data: note.imageData,
                         category: note.category,
                         width: 80,
-                        height: 80,
-                        uiColor: .systemBackground
+                        height: 80
                     )
                     
                     HStack(alignment: .top) {
@@ -44,9 +44,7 @@ struct NoteDetail<T: TastingNote>: View {
                         }
                     }
                 }
-                .listRowInsets(.init())
             }
-            .listRowBackground(Color.clear)
             
             Section("테이스팅 노트") {
                 if let look = Look(rawValue: note.look) {
@@ -90,7 +88,7 @@ struct NoteDetail<T: TastingNote>: View {
                                         .padding(.horizontal, 3)
                                         .background {
                                             RoundedRectangle(cornerRadius: 12)
-                                                .foregroundStyle(Color(.systemGroupedBackground))
+                                                .foregroundStyle(.ultraThinMaterial)
                                         }
                                     }
                                 }

@@ -12,14 +12,15 @@ struct Thumnail: View {
     let category: String
     let width: CGFloat
     let height: CGFloat
-    let uiColor: UIColor
+    
+    var foregroundStyle: some ShapeStyle = .ultraThinMaterial
     
     var body: some View {
         ZStack {
             Rectangle()
                 .frame(width: width, height: height)
-                .foregroundStyle(Color(uiColor))
-            
+                .foregroundStyle(foregroundStyle)
+
             if let data = data, let uiImage = UIImage(data: data) {
                 Image(uiImage: uiImage)
                     .resizable()
@@ -43,7 +44,6 @@ struct Thumnail: View {
         data: nil,
         category: "redWine",
         width: 60,
-        height: 60,
-        uiColor: .systemGray6
+        height: 60
     )
 }

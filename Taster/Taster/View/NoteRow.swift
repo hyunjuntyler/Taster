@@ -19,8 +19,7 @@ struct NoteRow<T: TastingNote>: View {
                     data: note.imageData,
                     category: note.category,
                     width: 60,
-                    height: 60,
-                    uiColor: .systemGroupedBackground
+                    height: 60
                 )
                 
                 HStack(alignment: .top) {

@@ -22,8 +22,8 @@ struct PolygonChart: View {
     var body: some View {
         ZStack {
             Polygon(values: maxValues, maxValue: maxValue)
-                .foregroundStyle(Color(.systemGroupedBackground))
-            
+                .foregroundStyle(.ultraThinMaterial)
+
             Polygon(values: values, maxValue: maxValue)
                 .foregroundStyle(foregroundColor)
             
