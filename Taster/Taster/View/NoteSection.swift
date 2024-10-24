@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct NoteSection<T: TastingNote>: View {
+    @Environment(\.modelContext) var context
+    
+    @State private var showDeleteAlert = false
+    @State private var selectedNote: T?
+    
     let title: String
     var notes: [T]
     
@@ -16,9 +21,25 @@ struct NoteSection<T: TastingNote>: View {
             Section {
                 ForEach(notes.prefix(3)) { note in
                     NoteRow(note: note)
+                        .swipeActions {
+                            Button("삭제", systemImage: "trash") {
+                                selectedNote = note
+                                showDeleteAlert = true
+                            }
+                            .tint(.red)
+                        }
                 }
             } header: {
                 NoteHeader(title: title, notes: notes)
+            }
+            .alert("정말 삭제하시겠어요?", isPresented: $showDeleteAlert) {
+                Button("확인", role: .destructive) {
+                    if let selectedNote {
+                        context.delete(selectedNote)
+                    }
+                }
+            } message: {
+                Text("삭제한 노트는 복구가 불가능해요.")
             }
         }
     }

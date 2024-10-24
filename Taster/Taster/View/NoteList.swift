@@ -10,7 +10,10 @@ import SwiftUI
 
 struct NoteList<T: TastingNote>: View {
     @Environment(\.modelContext) var context
+    
     @State private var showDeleteAlert = false
+    @State private var selectedNote: T?
+    
     var notes: [T]
     let title: String
     
@@ -20,16 +23,10 @@ struct NoteList<T: TastingNote>: View {
                 NoteRow(note: note)
                     .swipeActions {
                         Button("삭제", systemImage: "trash") {
+                            selectedNote = note
                             showDeleteAlert = true
                         }
                         .tint(.red)
-                    }
-                    .alert("정말 삭제하시겠어요?", isPresented: $showDeleteAlert) {
-                        Button("확인", role: .destructive) {
-                            context.delete(note)
-                        }
-                    } message: {
-                        Text("삭제한 노트는 복구가 불가능해요.")
                     }
             }
         }
@@ -52,6 +49,15 @@ struct NoteList<T: TastingNote>: View {
                     }
                 }
             }
+        }
+        .alert("정말 삭제하시겠어요?", isPresented: $showDeleteAlert) {
+            Button("확인", role: .destructive) {
+                if let selectedNote {
+                    context.delete(selectedNote)
+                }
+            }
+        } message: {
+            Text("삭제한 노트는 복구가 불가능해요.")
         }
     }
 }
