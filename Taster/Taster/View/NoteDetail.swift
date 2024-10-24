@@ -134,7 +134,7 @@ struct NoteDetail<T: TastingNote>: View {
                         }
                         
                         LabeledContent {
-                            RatingDisplay(rating: taste.value, color: color, systemName: "circle.fill", font: .subheadline)
+                            RatingDisplay(rating: taste.value, color: color, systemName: "circle.fill", font: .subheadline, labelLocation: .left)
                         } label: {
                             Text(taste.label)
                                 .font(.subheadline)

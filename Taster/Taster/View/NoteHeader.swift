@@ -12,16 +12,19 @@ struct NoteHeader<T: TastingNote>: View {
     var notes: [T]
     
     var body: some View {
-        HStack {
-            Text(title)
-            NavigationLink {
-                NoteList(notes: notes, title: title)
-            } label: {
+        NavigationLink {
+            NoteList(notes: notes, title: title)
+        } label: {
+            HStack {
+                Text(title)
+                    .font(.title3)
+                    .fontWeight(.semibold)
                 Image(systemName: "chevron.right")
                     .bold()
                     .foregroundStyle(.gray)
             }
         }
+        .buttonStyle(.plain)
     }
 }
 

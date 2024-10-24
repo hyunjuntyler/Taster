@@ -23,6 +23,7 @@ struct CocktailFactory: View {
         )
         
         Toggle("얼음", isOn: $containsIce)
+            .tint(.cyan)
         
         ForEach(ingredients.indices, id: \.self) { index in
             LabeledContent {

@@ -169,7 +169,17 @@ struct EditNote<T: TastingNote>: View {
                     
                     ForEach(tastes.indices, id: \.self) { index in
                         LabeledContent(tastes[index].label) {
-                            Rating(rating: $tastes[index].value, systemName: "circle.fill", font: .title3, foregroundColor: Property.labelColors[index])
+                            HStack {
+                                Text("\(tastes[index].value, specifier: "%.1f")")
+                                    .contentTransition(.numericText(value: tastes[index].value))
+                                    .fontDesign(.rounded)
+                                    .fontWeight(.medium)
+                                    .monospacedDigit()
+                                    .font(.body)
+                                
+                                Rating(rating: $tastes[index].value, systemName: "circle.fill", font: .title3, foregroundColor: Property.labelColors[index])
+                            }
+                            .frame(maxWidth: .infinity, alignment: .trailing)
                         }
                     }
                 }

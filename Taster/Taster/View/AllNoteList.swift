@@ -60,6 +60,7 @@ struct AllNoteList: View {
         }
         .sheet(item: $selectedCategory) { category in
             category.editNoteView
+                .interactiveDismissDisabled()
         }
     }
 }
