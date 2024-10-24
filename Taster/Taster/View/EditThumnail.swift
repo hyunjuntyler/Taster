@@ -29,7 +29,7 @@ struct EditThumnail: View {
                     if let uiImage = selectedImage {
                         Image(uiImage: uiImage)
                             .resizable()
-                            .scaledToFit()
+                            .scaledToFill()
                             .frame(width: 70, height: 70)
                     } else if let uiImage = category?.uiImage {
                         Image(uiImage: uiImage)
@@ -77,7 +77,7 @@ struct EditThumnail: View {
             PHPicker(selectedImage: $selectedImage)
                 .ignoresSafeArea()
         }
-        .sheet(isPresented: $showCamera) {
+        .fullScreenCover(isPresented: $showCamera) {
             Camera(selectedImage: $selectedImage)
                 .ignoresSafeArea()
         }
@@ -91,30 +91,38 @@ struct EditThumnail: View {
         }
     }
     
-    @MainActor
     private func checkCameraPermission() {
-        AVCaptureDevice.requestAccess(for: .video) { granted in
-            if granted {
-                showCamera = true
-            } else {
-                alertTitle = "카메라 권한이 없습니다."
-                showAlert = true
+        let cameraStatus = AVCaptureDevice.authorizationStatus(for: .video)
+        switch cameraStatus {
+        case .authorized:
+            showCamera = true
+        case .notDetermined:
+            Task {
+                await AVCaptureDevice.requestAccess(for: .video)
+                checkCameraPermission()
             }
+        default:
+            alertTitle = "카메라 권한이 없습니다."
+            showAlert = true
         }
     }
-    
-    @MainActor
+
     private func checkAlbumPermission() {
-        PHPhotoLibrary.requestAuthorization { status in
-            switch status {
-            case .authorized: showAlbum = true
-            case .notDetermined: break
-            default:
-                alertTitle = "앨범 권한이 없습니다."
-                showAlert = true
+        let photoStatus = PHPhotoLibrary.authorizationStatus(for: .readWrite)
+        switch photoStatus {
+        case .authorized, .limited:
+            showAlbum = true
+        case .notDetermined:
+            Task {
+                await PHPhotoLibrary.requestAuthorization(for: .readWrite)
+                checkAlbumPermission()
             }
+        default:
+            alertTitle = "앨범 권한이 없습니다."
+            showAlert = true
         }
     }
+
 }
 
 #Preview {
