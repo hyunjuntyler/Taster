@@ -105,7 +105,7 @@ struct NoteDetail<T: TastingNote>: View {
                         
                         CustomCocktail(
                             ingredients: note.ingredients,
-                            containsIce: note.containsIce,
+                            isContainsIce: note.isContainsIce,
                             width: 60,
                             height: 90
                         )

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CustomCocktail: View {
     var ingredients: [Ingredient]
-    var containsIce: Bool
+    var isContainsIce: Bool
     var width: CGFloat
     var height: CGFloat
     
@@ -19,7 +19,7 @@ struct CustomCocktail: View {
                 .overlay(alignment: .bottom) {
                     Liquid(ingredients: ingredients, width: width, height: height)
                         .scaleEffect(0.85)
-                    Ice(containsIce: containsIce, width: width, height: height)
+                    Ice(isContainsIce: isContainsIce, width: width, height: height)
                 }
                 .padding(.vertical, 8)
             
@@ -143,7 +143,7 @@ private struct Ingredients: View {
 }
 
 private struct Ice: View {
-    var containsIce: Bool
+    var isContainsIce: Bool
     let width: CGFloat
     let height: CGFloat
     
@@ -160,7 +160,7 @@ private struct Ice: View {
         }
         .offset(y: height * 0.05)
         .font(.TossFace.body)
-        .opacity(containsIce ? 0.4 : 0)
+        .opacity(isContainsIce ? 0.4 : 0)
     }
 }
 
@@ -173,7 +173,7 @@ private struct Ice: View {
                 Ingredient(name: "칵테일", amount: 3, colorString: "green"),
                 Ingredient(name: "위스키", amount: 2, colorString: "orange"),
                 Ingredient(name: "자유", amount: 5, colorString: "yellow")
-            ], containsIce: true, width: 60, height: 90)
+            ], isContainsIce: true, width: 60, height: 90)
         }
     }
 }

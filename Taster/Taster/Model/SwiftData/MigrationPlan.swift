@@ -40,7 +40,8 @@ actor MigrationPlan: SchemaMigrationPlan {
                     smells: $0.scents.map { $0.imageName },
                     tastes: zip(Wine.labels, $0.taste).map { Taste(label: $0, value: $1) },
                     think: $0.think,
-                    rating: $0.rating
+                    rating: $0.rating,
+                    isFavorite: false
                 )
             }
             
@@ -53,7 +54,8 @@ actor MigrationPlan: SchemaMigrationPlan {
                     smells: $0.flavors.map { $0.imageName },
                     tastes: zip(Coffee.labels, $0.taste).map { Taste(label: $0, value: $1) },
                     think: $0.think,
-                    rating: $0.rating
+                    rating: $0.rating,
+                    isFavorite: false
                 )
             }
             
@@ -65,8 +67,10 @@ actor MigrationPlan: SchemaMigrationPlan {
                     look: $0.color.imageName,
                     smells: $0.flavors.map { $0.imageName },
                     tastes: zip(Whiskey.labels, $0.taste).map { Taste(label: $0, value: $1) },
+                    finish: Finish(value: 0, note: ""),
                     think: $0.think,
-                    rating: $0.rating
+                    rating: $0.rating,
+                    isFavorite: false
                 )
             }
             
@@ -80,8 +84,9 @@ actor MigrationPlan: SchemaMigrationPlan {
                     tastes: zip(Cocktail.labels, $0.taste).map { Taste(label: $0, value: $1) },
                     think: $0.think,
                     rating: $0.rating,
+                    isFavorite: false,
                     ingredients: $0.ingredients.map { $0.converted },
-                    containsIce: $0.isIce
+                    isContainsIce: $0.isIce
                 )
             }
         }, didMigrate: { context in

@@ -12,17 +12,17 @@ struct CocktailFactory: View {
     @State private var selectedIndex: Int?
     
     @Binding var ingredients: [Ingredient]
-    @Binding var containsIce: Bool
+    @Binding var isContainsIce: Bool
     
     var body: some View {
         CustomCocktail(
             ingredients: ingredients,
-            containsIce: containsIce,
+            isContainsIce: isContainsIce,
             width: 60,
             height: 80
         )
         
-        Toggle("얼음", isOn: $containsIce)
+        Toggle("얼음", isOn: $isContainsIce)
             .tint(.cyan)
         
         ForEach(ingredients.indices, id: \.self) { index in
@@ -163,7 +163,7 @@ struct IngredientSheet: View {
         Section("커스텀") {
             CocktailFactory(
                 ingredients: .constant([Ingredient(name: "재료", amount: 1, colorString: "red")]),
-                containsIce: .constant(true)
+                isContainsIce: .constant(true)
             )
         }
     }

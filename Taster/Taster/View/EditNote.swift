@@ -25,7 +25,7 @@ struct EditNote<T: TastingNote>: View {
     @State private var think = ""
     @State private var rating = 0.0
     @State private var ingredients: [Ingredient] = []
-    @State private var containsIce = false
+    @State private var isContainsIce = false
     
     let category: NoteCategory
     var note: T?
@@ -151,7 +151,7 @@ struct EditNote<T: TastingNote>: View {
                     Section("커스텀 칵테일") {
                         CocktailFactory(
                             ingredients: $ingredients,
-                            containsIce: $containsIce
+                            isContainsIce: $isContainsIce
                         )
                     }
                 }
@@ -243,7 +243,7 @@ struct EditNote<T: TastingNote>: View {
                     
                     if let note = note as? CocktailTastingNote {
                         ingredients = note.ingredients
-                        containsIce = note.containsIce
+                        isContainsIce = note.isContainsIce
                     }
                 }
             }
@@ -264,7 +264,7 @@ struct EditNote<T: TastingNote>: View {
             
             if let note = note as? CocktailTastingNote {
                 note.ingredients = ingredients
-                note.containsIce = containsIce
+                note.isContainsIce = isContainsIce
             }
             
             try? context.save()
@@ -282,7 +282,7 @@ struct EditNote<T: TastingNote>: View {
                 
                 if let note = note as? CocktailTastingNote {
                     note.ingredients = ingredients
-                    note.containsIce = containsIce
+                    note.isContainsIce = isContainsIce
                 }
                 
                 context.insert(note)

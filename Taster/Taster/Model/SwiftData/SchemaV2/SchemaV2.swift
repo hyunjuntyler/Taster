@@ -9,6 +9,7 @@ import Foundation
 import SwiftData
 
 typealias Taste = SchemaV2.Taste
+typealias Finish = SchemaV2.Finish
 typealias Ingredient = SchemaV2.Ingredient
 typealias TastingNote = SchemaV2.TastingNote
 typealias WineTastingNote = SchemaV2.WineTastingNote
@@ -35,6 +36,7 @@ extension SchemaV2 {
         var tastes: [Taste] { get set }
         var think: String { get set }
         var rating: Double { get set }
+        var isFavorite: Bool { get set }
     }
     
     @Model final class WineTastingNote: TastingNote {
@@ -47,6 +49,7 @@ extension SchemaV2 {
         var tastes: [Taste]
         var think: String
         var rating: Double
+        var isFavorite: Bool
         
         init(
             title: String,
@@ -56,7 +59,8 @@ extension SchemaV2 {
             smells: [String],
             tastes: [Taste],
             think: String,
-            rating: Double
+            rating: Double,
+            isFavorite: Bool
         ) {
             self.title = title
             self.category = category
@@ -66,6 +70,7 @@ extension SchemaV2 {
             self.tastes = tastes
             self.think = think
             self.rating = rating
+            self.isFavorite = isFavorite
         }
         
         convenience init() {
@@ -77,7 +82,8 @@ extension SchemaV2 {
                 smells: [],
                 tastes: [],
                 think: "",
-                rating: 0.0
+                rating: 0.0,
+                isFavorite: false
             )
         }
     }
@@ -92,6 +98,7 @@ extension SchemaV2 {
         var tastes: [Taste]
         var think: String
         var rating: Double
+        var isFavorite: Bool
         
         init(
             title: String,
@@ -101,7 +108,8 @@ extension SchemaV2 {
             smells: [String],
             tastes: [Taste],
             think: String,
-            rating: Double
+            rating: Double,
+            isFavorite: Bool
         ) {
             self.title = title
             self.category = category
@@ -111,6 +119,7 @@ extension SchemaV2 {
             self.tastes = tastes
             self.think = think
             self.rating = rating
+            self.isFavorite = isFavorite
         }
         
         convenience init() {
@@ -122,7 +131,8 @@ extension SchemaV2 {
                 smells: [],
                 tastes: [],
                 think: "",
-                rating: 0.0
+                rating: 0.0,
+                isFavorite: false
             )
         }
     }
@@ -135,8 +145,10 @@ extension SchemaV2 {
         var look: String
         var smells: [String]
         var tastes: [Taste]
+        var finish: Finish
         var think: String
         var rating: Double
+        var isFavorite: Bool
         
         init(
             title: String,
@@ -145,8 +157,10 @@ extension SchemaV2 {
             look: String,
             smells: [String],
             tastes: [Taste],
+            finish: Finish,
             think: String,
-            rating: Double
+            rating: Double,
+            isFavorite: Bool
         ) {
             self.title = title
             self.category = category
@@ -154,8 +168,10 @@ extension SchemaV2 {
             self.look = look
             self.smells = smells
             self.tastes = tastes
+            self.finish = finish
             self.think = think
             self.rating = rating
+            self.isFavorite = isFavorite
         }
         
         convenience init() {
@@ -166,8 +182,10 @@ extension SchemaV2 {
                 look: "",
                 smells: [],
                 tastes: [],
+                finish: Finish(value: 0.0, note: ""),
                 think: "",
-                rating: 0.0
+                rating: 0.0,
+                isFavorite: false
             )
         }
     }
@@ -182,8 +200,9 @@ extension SchemaV2 {
         var tastes: [Taste]
         var think: String
         var rating: Double
+        var isFavorite: Bool
         var ingredients: [Ingredient]
-        var containsIce: Bool
+        var isContainsIce: Bool
         
         init(
             title: String,
@@ -194,8 +213,9 @@ extension SchemaV2 {
             tastes: [Taste],
             think: String,
             rating: Double,
+            isFavorite: Bool,
             ingredients: [Ingredient],
-            containsIce: Bool
+            isContainsIce: Bool
         ) {
             self.title = title
             self.category = category
@@ -205,8 +225,9 @@ extension SchemaV2 {
             self.tastes = tastes
             self.think = think
             self.rating = rating
+            self.isFavorite = isFavorite
             self.ingredients = ingredients
-            self.containsIce = containsIce
+            self.isContainsIce = isContainsIce
         }
         
         convenience init() {
@@ -219,8 +240,9 @@ extension SchemaV2 {
                 tastes: [],
                 think: "",
                 rating: 0.0,
+                isFavorite: false,
                 ingredients: [],
-                containsIce: false
+                isContainsIce: false
             )
         }
     }
@@ -228,6 +250,11 @@ extension SchemaV2 {
     struct Taste: Hashable, Codable {
         let label: String
         var value: Double
+    }
+    
+    struct Finish: Hashable, Codable {
+        var value: Double
+        var note: String
     }
     
     struct Ingredient: Hashable, Codable {
@@ -267,7 +294,8 @@ extension SchemaV2 {
                 smells: ["olive", "plum"],
                 tastes: zip(Wine.labels, [5, 4, 3, 2, 4]).map { Taste(label: $0, value: $1) },
                 think: "think",
-                rating: 5.0
+                rating: 5.0,
+                isFavorite: true
             ),
             .init(
                 title: "와인 2",
@@ -277,7 +305,8 @@ extension SchemaV2 {
                 smells: ["jasmine", "butter"],
                 tastes: zip(Wine.labels, [4, 3, 2, 2, 3]).map { Taste(label: $0, value: $1) },
                 think: "think",
-                rating: 4.0
+                rating: 4.0,
+                isFavorite: false
             )
         ]
     }
@@ -291,8 +320,10 @@ extension SchemaV2 {
                 look: "gold",
                 smells: ["lemon", "raisin"],
                 tastes: zip(Whiskey.labels, [3, 4, 5, 1, 2, 4]).map { Taste(label: $0, value: $1) },
+                finish: Finish(value: 3.5, note: "Finish note"),
                 think: "think",
-                rating: 3.5
+                rating: 3.5,
+                isFavorite: false
             ),
             .init(
                 title: "위스키 2",
@@ -301,8 +332,10 @@ extension SchemaV2 {
                 look: "copper",
                 smells: ["popcorn", "strawberry"],
                 tastes: zip(Whiskey.labels, [2, 5, 5, 3, 2, 5]).map { Taste(label: $0, value: $1) },
+                finish: Finish(value: 2.5, note: "Finish note"),
                 think: "think",
-                rating: 4.5
+                rating: 4.5,
+                isFavorite: false
             )
         ]
     }
@@ -317,7 +350,8 @@ extension SchemaV2 {
                 smells: ["mango"],
                 tastes: zip(Coffee.labels, [3, 4, 3, 3, 4]).map { Taste(label: $0, value: $1) },
                 think: "think",
-                rating: 4.5
+                rating: 4.5,
+                isFavorite: false
             ),
             .init(
                 title: "커피 2",
@@ -327,7 +361,8 @@ extension SchemaV2 {
                 smells: ["kiwi", "cherry"],
                 tastes: zip(Coffee.labels, [5, 4, 2, 3, 3]).map { Taste(label: $0, value: $1) },
                 think: "think",
-                rating: 4.0
+                rating: 4.0,
+                isFavorite: false
             )
         ]
     }
@@ -343,6 +378,7 @@ extension SchemaV2 {
                 tastes: zip(Cocktail.labels, [2, 2, 3]).map { Taste(label: $0, value: $1) },
                 think: "think",
                 rating: 4.0,
+                isFavorite: true,
                 ingredients: [
                     Ingredient(
                         name: "red",
@@ -350,7 +386,7 @@ extension SchemaV2 {
                         colorString: "red"
                     )
                 ],
-                containsIce: true
+                isContainsIce: true
             ),
             .init(
                 title: "칵테일 2",
@@ -361,6 +397,7 @@ extension SchemaV2 {
                 tastes: zip(Cocktail.labels, [2, 3, 3]).map { Taste(label: $0, value: $1) },
                 think: "think",
                 rating: 4.5,
+                isFavorite: false,
                 ingredients: [
                     Ingredient(
                         name: "yellow",
@@ -373,7 +410,7 @@ extension SchemaV2 {
                         colorString: "mint"
                     )
                 ],
-                containsIce: true
+                isContainsIce: true
             )
         ]
     }
