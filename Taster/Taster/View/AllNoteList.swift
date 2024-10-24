@@ -8,14 +8,13 @@
 import SwiftData
 import SwiftUI
 
-struct AllNoteList: View {
-    @State private var searchText = ""
-    
+struct AllNoteList: View {    
     @Query private var wineNotes: [WineTastingNote]
     @Query private var coffeeNotes: [CoffeeTastingNote]
     @Query private var whiskeyNotes: [WhiskeyTastingNote]
     @Query private var cocktailNotes: [CocktailTastingNote]
     
+    @State private var searchText = ""
     @State private var selectedCategory: NoteCategory?
     @State private var showEditNote = false
     
@@ -25,18 +24,28 @@ struct AllNoteList: View {
     
     var body: some View {
         List {
-            if isEmpty {
-                ContentUnavailableView("기록이 없어요", systemImage: "questionmark.circle.fill", description: Text("나만의 노트를 추가해 보세요"))
+            if searchText.isEmpty {
+                if isEmpty {
+                    ContentUnavailableView("기록이 없어요", systemImage: "questionmark.circle.fill", description: Text("나만의 노트를 추가해 보세요"))
+                }
+                
+                NoteSection(title: "와인 노트", notes: wineNotes)
+                NoteSection(title: "커피 노트", notes: coffeeNotes)
+                NoteSection(title: "위스키 노트", notes: whiskeyNotes)
+                NoteSection(title: "칵테일 노트", notes: cocktailNotes)
+            } else {
+                SearchResult(
+                    searchText: searchText,
+                    wineNotes: wineNotes,
+                    coffeeNotes: coffeeNotes,
+                    whiskeyNotes: whiskeyNotes,
+                    cocktailNotes: cocktailNotes
+                )
             }
-            
-            NoteSection(title: "와인 노트", notes: wineNotes)
-            NoteSection(title: "커피 노트", notes: coffeeNotes)
-            NoteSection(title: "위스키 노트", notes: whiskeyNotes)
-            NoteSection(title: "칵테일 노트", notes: cocktailNotes)
         }
+        .searchable(text: $searchText)
         .listRowSpacing(8)
         .headerProminence(.increased)
-        .searchable(text: $searchText)
         .navigationTitle("노트")
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {

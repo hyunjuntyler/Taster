@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NoteSection<T: TastingNote & Identifiable>: View {
+struct NoteSection<T: TastingNote>: View {
     let title: String
     var notes: [T]
     

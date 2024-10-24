@@ -9,7 +9,7 @@ import SwiftData
 import SwiftUI
 import PhotosUI
 
-struct EditNote<T: TastingNote & PersistentModel>: View {
+struct EditNote<T: TastingNote>: View {
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
     

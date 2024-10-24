@@ -8,7 +8,7 @@
 import SwiftData
 import SwiftUI
 
-struct NoteDetail<T: TastingNote & PersistentModel>: View {
+struct NoteDetail<T: TastingNote>: View {
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
     

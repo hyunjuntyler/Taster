@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NoteHeader<T: TastingNote & Identifiable>: View {
+struct NoteHeader<T: TastingNote>: View {
     let title: String
     var notes: [T]
     
